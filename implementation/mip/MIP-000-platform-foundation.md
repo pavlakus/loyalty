@@ -130,7 +130,7 @@ The following ADRs must exist or be created before Foundation is considered comp
 - `ADR-005-idempotency-foundation.md`
 - `ADR-006-observability-and-correlation-context.md`
 - `ADR-007-environment-and-secret-management.md`
-- `ADR-008-mobile-cross-platform-architecture.md`
+- `ADR-008-cross-platform-mobile-architecture.md`
 
 ADRs may begin as `Proposed`, but blocking decisions must be `Accepted` before affected implementation starts.
 
@@ -602,7 +602,7 @@ infrastructure/**
 scripts/**
 .github/**
 docs/engineering/**
-docs/decisions/**
+docs/adr/**
 AGENTS.md
 README.md
 package.json
