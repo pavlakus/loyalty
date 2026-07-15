@@ -1,0 +1,25 @@
+{
+  "name": "@loyalty-platform/business-portal",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Business Portal web skeleton.",
+  "type": "module",
+  "scripts": {
+    "start": "vite --host 0.0.0.0",
+    "build": "tsc --noEmit && vite build",
+    "lint": "node -e \"console.log('business-portal placeholder lint')\"",
+    "test": "tsc --noEmit",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "4.3.4",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "typescript": "5.8.3",
+    "vite": "5.4.19"
+  },
+  "devDependencies": {
+    "@types/react": "19.0.12",
+    "@types/react-dom": "19.0.4"
+  }
+}

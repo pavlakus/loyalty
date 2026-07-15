@@ -1,0 +1,57 @@
+# 82. Dispatcher Command Standard
+
+Supported commands:
+
+```text
+prepare <TASK-ID>
+execute <TASK-ID>
+review <TASK-ID>
+qa <TASK-ID>
+close <TASK-ID>
+status <TASK-ID>
+```
+
+The dispatcher locates the task and MIP, validates lifecycle, invokes the matching skill, persists evidence and returns the next valid action.
+
+The dispatcher must validate every agent response against `docs/ai-engineering-framework/90-agent-response-contract.md`. Status-only responses are invalid. If validation fails, the dispatcher rejects the response, records the validation failure and requires the agent to regenerate a compliant response before workflow continues.
+
+## Command Responsibilities
+
+| Command | Valid Starting Point | Required Result |
+|---|---|---|
+| `prepare <TASK-ID>` | DRAFT, BLOCKED when preparation blocker was resolved | READY FOR IMPLEMENTATION or TASK PREPARATION BLOCKED |
+| `execute <TASK-ID>` | READY, or CHANGES_REQUIRED with explicit correction authorization | READY FOR REVIEW or BLOCKED |
+| `review <TASK-ID>` | READY_FOR_REVIEW | APPROVED, APPROVED WITH FOLLOW-UP, CHANGES REQUIRED or BLOCKED |
+| `qa <TASK-ID>` | QA after review approval | QA APPROVED, QA CHANGES REQUIRED or QA BLOCKED |
+| `close <TASK-ID>` | READY_FOR_MERGE or MERGED | MERGED, DONE or BLOCKED |
+| `status <TASK-ID>` | Any state | Current lifecycle state and next valid action |
+
+## Evidence Routing
+
+The dispatcher must preserve separate phase evidence under:
+
+```text
+implementation/evidence/<TASK-ID>/
+```
+
+Required files by phase:
+
+- `prepare.md`
+- `implementation.md`
+- `review.md`
+- `qa.md`
+- `security.md` when required
+- `release.md` when required
+
+The dispatcher must not collapse preparation, implementation, review and QA into a single approval. Review, QA, Security and human merge gates remain separate.
+
+Every phase response must include required metadata, Executive Summary, Status, Findings, Evidence, Required Corrections, Next Action and the machine-readable Workflow Result footer.
+
+## Guardrails
+
+- Do not route `execute` unless the task is READY or an authorized CHANGES_REQUIRED correction pass.
+- Do not route `qa` before independent review approval.
+- Do not route `close` to DONE without Git evidence for MERGED and completed status records.
+- Do not mark unfinished dependencies complete.
+- Do not perform automatic merge or production deployment.
+- Do not accept status-only or response-contract invalid agent outputs.

@@ -1,0 +1,22 @@
+{
+  "name": "@loyalty-platform/root",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Loyalty Platform monorepo workspace.",
+  "packageManager": "pnpm@10.13.1",
+  "engines": {
+    "node": ">=22.18.0 <26",
+    "pnpm": "10.13.1"
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "typecheck": "turbo run typecheck",
+    "workspace:list": "pnpm -r list --depth -1",
+    "verify:lockfile": "pnpm install --frozen-lockfile"
+  },
+  "devDependencies": {
+    "turbo": "2.5.4"
+  }
+}

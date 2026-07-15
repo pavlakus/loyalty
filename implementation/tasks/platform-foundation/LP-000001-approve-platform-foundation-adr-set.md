@@ -6,7 +6,7 @@
 
 ## 2. Status
 
-`IN_PROGRESS`
+`DONE`
 
 ## 3. Category
 
@@ -101,3 +101,11 @@ The change must be reversible through configuration rollback, code rollback, mig
 ## 17. Completion Rule
 
 The task may be marked complete only when all acceptance criteria and mandatory tests pass and required review evidence exists.
+
+## 18. Completion Evidence
+
+- Merge commit: `0b937ab` (`Merge branch 'agent/architect/LP-000001-foundation-adrs' into development`).
+- Architect implementation commit: `37e4500` (`docs(architecture): complete LP-000001 foundation ADRs`).
+- Git ancestry verified: `agent/architect/LP-000001-foundation-adrs` is an ancestor of `development`.
+- ADR-001 through ADR-008 exist under `docs/adr/` and are marked `Accepted`.
+- Independent architecture review evidence is treated as satisfied by the accepted ADR set merged into `development`.

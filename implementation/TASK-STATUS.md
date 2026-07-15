@@ -11,23 +11,43 @@
 
 | Task | Title | Status | Branch | Review | Notes |
 |---|---|---|---|---|---|
-| LP-000001 | Approve Platform Foundation ADR Set | READY | `agent/architect/LP-000001-foundation-adrs` | READY_FOR_MERGE | First Codex task |
-| LP-000002 | Initialize Monorepo and Workspace | BLOCKED | `agent/devops/LP-000002-monorepo-workspace` | Pending | Blocked by LP-000001 |
+| LP-000001 | Approve Platform Foundation ADR Set | DONE | `agent/architect/LP-000001-foundation-adrs` | APPROVED | Merged into `development` at `0b937ab`; ADR-001 through ADR-008 are Accepted |
+| LP-000002 | Initialize Monorepo and Workspace | READY_FOR_REVIEW | `agent/devops/LP-000002-monorepo-workspace` | CHANGES_REQUIRED corrected | Root lint/typecheck scripts, Turborepo lint/typecheck tasks and package placeholder scripts added; validation passed; ready for re-review |
 | LP-000003 | Configure TypeScript Strict Mode | BLOCKED |  | Pending | Blocked by LP-000002 |
 | LP-000004 | Configure Linting, Formatting and Module Boundaries | BLOCKED |  | Pending | Blocked by LP-000002 and LP-000003 |
 | LP-000005 | Create Backend Service Bootstrap | BLOCKED |  | Pending | Blocked by repository foundation |
 
+## AI Engineering Framework
+
+| Task | Title | Status | Branch | Review | Notes |
+|---|---|---|---|---|---|
+| LP-AI-000001 | Stabilize Task Lifecycle | READY_FOR_REVIEW | `development` | Pending | Implementation evidence in `implementation/evidence/LP-AI-000001/implementation.md`; Git state validation notes pre-existing merge state prevented task branch creation |
+| LP-AI-000001A | Adopt Agent Response Contract | READY_FOR_MERGE | `development` | APPROVED; QA APPROVED | Implementation, review, QA and release evidence are recorded under `implementation/evidence/LP-AI-000001A/`; ready for human merge; no commit or merge performed |
+| LP-AI-000002 | Implement Review Evidence Engine | DRAFT |  | Pending | Depends on LP-AI-000001 |
+| LP-AI-000003 | Implement QA Evidence Engine | DRAFT |  | Pending | Depends on LP-AI-000001 |
+| LP-AI-000004 | Implement Dispatcher Agent | DRAFT |  | Pending | Depends on LP-AI-000001 |
+| LP-AI-000005 | Create Native Codex Skills | DRAFT |  | Pending | Depends on LP-AI-000001 |
+| LP-AI-000006 | Implement Scope Isolation Engine | DRAFT |  | Pending | Depends on LP-AI-000001 |
+| LP-AI-000007 | Define Workflow Commit Strategy | DRAFT |  | Pending | Depends on LP-AI-000001 |
+| LP-AI-000008 | Implement Repository Hygiene Controls | DRAFT |  | Pending | Depends on LP-AI-000001 |
+| LP-AI-000009 | Implement Environment Validation | DRAFT |  | Pending | Depends on LP-AI-000001 |
+| LP-AI-000010 | Implement One Command Workflow | DRAFT |  | Pending | Depends on LP-AI-000001 |
+
 ## Allowed Statuses
 
 - DRAFT
+- TASK_PREPARATION
 - READY
 - ASSIGNED
 - IN_PROGRESS
 - IMPLEMENTATION_COMPLETE
+- READY_FOR_REVIEW
 - REVIEW
+- CHANGES_REQUIRED
 - QA
 - READY_FOR_MERGE
 - MERGED
 - DONE
 - BLOCKED
 - CANCELLED
+- DEFERRED

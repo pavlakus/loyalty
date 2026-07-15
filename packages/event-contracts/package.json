@@ -1,0 +1,12 @@
+{
+  "name": "@loyalty-platform/event-contracts",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Event contracts package placeholder.",
+  "scripts": {
+    "build": "node -e \"console.log('event-contracts placeholder build')\"",
+    "lint": "node -e \"console.log('event-contracts placeholder lint')\"",
+    "test": "node -e \"console.log('event-contracts placeholder test')\"",
+    "typecheck": "node -e \"console.log('event-contracts placeholder typecheck')\""
+  }
+}
