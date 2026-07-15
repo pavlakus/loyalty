@@ -1,0 +1,612 @@
+# 67. Development Workflow
+
+---
+
+# 1. Purpose
+
+The Development Workflow defines the complete lifecycle of work within the Loyalty Platform project.
+
+It standardizes how Product Decisions become production software while ensuring consistency between Product, Architecture, Engineering, QA, DevOps and AI implementation agents.
+
+The workflow minimizes ambiguity, prevents architectural drift and provides complete traceability from idea to production.
+
+---
+
+# 2. Scope
+
+This workflow applies to:
+
+- Product changes
+- Architecture changes
+- Feature implementation
+- Bug fixes
+- Refactoring
+- Infrastructure changes
+- Documentation changes
+- Security improvements
+- Release activities
+
+Every implementation activity follows this workflow.
+
+---
+
+# 3. Guiding Principles
+
+The workflow is built on the following principles:
+
+- Blueprint First
+- Architecture Before Code
+- Small Independent Tasks
+- Single Module Ownership
+- Continuous Verification
+- Documentation Synchronization
+- Human Approval for Critical Changes
+- AI-Assisted Development
+- Traceability by Default
+- Continuous Improvement
+
+---
+
+# 4. Development Lifecycle
+
+Every implementation follows the same lifecycle.
+
+```
+Business Need
+
+↓
+
+Product Decision
+
+↓
+
+Blueprint
+
+↓
+
+Engineering Playbook
+
+↓
+
+Product Backlog
+
+↓
+
+Task Catalog
+
+↓
+
+Module Implementation Package
+
+↓
+
+Task Assignment
+
+↓
+
+Implementation
+
+↓
+
+Review
+
+↓
+
+QA
+
+↓
+
+Merge
+
+↓
+
+Release
+
+↓
+
+Monitoring
+
+↓
+
+Production Feedback
+```
+
+Each stage produces deliverables that become inputs for the next stage.
+
+---
+
+# 5. Phase 1 – Product Definition
+
+Owned by:
+
+- Product Owner
+
+Objectives:
+
+- identify business problem;
+- define business value;
+- approve Product Decision;
+- determine implementation priority.
+
+Deliverables:
+
+- Product Decision
+- Business Requirements
+- Acceptance Criteria
+
+No implementation begins before Product approval.
+
+---
+
+# 6. Phase 2 – Blueprint
+
+Owned by:
+
+- Product Owner
+- Solution Architect
+
+Objectives:
+
+- define business rules;
+- define domain model;
+- define events;
+- define APIs;
+- define permissions;
+- define architecture.
+
+Deliverables:
+
+- Blueprint documentation
+
+Blueprint becomes the authoritative product specification.
+
+---
+
+# 7. Phase 3 – Engineering Preparation
+
+Owned by:
+
+- Solution Architect
+
+Objectives:
+
+- identify owning module;
+- prepare implementation strategy;
+- update Engineering documentation;
+- verify dependencies.
+
+Deliverables:
+
+- Engineering references
+- Module ownership
+- Definition of Done
+- UAT references
+
+---
+
+# 8. Phase 4 – Planning
+
+Owned by:
+
+- Product Owner
+- Project Manager
+
+Objectives:
+
+- create backlog item;
+- create implementation task;
+- assign priority;
+- identify dependencies.
+
+Deliverables:
+
+- Product Backlog item
+- Project Task
+
+Only Ready tasks may proceed.
+
+---
+
+# 9. Phase 5 – Task Preparation
+
+Owned by:
+
+- Solution Architect
+
+Objectives:
+
+- assign Knowledge Package;
+- identify Blueprint references;
+- identify Engineering references;
+- define allowed files;
+- define forbidden files;
+- identify mandatory reviewers.
+
+Deliverables:
+
+- Complete implementation context
+
+No implementation starts without a completed Module Implementation Package.
+
+---
+
+# 10. Phase 6 – Task Assignment
+
+Owned by:
+
+- Project Manager
+- AI Orchestration System
+
+Objectives:
+
+- assign implementation agent;
+- reserve task ownership;
+- verify dependencies;
+- verify readiness.
+
+Every task has exactly one implementation owner.
+
+---
+
+# 11. Phase 7 – Implementation
+
+Owned by:
+
+- Assigned Implementation Agent
+
+Objectives:
+
+- implement scope;
+- remain inside module boundaries;
+- follow Coding Standards;
+- execute mandatory tests;
+- update documentation if required.
+
+Implementation agents must not:
+
+- expand scope;
+- modify unrelated modules;
+- invent Product Decisions;
+- violate ownership rules.
+
+---
+
+# 12. Phase 8 – Self Verification
+
+Before requesting review, the implementation agent must verify:
+
+- compilation;
+- linting;
+- formatting;
+- unit tests;
+- integration tests;
+- documentation updates;
+- Definition of Done.
+
+Incomplete work must not enter review.
+
+---
+
+# 13. Phase 9 – Technical Review
+
+Owned by:
+
+- Review Agents
+- Human Reviewers
+
+Review verifies:
+
+- Blueprint compliance;
+- Engineering compliance;
+- Coding Standards;
+- architecture consistency;
+- maintainability;
+- security;
+- documentation.
+
+Possible outcomes:
+
+- Approved
+- Approved with Comments
+- Changes Requested
+- Rejected
+
+---
+
+# 14. Phase 10 – QA Validation
+
+Owned by:
+
+- QA Agent
+- QA Engineer
+
+Validation includes:
+
+- mandatory tests;
+- regression tests;
+- UAT preparation;
+- API verification;
+- security validation;
+- concurrency validation.
+
+QA does not review implementation quality.
+
+QA verifies behavior.
+
+---
+
+# 15. Phase 11 – Merge
+
+Owned by:
+
+- Repository Maintainer
+
+Requirements:
+
+- review approved;
+- QA approved;
+- documentation updated;
+- CI passing;
+- Definition of Done satisfied.
+
+Merge must preserve repository stability.
+
+---
+
+# 16. Phase 12 – Release
+
+Owned by:
+
+- Release Manager
+
+Activities:
+
+- deployment;
+- smoke testing;
+- monitoring;
+- rollback verification;
+- release documentation.
+
+Release follows:
+
+**60-release-strategy.md**
+
+---
+
+# 17. Phase 13 – Production Monitoring
+
+Owned by:
+
+- DevOps
+- Platform Operations
+
+Activities:
+
+- monitor logs;
+- monitor metrics;
+- monitor business KPIs;
+- verify integrations;
+- detect incidents.
+
+Monitoring begins immediately after deployment.
+
+---
+
+# 18. Phase 14 – Feedback Loop
+
+Feedback sources include:
+
+- customer reports;
+- support tickets;
+- analytics;
+- monitoring;
+- AI recommendations;
+- business stakeholders.
+
+Feedback may produce:
+
+- bug reports;
+- backlog items;
+- Product Decisions;
+- ADRs.
+
+The workflow is iterative.
+
+---
+
+# 19. AI Agent Workflow
+
+AI implementation follows this sequence:
+
+```
+Receive Task
+
+↓
+
+Load Knowledge Package
+
+↓
+
+Read Blueprint
+
+↓
+
+Read Engineering Documents
+
+↓
+
+Verify Scope
+
+↓
+
+Implement
+
+↓
+
+Execute Tests
+
+↓
+
+Generate Evidence
+
+↓
+
+Submit for Review
+```
+
+AI agents must never skip Knowledge Package loading.
+
+---
+
+# 20. Human Collaboration
+
+Humans remain responsible for:
+
+- Product Decisions;
+- architecture approval;
+- production releases;
+- security approval;
+- business acceptance.
+
+AI assists implementation but does not replace governance.
+
+---
+
+# 21. Required Deliverables
+
+Every completed implementation task must produce:
+
+- implementation summary;
+- changed files;
+- executed tests;
+- review evidence;
+- readiness level;
+- documentation updates;
+- rollback confirmation.
+
+Deliverables become permanent project artifacts.
+
+---
+
+# 22. Documentation Synchronization
+
+Documentation must remain synchronized with implementation.
+
+If implementation changes:
+
+- APIs;
+- Events;
+- Domain ownership;
+- Database;
+- Security;
+- Configuration;
+
+the corresponding documentation must be updated before the task is closed.
+
+Documentation drift is considered a project defect.
+
+---
+
+# 23. Exception Handling
+
+When unexpected situations occur:
+
+- identify the issue;
+- determine whether Blueprint already covers it;
+- create a Product Decision if required;
+- create an ADR if architecture changes;
+- update backlog if implementation changes.
+
+Implementation must never silently redefine project rules.
+
+---
+
+# 24. Workflow Metrics
+
+Recommended workflow metrics include:
+
+Planning
+
+- Ready Tasks
+- Blocked Tasks
+
+Execution
+
+- Lead Time
+- Cycle Time
+- Review Time
+
+Quality
+
+- Review Pass Rate
+- QA Pass Rate
+- Defect Escape Rate
+- Rework Rate
+
+Operations
+
+- Deployment Frequency
+- Rollback Frequency
+- Production Incidents
+
+Documentation
+
+- Documentation Update Rate
+- Documentation Drift
+
+These metrics support continuous improvement.
+
+---
+
+# 25. Continuous Improvement
+
+The workflow itself should be reviewed regularly.
+
+Improvements may be proposed by:
+
+- Product Owner
+- Solution Architect
+- Engineering Leads
+- QA
+- DevOps
+- AI Review Agents
+
+Workflow changes require architectural approval.
+
+---
+
+# 26. Anti-Patterns
+
+The following practices are prohibited:
+
+- coding without a Task;
+- coding without a Knowledge Package;
+- coding without Blueprint references;
+- changing business rules during implementation;
+- merging without review;
+- releasing without QA;
+- updating production without Release Strategy;
+- leaving documentation outdated;
+- bypassing Definition of Done.
+
+These practices increase project risk and are not permitted.
+
+---
+
+# 27. Definition of Development Workflow Ready
+
+The Development Workflow is considered ready when:
+
+- the complete lifecycle is defined;
+- ownership is defined for every phase;
+- required deliverables are defined;
+- AI workflow is defined;
+- human responsibilities are defined;
+- review process is defined;
+- QA process is defined;
+- release process is defined;
+- monitoring process is defined;
+- documentation synchronization rules are defined;
+- workflow governance is defined.
+
+The Development Workflow becomes the authoritative operational process for all implementation activities following Blueprint Freeze v1.0.

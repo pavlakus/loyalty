@@ -1,0 +1,429 @@
+# 63. Architecture Decision Records (ADR)
+
+---
+
+# 1. Purpose
+
+Architecture Decision Records (ADRs) capture significant architectural decisions made during the design, implementation and evolution of the Loyalty Platform.
+
+The objective of ADRs is to preserve architectural intent, document trade-offs and provide historical context for future engineering decisions.
+
+Blueprint documents define the architecture.
+
+ADRs explain why important architectural decisions were made.
+
+---
+
+# 2. Scope
+
+An ADR documents only significant architectural decisions.
+
+Examples include:
+
+- Domain Model decisions
+- Aggregate ownership
+- Data storage strategy
+- Event-driven architecture
+- API strategy
+- Security architecture
+- Deployment architecture
+- Infrastructure architecture
+- Scalability decisions
+- External integrations
+
+ADRs do not replace Blueprint documents.
+
+---
+
+# 3. Principles
+
+Every ADR must be:
+
+- permanent;
+- immutable;
+- version controlled;
+- uniquely identified;
+- easy to reference;
+- technically justified;
+- linked to implementation.
+
+ADRs are historical records.
+
+Existing ADRs are never modified after approval.
+
+If a decision changes, a new ADR supersedes the previous one.
+
+---
+
+# 4. ADR Lifecycle
+
+Every ADR follows the lifecycle:
+
+```
+Proposed
+
+↓
+
+Under Review
+
+↓
+
+Approved
+
+↓
+
+Implemented
+
+↓
+
+Superseded
+
+↓
+
+Retired
+```
+
+Approved ADRs become part of the project's architectural baseline.
+
+---
+
+# 5. ADR Identifier
+
+Every ADR receives a permanent identifier.
+
+Format:
+
+```
+ADR-001
+
+ADR-002
+
+ADR-003
+```
+
+Identifiers are never reused.
+
+---
+
+# 6. ADR Status
+
+Allowed statuses:
+
+- Proposed
+- Accepted
+- Implemented
+- Superseded
+- Deprecated
+- Rejected
+
+Only Accepted ADRs may influence implementation.
+
+---
+
+# 7. ADR Template
+
+Every ADR should follow the same structure.
+
+```
+ADR Number
+
+Title
+
+Status
+
+Date
+
+Authors
+
+Related Blueprint Documents
+
+Related Engineering Documents
+
+Decision
+
+Context
+
+Problem Statement
+
+Alternatives Considered
+
+Selected Option
+
+Decision Rationale
+
+Consequences
+
+Implementation Impact
+
+Rejected Alternatives
+
+References
+```
+
+---
+
+# 8. Decision Quality
+
+Every ADR must explain:
+
+- why the decision exists;
+- what alternatives were evaluated;
+- why alternatives were rejected;
+- expected benefits;
+- expected risks;
+- implementation impact.
+
+An ADR that records only the final decision without rationale is considered incomplete.
+
+---
+
+# 9. Relationship with Blueprint
+
+Blueprint documents remain the authoritative functional specification.
+
+ADRs provide architectural justification.
+
+If a conflict exists:
+
+Blueprint remains authoritative until a newer Product Decision explicitly changes it.
+
+The corresponding ADR must then be updated by creating a new ADR.
+
+---
+
+# 10. Relationship with Engineering Playbook
+
+Engineering documents define implementation rules.
+
+ADRs define architectural intent.
+
+Engineering decisions must remain compatible with all Accepted ADRs.
+
+---
+
+# 11. Decision Categories
+
+Recommended categories include:
+
+## Domain
+
+Examples:
+
+- Customer Identity
+- Membership Ownership
+- Reward Ledger
+
+---
+
+## Architecture
+
+Examples:
+
+- Modular Monolith
+- Event Driven
+- CQRS
+
+---
+
+## Data
+
+Examples:
+
+- Immutable Ledger
+- Projection Model
+- Outbox Pattern
+
+---
+
+## Security
+
+Examples:
+
+- Row Level Security
+- Tenant Isolation
+- Backend Authorization
+
+---
+
+## Infrastructure
+
+Examples:
+
+- Supabase
+- PostgreSQL
+- Edge Functions
+
+---
+
+## Integration
+
+Examples:
+
+- SMS Provider
+- Viber Provider
+- Payment Gateway
+
+---
+
+## Operations
+
+Examples:
+
+- Release Strategy
+- Rollback Strategy
+- Monitoring
+
+---
+
+# 12. Required ADRs
+
+The following architectural decisions should exist as ADRs before implementation reaches Production.
+
+| ADR | Title |
+|------|-------|
+| ADR-001 | Global Customer Identity |
+| ADR-002 | Membership Ownership Model |
+| ADR-003 | Business → Brand → Loyalty Program Hierarchy |
+| ADR-004 | Immutable Reward Ledger |
+| ADR-005 | XP Ledger |
+| ADR-006 | Projection-Based Balances |
+| ADR-007 | Event-Driven Architecture |
+| ADR-008 | Automation Engine Responsibilities |
+| ADR-009 | Business-first API |
+| ADR-010 | Backend Business Logic Ownership |
+| ADR-011 | Aggregate Ownership Rules |
+| ADR-012 | Row Level Security Strategy |
+| ADR-013 | Permission Model |
+| ADR-014 | Notification Architecture |
+| ADR-015 | Release Strategy |
+
+Additional ADRs may be introduced as the project evolves.
+
+---
+
+# 13. ADR Review
+
+Every ADR must be reviewed by:
+
+- Solution Architect
+- Product Owner (where applicable)
+- Security Agent (if security related)
+- DevOps Agent (if infrastructure related)
+
+Approval requirements depend on the impact of the decision.
+
+---
+
+# 14. ADR Ownership
+
+Architecture ownership belongs to the Solution Architect.
+
+Implementation Agents may propose new ADRs but may never approve them.
+
+Product decisions remain owned by the Product Owner.
+
+---
+
+# 15. ADR Traceability
+
+Every Accepted ADR should reference:
+
+- Blueprint documents
+- Engineering documents
+- Modules
+- APIs
+- Events
+- Database objects
+- Implementation Tasks
+
+Likewise, implementation tasks should reference the ADRs that justify significant architectural decisions.
+
+---
+
+# 16. Superseding an ADR
+
+An Accepted ADR is never edited.
+
+Instead:
+
+1. create a new ADR;
+2. reference the previous ADR;
+3. explain why the previous decision changed;
+4. describe migration impact;
+5. define transition strategy.
+
+Historical ADRs remain available for future reference.
+
+---
+
+# 17. ADR Governance
+
+Architecture changes affecting:
+
+- module boundaries;
+- public APIs;
+- event contracts;
+- aggregate ownership;
+- database architecture;
+- security model;
+- deployment model;
+- infrastructure;
+
+must be documented through an ADR before implementation.
+
+Emergency fixes may temporarily bypass this rule but require a retrospective ADR.
+
+---
+
+# 18. Anti-Patterns
+
+The following practices are prohibited:
+
+- undocumented architectural changes;
+- changing Blueprint through implementation;
+- modifying Approved ADRs;
+- implementing architecture "because it feels cleaner";
+- introducing framework-driven architecture without business justification.
+
+Architecture exists to support business objectives.
+
+---
+
+# 19. ADR Repository
+
+Recommended structure:
+
+```
+docs/
+
+    adr/
+
+        ADR-001-global-customer.md
+
+        ADR-002-membership-model.md
+
+        ADR-003-brand-hierarchy.md
+
+        ...
+```
+
+Every ADR should remain individually version controlled.
+
+---
+
+# 20. Definition of ADR Process Ready
+
+The ADR process is considered ready when:
+
+- ADR template is standardized;
+- identifier format is defined;
+- statuses are defined;
+- ownership is defined;
+- review process is defined;
+- Blueprint relationship is defined;
+- Engineering relationship is defined;
+- traceability rules are defined;
+- superseding rules are defined;
+- governance rules are defined.
+
+The ADR process becomes the authoritative mechanism for recording architectural evolution after Blueprint Freeze v1.0.

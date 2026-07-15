@@ -1,0 +1,594 @@
+# 64. Module Implementation Packages
+
+---
+
+# 1. Purpose
+
+Module Implementation Packages (MIPs) provide implementation agents with a complete, self-contained knowledge package required to develop a single module of the Loyalty Platform.
+
+Instead of loading the complete Blueprint and Engineering documentation, implementation agents receive one Module Implementation Package that references only the documentation relevant to the assigned module.
+
+This minimizes context size, improves implementation quality and reduces architectural inconsistencies.
+
+Module Implementation Packages become the primary implementation context after Blueprint Freeze v1.0.
+
+---
+
+# 2. Scope
+
+A Module Implementation Package contains everything required to implement one module.
+
+It does not duplicate Blueprint documentation.
+
+Instead, it references the authoritative documents and defines how they apply to the module.
+
+---
+
+# 3. Principles
+
+Every Module Implementation Package follows these principles:
+
+- Single Module Ownership
+- Blueprint First
+- Engineering First
+- Minimal Required Context
+- Explicit Dependencies
+- Stable References
+- Independent Verification
+- AI-Friendly Context
+- Complete Traceability
+
+---
+
+# 4. Objectives
+
+Every Module Implementation Package should answer the following questions:
+
+- What is this module responsible for?
+- What is this module NOT responsible for?
+- Which Blueprint documents define it?
+- Which Engineering documents govern it?
+- Which APIs belong to it?
+- Which Events belong to it?
+- Which database objects belong to it?
+- Which tests are mandatory?
+- Which agents review it?
+- Which files may be modified?
+
+An implementation agent should never need to search the project for this information.
+
+---
+
+# 5. Package Structure
+
+Every Module Implementation Package must contain the following sections:
+
+1. Module Overview
+2. Business Responsibilities
+3. Non-Responsibilities
+4. Blueprint References
+5. Engineering References
+6. Domain Objects
+7. Aggregate Ownership
+8. Database Objects
+9. APIs
+10. Commands
+11. Queries
+12. Events
+13. Permissions
+14. Dependencies
+15. Allowed Files
+16. Forbidden Files
+17. Mandatory Tests
+18. UAT Scenarios
+19. Definition of Done
+20. Review Requirements
+
+---
+
+# 6. Package Identifier
+
+Every Module Implementation Package receives a permanent identifier.
+
+Format:
+
+```
+MIP-001
+
+MIP-002
+
+MIP-003
+```
+
+Identifiers are permanent and never reused.
+
+---
+
+# 7. Initial Module Catalog
+
+The following packages should exist.
+
+| Package | Module |
+|----------|--------|
+| MIP-001 | Authentication |
+| MIP-002 | Customer |
+| MIP-003 | Business |
+| MIP-004 | Brand |
+| MIP-005 | Loyalty Program |
+| MIP-006 | Membership |
+| MIP-007 | Receipt |
+| MIP-008 | Reward |
+| MIP-009 | Redemption |
+| MIP-010 | XP |
+| MIP-011 | Visit |
+| MIP-012 | Status |
+| MIP-013 | Benefit |
+| MIP-014 | Challenge |
+| MIP-015 | Reward Goal |
+| MIP-016 | Instant Reward |
+| MIP-017 | Automation |
+| MIP-018 | Notification |
+| MIP-019 | Analytics |
+| MIP-020 | AI Recommendation |
+| MIP-021 | Loyalty Network |
+| MIP-022 | Platform Administration |
+
+---
+
+# 8. Module Overview
+
+Every package starts with a short description.
+
+Example:
+
+```
+Reward Module
+
+Purpose:
+
+Maintain the immutable Reward Ledger and publish Reward-related Business Events.
+
+This module owns all Reward calculations.
+
+Other modules may never calculate Reward balances.
+```
+
+---
+
+# 9. Business Responsibilities
+
+Every package explicitly defines:
+
+The module is responsible for:
+
+- ...
+
+- ...
+
+- ...
+
+Responsibilities should reference Blueprint documents whenever possible.
+
+---
+
+# 10. Non-Responsibilities
+
+Every package explicitly defines what the module must never do.
+
+Example:
+
+Reward Module
+
+Not responsible for:
+
+- Status calculation
+
+- Notifications
+
+- Automation execution
+
+- Customer authentication
+
+This section prevents responsibility creep.
+
+---
+
+# 11. Blueprint References
+
+Every package lists only the Blueprint documents required for implementation.
+
+Example:
+
+```
+33-domain-model-v2.md
+
+36-event-storming-purchase-processing.md
+
+38-event-storming-redemption.md
+
+42-data-model-v1.md
+
+43-api-contract.md
+
+44-permission-matrix.md
+```
+
+Historical documents should not be included.
+
+---
+
+# 12. Engineering References
+
+Every package references only the required Engineering documents.
+
+Typical references include:
+
+- Engineering Implementation Guide
+- Repository Structure
+- Definition of Done
+- Coding Standards
+- UAT
+- Knowledge Map
+
+Only documents required for implementation should be included.
+
+---
+
+# 13. Domain Objects
+
+Each package identifies its owned entities.
+
+Example:
+
+Reward Module
+
+Reward Transaction
+
+Reward Ledger
+
+Reward Projection
+
+Reward Reservation
+
+Reward Expiration
+
+Objects owned by other modules must not be listed as owned.
+
+---
+
+# 14. Aggregate Ownership
+
+Every package identifies:
+
+Owned Aggregates
+
+Referenced Aggregates
+
+Forbidden Aggregates
+
+Example:
+
+Reward owns:
+
+Reward Ledger
+
+Reward Reservation
+
+Reward Projection
+
+Reward references:
+
+Membership
+
+Customer
+
+Receipt
+
+Reward never owns:
+
+Status
+
+Benefit
+
+Automation
+
+---
+
+# 15. Database Objects
+
+Every package lists:
+
+Tables
+
+Views
+
+Functions
+
+Triggers
+
+Indexes
+
+Policies
+
+owned by the module.
+
+No cross-module ownership is permitted.
+
+---
+
+# 16. API Ownership
+
+Every package identifies:
+
+REST endpoints
+
+RPC endpoints
+
+Internal APIs
+
+owned by the module.
+
+Public APIs should be distinguished from internal interfaces.
+
+---
+
+# 17. Command Ownership
+
+Every package lists every Command it owns.
+
+Example:
+
+CreateRewardTransaction
+
+ReserveRewardBalance
+
+ConfirmRewardRedemption
+
+ReleaseRewardReservation
+
+Only the owning module may implement these Commands.
+
+---
+
+# 18. Query Ownership
+
+Every package lists all supported Queries.
+
+Queries should be read-only.
+
+Examples:
+
+GetRewardBalance
+
+GetRewardHistory
+
+GetRewardReservations
+
+---
+
+# 19. Event Ownership
+
+Every package identifies:
+
+Events Published
+
+Events Consumed
+
+Events Ignored
+
+Event ownership must remain consistent with the Event Catalog.
+
+---
+
+# 20. Permission Requirements
+
+Every package identifies:
+
+Required Roles
+
+Tenant Validation
+
+RLS Expectations
+
+Authorization Rules
+
+Permission Matrix references
+
+Security requirements remain module-specific.
+
+---
+
+# 21. Module Dependencies
+
+Dependencies are classified as:
+
+Required
+
+Optional
+
+Forbidden
+
+Example:
+
+Reward
+
+Requires:
+
+Membership
+
+Receipt
+
+Forbidden:
+
+Status
+
+Benefit
+
+Automation
+
+Dependencies must never create circular ownership.
+
+---
+
+# 22. Allowed Files
+
+Every package explicitly lists which folders may be modified.
+
+Example:
+
+```
+services/api/src/modules/reward/**
+
+database/migrations/**
+
+tests/reward/**
+```
+
+Agents may modify only these files unless the task explicitly expands the scope.
+
+---
+
+# 23. Forbidden Files
+
+Every package explicitly identifies protected areas.
+
+Example:
+
+```
+status/**
+
+automation/**
+
+notification/**
+
+customer/**
+```
+
+Changing forbidden files requires a separate implementation task.
+
+---
+
+# 24. Mandatory Tests
+
+Each package lists mandatory:
+
+Unit Tests
+
+Integration Tests
+
+API Tests
+
+Concurrency Tests
+
+Security Tests
+
+Performance Tests
+
+Regression Tests
+
+No package may be merged without completing its mandatory tests.
+
+---
+
+# 25. UAT References
+
+Every package references applicable UAT scenarios.
+
+Example:
+
+Reward Module
+
+UAT-RWD-001
+
+UAT-RWD-002
+
+UAT-SEC-004
+
+UAT-REL-003
+
+This provides direct traceability between implementation and validation.
+
+---
+
+# 26. Definition of Done
+
+Every package references:
+
+55-module-definition-of-done.md
+
+Package-specific completion criteria may extend, but never weaken, the standard Definition of Done.
+
+---
+
+# 27. Review Requirements
+
+Every package defines mandatory reviewers.
+
+Typical reviewers:
+
+Backend Review
+
+Database Review
+
+Security Review
+
+Architecture Review
+
+QA Review
+
+Documentation Review
+
+Review requirements depend on module risk.
+
+---
+
+# 28. AI Context Rules
+
+Implementation agents should load:
+
+- the assigned Module Implementation Package;
+- referenced Blueprint documents;
+- referenced Engineering documents.
+
+Agents should not load unrelated documentation unless required by dependencies.
+
+This minimizes context size while preserving implementation quality.
+
+---
+
+# 29. Package Maintenance
+
+Module Implementation Packages are maintained by the Solution Architect.
+
+Implementation Agents may propose updates.
+
+Changes require Architecture Review.
+
+---
+
+# 30. Definition of Module Implementation Package Ready
+
+A Module Implementation Package is considered ready when:
+
+- module ownership is defined;
+- Blueprint references are complete;
+- Engineering references are complete;
+- responsibilities are defined;
+- non-responsibilities are defined;
+- aggregate ownership is defined;
+- APIs are identified;
+- Commands are identified;
+- Queries are identified;
+- Events are identified;
+- database ownership is defined;
+- permission requirements are defined;
+- dependencies are documented;
+- allowed files are defined;
+- forbidden files are defined;
+- mandatory tests are identified;
+- UAT references exist;
+- Definition of Done is referenced;
+- review requirements are defined;
+- AI context rules are documented.
+
+A completed Module Implementation Package becomes the authoritative implementation context for all Tasks assigned to the corresponding module.

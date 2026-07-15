@@ -1,0 +1,596 @@
+# 66. Implementation Order
+
+---
+
+# 1. Purpose
+
+This document defines the recommended implementation sequence for the Loyalty Platform.
+
+Its objective is to:
+
+- minimize implementation risk;
+- maximize parallel development;
+- reduce cross-module dependencies;
+- provide predictable delivery;
+- optimize AI agent utilization;
+- establish implementation milestones.
+
+This document complements the Development Roadmap by defining the practical execution order.
+
+---
+
+# 2. Principles
+
+Implementation follows these principles:
+
+- Foundation before Features
+- Stable Contracts before Integrations
+- Domain before UI
+- Backend before Frontend
+- Events before Automation
+- Security before Exposure
+- Testing before Release
+- Documentation before Completion
+
+No implementation phase may violate module dependencies.
+
+---
+
+# 3. Phase Overview
+
+The implementation is divided into sequential phases.
+
+| Phase | Goal |
+|--------|------|
+| Phase 0 | Foundation |
+| Phase 1 | Identity & Tenant |
+| Phase 2 | Core Business |
+| Phase 3 | Membership |
+| Phase 4 | Receipt Processing |
+| Phase 5 | Reward Engine |
+| Phase 6 | XP & Status |
+| Phase 7 | Benefits |
+| Phase 8 | Redemption |
+| Phase 9 | Reward Goals & Instant Rewards |
+| Phase 10 | Customer & Employee Apps |
+| Phase 11 | Business Portal |
+| Phase 12 | Automation |
+| Phase 13 | Notifications |
+| Phase 14 | Analytics |
+| Phase 15 | AI Recommendations |
+| Phase 16 | Loyalty Network |
+| Phase 17 | Platform Administration |
+| Phase 18 | Production Hardening |
+| Phase 19 | Pilot |
+| Phase 20 | Production |
+
+---
+
+# 4. Phase 0 — Platform Foundation
+
+Objectives:
+
+- Repository setup
+- CI/CD
+- Coding standards
+- Project structure
+- Authentication framework
+- Logging
+- Configuration
+- Monitoring foundation
+- Testing infrastructure
+- Docker environment
+- Supabase initialization
+
+Deliverables:
+
+- repository operational;
+- CI passing;
+- local environment reproducible;
+- deployment pipeline operational.
+
+No business functionality is implemented during this phase.
+
+---
+
+# 5. Phase 1 — Identity & Tenant Foundation
+
+Modules:
+
+- Authentication
+- Customer
+- Business
+- Brand
+
+Objectives:
+
+- OTP login
+- JWT
+- Customer identity
+- Business hierarchy
+- Tenant isolation
+- RLS
+
+Exit Criteria:
+
+- authentication operational;
+- tenant isolation verified;
+- security tests passing.
+
+---
+
+# 6. Phase 2 — Loyalty Program
+
+Modules:
+
+- Loyalty Program
+- Program Configuration
+
+Objectives:
+
+- create programs;
+- configure earning rules;
+- configure expiration;
+- configure benefits.
+
+Exit Criteria:
+
+- programs operational;
+- configuration stored;
+- APIs completed.
+
+---
+
+# 7. Phase 3 — Membership
+
+Modules:
+
+- Membership
+
+Objectives:
+
+- join program;
+- membership lifecycle;
+- membership year;
+- membership projections.
+
+Exit Criteria:
+
+- MembershipCreated flow complete;
+- UAT passing.
+
+---
+
+# 8. Phase 4 — Receipt Processing
+
+Modules:
+
+- Receipt
+
+Objectives:
+
+- receipt recording;
+- validation;
+- immutable storage;
+- cancellation support;
+- event publication.
+
+Dependencies:
+
+- Membership
+- Business
+
+Exit Criteria:
+
+ReceiptRecorded event available.
+
+---
+
+# 9. Phase 5 — Reward Engine
+
+Modules:
+
+- Reward
+
+Objectives:
+
+- Reward Ledger;
+- Reward Projection;
+- earning;
+- expiration;
+- compensation.
+
+Dependencies:
+
+- Receipt
+
+Exit Criteria:
+
+Reward calculations operational.
+
+---
+
+# 10. Phase 6 — XP, Visits and Status
+
+Modules:
+
+- XP
+- Visit
+- Status
+
+Objectives:
+
+- XP Ledger;
+- Visit tracking;
+- Status calculation;
+- Membership Year processing.
+
+Exit Criteria:
+
+Status Engine operational.
+
+---
+
+# 11. Phase 7 — Benefits
+
+Modules:
+
+- Benefit
+
+Objectives:
+
+- benefit lifecycle;
+- benefit granting;
+- activation;
+- expiration;
+- revocation.
+
+Exit Criteria:
+
+Benefit lifecycle operational.
+
+---
+
+# 12. Phase 8 — Redemption
+
+Modules:
+
+- Redemption
+
+Objectives:
+
+- preview;
+- reservation;
+- confirmation;
+- cancellation;
+- FIFO;
+- reservation expiration.
+
+Exit Criteria:
+
+Complete redemption workflow available.
+
+---
+
+# 13. Phase 9 — Reward Goals & Instant Rewards
+
+Modules:
+
+- Reward Goal
+- Instant Reward
+
+Objectives:
+
+- Reward Opportunities;
+- Reward Pools;
+- Surprise Rewards;
+- Reward Goal progress.
+
+Exit Criteria:
+
+Gamification operational.
+
+---
+
+# 14. Phase 10 — Customer & Employee Applications
+
+Modules:
+
+- Customer Mobile
+- Employee Mobile
+
+Objectives:
+
+- integrate APIs;
+- implement authentication;
+- receipt workflow;
+- reward visibility;
+- redemption flow.
+
+Backend remains the source of all business logic.
+
+---
+
+# 15. Phase 11 — Business Portal
+
+Objectives:
+
+- dashboards;
+- configuration;
+- campaign management;
+- customer search;
+- reporting.
+
+Portal consumes existing APIs only.
+
+---
+
+# 16. Phase 12 — Automation Engine
+
+Modules:
+
+- Automation
+
+Objectives:
+
+- rule execution;
+- event subscriptions;
+- cooldowns;
+- execution history;
+- retry;
+- scheduling.
+
+Dependencies:
+
+All core business modules.
+
+---
+
+# 17. Phase 13 — Notification Engine
+
+Modules:
+
+- Notification
+
+Objectives:
+
+- queues;
+- provider integrations;
+- retries;
+- duplicate suppression;
+- delivery tracking.
+
+Automation uses Notifications rather than direct providers.
+
+---
+
+# 18. Phase 14 — Analytics
+
+Modules:
+
+- Analytics
+
+Objectives:
+
+- dashboards;
+- KPIs;
+- Program Health Score;
+- drill-down;
+- exports.
+
+Analytics consumes immutable business data.
+
+---
+
+# 19. Phase 15 — AI Recommendations
+
+Modules:
+
+- AI Recommendation
+
+Objectives:
+
+- recommendations;
+- explanations;
+- confidence;
+- simulations.
+
+AI never performs business actions automatically.
+
+---
+
+# 20. Phase 16 — Loyalty Network
+
+Modules:
+
+- Loyalty Network
+
+Objectives:
+
+- cross-program redemption;
+- partner validation;
+- network permissions.
+
+Settlement remains outside MVP.
+
+---
+
+# 21. Phase 17 — Platform Administration
+
+Modules:
+
+- Platform Administration
+
+Objectives:
+
+- tenant management;
+- support tools;
+- audits;
+- configuration.
+
+Platform Administration never bypasses Blueprint business rules.
+
+---
+
+# 22. Phase 18 — Production Hardening
+
+Objectives:
+
+- load testing;
+- concurrency testing;
+- security review;
+- penetration testing;
+- observability;
+- backup verification;
+- disaster recovery validation.
+
+No new features should be introduced during this phase.
+
+---
+
+# 23. Phase 19 — Pilot
+
+Objectives:
+
+- limited production rollout;
+- monitoring;
+- customer feedback;
+- issue correction.
+
+Pilot Businesses should represent different industries whenever possible.
+
+---
+
+# 24. Phase 20 — Production Rollout
+
+Objectives:
+
+- controlled rollout;
+- production monitoring;
+- release validation;
+- operational handover.
+
+The rollout should follow the Release Strategy.
+
+---
+
+# 25. Parallel Development Strategy
+
+Parallel work is encouraged whenever module dependencies permit.
+
+Typical parallel streams include:
+
+### Backend
+
+- Authentication
+- Business
+- Membership
+
+### Database
+
+- Migrations
+- RLS
+- Functions
+
+### Mobile
+
+- Customer App
+- Employee App
+
+### Web
+
+- Business Portal
+
+### QA
+
+- Test automation
+- UAT preparation
+
+### DevOps
+
+- CI/CD
+- Infrastructure
+- Monitoring
+
+Cross-module ownership rules remain in effect.
+
+---
+
+# 26. Phase Gates
+
+Each implementation phase must satisfy:
+
+- Definition of Done;
+- mandatory tests;
+- required reviews;
+- documentation updates;
+- UAT readiness;
+- rollback validation.
+
+A phase may not begin until all mandatory gates from the previous phase have been completed unless an explicit exception is approved by the Solution Architect.
+
+---
+
+# 27. Release Alignment
+
+Every implementation phase should produce a potentially releasable increment.
+
+Major production releases should align with:
+
+- completed business capabilities;
+- completed UAT;
+- Release Strategy;
+- Production Readiness.
+
+Incomplete business workflows should remain protected by feature flags.
+
+---
+
+# 28. Risk Management
+
+Implementation risks should be reviewed continuously.
+
+Typical risks include:
+
+- architectural drift;
+- dependency expansion;
+- ownership violations;
+- documentation drift;
+- insufficient testing;
+- scope creep.
+
+Each identified risk should have:
+
+- owner;
+- mitigation plan;
+- review date;
+- current status.
+
+---
+
+# 29. Success Criteria
+
+Implementation is considered successful when:
+
+- Blueprint remains authoritative;
+- Engineering standards are followed;
+- module ownership is preserved;
+- UAT passes;
+- production readiness is achieved;
+- documentation remains synchronized with implementation.
+
+---
+
+# 30. Definition of Implementation Order Ready
+
+The Implementation Order is considered ready when:
+
+- implementation phases are defined;
+- dependencies are respected;
+- parallel work is identified;
+- phase gates are defined;
+- release alignment is defined;
+- risk management is documented;
+- success criteria are defined.
+
+This document becomes the authoritative implementation sequencing guide following Blueprint Freeze v1.0.

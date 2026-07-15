@@ -1,0 +1,543 @@
+# 65. Project Task Catalog
+
+---
+
+# 1. Purpose
+
+The Project Task Catalog is the authoritative register of all implementation work within the Loyalty Platform project.
+
+Unlike the Product Backlog, which organizes work at a planning level, the Project Task Catalog tracks every implementation task throughout its lifecycle.
+
+It serves as the single source of truth for:
+
+- implementation tasks;
+- AI agent assignments;
+- dependency tracking;
+- implementation progress;
+- delivery history;
+- implementation evidence.
+
+Every implementation task executed by either a human engineer or an AI agent must exist in this catalog.
+
+---
+
+# 2. Scope
+
+The Project Task Catalog contains:
+
+- implementation tasks;
+- technical tasks;
+- refactoring tasks;
+- migration tasks;
+- testing tasks;
+- documentation tasks;
+- release tasks.
+
+It does not contain:
+
+- Product Ideas;
+- Product Decisions;
+- ADRs;
+- Blueprint documents.
+
+---
+
+# 3. Principles
+
+The Task Catalog follows these principles:
+
+- Every task has one owner.
+- Every task belongs to one module.
+- Every task references Blueprint.
+- Every task references Engineering.
+- Every task is independently reviewable.
+- Every task is independently testable.
+- Every task is independently traceable.
+- Every completed task leaves implementation evidence.
+
+---
+
+# 4. Relationship with Other Documents
+
+The Task Catalog is built upon:
+
+- 62-product-backlog.md
+- 64-module-implementation-packages.md
+
+Tasks are generated from the Product Backlog and executed using the corresponding Module Implementation Package.
+
+---
+
+# 5. Task Identifier
+
+Every implementation task receives a permanent identifier.
+
+Format:
+
+```
+LP-000001
+LP-000002
+LP-000003
+```
+
+Identifiers are sequential.
+
+Identifiers are never reused.
+
+Cancelled tasks remain permanently reserved.
+
+---
+
+# 6. Task Categories
+
+Supported categories include:
+
+| Category | Description |
+|----------|-------------|
+| FEATURE | Business functionality |
+| BUG | Defect correction |
+| REFACTOR | Internal improvement |
+| PERFORMANCE | Optimization |
+| SECURITY | Security improvement |
+| TEST | Test implementation |
+| DOCUMENTATION | Documentation |
+| DEVOPS | Infrastructure |
+| DATA | Database |
+| RELEASE | Release preparation |
+| SPIKE | Technical investigation |
+
+---
+
+# 7. Standard Task Template
+
+Every task must contain the following information.
+
+---
+
+## Identification
+
+- Task ID
+- Title
+- Category
+- Priority
+
+---
+
+## Ownership
+
+- Assigned Agent
+- Review Agents
+- Owning Module
+
+---
+
+## Planning
+
+- Epic
+- Capability
+- Feature
+
+---
+
+## Context
+
+- Business Objective
+- Technical Objective
+- Knowledge Package
+
+---
+
+## Documentation
+
+- Blueprint References
+- Engineering References
+- ADR References
+
+---
+
+## Scope
+
+- In Scope
+- Out of Scope
+
+---
+
+## Implementation
+
+- Allowed Files
+- Forbidden Files
+- Dependencies
+
+---
+
+## Validation
+
+- Acceptance Criteria
+- Definition of Done
+- Mandatory Tests
+- UAT References
+
+---
+
+## Delivery
+
+- Expected Deliverables
+- Rollback Expectations
+
+---
+
+# 8. Task Status
+
+Every task follows the same lifecycle.
+
+```
+Draft
+
+↓
+
+Ready
+
+↓
+
+Assigned
+
+↓
+
+In Progress
+
+↓
+
+Implementation Complete
+
+↓
+
+Review
+
+↓
+
+QA
+
+↓
+
+Ready for Merge
+
+↓
+
+Merged
+
+↓
+
+Released
+
+↓
+
+Closed
+```
+
+Alternative states:
+
+- Blocked
+- Cancelled
+- Deferred
+
+---
+
+# 9. Assignment Rules
+
+Tasks may be assigned only when:
+
+- status is Ready;
+- dependencies are satisfied;
+- Knowledge Package exists;
+- owning module exists;
+- required documents are identified.
+
+Agents must never self-assign work.
+
+Assignment is performed by the Project Manager or orchestration system.
+
+---
+
+# 10. Dependency Rules
+
+Every dependency must be explicit.
+
+Supported dependency types:
+
+- Blocks
+- Blocked By
+- Requires
+- Related
+- Parallel With
+
+Circular dependencies are prohibited.
+
+---
+
+# 11. Task Priority
+
+Priority reflects business urgency.
+
+| Priority | Meaning |
+|----------|---------|
+| P0 | Critical |
+| P1 | High |
+| P2 | Normal |
+| P3 | Low |
+
+Priority must not be confused with complexity.
+
+---
+
+# 12. Complexity
+
+Complexity estimates implementation effort.
+
+| Level | Meaning |
+|--------|---------|
+| XS | Less than 2 hours |
+| S | 2–4 hours |
+| M | 4–8 hours |
+| L | 1–2 days |
+| XL | Multi-day |
+| XXL | Must be decomposed |
+
+Tasks estimated as XXL must never be assigned.
+
+---
+
+# 13. Readiness Level
+
+Every task records its implementation readiness.
+
+Possible values:
+
+- Planned
+- Ready
+- Assigned
+- Implementation Complete
+- Integration Ready
+- UAT Ready
+- Production Ready
+
+Readiness follows the definitions in:
+
+**55-module-definition-of-done.md**
+
+---
+
+# 14. Required Evidence
+
+Every completed task must produce evidence.
+
+Minimum evidence includes:
+
+- implementation summary;
+- changed files;
+- executed tests;
+- review outcome;
+- readiness level;
+- documentation updates;
+- rollback confirmation.
+
+Tasks without evidence cannot be closed.
+
+---
+
+# 15. Required Reviews
+
+Every implementation task identifies mandatory reviewers.
+
+Typical reviewers:
+
+- Backend Review
+- Database Review
+- QA Review
+- Security Review
+- Documentation Review
+- Architecture Review
+
+Review requirements depend on module risk.
+
+---
+
+# 16. Documentation Updates
+
+Every task must explicitly answer:
+
+```
+Does this implementation require documentation updates?
+
+YES / NO
+```
+
+If YES, the affected documents must be listed.
+
+Implementation is not complete until documentation has been updated.
+
+---
+
+# 17. AI Agent Rules
+
+Implementation Agents must:
+
+- load the Knowledge Package;
+- remain inside allowed files;
+- follow Coding Standards;
+- follow Definition of Done;
+- produce implementation evidence.
+
+Agents must never:
+
+- invent Product Decisions;
+- modify unrelated modules;
+- silently expand task scope;
+- ignore review requirements.
+
+---
+
+# 18. Human Review Rules
+
+Human reviewers verify:
+
+- Blueprint compliance;
+- Engineering compliance;
+- implementation quality;
+- security;
+- maintainability;
+- documentation;
+- readiness level.
+
+Human review remains the final approval authority.
+
+---
+
+# 19. Task Traceability
+
+Every task must maintain traceability to:
+
+- Epic
+- Capability
+- Feature
+- Module
+- Blueprint
+- Engineering
+- ADR
+- API
+- Event
+- Database
+- Tests
+- Pull Request
+- Release
+
+Traceability must remain valid after project completion.
+
+---
+
+# 20. Task Metrics
+
+Recommended metrics include:
+
+Planning:
+
+- Planned Tasks
+- Ready Tasks
+- Blocked Tasks
+
+Execution:
+
+- Active Tasks
+- Review Tasks
+- QA Tasks
+
+Delivery:
+
+- Completed Tasks
+- Reopened Tasks
+- Failed Tasks
+
+Quality:
+
+- Review Pass Rate
+- QA Pass Rate
+- Rollback Rate
+- Defect Escape Rate
+
+---
+
+# 21. AI Task Generation
+
+Implementation tasks should be generated automatically from:
+
+- Product Backlog
+- Module Implementation Package
+
+Generated tasks should already contain:
+
+- Knowledge Package
+- Blueprint references
+- Engineering references
+- Allowed Files
+- Forbidden Files
+- Review Agents
+- Mandatory Tests
+
+This minimizes manual project management effort.
+
+---
+
+# 22. Task Archival
+
+Completed tasks are never deleted.
+
+Archived tasks remain available for:
+
+- audits;
+- analytics;
+- release history;
+- production investigations;
+- architectural evolution.
+
+Historical tasks remain immutable.
+
+---
+
+# 23. Governance
+
+The Project Manager owns:
+
+- prioritization;
+- assignment;
+- scheduling.
+
+The Solution Architect owns:
+
+- technical scope;
+- dependencies;
+- implementation approach.
+
+Implementation Agents own execution.
+
+QA owns validation.
+
+Documentation Agent owns documentation consistency.
+
+---
+
+# 24. Definition of Project Task Catalog Ready
+
+The Project Task Catalog is considered ready when:
+
+- task identifiers are standardized;
+- categories are defined;
+- lifecycle is defined;
+- ownership rules are defined;
+- dependency rules are defined;
+- evidence requirements are defined;
+- review process is defined;
+- AI execution rules are defined;
+- traceability rules are defined;
+- governance rules are defined;
+- archival policy is defined.
+
+The Project Task Catalog becomes the authoritative operational register for all implementation work after Blueprint Freeze v1.0.
