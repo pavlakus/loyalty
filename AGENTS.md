@@ -115,6 +115,10 @@ Every agent must know the following authoritative references.
 - `docs/ai-engineering-framework/75-agent-document-generation-prompt.md`
 - `docs/ai-engineering-framework/76-agent-document-review-prompt.md`
 - `docs/ai-engineering-framework/77-project-document-generator.md`
+- `docs/ai-engineering-framework/78-task-preparation-agent.md`
+- `docs/ai-engineering-framework/79-agent-registry.md`
+- `docs/ai-engineering-framework/80-agent-workflow.md`
+- `implementation/TASK-LIFECYCLE.md`
 
 ---
 
@@ -133,6 +137,36 @@ Examples:
 - `28-glossary.md`
 
 When a historical document conflicts with an authoritative document, the authoritative document wins.
+
+---
+
+## Agent Workflow
+
+Every implementation task follows:
+
+Documentation
+→ Task Preparation
+→ READY
+→ Implementation
+→ Independent Review
+→ QA
+→ READY_FOR_MERGE
+→ Human Merge
+→ Release
+
+Developer Agents may execute only tasks with status READY.
+
+Task Preparation Agents may repair safe documentation and metadata issues, but may not invent Product Decisions, change accepted ADR decisions, expand MIP scope or mark unfinished dependencies complete.
+
+If a task is not READY, the Developer Agent must stop and return `TASK NOT READY`.
+
+The Task Preparation Agent must then prepare the task using:
+
+- `docs/ai-engineering-framework/78-task-preparation-agent.md`
+- `docs/ai-engineering-framework/79-agent-registry.md`
+- `docs/ai-engineering-framework/80-agent-workflow.md`
+- `.codex/skills/task-preparation/SKILL.md`
+- `implementation/TASK-LIFECYCLE.md`
 
 ---
 

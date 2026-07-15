@@ -1,0 +1,12 @@
+{
+  "name": "@loyalty-platform/shared-types",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Shared types package placeholder.",
+  "scripts": {
+    "build": "node -e \"console.log('shared-types placeholder build')\"",
+    "lint": "node -e \"console.log('shared-types placeholder lint')\"",
+    "test": "node -e \"console.log('shared-types placeholder test')\"",
+    "typecheck": "node -e \"console.log('shared-types placeholder typecheck')\""
+  }
+}
