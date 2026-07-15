@@ -6,7 +6,7 @@
 
 ## 2. Status
 
-`DRAFT`
+`IN_PROGRESS`
 
 ## 3. Category
 
@@ -26,7 +26,7 @@ Create a reliable implementation foundation for all later Loyalty Platform modul
 
 ## 7. Exact Scope
 
-- `docs/decisions/**`
+- `docs/adr/**`
 
 ## 8. Out of Scope
 
@@ -43,7 +43,14 @@ Create a reliable implementation foundation for all later Loyalty Platform modul
 - `58-project-knowledge-map.md`
 - `59-coding-standards.md`
 - `60-release-strategy.md`
-- relevant accepted ADRs
+- `docs/adr/ADR-001-monorepo-and-workspace-strategy.md`
+- `docs/adr/ADR-002-modular-monolith-backend.md`
+- `docs/adr/ADR-003-postgresql-and-supabase-compatible-data-platform.md`
+- `docs/adr/ADR-004-transactional-outbox.md`
+- `docs/adr/ADR-005-idempotency-foundation.md`
+- `docs/adr/ADR-006-observability-and-correlation-context.md`
+- `docs/adr/ADR-007-environment-and-secret-management.md`
+- `docs/adr/ADR-008-cross-platform-mobile-architecture.md`
 
 ## 10. Knowledge Package
 
@@ -51,7 +58,9 @@ Platform Foundation Knowledge Package from `MIP-000-platform-foundation.md`.
 
 ## 11. Dependencies
 
-Dependencies must be identified before this task moves to `READY`.
+- `MIP-000-platform-foundation.md`
+- Relevant Blueprint and Engineering documents listed by this task.
+- No previous LP task dependency.
 
 ## 12. Acceptance Criteria
 

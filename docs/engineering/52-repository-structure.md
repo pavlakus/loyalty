@@ -658,7 +658,7 @@ docs/
 ├── architecture/
 ├── api/
 ├── runbooks/
-├── decisions/
+├── adr/
 ├── uat/
 └── agents/
 
@@ -681,11 +681,11 @@ agent execution rules
 
 17. Architecture Decision Records
 
-docs/decisions/
-├── ADR-0001-monorepo.md
-├── ADR-0002-event-driven-modular-backend.md
-├── ADR-0003-ledger-immutability.md
-└── ADR-0004-projection-strategy.md
+docs/adr/
+├── ADR-001-monorepo-and-workspace-strategy.md
+├── ADR-002-modular-monolith-backend.md
+├── ADR-003-postgresql-and-supabase-compatible-data-platform.md
+└── ADR-004-transactional-outbox.md
 
 Any material architectural change requires an ADR.
 
@@ -1564,7 +1564,7 @@ docs/
 ├── architecture/
 ├── api/
 ├── runbooks/
-├── decisions/
+├── adr/
 ├── uat/
 └── agents/
 
@@ -1587,11 +1587,11 @@ agent execution rules
 
 17. Architecture Decision Records
 
-docs/decisions/
-├── ADR-0001-monorepo.md
-├── ADR-0002-event-driven-modular-backend.md
-├── ADR-0003-ledger-immutability.md
-└── ADR-0004-projection-strategy.md
+docs/adr/
+├── ADR-001-monorepo-and-workspace-strategy.md
+├── ADR-002-modular-monolith-backend.md
+├── ADR-003-postgresql-and-supabase-compatible-data-platform.md
+└── ADR-004-transactional-outbox.md
 
 Any material architectural change requires an ADR.
 
