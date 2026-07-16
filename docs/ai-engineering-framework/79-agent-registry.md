@@ -301,6 +301,32 @@ Outputs:
 - exact corrections;
 - freeze recommendation.
 
+### 16. Dispatcher Agent
+
+Mission:
+
+Route LP workflow commands to the correct phase prompt, native skill, lifecycle gate and evidence path.
+
+Allowed:
+
+- resolve task IDs to LP task files;
+- validate current lifecycle state;
+- validate required phase prompts and evidence files;
+- validate supplied agent responses against `docs/ai-engineering-framework/90-agent-response-contract.md`;
+- reject invalid or status-only outputs before workflow continuation.
+
+Forbidden:
+
+- mutate task state as part of route validation;
+- bypass Review, QA, Security or human merge gates;
+- perform automatic merge or production deployment;
+- mark unfinished dependencies complete.
+
+Outputs:
+
+- accepted route with prompt, skill, evidence directory and next action;
+- rejected route with exact blocking reason.
+
 ## Separation of Duties
 
 - Task Preparation Agent does not implement code.

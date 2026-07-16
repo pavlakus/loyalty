@@ -15,6 +15,14 @@ The dispatcher locates the task and MIP, validates lifecycle, invokes the matchi
 
 The dispatcher must validate every agent response against `docs/ai-engineering-framework/90-agent-response-contract.md`. Status-only responses are invalid. If validation fails, the dispatcher rejects the response, records the validation failure and requires the agent to regenerate a compliant response before workflow continues.
 
+Repository-local dispatcher routing is implemented by:
+
+```text
+scripts/dispatch-agent-workflow.py
+```
+
+The script resolves the LP task file, current lifecycle state, phase prompt, native skill and evidence directory. It validates the requested command against the allowed lifecycle starting point and can validate a supplied response with `scripts/validate-agent-response.py` before allowing workflow continuation.
+
 ## Command Responsibilities
 
 | Command | Valid Starting Point | Required Result |
@@ -55,3 +63,4 @@ Every phase response must include required metadata, Executive Summary, Status, 
 - Do not mark unfinished dependencies complete.
 - Do not perform automatic merge or production deployment.
 - Do not accept status-only or response-contract invalid agent outputs.
+- Do not mutate task state from the dispatcher routing check; state transitions remain phase-agent or Release Manager responsibilities.
