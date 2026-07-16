@@ -159,6 +159,8 @@ QA returns one of: QA APPROVED, QA CHANGES REQUIRED or QA BLOCKED.
 
 QA responses must comply with `docs/ai-engineering-framework/90-agent-response-contract.md`. They must include failed acceptance criteria or explicit none, evidence, required corrections, next action and Workflow Result footer.
 
+QA evidence validation must reject status-only QA output and incomplete QA decisions. Complete QA evidence includes acceptance criteria validation, mandatory test results, failure-path validation, review precondition verification before approval, security checks, scope checks, persisted QA evidence separation from implementation/review/Security/release evidence, and a merge-readiness recommendation.
+
 ## Stage 6 — Merge
 
 A task may become READY_FOR_MERGE only when:

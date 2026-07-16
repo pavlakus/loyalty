@@ -23,6 +23,18 @@ File: implementation/TASK-LIFECYCLE.md
 Impact: Acceptance criterion 3 is not proven.
 Exact Required Correction: Add persisted QA approval gate evidence.
 
+## Acceptance Criteria Validation
+
+- Acceptance criteria coverage: failed because acceptance criterion 3 is not proven.
+- Mandatory test results: response-contract validation executed.
+- Failure-path validation: QA changes-required path verified.
+
+## QA Validation
+
+- Review precondition: independent review is APPROVED.
+- Security validation: no runtime security changes.
+- Scope validation: QA remained inside workflow evidence scope.
+
 ## Evidence
 
 - Commands executed: `rg READY_FOR_MERGE`.
@@ -32,6 +44,10 @@ Exact Required Correction: Add persisted QA approval gate evidence.
 - Lifecycle evidence: QA.
 - Review evidence: approved.
 - QA evidence: failed criterion recorded.
+
+## Merge Recommendation
+
+Merge recommendation: do not prepare merge until QA corrections are complete.
 
 ## Required Corrections
 

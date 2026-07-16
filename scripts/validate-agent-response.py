@@ -100,6 +100,36 @@ REVIEW_REQUIRED_TERMS = (
     "documentation",
 )
 
+QA_STATUSES = {
+    "QA APPROVED",
+    "QA APPROVED WITH FOLLOW-UP",
+    "QA CHANGES REQUIRED",
+    "QA BLOCKED",
+}
+
+QA_REQUIRED_SECTIONS = (
+    "Acceptance Criteria Validation",
+    "QA Validation",
+    "Merge Recommendation",
+)
+
+QA_EVIDENCE_TERMS = (
+    "Commands executed",
+    "Validation results",
+    "Git evidence",
+    "Review evidence",
+    "QA evidence",
+)
+
+QA_REQUIRED_TERMS = (
+    "acceptance criteria",
+    "mandatory test",
+    "failure-path",
+    "security",
+    "scope",
+    "review precondition",
+)
+
 
 def heading_exists(text: str, heading: str) -> bool:
     return re.search(rf"^#+\s+{re.escape(heading)}\s*$", text, re.MULTILINE) is not None
@@ -162,6 +192,42 @@ def validate_review_response(text: str, status: str | None, errors: list[str]) -
             errors.append("APPROVED review evidence must state Findings as None")
 
 
+def is_qa_response(path: Path, text: str, status: str | None) -> bool:
+    agent_role = field_value(text, "Agent Role") or ""
+    return (
+        (agent_role == "QA Agent" and status in QA_STATUSES)
+        or path.name == "qa.md"
+        or status in (QA_STATUSES - {"QA BLOCKED"})
+    )
+
+
+def validate_qa_response(text: str, status: str | None, errors: list[str]) -> None:
+    if status not in QA_STATUSES:
+        errors.append("QA response has invalid QA status")
+
+    for section in QA_REQUIRED_SECTIONS:
+        if not heading_exists(text, section):
+            errors.append(f"QA evidence missing section: {section}")
+
+    evidence = section_text(text, "Evidence")
+    for term in QA_EVIDENCE_TERMS:
+        if term.lower() not in evidence.lower():
+            errors.append(f"QA evidence missing evidence item: {term}")
+
+    lowered = text.lower()
+    for term in QA_REQUIRED_TERMS:
+        if term not in lowered:
+            errors.append(f"QA evidence missing required QA coverage: {term}")
+
+    if status in {"QA APPROVED", "QA APPROVED WITH FOLLOW-UP"}:
+        findings = section_text(text, "Findings")
+        if not re.fullmatch(r"`?None`?", findings, re.IGNORECASE):
+            errors.append(f"{status} evidence must state Findings as None")
+        qa_validation = section_text(text, "QA Validation").lower()
+        if "review precondition" not in qa_validation or "approved" not in qa_validation:
+            errors.append(f"{status} requires approved review precondition evidence")
+
+
 def validate(path: Path) -> list[str]:
     text = path.read_text(encoding="utf-8")
     errors: list[str] = []
@@ -220,6 +286,9 @@ def validate(path: Path) -> list[str]:
 
     if is_review_response(path, text, status):
         validate_review_response(text, status, errors)
+
+    if is_qa_response(path, text, status):
+        validate_qa_response(text, status, errors)
 
     return errors
 
