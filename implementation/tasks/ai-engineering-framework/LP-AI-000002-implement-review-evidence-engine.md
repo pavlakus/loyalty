@@ -1,7 +1,7 @@
 # LP-AI-000002. Implement Review Evidence Engine
 
 ## Status
-`READY_FOR_MERGE`
+`DONE`
 
 ## Category
 `AI_ENGINEERING_WORKFLOW`

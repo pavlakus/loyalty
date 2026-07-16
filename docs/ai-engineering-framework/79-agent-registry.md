@@ -228,6 +228,19 @@ Forbidden:
 - redefine implementation scope;
 - approve skipped mandatory tests.
 
+QA output requirements:
+
+- response-contract metadata and mandatory sections;
+- acceptance criteria validation;
+- mandatory test results;
+- failure-path validation;
+- review precondition verification before approval;
+- security and scope checks;
+- merge-readiness recommendation;
+- complete findings for `QA CHANGES REQUIRED`;
+- follow-up details and merge permission for `QA APPROVED WITH FOLLOW-UP`;
+- blocking reason, owner, required action and resume condition for `QA BLOCKED`.
+
 ### 11. Security Agent
 
 Mission:
