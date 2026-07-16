@@ -125,6 +125,8 @@ Review returns one of: APPROVED, APPROVED WITH FOLLOW-UP, CHANGES_REQUIRED or BL
 
 Review responses must comply with `docs/ai-engineering-framework/90-agent-response-contract.md`. They must include scope reviewed, findings or explicit none, evidence, required corrections, next action and merge recommendation. `APPROVED WITH FOLLOW-UP` must classify the follow-up as blocking or non-blocking and state whether merge is allowed.
 
+Review evidence validation must reject status-only review output and incomplete review decisions. Complete review evidence includes changed files inspected, acceptance criteria coverage, validation commands and results, security checks, documentation checks, persisted review evidence separation from QA/Security/release evidence, and a merge recommendation.
+
 ## Stage 4 — Correction
 
 If review returns CHANGES REQUIRED:

@@ -21,9 +21,9 @@
 
 | Task | Title | Status | Branch | Review | Notes |
 |---|---|---|---|---|---|
-| LP-AI-000001 | Stabilize Task Lifecycle | READY_FOR_MERGE | `development` | APPROVED; QA APPROVED | Release evidence in `implementation/evidence/LP-AI-000001/release.md`; ready for human merge, do not auto-merge |
+| LP-AI-000001 | Stabilize Task Lifecycle | DONE | `development` | APPROVED; QA APPROVED | Merged into `development` at `3ac2cd9`; release evidence in `implementation/evidence/LP-AI-000001/release.md` |
 | LP-AI-000001A | Adopt Agent Response Contract | DONE | `development` | APPROVED; QA APPROVED | Merged into `development` at `b675c1a`; local `development` and `origin/development` both resolve to `b675c1ad33705cce8dbbf0211ec71b8aacb2b842`; implementation, review, QA and release evidence are recorded under `implementation/evidence/LP-AI-000001A/` |
-| LP-AI-000002 | Implement Review Evidence Engine | BLOCKED |  | Pending | Preparation remains blocked because dependency `LP-AI-000001` is `READY_FOR_MERGE` but not complete; do not mark READY until LP-AI-000001 completes |
+| LP-AI-000002 | Implement Review Evidence Engine | READY_FOR_MERGE | `agent/documentation/LP-AI-000002-review-evidence-engine` | APPROVED; QA APPROVED | Release Manager verified implementation, review and QA evidence; ready for human merge; release evidence in `implementation/evidence/LP-AI-000002/release.md` |
 | LP-AI-000003 | Implement QA Evidence Engine | DRAFT |  | Pending | Depends on LP-AI-000001 |
 | LP-AI-000004 | Implement Dispatcher Agent | DRAFT |  | Pending | Depends on LP-AI-000001 |
 | LP-AI-000005 | Create Native Codex Skills | DRAFT |  | Pending | Depends on LP-AI-000001 |

@@ -205,6 +205,18 @@ Outputs:
 - CHANGES REQUIRED;
 - BLOCKED.
 
+Review output requirements:
+
+- response-contract metadata and mandatory sections;
+- scope reviewed, including changed files inspected;
+- acceptance criteria coverage;
+- validation commands and results;
+- security and documentation checks;
+- merge recommendation;
+- complete findings for `CHANGES REQUIRED`;
+- follow-up details and merge permission for `APPROVED WITH FOLLOW-UP`;
+- blocking reason, owner, required action and resume condition for `BLOCKED`.
+
 ### 10. QA Agent
 
 Mission:
