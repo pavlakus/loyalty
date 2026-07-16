@@ -56,9 +56,10 @@ The Task Preparation Agent must:
 5. verify dependencies;
 6. verify exact required documents;
 7. fix safe metadata and path issues;
-8. generate implementation, review and QA prompts;
-9. update status and index;
-10. return READY FOR IMPLEMENTATION.
+8. create or validate the task scope manifest when the active workflow requires it;
+9. generate implementation, review and QA prompts;
+10. update status and index;
+11. return READY FOR IMPLEMENTATION.
 
 The returned response must include response-contract metadata, evidence, next action and Workflow Result footer.
 
@@ -80,14 +81,32 @@ The implementation agent may start only when:
 - implementation prompt exists;
 - branch matches task;
 - required documents exist.
+- required task scope manifest exists and validates when the active workflow requires it.
 
 The agent must:
 
 - implement only scope;
+- preserve the task scope manifest as authoritative scope evidence when present;
 - run mandatory tests;
 - update documentation;
 - produce evidence;
 - return READY FOR REVIEW or BLOCKED.
+
+## Task Scope Manifest
+
+The canonical task scope manifest location is:
+
+```text
+implementation/workflow-state/manifests/<TASK-ID>.json
+```
+
+The canonical schema location is:
+
+```text
+implementation/workflow-state/schemas/task-scope-manifest.schema.json
+```
+
+Manifests define task identity, allowed and forbidden files, required documents, required MIP, required ADRs, dependencies, expected evidence paths, required commands, lifecycle transitions and cross-module access. V2-001 defines the standard only. V2-002 is responsible for future scope isolation enforcement.
 
 The returned response must comply with `docs/ai-engineering-framework/90-agent-response-contract.md`, including changed files, commands, tests, known limitations, Definition of Done evidence and readiness recommendation.
 

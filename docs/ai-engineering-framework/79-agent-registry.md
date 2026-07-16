@@ -65,6 +65,7 @@ Outputs:
 - prepared LP task;
 - generated prompts;
 - updated indexes and status;
+- task scope manifest when the active workflow requires it;
 - READY FOR IMPLEMENTATION or TASK PREPARATION BLOCKED.
 
 ### 3. Solution Architect Agent
@@ -312,6 +313,7 @@ Allowed:
 - resolve task IDs to LP task files;
 - validate current lifecycle state;
 - validate required phase prompts and evidence files;
+- locate the task scope manifest when present and expose it in route evidence;
 - validate supplied agent responses against `docs/ai-engineering-framework/90-agent-response-contract.md`;
 - reject invalid or status-only outputs before workflow continuation.
 
@@ -326,6 +328,16 @@ Outputs:
 
 - accepted route with prompt, skill, evidence directory and next action;
 - rejected route with exact blocking reason.
+
+### Scope Manifest Consumers
+
+Task Preparation Agent owns manifest creation or validation when enabled.
+
+Dispatcher consumes the manifest as routing context.
+
+Review Agent and QA Agent use the manifest as read-only scope evidence until V2-002 provides enforcement.
+
+Environment Preflight validates manifest presence and path hygiene when its integration task enables that gate.
 
 ## Separation of Duties
 

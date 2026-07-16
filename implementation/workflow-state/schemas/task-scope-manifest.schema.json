@@ -1,0 +1,249 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://loyalty-platform.local/schemas/task-scope-manifest.schema.json",
+  "title": "Task Scope Manifest",
+  "description": "Canonical machine-readable scope manifest for Loyalty Platform implementation tasks.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "task_id",
+    "task_title",
+    "owning_module",
+    "assigned_role",
+    "lifecycle_state",
+    "target_branch",
+    "allowed_files",
+    "forbidden_files",
+    "required_documents",
+    "required_mip",
+    "required_adrs",
+    "dependencies",
+    "expected_evidence_paths",
+    "required_commands",
+    "permitted_lifecycle_transitions",
+    "cross_module_access",
+    "generated_at",
+    "manifest_version"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[A-Z0-9]+(?:-[A-Z0-9]+)+$"
+    },
+    "task_title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "owning_module": {
+      "type": "string",
+      "minLength": 1
+    },
+    "assigned_role": {
+      "type": "string",
+      "minLength": 1
+    },
+    "lifecycle_state": {
+      "$ref": "#/$defs/lifecycle_state"
+    },
+    "target_branch": {
+      "type": "string",
+      "minLength": 1
+    },
+    "allowed_files": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/path_rule"
+      }
+    },
+    "forbidden_files": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/path_rule"
+      }
+    },
+    "required_documents": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/repository_path"
+      }
+    },
+    "required_mip": {
+      "$ref": "#/$defs/repository_path"
+    },
+    "required_adrs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/repository_path"
+      }
+    },
+    "dependencies": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "task_id",
+          "required_state"
+        ],
+        "properties": {
+          "task_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "required_state": {
+            "$ref": "#/$defs/lifecycle_state"
+          }
+        }
+      }
+    },
+    "expected_evidence_paths": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/repository_path"
+      }
+    },
+    "required_commands": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "permitted_lifecycle_transitions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "from",
+          "to",
+          "authorized_role"
+        ],
+        "properties": {
+          "from": {
+            "$ref": "#/$defs/lifecycle_state"
+          },
+          "to": {
+            "$ref": "#/$defs/lifecycle_state"
+          },
+          "authorized_role": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "cross_module_access": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "allowed",
+        "mode",
+        "modules",
+        "rationale"
+      ],
+      "properties": {
+        "allowed": {
+          "type": "boolean"
+        },
+        "mode": {
+          "type": "string",
+          "enum": [
+            "none",
+            "read_only",
+            "public_contracts"
+          ]
+        },
+        "modules": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "rationale": {
+          "type": "string"
+        }
+      }
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "manifest_version": {
+      "type": "string",
+      "enum": [
+        "1.0"
+      ]
+    }
+  },
+  "$defs": {
+    "repository_path": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$)).+"
+    },
+    "lifecycle_state": {
+      "type": "string",
+      "enum": [
+        "DRAFT",
+        "TASK_PREPARATION",
+        "READY",
+        "ASSIGNED",
+        "IN_PROGRESS",
+        "IMPLEMENTATION_COMPLETE",
+        "READY_FOR_REVIEW",
+        "REVIEW",
+        "CHANGES_REQUIRED",
+        "QA",
+        "READY_FOR_MERGE",
+        "MERGED",
+        "DONE",
+        "BLOCKED",
+        "CANCELLED",
+        "DEFERRED"
+      ]
+    },
+    "path_rule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "match_type",
+        "access",
+        "rationale"
+      ],
+      "properties": {
+        "path": {
+          "$ref": "#/$defs/repository_path"
+        },
+        "match_type": {
+          "type": "string",
+          "enum": [
+            "exact_file",
+            "directory_glob",
+            "recursive_glob",
+            "explicit_exclusion"
+          ]
+        },
+        "access": {
+          "type": "string",
+          "enum": [
+            "read",
+            "write",
+            "read_write",
+            "generated_evidence"
+          ]
+        },
+        "rationale": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -23,6 +23,8 @@ scripts/dispatch-agent-workflow.py
 
 The script resolves the LP task file, current lifecycle state, phase prompt, native skill and evidence directory. It validates the requested command against the allowed lifecycle starting point and can validate a supplied response with `scripts/validate-agent-response.py` before allowing workflow continuation.
 
+When a task scope manifest exists at `implementation/workflow-state/manifests/<TASK-ID>.json`, Dispatcher must treat it as route context and expose its path in command output. Dispatcher must not enforce file-scope decisions until V2-002 or a later integration task explicitly adds that behavior.
+
 ## Command Responsibilities
 
 | Command | Valid Starting Point | Required Result |
@@ -54,6 +56,22 @@ Required files by phase:
 The dispatcher must not collapse preparation, implementation, review and QA into a single approval. Review, QA, Security and human merge gates remain separate.
 
 Every phase response must include required metadata, Executive Summary, Status, Findings, Evidence, Required Corrections, Next Action and the machine-readable Workflow Result footer.
+
+## Scope Manifest Routing
+
+The canonical task scope manifest schema is:
+
+```text
+implementation/workflow-state/schemas/task-scope-manifest.schema.json
+```
+
+The canonical task scope manifest path is:
+
+```text
+implementation/workflow-state/manifests/<TASK-ID>.json
+```
+
+Manifests include allowed files, forbidden files, required documents, required MIP, required ADRs, dependencies, expected evidence paths, required commands, permitted lifecycle transitions and cross-module access.
 
 ## Guardrails
 

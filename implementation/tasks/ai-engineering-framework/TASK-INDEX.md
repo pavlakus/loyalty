@@ -8,13 +8,14 @@
 | LP-AI-000001A | Adopt Agent Response Contract | Documentation Agent | LP-AI-000001 implementation complete | DONE |
 | LP-AI-000002 | Implement Review Evidence Engine | Documentation Agent | LP-AI-000001 | DONE |
 | LP-AI-000003 | Implement QA Evidence Engine | QA Agent | LP-AI-000002 | DONE |
-| LP-AI-000004 | Implement Dispatcher Agent | DevOps Agent | LP-AI-000003 | READY_FOR_MERGE |
+| LP-AI-000004 | Implement Dispatcher Agent | DevOps Agent | LP-AI-000003 | DONE |
 | LP-AI-000005 | Create Native Codex Skills | DevOps Agent | LP-AI-000001 | DRAFT |
 | LP-AI-000006 | Implement Scope Isolation Engine | DevOps Agent | LP-AI-000001 | DRAFT |
 | LP-AI-000007 | Define Workflow Commit Strategy | Solution Architect Agent | LP-AI-000001 | DRAFT |
 | LP-AI-000008 | Implement Repository Hygiene Controls | DevOps Agent | LP-AI-000001 | DRAFT |
 | LP-AI-000009 | Implement Environment Validation | DevOps Agent | LP-AI-000001 | DRAFT |
 | LP-AI-000010 | Implement One Command Workflow | DevOps Agent | LP-AI-000001 | DRAFT |
+| V2-001 | Scope Manifest Standard | Solution Architect Agent | LP-AI-000001, LP-AI-000001A, LP-AI-000002, LP-AI-000003, LP-AI-000004 | READY_FOR_MERGE |
 
 ## Lifecycle Evidence
 
@@ -32,3 +33,7 @@
 - LP-AI-000004 implementation completed the Dispatcher Agent and moved to `READY_FOR_REVIEW`; implementation evidence is recorded in `implementation/evidence/LP-AI-000004/implementation.md`.
 - LP-AI-000004 review returned `CHANGES REQUIRED` for missing MIP resolution; correction added MIP parsing, validation, route output and fixture coverage, then returned to `READY_FOR_REVIEW`.
 - LP-AI-000004 review is `APPROVED`, QA is `QA APPROVED`, and Release Manager moved the task to `READY_FOR_MERGE`; release evidence is recorded in `implementation/evidence/LP-AI-000004/release.md`.
+- LP-AI-000004 was merged into `development` at `a8bf41a` and is `DONE`.
+- V2-001 prepared to `READY` by Task Preparation Agent; evidence is recorded in `implementation/evidence/V2-001/prepare.md`.
+- V2-001 implementation completed the Scope Manifest Standard and moved to `READY_FOR_REVIEW`; implementation evidence is recorded in `implementation/evidence/V2-001/implementation.md`.
+- V2-001 review is `APPROVED`, QA is `QA APPROVED`, and the task is `READY_FOR_MERGE`; review and QA evidence are recorded in `implementation/evidence/V2-001/`.

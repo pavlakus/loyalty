@@ -25,13 +25,14 @@
 | LP-AI-000001A | Adopt Agent Response Contract | DONE | `development` | APPROVED; QA APPROVED | Merged into `development` at `b675c1a`; local `development` and `origin/development` both resolve to `b675c1ad33705cce8dbbf0211ec71b8aacb2b842`; implementation, review, QA and release evidence are recorded under `implementation/evidence/LP-AI-000001A/` |
 | LP-AI-000002 | Implement Review Evidence Engine | DONE | `development` | APPROVED; QA APPROVED | Merged into `development` at `77a317c`; release evidence in `implementation/evidence/LP-AI-000002/release.md` |
 | LP-AI-000003 | Implement QA Evidence Engine | DONE | `development` | APPROVED; QA APPROVED | Merged into `development` at `2023ad9`; release evidence in `implementation/evidence/LP-AI-000003/release.md` |
-| LP-AI-000004 | Implement Dispatcher Agent | READY_FOR_MERGE | `development` | APPROVED; QA APPROVED | Release Manager verified review, QA, evidence and Definition of Done; release evidence in `implementation/evidence/LP-AI-000004/release.md` |
+| LP-AI-000004 | Implement Dispatcher Agent | DONE | `development` | APPROVED; QA APPROVED | Merged into `development` at `a8bf41a`; release evidence in `implementation/evidence/LP-AI-000004/release.md` |
 | LP-AI-000005 | Create Native Codex Skills | DRAFT |  | Pending | Depends on LP-AI-000001 |
 | LP-AI-000006 | Implement Scope Isolation Engine | DRAFT |  | Pending | Depends on LP-AI-000001 |
 | LP-AI-000007 | Define Workflow Commit Strategy | DRAFT |  | Pending | Depends on LP-AI-000001 |
 | LP-AI-000008 | Implement Repository Hygiene Controls | DRAFT |  | Pending | Depends on LP-AI-000001 |
 | LP-AI-000009 | Implement Environment Validation | DRAFT |  | Pending | Depends on LP-AI-000001 |
 | LP-AI-000010 | Implement One Command Workflow | DRAFT |  | Pending | Depends on LP-AI-000001 |
+| V2-001 | Scope Manifest Standard | READY_FOR_MERGE | `development` | APPROVED; QA APPROVED | Scope manifest schema, example, invalid fixtures, validator, tests and documentation added; review and QA approved; evidence in `implementation/evidence/V2-001/` |
 
 ## Allowed Statuses
 

@@ -1,0 +1,41 @@
+{
+  "task_id": "V2-001",
+  "task_title": "Missing MIP Fixture",
+  "owning_module": "AI Engineering Framework",
+  "assigned_role": "Solution Architect Agent",
+  "lifecycle_state": "READY",
+  "target_branch": "development",
+  "allowed_files": [
+    {
+      "path": "docs/ai-engineering-framework/**",
+      "match_type": "recursive_glob",
+      "access": "read_write",
+      "rationale": "Fixture scope."
+    }
+  ],
+  "forbidden_files": [],
+  "required_documents": [
+    "AGENTS.md"
+  ],
+  "required_adrs": [],
+  "dependencies": [],
+  "expected_evidence_paths": [
+    "implementation/evidence/V2-001/implementation.md"
+  ],
+  "required_commands": [],
+  "permitted_lifecycle_transitions": [
+    {
+      "from": "READY",
+      "to": "IN_PROGRESS",
+      "authorized_role": "Solution Architect Agent"
+    }
+  ],
+  "cross_module_access": {
+    "allowed": false,
+    "mode": "none",
+    "modules": [],
+    "rationale": "Fixture."
+  },
+  "generated_at": "2026-07-16T10:36:29Z",
+  "manifest_version": "1.0"
+}

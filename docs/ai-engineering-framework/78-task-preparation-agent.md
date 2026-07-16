@@ -19,6 +19,7 @@ All Task Preparation Agent outputs must comply with `docs/ai-engineering-framewo
 The Task Preparation Agent shall:
 
 - validate LP readiness
+- validate or generate the task scope manifest when required by the active workflow standard
 - validate MIP references
 - validate Blueprint references
 - validate Engineering references
@@ -33,6 +34,24 @@ The Task Preparation Agent shall:
 - validate UAT references
 - validate repository paths
 - validate filenames
+
+## Scope Manifest Standard
+
+The canonical task scope manifest location is:
+
+```text
+implementation/workflow-state/manifests/<TASK-ID>.json
+```
+
+The canonical schema location is:
+
+```text
+implementation/workflow-state/schemas/task-scope-manifest.schema.json
+```
+
+Once manifest integration is enabled by a later task, the Task Preparation Agent must ensure each READY task has a manifest containing task identity, owning module, allowed and forbidden files, required documents, required MIP, required ADRs, dependencies, expected evidence paths, required commands, permitted lifecycle transitions, cross-module access rules, `generated_at` and `manifest_version`.
+
+The Task Preparation Agent must not use a manifest to invent Product Decisions, change accepted ADRs or expand task scope.
 
 ---
 

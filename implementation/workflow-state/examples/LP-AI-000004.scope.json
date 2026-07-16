@@ -1,0 +1,131 @@
+{
+  "task_id": "LP-AI-000004",
+  "task_title": "Implement Dispatcher Agent",
+  "owning_module": "AI Engineering Framework",
+  "assigned_role": "DevOps Agent",
+  "lifecycle_state": "DONE",
+  "target_branch": "development",
+  "allowed_files": [
+    {
+      "path": "scripts/dispatch-agent-workflow.py",
+      "match_type": "exact_file",
+      "access": "read_write",
+      "rationale": "Dispatcher implementation entry point."
+    },
+    {
+      "path": "scripts/tests/dispatcher/**",
+      "match_type": "recursive_glob",
+      "access": "read_write",
+      "rationale": "Dispatcher fixture tests."
+    },
+    {
+      "path": "docs/ai-engineering-framework/**",
+      "match_type": "recursive_glob",
+      "access": "read_write",
+      "rationale": "AI framework dispatcher documentation."
+    },
+    {
+      "path": "implementation/evidence/LP-AI-000004/**",
+      "match_type": "recursive_glob",
+      "access": "generated_evidence",
+      "rationale": "Generated evidence for the active task."
+    }
+  ],
+  "forbidden_files": [
+    {
+      "path": "apps/**",
+      "match_type": "recursive_glob",
+      "access": "write",
+      "rationale": "Loyalty application code is out of scope."
+    },
+    {
+      "path": "services/**",
+      "match_type": "recursive_glob",
+      "access": "write",
+      "rationale": "Backend service code is out of scope."
+    },
+    {
+      "path": "database/**",
+      "match_type": "recursive_glob",
+      "access": "write",
+      "rationale": "Database changes are out of scope."
+    },
+    {
+      "path": "docs/blueprint/**",
+      "match_type": "recursive_glob",
+      "access": "write",
+      "rationale": "Blueprint documents are read-only unless explicitly allowed."
+    }
+  ],
+  "required_documents": [
+    "AGENTS.md",
+    "implementation/tasks/ai-engineering-framework/LP-AI-000004-implement-dispatcher-agent.md",
+    "implementation/mip/MIP-AI-001-ai-engineering-framework-stabilization.md",
+    "docs/ai-engineering-framework/79-agent-registry.md",
+    "docs/ai-engineering-framework/80-agent-workflow.md",
+    "docs/ai-engineering-framework/82-dispatcher-command-standard.md",
+    "docs/ai-engineering-framework/90-agent-response-contract.md",
+    "implementation/TASK-LIFECYCLE.md"
+  ],
+  "required_mip": "implementation/mip/MIP-AI-001-ai-engineering-framework-stabilization.md",
+  "required_adrs": [],
+  "dependencies": [
+    {
+      "task_id": "LP-AI-000003",
+      "required_state": "DONE"
+    }
+  ],
+  "expected_evidence_paths": [
+    "implementation/evidence/LP-AI-000004/prepare.md",
+    "implementation/evidence/LP-AI-000004/implementation.md",
+    "implementation/evidence/LP-AI-000004/review.md",
+    "implementation/evidence/LP-AI-000004/qa.md",
+    "implementation/evidence/LP-AI-000004/release.md"
+  ],
+  "required_commands": [
+    "python3 scripts/tests/dispatcher/test_dispatcher.py",
+    "python3 scripts/dispatch-agent-workflow.py status LP-AI-000004",
+    "python3 scripts/validate-agent-response.py implementation/evidence/LP-AI-000004/implementation.md",
+    "git status --short"
+  ],
+  "permitted_lifecycle_transitions": [
+    {
+      "from": "READY",
+      "to": "IN_PROGRESS",
+      "authorized_role": "DevOps Agent"
+    },
+    {
+      "from": "IN_PROGRESS",
+      "to": "READY_FOR_REVIEW",
+      "authorized_role": "DevOps Agent"
+    },
+    {
+      "from": "READY_FOR_REVIEW",
+      "to": "REVIEW",
+      "authorized_role": "Review Agent"
+    },
+    {
+      "from": "REVIEW",
+      "to": "QA",
+      "authorized_role": "Review Agent"
+    },
+    {
+      "from": "QA",
+      "to": "READY_FOR_MERGE",
+      "authorized_role": "QA Agent"
+    },
+    {
+      "from": "MERGED",
+      "to": "DONE",
+      "authorized_role": "Release Manager"
+    }
+  ],
+  "cross_module_access": {
+    "allowed": false,
+    "mode": "none",
+    "modules": [],
+    "rationale": "Dispatcher work remains inside the AI Engineering Framework."
+  },
+  "generated_at": "2026-07-16T10:36:29Z",
+  "manifest_version": "1.0"
+}
