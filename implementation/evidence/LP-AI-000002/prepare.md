@@ -1,118 +1,173 @@
+Task ID: LP-AI-000002
+Task Title: Implement Review Evidence Engine
+Agent Role: Task Preparation Agent
+Branch: development
+Timestamp: 2026-07-16T08:52:51Z
+Current Lifecycle State: READY
+Commit: 3ac2cd9 with working-tree changes
+
 # Preparation Evidence
 
-- Task ID: `LP-AI-000002`
-- Task Title: Implement Review Evidence Engine
-- Phase: `task-preparation`
-- Agent Role: Task Preparation Agent
-- Result: `TASK PREPARATION BLOCKED`
-- Date Context: 2026-07-16
-- Branch: `development`
-- Commit: `b675c1ad33705cce8dbbf0211ec71b8aacb2b842`
+## Executive Summary
 
-## Documents Read
+- Prepared LP-AI-000002 using the Task Preparation skill.
+- Verified dependency LP-AI-000001 is `DONE`.
+- Validated lifecycle, required documents, allowed files, forbidden files, evidence requirements and response contract.
+- Repaired LP-AI-000002 task metadata for Definition of Task Ready.
+- Generated task-specific implementation, review and QA prompts.
+- Updated `implementation/TASK-STATUS.md`.
+- Updated `implementation/tasks/ai-engineering-framework/TASK-INDEX.md`.
+- Did not implement LP-AI-000002.
+- Preparation result: READY FOR IMPLEMENTATION.
 
-- `AGENTS.md`
-- `.codex/skills/task-preparation/SKILL.md`
-- `implementation/tasks/ai-engineering-framework/LP-AI-000002-implement-review-evidence-engine.md`
-- `implementation/mip/MIP-AI-001-ai-engineering-framework-stabilization.md`
-- `docs/ai-engineering-framework/78-task-preparation-agent.md`
-- `docs/ai-engineering-framework/79-agent-registry.md`
-- `docs/ai-engineering-framework/80-agent-workflow.md`
-- `docs/ai-engineering-framework/90-agent-response-contract.md`
-- `implementation/TASK-LIFECYCLE.md`
-- `docs/engineering/68-definition-of-task-ready`
-- `implementation/TASK-STATUS.md`
-- `implementation/tasks/ai-engineering-framework/TASK-INDEX.md`
-- `implementation/evidence/LP-AI-000001/implementation.md`
-- `implementation/evidence/LP-AI-000001/review.md`
-- `implementation/evidence/LP-AI-000001/qa.md`
-- `implementation/codex-prompts/ai-engineering-framework/LP-AI-000002-implementation.md`
-- `implementation/codex-prompts/ai-engineering-framework/LP-AI-000002-review.md`
-- `implementation/codex-prompts/ai-engineering-framework/LP-AI-000002-qa.md`
+## Status
 
-## Validation Summary
+READY FOR IMPLEMENTATION
 
-- Dependencies: failed. `LP-AI-000002` depends on `LP-AI-000001`; `implementation/TASK-STATUS.md` records `LP-AI-000001` as `READY_FOR_REVIEW`, and `implementation/evidence/LP-AI-000001/qa.md` records `QA CHANGES REQUIRED`.
-- Lifecycle: failed READY gate. `implementation/TASK-LIFECYCLE.md` requires all real dependencies complete before READY, and the MIP forbids marking unfinished dependencies complete.
-- Allowed files: present. The task allows workflow documentation, prompts, status records, scripts, evidence and repository-level documentation.
-- Forbidden files: present. The task forbids `docs/blueprint/**`, `services/**`, `apps/**` and `database/migrations/**`.
-- Required documents: partially complete. Listed documents exist except the root-required path `docs/engineering/68-definition-of-task-ready.md`; the repository contains `docs/engineering/68-definition-of-task-ready` without the `.md` extension. The task also does not list `docs/ai-engineering-framework/90-agent-response-contract.md`, although the response contract is mandatory for all phase responses.
-- Response contract: validated. `docs/ai-engineering-framework/90-agent-response-contract.md` requires metadata, Executive Summary, Status, Findings, Evidence, Required Corrections, Next Action and a machine-readable workflow footer.
-- Readiness: failed. The task is not READY and must not be implemented.
+## Findings
 
-## Readiness Gaps
+None
 
-1. Dependency `LP-AI-000001` is unfinished.
-2. Required task metadata is incomplete for Definition of Task Ready: missing explicit `Category`, `Business Objective`, `Exact Scope` or `In Scope`, `Out of Scope`, `Knowledge Package`, `UAT References`, and `Expected Deliverables`.
-3. Required document references are incomplete: `docs/ai-engineering-framework/90-agent-response-contract.md` is not listed in the LP task, and `docs/engineering/68-definition-of-task-ready.md` is referenced by root instructions but the repository path currently has no `.md` extension.
-4. Existing `LP-AI-000002` implementation, review and QA prompts are generic placeholders. Task-specific prompts were not generated because preparation stopped at the unresolved dependency gate.
+## Readiness Validation
+
+- Task ID: present.
+- Title: present.
+- Category: present.
+- Priority: present.
+- Complexity: present.
+- Estimated Context Size: present.
+- Business Objective: present.
+- Business Value: present.
+- Expected User Outcome: present.
+- Technical Objective: present.
+- Owning Module: present.
+- Module Implementation Package: present.
+- Dependencies: present and satisfied.
+- Required Documents: present and verified.
+- Required Blueprint Documents: present; none required.
+- Required Engineering Documents: present.
+- Related ADRs: present; none required.
+- Knowledge Package: present.
+- Exact Scope: present.
+- Out of Scope: present.
+- Allowed Files: present.
+- Forbidden Files: present.
+- Acceptance Criteria: present and measurable.
+- Mandatory Tests: present.
+- UAT References: present; no customer-facing UAT applies.
+- Required Reviewers: present.
+- Expected Deliverables: present.
+- Rollback or Recovery: present.
+- Definition of Done Level: present.
+- Definition of Done Reference: present.
 
 ## Automatic Fixes Performed
 
-- Created preparation evidence at `implementation/evidence/LP-AI-000002/prepare.md`.
-- Updated `implementation/tasks/ai-engineering-framework/LP-AI-000002-implement-review-evidence-engine.md` status to `BLOCKED`.
-- Updated `implementation/tasks/ai-engineering-framework/TASK-INDEX.md` status and lifecycle evidence for `LP-AI-000002`.
-- Updated `implementation/TASK-STATUS.md` status and notes for `LP-AI-000002`.
+- Set LP-AI-000002 task status to `READY`.
+- Added missing readiness metadata to `implementation/tasks/ai-engineering-framework/LP-AI-000002-implement-review-evidence-engine.md`.
+- Added `docs/engineering/55-module-definition-of-done.md`.
+- Added `docs/engineering/68-definition-of-task-ready.md`.
+- Added `docs/ai-engineering-framework/82-dispatcher-command-standard.md`.
+- Added `docs/ai-engineering-framework/90-agent-response-contract.md`.
+- Added Required Engineering Documents, Related ADRs, Knowledge Package, UAT References, Expected Deliverables, Documentation Requirements, Risk Assessment, Definition of Done Reference and Preparation Evidence sections.
+- Updated `implementation/TASK-STATUS.md` to record LP-AI-000002 as `READY`.
+- Updated `implementation/tasks/ai-engineering-framework/TASK-INDEX.md` to record LP-AI-000002 as `READY`.
+- Replaced generic implementation, review and QA prompts with task-specific prompts.
 
-## Prompt Generation
-
-Task-specific implementation, review and QA prompts were not generated.
-
-Reason: `docs/ai-engineering-framework/78-task-preparation-agent.md`, `implementation/TASK-LIFECYCLE.md` and the MIP require preparation to stop for incomplete dependencies. Generating READY-stage prompts before dependency completion would risk routing a Developer Agent into a non-READY task.
-
-Existing placeholder prompts inspected:
+## Generated Prompts
 
 - `implementation/codex-prompts/ai-engineering-framework/LP-AI-000002-implementation.md`
 - `implementation/codex-prompts/ai-engineering-framework/LP-AI-000002-review.md`
 - `implementation/codex-prompts/ai-engineering-framework/LP-AI-000002-qa.md`
 
-## Commands Executed
+## Evidence
 
-- `sed -n '1,260p' AGENTS.md`
-- `sed -n '261,520p' AGENTS.md`
-- `sed -n '521,900p' AGENTS.md`
-- `sed -n '1,260p' .codex/skills/task-preparation/SKILL.md`
-- `rg -n "LP-AI-000002|AI-000002" .`
-- `sed -n '1,260p' docs/ai-engineering-framework/78-task-preparation-agent.md`
-- `sed -n '1,260p' implementation/TASK-LIFECYCLE.md`
-- `sed -n '1,260p' implementation/tasks/ai-engineering-framework/LP-AI-000002-implement-review-evidence-engine.md`
-- `sed -n '1,220p' implementation/tasks/ai-engineering-framework/TASK-INDEX.md`
-- `sed -n '1,220p' implementation/TASK-STATUS.md`
-- `sed -n '1,320p' implementation/mip/MIP-AI-001-ai-engineering-framework-stabilization.md`
-- `sed -n '1,320p' docs/ai-engineering-framework/79-agent-registry.md`
-- `sed -n '1,340p' docs/ai-engineering-framework/80-agent-workflow.md`
-- `sed -n '1,320p' docs/ai-engineering-framework/90-agent-response-contract.md`
-- `sed -n '1,320p' docs/engineering/68-definition-of-task-ready.md` - failed; no file exists at that path.
-- `find implementation/evidence -maxdepth 3 -type f | sort | rg "LP-AI-000001|LP-AI-000002"`
-- `git status --short --branch`
-- `git rev-parse --abbrev-ref HEAD`
-- `git rev-parse HEAD`
-- `sed -n '1,260p' implementation/evidence/LP-AI-000001/review.md`
-- `sed -n '1,260p' implementation/evidence/LP-AI-000001/qa.md`
-- `sed -n '1,260p' implementation/evidence/LP-AI-000001/implementation.md`
-- `rg -n "Definition of Task Ready|definition-of-task-ready|Task Ready|READY requires" docs implementation .codex AGENTS.md`
-- `sed -n '1,420p' docs/engineering/68-definition-of-task-ready`
-- `sed -n '1,260p' implementation/codex-prompts/ai-engineering-framework/LP-AI-000002-implementation.md`
-- `sed -n '1,260p' implementation/codex-prompts/ai-engineering-framework/LP-AI-000002-review.md`
-- `sed -n '1,260p' implementation/codex-prompts/ai-engineering-framework/LP-AI-000002-qa.md`
-- `git diff -- implementation/TASK-STATUS.md`
-- `git diff -- implementation/tasks/ai-engineering-framework/TASK-INDEX.md`
-- `ls -la implementation/evidence && test -d implementation/evidence/LP-AI-000002; echo $?`
-- `rg --files -g 'AGENTS.md' -g '!node_modules'`
-- `mkdir -p implementation/evidence/LP-AI-000002`
-- `sed -n '1,320p' implementation/evidence/LP-AI-000002/prepare.md`
-- `rg -n "LP-AI-000002|Status|BLOCKED|TASK PREPARATION BLOCKED" implementation/tasks/ai-engineering-framework/LP-AI-000002-implement-review-evidence-engine.md implementation/tasks/ai-engineering-framework/TASK-INDEX.md implementation/TASK-STATUS.md implementation/evidence/LP-AI-000002/prepare.md`
-- `git diff -- implementation/tasks/ai-engineering-framework/LP-AI-000002-implement-review-evidence-engine.md implementation/tasks/ai-engineering-framework/TASK-INDEX.md implementation/TASK-STATUS.md implementation/evidence/LP-AI-000002/prepare.md`
-- `git status --short --branch`
+Commands executed:
 
-## Blocker
+```text
+sed -n '1,260p' AGENTS.md
+sed -n '1,260p' .codex/skills/task-preparation/SKILL.md
+git status --short --branch
+sed -n '1,340p' implementation/tasks/ai-engineering-framework/LP-AI-000002-implement-review-evidence-engine.md
+sed -n '1,260p' implementation/mip/MIP-AI-001-ai-engineering-framework-stabilization.md
+sed -n '261,980p' AGENTS.md
+sed -n '1,320p' docs/ai-engineering-framework/78-task-preparation-agent.md
+sed -n '1,320p' docs/ai-engineering-framework/79-agent-registry.md
+sed -n '1,360p' docs/ai-engineering-framework/80-agent-workflow.md
+sed -n '1,260p' docs/ai-engineering-framework/90-agent-response-contract.md
+sed -n '1,320p' docs/engineering/68-definition-of-task-ready.md
+find implementation/codex-prompts/ai-engineering-framework -maxdepth 1 -type f -name 'LP-AI-000002*' -print -exec sed -n '1,220p' {} \;
+find implementation/evidence/LP-AI-000002 -maxdepth 1 -type f -print -exec sed -n '1,260p' {} \;
+sed -n '1,360p' implementation/TASK-LIFECYCLE.md
+sed -n '1,260p' docs/ai-engineering-framework/82-dispatcher-command-standard.md
+find scripts -maxdepth 3 -type f -print | sort
+sed -n '1,280p' scripts/validate-agent-response.py
+find scripts/tests -maxdepth 3 -type f -print | sort
+rg -n "Review Evidence|review evidence|evidence engine|LP-AI-000002|Review Agent|review.md" docs implementation scripts .codex
+find . -path '*/AGENTS.md' -print
+rg -n "^## (Task ID|Status|Category|Priority|Complexity|Estimated Context Size|Assigned Role|Owning Module|Module Implementation Package|Business Objective|Business Value|Expected User Outcome|Technical Objective|Exact Scope|Out of Scope|Dependencies|Required Documents|Required Blueprint Documents|Required Engineering Documents|Related ADRs|Knowledge Package|Allowed Files|Forbidden Files|Acceptance Criteria|Mandatory Tests|UAT References|Required Reviewers|Expected Deliverables|Documentation Requirements|Rollback|Risk Assessment|Definition of Done Level|Definition of Done Reference|Preparation Evidence)" implementation/tasks/ai-engineering-framework/LP-AI-000002-implement-review-evidence-engine.md
+rg -n "LP-AI-000001 \| Stabilize Task Lifecycle|LP-AI-000002 \| Implement Review Evidence Engine|DONE|READY" implementation/TASK-STATUS.md implementation/tasks/ai-engineering-framework/TASK-INDEX.md
+rg -n "90-agent-response-contract|Status-only|status-only|Workflow Result|implementation/evidence/LP-AI-000002|IMPLEMENTATION BLOCKED|CHANGES REQUIRED|QA CHANGES REQUIRED|BLOCKED" implementation/codex-prompts/ai-engineering-framework/LP-AI-000002-implementation.md implementation/codex-prompts/ai-engineering-framework/LP-AI-000002-review.md implementation/codex-prompts/ai-engineering-framework/LP-AI-000002-qa.md
+for f in AGENTS.md implementation/mip/MIP-AI-001-ai-engineering-framework-stabilization.md docs/engineering/55-module-definition-of-done.md docs/engineering/68-definition-of-task-ready.md docs/ai-engineering-framework/78-task-preparation-agent.md docs/ai-engineering-framework/79-agent-registry.md docs/ai-engineering-framework/80-agent-workflow.md docs/ai-engineering-framework/82-dispatcher-command-standard.md docs/ai-engineering-framework/90-agent-response-contract.md implementation/TASK-LIFECYCLE.md; do test -f "$f" || echo "missing $f"; done
+git status --short apps services database/migrations docs/blueprint
+date -u +%Y-%m-%dT%H:%M:%SZ
+git rev-parse --abbrev-ref HEAD
+git rev-parse --short HEAD
+git diff --name-only -- implementation/tasks/ai-engineering-framework/LP-AI-000002-implement-review-evidence-engine.md implementation/TASK-STATUS.md implementation/tasks/ai-engineering-framework/TASK-INDEX.md implementation/codex-prompts/ai-engineering-framework/LP-AI-000002-implementation.md implementation/codex-prompts/ai-engineering-framework/LP-AI-000002-review.md implementation/codex-prompts/ai-engineering-framework/LP-AI-000002-qa.md implementation/evidence/LP-AI-000002/prepare.md
+```
 
-- Blocking Reason: Dependency `LP-AI-000001` is not complete.
-- Blocking Category: Dependency
-- Blocking Owner: Project Manager / LP-AI-000001 owner
-- Required Action: Resolve `LP-AI-000001` review follow-up and QA findings, then advance it through the required lifecycle gates.
-- Resume Condition: `LP-AI-000001` has completed required review, QA and merge-readiness gates, and status records no longer show an unresolved dependency.
+Validation results:
 
-## Next Valid Action
+- Root `AGENTS.md` and `.codex/skills/task-preparation/SKILL.md` were read before preparation changes.
+- No directory-level `AGENTS.md` files exist beyond the root file.
+- Dependency validation passed: LP-AI-000001 is `DONE` in `implementation/TASK-STATUS.md` and `implementation/tasks/ai-engineering-framework/TASK-INDEX.md`.
+- Lifecycle validation passed: LP-AI-000002 can move from `BLOCKED` to `READY` after the dependency blocker was resolved and readiness metadata was repaired.
+- Required documents exist.
+- Allowed files and forbidden files are present.
+- Forbidden-path status check returned no entries for `apps`, `services`, `database/migrations` or `docs/blueprint`.
+- Evidence requirements are defined for implementation, review and QA.
+- Response contract is listed and required by all generated prompts.
+- Implementation prompt requires `READY FOR REVIEW` or `IMPLEMENTATION BLOCKED`.
+- Review prompt requires `APPROVED`, `APPROVED WITH FOLLOW-UP`, `CHANGES REQUIRED` or `BLOCKED`.
+- QA prompt requires `QA APPROVED`, `QA CHANGES REQUIRED` or `QA BLOCKED`.
+- No implementation work was performed.
 
-Stop preparation for `LP-AI-000002` until the dependency is complete. After the dependency is complete, rerun Task Preparation for `LP-AI-000002` to repair metadata, generate task-specific implementation/review/QA prompts and move the task to READY if all readiness checks pass.
+Evidence files generated:
+
+- `implementation/evidence/LP-AI-000002/prepare.md`
+
+Git evidence:
+
+- Branch: `development`
+- Commit baseline: `3ac2cd9`
+- Worktree contains LP-AI-000001 post-merge status/evidence updates and LP-AI-000002 preparation changes.
+
+Lifecycle evidence:
+
+- Previous LP-AI-000002 state: `BLOCKED`
+- Current LP-AI-000002 state: `READY`
+- Next valid lifecycle action: implementation
+
+Review evidence:
+
+- Not applicable yet. Review must run after implementation evidence exists.
+
+QA evidence:
+
+- Not applicable yet. QA must run after independent review approval.
+
+## Required Corrections
+
+None
+
+## Next Action
+
+Stop
+
+## Workflow Result
+
+Task ID: LP-AI-000002
+Current State: READY
+Next State: READY
+Next Responsible Agent: Implementation Agent
+Can Continue: YES

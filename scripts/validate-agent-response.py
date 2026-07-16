@@ -73,6 +73,33 @@ FOLLOW_UP_FIELDS = (
     "Merge Allowed",
 )
 
+REVIEW_STATUSES = {
+    "APPROVED",
+    "APPROVED WITH FOLLOW-UP",
+    "CHANGES REQUIRED",
+    "BLOCKED",
+}
+
+REVIEW_REQUIRED_SECTIONS = (
+    "Scope Reviewed",
+    "Acceptance Criteria Review",
+    "Merge Recommendation",
+)
+
+REVIEW_EVIDENCE_TERMS = (
+    "Commands executed",
+    "Validation results",
+    "Git evidence",
+    "Review evidence",
+    "QA evidence",
+)
+
+REVIEW_REQUIRED_TERMS = (
+    "changed files",
+    "security",
+    "documentation",
+)
+
 
 def heading_exists(text: str, heading: str) -> bool:
     return re.search(rf"^#+\s+{re.escape(heading)}\s*$", text, re.MULTILINE) is not None
@@ -100,6 +127,39 @@ def add_missing(errors: list[str], text: str, fields: tuple[str, ...], context: 
     for field in fields:
         if not field_exists(text, field):
             errors.append(f"missing {context}: {field}")
+
+
+def is_review_response(path: Path, text: str, status: str | None) -> bool:
+    agent_role = field_value(text, "Agent Role") or ""
+    return (
+        agent_role == "Review Agent"
+        or path.name == "review.md"
+        or status in (REVIEW_STATUSES - {"BLOCKED"})
+    )
+
+
+def validate_review_response(text: str, status: str | None, errors: list[str]) -> None:
+    if status not in REVIEW_STATUSES:
+        errors.append("review response has invalid review status")
+
+    for section in REVIEW_REQUIRED_SECTIONS:
+        if not heading_exists(text, section):
+            errors.append(f"review evidence missing section: {section}")
+
+    evidence = section_text(text, "Evidence")
+    for term in REVIEW_EVIDENCE_TERMS:
+        if term.lower() not in evidence.lower():
+            errors.append(f"review evidence missing evidence item: {term}")
+
+    lowered = text.lower()
+    for term in REVIEW_REQUIRED_TERMS:
+        if term not in lowered:
+            errors.append(f"review evidence missing required review coverage: {term}")
+
+    if status == "APPROVED":
+        findings = section_text(text, "Findings")
+        if not re.fullmatch(r"`?None`?", findings, re.IGNORECASE):
+            errors.append("APPROVED review evidence must state Findings as None")
 
 
 def validate(path: Path) -> list[str]:
@@ -157,6 +217,9 @@ def validate(path: Path) -> list[str]:
 
     if status in {"BLOCKED", "IMPLEMENTATION BLOCKED", "QA BLOCKED", "TASK PREPARATION BLOCKED"}:
         add_missing(errors, text, BLOCKED_FIELDS, "blocked field")
+
+    if is_review_response(path, text, status):
+        validate_review_response(text, status, errors)
 
     return errors
 
