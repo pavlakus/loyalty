@@ -4,7 +4,7 @@
 `LP-AI-000001`
 
 ## Status
-`READY_FOR_REVIEW`
+`READY_FOR_MERGE`
 
 ## Category
 `AI_ENGINEERING_WORKFLOW`
@@ -78,7 +78,7 @@ Task Preparation Agent validation completed for READY.
 - `AGENTS.md`
 - `implementation/mip/MIP-AI-001-ai-engineering-framework-stabilization.md`
 - `docs/engineering/55-module-definition-of-done.md`
-- `docs/engineering/68-definition-of-task-ready`
+- `docs/engineering/68-definition-of-task-ready.md`
 - `docs/ai-engineering-framework/78-task-preparation-agent.md`
 - `docs/ai-engineering-framework/79-agent-registry.md`
 - `docs/ai-engineering-framework/80-agent-workflow.md`
@@ -90,7 +90,7 @@ None.
 
 ## Required Engineering Documents
 - `docs/engineering/55-module-definition-of-done.md`
-- `docs/engineering/68-definition-of-task-ready`
+- `docs/engineering/68-definition-of-task-ready.md`
 
 ## Related ADRs
 None.
@@ -108,7 +108,7 @@ None.
 
 ### Engineering
 - `docs/engineering/55-module-definition-of-done.md`
-- `docs/engineering/68-definition-of-task-ready`
+- `docs/engineering/68-definition-of-task-ready.md`
 
 ### Excluded Context
 Do not load unrelated Loyalty business-domain documents unless a contradiction is discovered.

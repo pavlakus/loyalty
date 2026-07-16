@@ -20,7 +20,7 @@ Read `AGENTS.md` first.
 - `docs/ai-engineering-framework/80-agent-workflow.md`
 - `docs/ai-engineering-framework/82-dispatcher-command-standard.md`
 - `docs/engineering/55-module-definition-of-done.md`
-- `docs/engineering/68-definition-of-task-ready`
+- `docs/engineering/68-definition-of-task-ready.md`
 - `implementation/TASK-LIFECYCLE.md`
 
 ## Execution Rules

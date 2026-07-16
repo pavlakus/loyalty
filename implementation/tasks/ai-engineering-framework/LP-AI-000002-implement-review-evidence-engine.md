@@ -1,7 +1,7 @@
 # LP-AI-000002. Implement Review Evidence Engine
 
 ## Status
-`DRAFT`
+`BLOCKED`
 
 ## Priority
 `P0`

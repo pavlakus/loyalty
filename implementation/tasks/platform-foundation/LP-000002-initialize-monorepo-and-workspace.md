@@ -124,7 +124,7 @@ No other LP task dependency exists.
 - `docs/engineering/58-project-knowledge-map.md`
 - `docs/engineering/59-coding-standards.md`
 - `docs/engineering/60-release-strategy.md`
-- `docs/engineering/68-definition-of-task-ready`
+- `docs/engineering/68-definition-of-task-ready.md`
 
 ## 16. Knowledge Package
 

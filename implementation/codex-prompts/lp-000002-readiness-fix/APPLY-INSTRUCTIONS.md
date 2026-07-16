@@ -2,7 +2,7 @@
 
 1. Replace the existing LP-000002 task file with the file from this package.
 2. Rename the existing file:
-   `docs/engineering/68-definition-of-task-ready`
+   `docs/engineering/68-definition-of-task-ready.md`
    to:
    `docs/engineering/68-definition-of-task-ready.md`
 3. Confirm `AGENTS.md` references the `.md` path.

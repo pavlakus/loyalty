@@ -21,9 +21,9 @@
 
 | Task | Title | Status | Branch | Review | Notes |
 |---|---|---|---|---|---|
-| LP-AI-000001 | Stabilize Task Lifecycle | READY_FOR_REVIEW | `development` | Pending | Implementation evidence in `implementation/evidence/LP-AI-000001/implementation.md`; Git state validation notes pre-existing merge state prevented task branch creation |
-| LP-AI-000001A | Adopt Agent Response Contract | READY_FOR_MERGE | `development` | APPROVED; QA APPROVED | Implementation, review, QA and release evidence are recorded under `implementation/evidence/LP-AI-000001A/`; ready for human merge; no commit or merge performed |
-| LP-AI-000002 | Implement Review Evidence Engine | DRAFT |  | Pending | Depends on LP-AI-000001 |
+| LP-AI-000001 | Stabilize Task Lifecycle | READY_FOR_MERGE | `development` | APPROVED; QA APPROVED | Release evidence in `implementation/evidence/LP-AI-000001/release.md`; ready for human merge, do not auto-merge |
+| LP-AI-000001A | Adopt Agent Response Contract | DONE | `development` | APPROVED; QA APPROVED | Merged into `development` at `b675c1a`; local `development` and `origin/development` both resolve to `b675c1ad33705cce8dbbf0211ec71b8aacb2b842`; implementation, review, QA and release evidence are recorded under `implementation/evidence/LP-AI-000001A/` |
+| LP-AI-000002 | Implement Review Evidence Engine | BLOCKED |  | Pending | Preparation remains blocked because dependency `LP-AI-000001` is `READY_FOR_MERGE` but not complete; do not mark READY until LP-AI-000001 completes |
 | LP-AI-000003 | Implement QA Evidence Engine | DRAFT |  | Pending | Depends on LP-AI-000001 |
 | LP-AI-000004 | Implement Dispatcher Agent | DRAFT |  | Pending | Depends on LP-AI-000001 |
 | LP-AI-000005 | Create Native Codex Skills | DRAFT |  | Pending | Depends on LP-AI-000001 |

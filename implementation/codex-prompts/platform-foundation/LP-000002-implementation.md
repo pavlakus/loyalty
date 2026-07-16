@@ -30,7 +30,7 @@ Read every document listed in the LP task's Required Documents section, includin
 - `docs/engineering/58-project-knowledge-map.md`
 - `docs/engineering/59-coding-standards.md`
 - `docs/engineering/60-release-strategy.md`
-- `docs/engineering/68-definition-of-task-ready`
+- `docs/engineering/68-definition-of-task-ready.md`
 
 ## Task
 

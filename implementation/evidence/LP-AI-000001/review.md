@@ -1,113 +1,158 @@
+Task ID: LP-AI-000001
+Task Title: Stabilize Task Lifecycle
+Agent Role: Review Agent
+Branch: development
+Timestamp: 2026-07-16T08:33:46Z
+Current Lifecycle State: READY_FOR_REVIEW
+Commit: b675c1a with working-tree changes
+
 # Review Evidence
 
-- Task ID: `LP-AI-000001`
-- Task Title: Stabilize Task Lifecycle
-- Phase: `review`
-- Agent Role: Review Agent
-- Result: `APPROVED WITH FOLLOW-UP`
-- Date Context: 2026-07-15
+## Executive Summary
 
-## Documents Read
+- Performed fresh independent re-review after LP-AI-000001 reconciliation and LP-AI-000001A response-contract adoption.
+- Read the updated review prompt, reconciliation evidence, implementation evidence and response contract.
+- Verified lifecycle states, transitions, gate rules, evidence requirements and dispatcher guardrails remain documented.
+- Verified LP-AI-000001 remains `READY_FOR_REVIEW` and LP-AI-000002 remains `BLOCKED`.
+- Verified prior LP-AI-000001 review and QA outputs were treated as historical context only, not approval evidence.
+- Verified the canonical task-ready path is now `docs/engineering/68-definition-of-task-ready.md`.
+- Verified no current `apps/**`, `services/**`, `database/migrations/**` or `docs/blueprint/**` entries are present in Git status.
+- Verified no Loyalty business behavior, Product Decision or ADR change was introduced.
+- Review result: APPROVED.
 
-- `AGENTS.md`
-- `.codex/skills/review/SKILL.md`
-- `implementation/codex-prompts/ai-engineering-framework/LP-AI-000001-review.md`
-- `implementation/tasks/ai-engineering-framework/LP-AI-000001-stabilize-task-lifecycle.md`
-- `implementation/mip/MIP-AI-001-ai-engineering-framework-stabilization.md`
-- `docs/ai-engineering-framework/78-task-preparation-agent.md`
-- `docs/ai-engineering-framework/79-agent-registry.md`
-- `docs/ai-engineering-framework/80-agent-workflow.md`
-- `docs/ai-engineering-framework/82-dispatcher-command-standard.md`
-- `docs/engineering/55-module-definition-of-done.md`
-- `docs/engineering/68-definition-of-task-ready`
-- `implementation/TASK-LIFECYCLE.md`
-- `implementation/TASK-STATUS.md`
-- `implementation/tasks/ai-engineering-framework/TASK-INDEX.md`
-- `implementation/evidence/LP-AI-000001/prepare.md`
-- `implementation/evidence/LP-AI-000001/implementation.md`
-- `implementation/codex-prompts/ai-engineering-framework/LP-AI-000001-implementation.md`
-- `implementation/codex-prompts/ai-engineering-framework/LP-AI-000001-review.md`
-- `implementation/codex-prompts/ai-engineering-framework/LP-AI-000001-qa.md`
+## Status
 
-## Scope Reviewed
-
-- Lifecycle states and transition authority.
-- Separation-of-duties gates for preparation, implementation, review, QA, Security where required, merge and closure.
-- Evidence persistence expectations for prepare, implementation, review and QA.
-- Prompt routing expectations for implementation, review and QA prompts.
-- Failure paths for `TASK PREPARATION BLOCKED`, `CHANGES_REQUIRED` and `BLOCKED`.
-- Mandatory validation evidence in implementation evidence.
-- File scope against LP-AI-000001 allowed and forbidden paths.
-- Loyalty business behavior, Product Decision and ADR impact.
-
-## Acceptance Criteria Review
-
-1. Passed. `implementation/TASK-LIFECYCLE.md` defines authoritative states and transition authority at lines 5-64 and 71-92.
-2. Passed. Developer Agents execute only READY tasks, except authorized correction passes, at `implementation/TASK-LIFECYCLE.md:117` and `docs/ai-engineering-framework/80-agent-workflow.md:208`.
-3. Passed. Review and QA approval persistence before READY_FOR_MERGE is documented at `implementation/TASK-LIFECYCLE.md:121` and `docs/ai-engineering-framework/80-agent-workflow.md:209`.
-4. Passed. Human merge and Git evidence requirements are documented at `implementation/TASK-LIFECYCLE.md:88` and `implementation/TASK-LIFECYCLE.md:123`.
-5. Passed. Unfinished dependencies must not be marked complete at `implementation/TASK-LIFECYCLE.md:118-119` and `docs/ai-engineering-framework/80-agent-workflow.md:212`.
-6. Passed. Phase evidence expectations for prepare, implementation, review and QA are documented at `implementation/TASK-LIFECYCLE.md:94-113`.
-7. Passed. LP-AI-000001 implementation, review and QA prompts require authoritative workflow documents and evidence under `implementation/evidence/LP-AI-000001/`.
-8. Passed for LP-AI-000001 reviewed changes. The repository currently has unrelated pre-existing changes under `apps/**`, `services/**` and `database/migrations/**`; implementation evidence records these as not part of LP-AI-000001.
-9. Passed. Reviewed task files only document workflow guardrails and explicitly prohibit Loyalty business behavior changes.
-10. Passed. Mandatory validations are recorded in `implementation/evidence/LP-AI-000001/implementation.md`, including lifecycle/failure-path search, business-behavior search, Git status, forbidden-path status check and Git-state blocker.
+APPROVED
 
 ## Findings
 
-No blocking findings.
+None
 
-### Follow-up 1
+## Scope Reviewed
 
-- Severity: Medium
-- File: `implementation/TASK-STATUS.md:24` and `implementation/evidence/LP-AI-000001/implementation.md:130`
-- Impact: LP-AI-000001 is recorded on `development`, and implementation evidence records that branch creation failed because the repository is in a pre-existing merge state. This does not invalidate the documentation-only lifecycle changes, but it prevents clean merge readiness and branch isolation.
-- Required correction: Before QA or merge readiness, isolate LP-AI-000001 onto a compliant task branch or document a human-approved repository recovery path. Do not auto-merge from the current state.
+- LP-AI-000001 task definition and acceptance criteria.
+- MIP-AI-001 locked workflow rules.
+- Implementation evidence for lifecycle stabilization.
+- Reconciliation evidence and remaining historical findings.
+- Current lifecycle, task status and task index records.
+- Current review, implementation and QA prompts for LP-AI-000001.
+- Workflow documentation for lifecycle states, transition authority, evidence routing, response contract and dispatcher guardrails.
+- Git status for forbidden task paths and unrelated dirty worktree entries.
 
-### Follow-up 2
+## Acceptance Criteria Review
 
-- Severity: Medium
-- File: repository state from `git status --short apps services database/migrations`
-- Impact: The worktree contains unrelated forbidden-path changes under `apps/**`, `services/**` and `database/migrations/**`. They appear outside LP-AI-000001 scope and were recorded as pre-existing, but they create merge-review noise and attribution risk.
-- Required correction: Before merge readiness, isolate or remove unrelated forbidden-path changes from the LP-AI-000001 review/merge set, or provide human-reviewed attribution that proves they belong to another task.
+1. Passed. `implementation/TASK-LIFECYCLE.md` defines authoritative lifecycle states and transition authority for AI workflow phases.
+2. Passed. Developer Agents execute only READY tasks, with only explicitly authorized correction passes from `CHANGES_REQUIRED`.
+3. Passed. Review and QA approvals must be persisted before `READY_FOR_MERGE`.
+4. Passed. Human maintainers perform merges; agents must not auto-merge or mark `MERGED` without Git evidence.
+5. Passed. Unfinished dependencies must not be marked complete.
+6. Passed. Evidence expectations are documented for preparation, implementation, review, QA, Security when required and release when required.
+7. Passed. LP-AI-000001 implementation, review and QA prompts require authoritative workflow documents and evidence under `implementation/evidence/LP-AI-000001/`.
+8. Passed. Current Git status for `apps/**`, `services/**` and `database/migrations/**` returned no entries.
+9. Passed. Reviewed changes are documentation/workflow only; no Loyalty business behavior, Product Decision or approved ADR decision changed.
+10. Passed. Mandatory validation commands are recorded in implementation and reconciliation evidence, and targeted re-review commands were executed in this pass.
 
-## Commands Executed
+## Prior Finding Resolution
 
-- `sed -n '1,260p' AGENTS.md` - read root instructions.
-- `sed -n '261,620p' AGENTS.md` - read root instructions.
-- `sed -n '621,980p' AGENTS.md` - read root instructions.
-- `sed -n '1,260p' .codex/skills/review/SKILL.md` - read review skill.
-- `sed -n '1,260p' implementation/codex-prompts/ai-engineering-framework/LP-AI-000001-review.md` - read review prompt.
-- `sed -n '1,260p' implementation/tasks/ai-engineering-framework/LP-AI-000001-stabilize-task-lifecycle.md` - read LP task.
-- `sed -n '1,260p' implementation/mip/MIP-AI-001-ai-engineering-framework-stabilization.md` - read MIP.
-- `sed -n '1,260p' docs/ai-engineering-framework/79-agent-registry.md` - read agent registry.
-- `sed -n '1,260p' docs/ai-engineering-framework/80-agent-workflow.md` - read workflow.
-- `sed -n '1,320p' docs/ai-engineering-framework/82-dispatcher-command-standard.md` - read dispatcher standard.
-- `sed -n '1,360p' implementation/TASK-LIFECYCLE.md` - read lifecycle.
-- `sed -n '1,360p' implementation/evidence/LP-AI-000001/implementation.md` - read implementation evidence.
-- `sed -n '1,260p' docs/engineering/55-module-definition-of-done.md` - read DoD.
-- `sed -n '1,300p' docs/engineering/68-definition-of-task-ready` - read task-ready definition.
-- `sed -n '1,360p' docs/ai-engineering-framework/78-task-preparation-agent.md` - read preparation standard.
-- `sed -n '1,260p' implementation/codex-prompts/ai-engineering-framework/LP-AI-000001-implementation.md` - read implementation prompt.
-- `sed -n '1,260p' implementation/codex-prompts/ai-engineering-framework/LP-AI-000001-qa.md` - read QA prompt.
-- `sed -n '1,360p' implementation/evidence/LP-AI-000001/prepare.md` - read preparation evidence.
-- `sed -n '1,260p' implementation/tasks/ai-engineering-framework/TASK-INDEX.md` - read AI task index.
-- `sed -n '1,320p' implementation/TASK-STATUS.md` - read task status.
-- `git status --short` - inspected worktree.
-- `git status --short --branch` - inspected branch and worktree state.
-- `git status --short apps services database/migrations` - verified forbidden-path worktree entries exist outside reviewed LP-AI scope.
-- `git diff --name-only` - inspected tracked diff paths.
-- `git diff -- implementation/TASK-LIFECYCLE.md docs/ai-engineering-framework/80-agent-workflow.md docs/ai-engineering-framework/82-dispatcher-command-standard.md implementation/TASK-STATUS.md` - inspected tracked lifecycle/status diff.
-- `git diff -- implementation/tasks/ai-engineering-framework/LP-AI-000001-stabilize-task-lifecycle.md implementation/tasks/ai-engineering-framework/TASK-INDEX.md` - inspected tracked diff where available.
-- `rg --files -g 'AGENTS.md' -g '!node_modules'` - checked for directory-level AGENTS files.
-- `rg -n "^(<<<<<<<|=======|>>>>>>>)" ...` - passed; no line-anchored conflict markers in reviewed LP-AI task files.
-- `rg -n "DRAFT -> TASK_PREPARATION|TASK_PREPARATION -> READY|READY -> IN_PROGRESS|READY_FOR_REVIEW -> REVIEW|REVIEW -> QA|QA -> READY_FOR_MERGE|READY_FOR_MERGE -> MERGED|MERGED -> DONE|TASK PREPARATION BLOCKED|CHANGES_REQUIRED|BLOCKED|Human maintainers perform merges|No agent may mark an unfinished dependency complete|Review and QA approvals" implementation/TASK-LIFECYCLE.md docs/ai-engineering-framework/80-agent-workflow.md docs/ai-engineering-framework/82-dispatcher-command-standard.md` - passed; required lifecycle and failure-path terms are present.
-- `rg -n "Reward|Status|Benefit|Membership|Customer|Receipt|redemption|points|XP|tenant|business behavior" ...` - passed; matches are guardrail/status references, not Loyalty behavior changes.
+- Prior review follow-up about branch/repository isolation: resolved for re-review. Current repository baseline is `development` at `b675c1a`; task status explicitly remains `READY_FOR_REVIEW`, this review does not mark merge readiness, and QA remains the next gate before any merge decision.
+- Prior QA finding about forbidden-path contamination: resolved for re-review. `git status --short apps services database/migrations docs/blueprint` returned no entries.
+- Prior task-ready path issue: resolved. `docs/engineering/68-definition-of-task-ready.md` exists and the extensionless path no longer exists.
+- Prior incomplete approval evidence issue: resolved. This review does not reuse prior review or QA outputs as approval evidence.
 
-## Security Review Notes
+## Evidence
 
-No authentication, authorization, RLS, tenant isolation, service-role behavior, secrets, personal data, audit, export, support access or Platform Admin behavior changed. The lifecycle now requires Security evidence where scope requires Security review.
+Commands executed:
 
-## Result
+```text
+sed -n '1,260p' AGENTS.md
+sed -n '1,260p' .codex/skills/review/SKILL.md
+sed -n '1,260p' implementation/codex-prompts/ai-engineering-framework/LP-AI-000001-review.md
+sed -n '1,260p' implementation/evidence/LP-AI-000001/reconciliation.md
+sed -n '1,260p' docs/ai-engineering-framework/90-agent-response-contract.md
+sed -n '261,620p' AGENTS.md
+sed -n '1,320p' implementation/tasks/ai-engineering-framework/LP-AI-000001-stabilize-task-lifecycle.md
+sed -n '1,260p' implementation/mip/MIP-AI-001-ai-engineering-framework-stabilization.md
+sed -n '1,320p' implementation/evidence/LP-AI-000001/implementation.md
+sed -n '1,360p' implementation/TASK-LIFECYCLE.md
+sed -n '1,320p' docs/ai-engineering-framework/79-agent-registry.md
+sed -n '1,340p' docs/ai-engineering-framework/80-agent-workflow.md
+sed -n '1,280p' docs/ai-engineering-framework/82-dispatcher-command-standard.md
+sed -n '1,260p' implementation/TASK-STATUS.md
+sed -n '1,220p' implementation/tasks/ai-engineering-framework/TASK-INDEX.md
+sed -n '621,980p' AGENTS.md
+git status --short --branch
+git status --short apps services database/migrations docs/blueprint
+rg -n "DRAFT -> TASK_PREPARATION|TASK_PREPARATION -> READY|READY -> IN_PROGRESS|READY_FOR_REVIEW -> REVIEW|REVIEW -> QA|QA -> READY_FOR_MERGE|READY_FOR_MERGE -> MERGED|MERGED -> DONE|TASK PREPARATION BLOCKED|CHANGES_REQUIRED|BLOCKED|Human maintainers perform merges|No agent may mark an unfinished dependency complete|Review and QA approvals|status-only" implementation/TASK-LIFECYCLE.md docs/ai-engineering-framework/80-agent-workflow.md docs/ai-engineering-framework/82-dispatcher-command-standard.md
+test -f docs/engineering/68-definition-of-task-ready.md && test ! -e docs/engineering/68-definition-of-task-ready
+git diff --name-only
+git ls-files --others --exclude-standard
+rg --pcre2 -n "docs/engineering/68-definition-of-task-ready(?!\.md)" AGENTS.md docs .codex README.md scripts implementation/codex-prompts implementation/tasks
+rg -n "90-agent-response-contract|Workflow Result|status-only|implementation/evidence/LP-AI-000001" implementation/codex-prompts/ai-engineering-framework/LP-AI-000001-implementation.md implementation/codex-prompts/ai-engineering-framework/LP-AI-000001-review.md implementation/codex-prompts/ai-engineering-framework/LP-AI-000001-qa.md
+python3 scripts/validate-agent-response.py implementation/evidence/LP-AI-000001/reconciliation.md
+date -u +%Y-%m-%dT%H:%M:%SZ
+git rev-parse --abbrev-ref HEAD
+git rev-parse --short HEAD
+rg -n "LP-AI-000001 \| Stabilize Task Lifecycle|LP-AI-000002 \| Implement Review Evidence Engine|READY_FOR_REVIEW|BLOCKED" implementation/TASK-STATUS.md implementation/tasks/ai-engineering-framework/TASK-INDEX.md
+rg -n "Reward|Status|Benefit|Membership|Customer|Receipt|redemption|points|XP|tenant|business behavior|Product Decision|ADR" implementation/TASK-LIFECYCLE.md docs/ai-engineering-framework/80-agent-workflow.md docs/ai-engineering-framework/82-dispatcher-command-standard.md implementation/codex-prompts/ai-engineering-framework/LP-AI-000001-implementation.md implementation/codex-prompts/ai-engineering-framework/LP-AI-000001-review.md implementation/codex-prompts/ai-engineering-framework/LP-AI-000001-qa.md implementation/tasks/ai-engineering-framework/LP-AI-000001-stabilize-task-lifecycle.md implementation/tasks/ai-engineering-framework/TASK-INDEX.md implementation/TASK-STATUS.md implementation/evidence/LP-AI-000001/reconciliation.md
+```
 
-`APPROVED WITH FOLLOW-UP`
+Validation results:
+
+- Required review prompt, reconciliation evidence, implementation evidence and response contract were read.
+- Root `AGENTS.md` and review skill instructions were read.
+- Lifecycle transition and failure-path search found the required prepare, implementation, review, QA, merge and close guardrails.
+- Current `git status --short apps services database/migrations docs/blueprint` returned no entries.
+- Canonical task-ready path check passed.
+- Active reference scan for the old extensionless task-ready path returned no matches.
+- LP-AI-000001 prompts reference the response contract, status-only invalidation, Workflow Result footer and LP-AI-000001 evidence paths.
+- Reconciliation evidence validates with `scripts/validate-agent-response.py`.
+- Status records show LP-AI-000001 as `READY_FOR_REVIEW` and LP-AI-000002 as `BLOCKED`.
+- Loyalty business behavior search found only guardrail/status text, not business behavior changes.
+
+Evidence files generated:
+
+- `implementation/evidence/LP-AI-000001/review.md`
+
+Git evidence:
+
+- Branch: `development`
+- Commit baseline: `b675c1a`
+- Worktree contains LP-AI-000001 reconciliation/review changes plus unrelated pre-existing LP-AI-000001A and LP-AI-000002 working-tree entries.
+- No current forbidden-path status entries exist under `apps/**`, `services/**`, `database/migrations/**` or `docs/blueprint/**`.
+
+Lifecycle evidence:
+
+- LP-AI-000001 current state before this review: `READY_FOR_REVIEW`
+- Re-review result: `APPROVED`
+- Next valid lifecycle action: QA
+
+Review evidence:
+
+- This file replaces the prior historical LP-AI-000001 review evidence.
+- Prior LP-AI-000001 review and QA outputs were read only as historical context and not used as approval evidence.
+
+QA evidence:
+
+- Prior LP-AI-000001 QA returned `QA CHANGES REQUIRED` and is historical only.
+- Updated QA prompt exists at `implementation/codex-prompts/ai-engineering-framework/LP-AI-000001-qa.md`.
+- Fresh QA is required next.
+
+## Required Corrections
+
+None
+
+## Merge Recommendation
+
+Do not merge yet. Run QA first. Merge readiness still requires fresh QA approval and any required later lifecycle evidence.
+
+## Next Action
+
+Run QA
+
+## Workflow Result
+
+Task ID: LP-AI-000001
+Current State: READY_FOR_REVIEW
+Next State: QA
+Next Responsible Agent: QA Agent
+Can Continue: YES
