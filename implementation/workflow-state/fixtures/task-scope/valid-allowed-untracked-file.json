@@ -1,0 +1,15 @@
+{
+  "case": "valid task with allowed untracked file",
+  "task_id": "TEST-001",
+  "manifest": "valid",
+  "changes": [
+    {
+      "action": "untracked",
+      "path": "implementation/evidence/TEST-001/implementation.md"
+    }
+  ],
+  "expected_status": "PASS",
+  "expected_classifications": [
+    "allowed_active_task_change"
+  ]
+}

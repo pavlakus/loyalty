@@ -1,0 +1,16 @@
+{
+  "case": "renamed file outside scope",
+  "task_id": "TEST-001",
+  "manifest": "valid",
+  "changes": [
+    {
+      "action": "rename",
+      "path": "README.md",
+      "new_path": "README-renamed.md"
+    }
+  ],
+  "expected_status": "FAIL",
+  "expected_classifications": [
+    "unrelated_dirty_file"
+  ]
+}

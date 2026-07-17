@@ -73,6 +73,14 @@ implementation/workflow-state/manifests/<TASK-ID>.json
 
 Manifests include allowed files, forbidden files, required documents, required MIP, required ADRs, dependencies, expected evidence paths, required commands, permitted lifecycle transitions and cross-module access.
 
+Scope isolation validation is provided by:
+
+```text
+scripts/validate-task-scope.py <TASK-ID>
+```
+
+The validator loads the canonical manifest, validates it against the V2-001 manifest standard and checks Git changed paths across staged, unstaged, tracked, untracked, renamed and deleted states. Dispatcher integrations may consume its JSON output as route evidence once a later integration task enables automatic enforcement. Unrelated dirty worktree blocking is controlled by an explicit caller policy flag.
+
 ## Guardrails
 
 - Do not route `execute` unless the task is READY or an authorized CHANGES_REQUIRED correction pass.

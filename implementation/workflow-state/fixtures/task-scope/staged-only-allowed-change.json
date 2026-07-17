@@ -1,0 +1,28 @@
+{
+  "case": "staged only allowed change",
+  "task_id": "TEST-001",
+  "manifest": "valid",
+  "changes": [
+    {
+      "action": "modify",
+      "path": "implementation/tasks/TEST-001.md"
+    },
+    {
+      "action": "stage",
+      "path": "implementation/tasks/TEST-001.md"
+    }
+  ],
+  "expected_status": "PASS",
+  "expected_manifest_state": "valid",
+  "expected_manifest_failure_code": null,
+  "expected_classifications": [
+    "allowed_active_task_change"
+  ],
+  "expected_change": {
+    "status": "M ",
+    "staged": true,
+    "unstaged": false,
+    "untracked": false,
+    "blocking": false
+  }
+}

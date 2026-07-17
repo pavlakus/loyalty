@@ -1,0 +1,26 @@
+{
+  "case": "unrelated dirty worktree file",
+  "task_id": "TEST-001",
+  "manifest": "valid",
+  "changes": [
+    {
+      "action": "modify",
+      "path": "README.md"
+    }
+  ],
+  "expected_status": "PASS",
+  "expected_manifest_state": "valid",
+  "expected_manifest_failure_code": null,
+  "expected_unrelated_dirty_policy": "allow",
+  "expected_classifications": [
+    "unrelated_dirty_file"
+  ],
+  "expected_change": {
+    "status": " M",
+    "staged": false,
+    "unstaged": true,
+    "untracked": false,
+    "blocking": false
+  },
+  "policy_block_check": true
+}

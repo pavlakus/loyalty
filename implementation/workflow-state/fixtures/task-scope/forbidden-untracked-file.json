@@ -1,0 +1,15 @@
+{
+  "case": "forbidden untracked file",
+  "task_id": "TEST-001",
+  "manifest": "valid",
+  "changes": [
+    {
+      "action": "untracked",
+      "path": "docs/blueprint/new-scope.md"
+    }
+  ],
+  "expected_status": "FAIL",
+  "expected_classifications": [
+    "forbidden_active_task_change"
+  ]
+}
