@@ -1,0 +1,15 @@
+{
+  "case": "valid clean task diff",
+  "task_id": "TEST-001",
+  "manifest": "valid",
+  "changes": [
+    {
+      "action": "modify",
+      "path": "implementation/tasks/TEST-001.md"
+    }
+  ],
+  "expected_status": "PASS",
+  "expected_classifications": [
+    "allowed_active_task_change"
+  ]
+}

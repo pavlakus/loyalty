@@ -1,0 +1,15 @@
+{
+  "case": "forbidden tracked change",
+  "task_id": "TEST-001",
+  "manifest": "valid",
+  "changes": [
+    {
+      "action": "modify",
+      "path": "docs/blueprint/01-product-vision.md"
+    }
+  ],
+  "expected_status": "FAIL",
+  "expected_classifications": [
+    "forbidden_active_task_change"
+  ]
+}

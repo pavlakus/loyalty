@@ -15,7 +15,8 @@
 | LP-AI-000008 | Implement Repository Hygiene Controls | DevOps Agent | LP-AI-000001 | DRAFT |
 | LP-AI-000009 | Implement Environment Validation | DevOps Agent | LP-AI-000001 | DRAFT |
 | LP-AI-000010 | Implement One Command Workflow | DevOps Agent | LP-AI-000001 | DRAFT |
-| V2-001 | Scope Manifest Standard | Solution Architect Agent | LP-AI-000001, LP-AI-000001A, LP-AI-000002, LP-AI-000003, LP-AI-000004 | READY_FOR_MERGE |
+| V2-001 | Scope Manifest Standard | Solution Architect Agent | LP-AI-000001, LP-AI-000001A, LP-AI-000002, LP-AI-000003, LP-AI-000004 | DONE |
+| V2-002 | Scope Isolation Enforcement | DevOps Agent | V2-001 | READY_FOR_MERGE |
 
 ## Lifecycle Evidence
 
@@ -37,3 +38,7 @@
 - V2-001 prepared to `READY` by Task Preparation Agent; evidence is recorded in `implementation/evidence/V2-001/prepare.md`.
 - V2-001 implementation completed the Scope Manifest Standard and moved to `READY_FOR_REVIEW`; implementation evidence is recorded in `implementation/evidence/V2-001/implementation.md`.
 - V2-001 review is `APPROVED`, QA is `QA APPROVED`, and the task is `READY_FOR_MERGE`; review and QA evidence are recorded in `implementation/evidence/V2-001/`.
+- V2-001 was merged into `development` at `a7cf285` and is `DONE`; release evidence is recorded in `implementation/evidence/V2-001/release.md`.
+- V2-002 prepared to `READY` by Task Preparation Agent after V2-001 reached `DONE`; evidence is recorded in `implementation/evidence/V2-002/prepare.md`.
+- V2-002 implementation completed the Scope Isolation Enforcement validator and moved to `READY_FOR_REVIEW`; implementation evidence is recorded in `implementation/evidence/V2-002/implementation.md`.
+- V2-002 review is `APPROVED`, QA is `QA APPROVED`, and the task is `READY_FOR_MERGE`; review and QA evidence are recorded in `implementation/evidence/V2-002/`.

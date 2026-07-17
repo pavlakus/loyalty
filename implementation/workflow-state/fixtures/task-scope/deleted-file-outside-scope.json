@@ -1,0 +1,15 @@
+{
+  "case": "deleted file outside scope",
+  "task_id": "TEST-001",
+  "manifest": "valid",
+  "changes": [
+    {
+      "action": "delete",
+      "path": "README.md"
+    }
+  ],
+  "expected_status": "FAIL",
+  "expected_classifications": [
+    "unrelated_dirty_file"
+  ]
+}

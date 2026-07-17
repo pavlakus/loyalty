@@ -1,0 +1,15 @@
+{
+  "case": "invalid manifest",
+  "task_id": "TEST-001",
+  "manifest": "invalid",
+  "changes": [
+    {
+      "action": "modify",
+      "path": "implementation/tasks/TEST-001.md"
+    }
+  ],
+  "expected_status": "FAIL",
+  "expected_manifest_state": "invalid_manifest",
+  "expected_manifest_failure_code": "invalid_manifest",
+  "expected_manifest_error_contains": "unknown manifest version"
+}

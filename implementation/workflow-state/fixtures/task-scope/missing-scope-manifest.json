@@ -1,0 +1,15 @@
+{
+  "case": "missing scope manifest",
+  "task_id": "TEST-001",
+  "manifest": "missing",
+  "changes": [
+    {
+      "action": "modify",
+      "path": "implementation/tasks/TEST-001.md"
+    }
+  ],
+  "expected_status": "FAIL",
+  "expected_manifest_state": "missing_manifest",
+  "expected_manifest_failure_code": "missing_manifest",
+  "expected_manifest_error_contains": "missing scope manifest"
+}

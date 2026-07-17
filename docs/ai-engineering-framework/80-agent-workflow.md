@@ -106,7 +106,15 @@ The canonical schema location is:
 implementation/workflow-state/schemas/task-scope-manifest.schema.json
 ```
 
-Manifests define task identity, allowed and forbidden files, required documents, required MIP, required ADRs, dependencies, expected evidence paths, required commands, lifecycle transitions and cross-module access. V2-001 defines the standard only. V2-002 is responsible for future scope isolation enforcement.
+Manifests define task identity, allowed and forbidden files, required documents, required MIP, required ADRs, dependencies, expected evidence paths, required commands, lifecycle transitions and cross-module access. V2-001 defines the standard.
+
+V2-002 provides repository-local scope validation through:
+
+```text
+scripts/validate-task-scope.py <TASK-ID>
+```
+
+The validator loads `implementation/workflow-state/manifests/<TASK-ID>.json`, validates it against the V2-001 manifest standard and checks staged, unstaged, tracked, untracked, renamed and deleted Git paths. It reports every changed path as allowed active-task scope, forbidden active-task scope, unrelated dirty worktree state or invalid path. Forbidden paths override allowed paths, generated evidence is allowed only for the active task, unrelated dirty behavior is governed by an explicit caller policy and changes outside allowed scope fail validation.
 
 The returned response must comply with `docs/ai-engineering-framework/90-agent-response-contract.md`, including changed files, commands, tests, known limitations, Definition of Done evidence and readiness recommendation.
 

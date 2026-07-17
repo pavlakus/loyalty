@@ -32,7 +32,8 @@
 | LP-AI-000008 | Implement Repository Hygiene Controls | DRAFT |  | Pending | Depends on LP-AI-000001 |
 | LP-AI-000009 | Implement Environment Validation | DRAFT |  | Pending | Depends on LP-AI-000001 |
 | LP-AI-000010 | Implement One Command Workflow | DRAFT |  | Pending | Depends on LP-AI-000001 |
-| V2-001 | Scope Manifest Standard | READY_FOR_MERGE | `development` | APPROVED; QA APPROVED | Scope manifest schema, example, invalid fixtures, validator, tests and documentation added; review and QA approved; evidence in `implementation/evidence/V2-001/` |
+| V2-001 | Scope Manifest Standard | DONE | `development` | APPROVED; QA APPROVED | Merged into `development` at `a7cf285`; scope manifest schema, example, invalid fixtures, validator, tests and documentation added; release evidence in `implementation/evidence/V2-001/release.md` |
+| V2-002 | Scope Isolation Enforcement | READY_FOR_MERGE | `development` | APPROVED; QA APPROVED | Scope validator, fixtures, tests and documentation added; implementation, review and QA evidence in `implementation/evidence/V2-002/`; ready for merge |
 
 ## Allowed Statuses
 
