@@ -1,0 +1,4 @@
+{
+  "scenario": "clean_repository_state",
+  "output_format": "json"
+}

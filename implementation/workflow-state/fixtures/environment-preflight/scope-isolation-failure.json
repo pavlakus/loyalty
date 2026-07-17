@@ -1,0 +1,4 @@
+{
+  "scenario": "scope_isolation_failure",
+  "output_format": "json"
+}

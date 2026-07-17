@@ -1,0 +1,4 @@
+{
+  "scenario": "manifest_not_required_no_manifests_dir",
+  "output_format": "json"
+}

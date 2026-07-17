@@ -118,6 +118,10 @@ The validator loads `implementation/workflow-state/manifests/<TASK-ID>.json`, va
 
 The returned response must comply with `docs/ai-engineering-framework/90-agent-response-contract.md`, including changed files, commands, tests, known limitations, Definition of Done evidence and readiness recommendation.
 
+### Environment Preflight
+
+When enabled, Environment Preflight runs `scripts/validate-environment-preflight.py <TASK-ID>` before implementation starts. The validator must emit both human-readable and machine-readable output, report PASS/FAIL for repository state, Git state, lifecycle state, task state, dependency completion, scope manifest state, scope isolation, required tools and repository structure, and set `CAN_CONTINUE` to `YES` only when every required check passes.
+
 Implementation evidence must be persisted at:
 
 ```text

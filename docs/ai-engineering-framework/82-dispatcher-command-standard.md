@@ -81,6 +81,14 @@ scripts/validate-task-scope.py <TASK-ID>
 
 The validator loads the canonical manifest, validates it against the V2-001 manifest standard and checks Git changed paths across staged, unstaged, tracked, untracked, renamed and deleted states. Dispatcher integrations may consume its JSON output as route evidence once a later integration task enables automatic enforcement. Unrelated dirty worktree blocking is controlled by an explicit caller policy flag.
 
+Environment Preflight consumes the same manifest context through:
+
+```text
+scripts/validate-environment-preflight.py <TASK-ID>
+```
+
+It must report machine-readable and human-readable output, return PASS/FAIL for every required check, and report `CAN_CONTINUE` as `YES` only when repository state, Git state, lifecycle state, task state, dependency completion, scope manifest state, scope isolation, required tools and repository structure all pass.
+
 ## Guardrails
 
 - Do not route `execute` unless the task is READY or an authorized CHANGES_REQUIRED correction pass.

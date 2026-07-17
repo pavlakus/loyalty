@@ -1,0 +1,4 @@
+{
+  "scenario": "dependency_failure",
+  "output_format": "json"
+}
