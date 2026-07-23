@@ -1,0 +1,28 @@
+{
+  "name": "@loyalty-platform/fcr",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Framework Canonical Registry runtime foundation.",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "fcr": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "typecheck:tests": "tsc -p tsconfig.type-tests.json --noEmit",
+    "test": "node --import tsx --test test/*.test.ts"
+  },
+  "dependencies": {
+    "ajv": "8.20.0",
+    "ajv-formats": "3.0.1",
+    "canonicalize": "2.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "26.1.0",
+    "tsx": "4.20.3",
+    "typescript": "5.8.3"
+  }
+}
