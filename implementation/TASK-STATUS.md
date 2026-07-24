@@ -14,7 +14,7 @@
 | LP-000001 | Approve Platform Foundation ADR Set | DONE | `agent/architect/LP-000001-foundation-adrs` | APPROVED | Merged into `development` at `0b937ab`; ADR-001 through ADR-008 are Accepted |
 | LP-000002 | Initialize Monorepo and Workspace | DONE | `agent/devops/LP-000002-monorepo-workspace` | APPROVED; QA APPROVED; Security APPROVED | Historical merge `b675c1a`; post-merge validation passed |
 | LP-000003 | Configure TypeScript Strict Mode | DONE | `development` | APPROVED; QA APPROVED; Security APPROVED | Historical merge `cb48ceb9c872eeb0b71074dbcf137e443b2c8fb1`; post-merge validation passed after FCR baseline restoration at `bb7a916d9b490d7ef920203295b2f5ccf5cb529e`. |
-| LP-000004 | Configure Linting, Formatting and Module Boundaries | READY_FOR_REVIEW | `agent/devops/LP-000004-lint-format-boundaries` | Pending independent review | Implementation evidence and required validation are complete. |
+| LP-000004 | Configure Linting, Formatting and Module Boundaries | QA | `agent/devops/LP-000004-lint-format-boundaries` | REVIEW APPROVED | Independent review approved; QA validation is next. |
 | LP-000005 | Create Backend Service Bootstrap | BLOCKED |  | Pending | Blocked by repository foundation |
 
 ## AI Engineering Framework
