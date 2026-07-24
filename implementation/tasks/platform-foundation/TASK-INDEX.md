@@ -11,7 +11,7 @@
 | LP-000001 | Approve Platform Foundation ADR Set | Solution Architect Agent | None | DONE |
 | LP-000002 | Initialize Monorepo and Workspace | DevOps Agent | LP-000001; accepted ADR-001, ADR-002, ADR-003, ADR-008 | DONE |
 | LP-000003 | Configure TypeScript Strict Mode and Shared Compiler Settings | DevOps Agent | LP-000002 | DONE |
-| LP-000004 | Configure Linting, Formatting and Module Boundaries | DevOps Agent | LP-000002; LP-000003 | READY_FOR_MERGE |
+| LP-000004 | Configure Linting, Formatting and Module Boundaries | DevOps Agent | LP-000002; LP-000003 | DONE |
 | LP-000005 | Create Backend Service Bootstrap | Backend Developer Agent | LP-000002; LP-000003; LP-000004 | BLOCKED |
 | LP-000006 | Implement Environment Configuration Validation | Backend Developer Agent | LP-000005 | BLOCKED |
 | LP-000007 | Create Standard API Response and Error Contracts | Backend Developer Agent | LP-000005 | BLOCKED |
@@ -35,4 +35,4 @@
 - LP-000002 current state: `DONE` through historical merge `b675c1ad33705cce8dbbf0211ec71b8aacb2b842`; post-merge validation passed and evidence is recorded in `post-merge.md`.
 - LP-000002 correction evidence: root `lint` and `typecheck` scripts, Turborepo `lint` and `typecheck` tasks, and package/app/service placeholder `lint` and `typecheck` scripts were added; required validation passed and the task is `DONE`.
 - LP-000003 current state: `DONE` after historical merge `cb48ceb9c872eeb0b71074dbcf137e443b2c8fb1` and successful post-merge validation after FCR baseline restoration at `bb7a916d9b490d7ef920203295b2f5ccf5cb529e`.
-- LP-000004 current state: `READY_FOR_MERGE`; independent review and QA approved with no P0/P1 findings.
+- LP-000004 current state: `DONE`; merged into `development` at `9710b9e85d856c3bdf1b3774e01a0a0caf003d56`; post-merge validation passed with no P0/P1 findings.
