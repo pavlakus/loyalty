@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://loyalty.example/fcr/schema/evidence-record/1.0.0",
+  "title": "evidence-record",
+  "type": "object",
+  "$comment": "Independently persisted; schema_version required.",
+  "required": [
+    "schema_version",
+    "evidence_id",
+    "task_id",
+    "phase",
+    "canonical_path",
+    "repository_id",
+    "repository_revision",
+    "created_at",
+    "agent_role",
+    "lifecycle_state",
+    "implementation_status",
+    "release_status",
+    "response_contract_status",
+    "validation_result",
+    "validator_name",
+    "validator_version",
+    "input_revision",
+    "content_hash",
+    "stale",
+    "contradictory",
+    "valid",
+    "findings",
+    "metadata"
+  ],
+  "properties": {
+    "schema_version": {
+      "$ref": "./common-types.schema.json#/$defs/SchemaVersion"
+    },
+    "evidence_id": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "task_id": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "phase": {
+      "$ref": "./common-types.schema.json#/$defs/Phase"
+    },
+    "canonical_path": {
+      "$ref": "./common-types.schema.json#/$defs/Path"
+    },
+    "repository_id": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "repository_revision": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "commit": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "created_at": {
+      "$ref": "./common-types.schema.json#/$defs/Timestamp"
+    },
+    "agent_role": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "lifecycle_state": {
+      "$ref": "./common-types.schema.json#/$defs/LifecycleState"
+    },
+    "implementation_status": {
+      "$ref": "./common-types.schema.json#/$defs/ImplementationStatus"
+    },
+    "release_status": {
+      "$ref": "./common-types.schema.json#/$defs/ReleaseStatus"
+    },
+    "response_contract_status": {
+      "$ref": "./common-types.schema.json#/$defs/ResponseContractStatus"
+    },
+    "validation_result": {
+      "$ref": "./common-types.schema.json#/$defs/ResponseResult"
+    },
+    "validator_name": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "validator_version": {
+      "$ref": "./common-types.schema.json#/$defs/SchemaVersion"
+    },
+    "input_revision": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "content_hash": {
+      "$ref": "./common-types.schema.json#/$defs/Sha256"
+    },
+    "supersedes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "superseded_by": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "stale": {
+      "type": "boolean"
+    },
+    "contradictory": {
+      "type": "boolean"
+    },
+    "valid": {
+      "type": "boolean"
+    },
+    "findings": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

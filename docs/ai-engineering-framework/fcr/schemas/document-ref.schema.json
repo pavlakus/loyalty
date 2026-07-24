@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://loyalty.example/fcr/schema/document-ref/1.0.0",
+  "title": "document-ref",
+  "type": "object",
+  "$comment": "Embedded; schema_version is inherited or forbidden as defined by the consuming record.",
+  "required": [
+    "document_id",
+    "repository_path",
+    "required",
+    "read_only",
+    "content_hash",
+    "source_revision"
+  ],
+  "properties": {
+    "document_id": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "repository_path": {
+      "$ref": "./common-types.schema.json#/$defs/Path"
+    },
+    "required": {
+      "type": "boolean"
+    },
+    "read_only": {
+      "type": "boolean"
+    },
+    "content_hash": {
+      "$ref": "./common-types.schema.json#/$defs/Sha256"
+    },
+    "source_revision": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    }
+  },
+  "additionalProperties": false
+}

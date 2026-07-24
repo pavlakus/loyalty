@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://loyalty.example/fcr/schema/evidence-evaluation-algorithm/1.0.0",
+  "title": "evidence-evaluation-algorithm",
+  "type": "object",
+  "$comment": "Independently persisted; schema_version required.",
+  "required": ["schema_version", "algorithm_id", "steps", "relationship_algorithms", "version_constraint_syntax", "maximum_age_rule", "supersession_rule", "contradiction_rule"],
+  "properties": {
+    "schema_version": {"$ref": "./common-types.schema.json#/$defs/SchemaVersion"},
+    "algorithm_id": {"const": "EVIDENCE_EVALUATION_V1"},
+    "steps": {"type": "array", "items": {"type": "object", "required": ["step_id", "order", "input_fields", "comparison_operation", "success_continuation", "failure_outcome", "error_code", "retryable", "stop"], "properties": {"step_id": {"type": "string", "minLength": 1}, "order": {"type": "integer", "minimum": 1}, "input_fields": {"type": "array", "items": {"type": "string", "minLength": 1}, "minItems": 1}, "comparison_operation": {"type": "string", "minLength": 1}, "success_continuation": {"type": "string", "minLength": 1}, "failure_outcome": {"type": "string", "minLength": 1}, "error_code": {"type": "string", "minLength": 1}, "retryable": {"type": "boolean"}, "stop": {"type": "boolean"}}, "additionalProperties": false}, "minItems": 20},
+    "relationship_algorithms": {"type": "object", "additionalProperties": false, "required": ["EXACT_REPOSITORY", "ALLOWED_EXTERNAL_REPOSITORY", "EXACT_COMMIT", "ANCESTOR_COMMIT", "DESCENDANT_COMMIT", "RELEASE_COMMIT", "EXACT_REGISTRY_REVISION", "AT_LEAST_REGISTRY_REVISION"], "properties": {"EXACT_REPOSITORY": {"const": "repository_id equality"}, "ALLOWED_EXTERNAL_REPOSITORY": {"const": "predicate allowlist membership"}, "EXACT_COMMIT": {"const": "commit equality"}, "ANCESTOR_COMMIT": {"const": "git merge-base equals evidence commit"}, "DESCENDANT_COMMIT": {"const": "git merge-base equals predicate commit"}, "RELEASE_COMMIT": {"const": "release commit equality"}, "EXACT_REGISTRY_REVISION": {"const": "revision equality"}, "AT_LEAST_REGISTRY_REVISION": {"const": "monotonic revision sequence >= required"}}},
+    "version_constraint_syntax": {"const": "EXACT:MAJOR.MINOR.PATCH|MAJOR:INTEGER"},
+    "maximum_age_rule": {"const": "created_at plus maximum_age_seconds must be >= evaluation time; null disables age expiry"},
+    "supersession_rule": {"const": "follow supersedes chain; any superseded record cannot satisfy"},
+    "contradiction_rule": {"const": "any contradictory record is invalid and cannot satisfy"}
+  },
+  "additionalProperties": false
+}

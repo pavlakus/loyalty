@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://loyalty.example/fcr/schema/module-dependency-ref/1.0.0",
+  "title": "module-dependency-ref",
+  "type": "object",
+  "$comment": "Embedded; schema_version is inherited or forbidden as defined by the consuming record.",
+  "required": [
+    "module_id",
+    "required_state"
+  ],
+  "properties": {
+    "module_id": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "required_state": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    }
+  },
+  "additionalProperties": false
+}

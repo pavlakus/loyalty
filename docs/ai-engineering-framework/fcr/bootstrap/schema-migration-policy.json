@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0.0",
+  "major_change": "BLOCK_AND_MIGRATE",
+  "minor_change": "OPTIONAL_FIELDS_ONLY",
+  "patch_change": "NON_SEMANTIC_ONLY",
+  "failed_migration": "KEEP_PRIOR_REVISION_CURRENT",
+  "dual_write": "PROHIBITED"
+}

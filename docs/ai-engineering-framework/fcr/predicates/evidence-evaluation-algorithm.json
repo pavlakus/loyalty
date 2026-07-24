@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0.0",
+  "algorithm_id": "EVIDENCE_EVALUATION_V1",
+  "steps": [
+    {"step_id":"SCHEMA_VALIDATION","order":1,"input_fields":["schema_version"],"comparison_operation":"supported schema version and JSON Schema validation","success_continuation":"PREDICATE_LOOKUP","failure_outcome":"INVALID","error_code":"REGISTRY_EVIDENCE_INVALID","retryable":false,"stop":true},
+    {"step_id":"PREDICATE_LOOKUP","order":2,"input_fields":["predicate_id"],"comparison_operation":"exact predicate ID lookup","success_continuation":"EVIDENCE_TYPE","failure_outcome":"MISSING","error_code":"REGISTRY_EVIDENCE_MISSING","retryable":false,"stop":true},
+    {"step_id":"EVIDENCE_TYPE","order":3,"input_fields":["evidence_type"],"comparison_operation":"exact equality","success_continuation":"EVIDENCE_PHASE","failure_outcome":"INVALID","error_code":"REGISTRY_EVIDENCE_INVALID","retryable":false,"stop":true},
+    {"step_id":"EVIDENCE_PHASE","order":4,"input_fields":["phase"],"comparison_operation":"exact equality","success_continuation":"AGENT_ROLE","failure_outcome":"INVALID","error_code":"REGISTRY_EVIDENCE_INVALID","retryable":false,"stop":true},
+    {"step_id":"AGENT_ROLE","order":5,"input_fields":["agent_role"],"comparison_operation":"exact equality","success_continuation":"REPOSITORY","failure_outcome":"INVALID","error_code":"REGISTRY_EVIDENCE_INVALID","retryable":false,"stop":true},
+    {"step_id":"REPOSITORY","order":6,"input_fields":["repository_id"],"comparison_operation":"relationship algorithm","success_continuation":"REVISION","failure_outcome":"INVALID","error_code":"REGISTRY_EVIDENCE_INVALID","retryable":false,"stop":true},
+    {"step_id":"REVISION","order":7,"input_fields":["repository_revision"],"comparison_operation":"relationship algorithm","success_continuation":"COMMIT","failure_outcome":"STALE","error_code":"REGISTRY_EVIDENCE_STALE","retryable":true,"stop":true},
+    {"step_id":"COMMIT","order":8,"input_fields":["commit"],"comparison_operation":"relationship algorithm","success_continuation":"REGISTRY_REVISION","failure_outcome":"INVALID","error_code":"REGISTRY_EVIDENCE_INVALID","retryable":false,"stop":true},
+    {"step_id":"REGISTRY_REVISION","order":9,"input_fields":["input_revision"],"comparison_operation":"exact or minimum relationship","success_continuation":"VALIDATOR","failure_outcome":"STALE","error_code":"REGISTRY_EVIDENCE_STALE","retryable":true,"stop":true},
+    {"step_id":"VALIDATOR","order":10,"input_fields":["validator_name","validator_version"],"comparison_operation":"exact identity and supported version constraint","success_continuation":"INPUT_REVISION","failure_outcome":"INVALID","error_code":"REGISTRY_EVIDENCE_INVALID","retryable":false,"stop":true},
+    {"step_id":"INPUT_REVISION","order":11,"input_fields":["input_revision"],"comparison_operation":"exact relationship","success_continuation":"CONTENT_HASH","failure_outcome":"STALE","error_code":"REGISTRY_EVIDENCE_STALE","retryable":true,"stop":true},
+    {"step_id":"CONTENT_HASH","order":12,"input_fields":["content_hash"],"comparison_operation":"SHA256 equality","success_continuation":"AGE","failure_outcome":"INVALID","error_code":"REGISTRY_EVIDENCE_INVALID","retryable":false,"stop":true},
+    {"step_id":"AGE","order":13,"input_fields":["created_at","maximum_age_seconds"],"comparison_operation":"numeric age comparison","success_continuation":"SUPERSESSION","failure_outcome":"STALE","error_code":"REGISTRY_EVIDENCE_STALE","retryable":true,"stop":true},
+    {"step_id":"SUPERSESSION","order":14,"input_fields":["superseded_by"],"comparison_operation":"follow chain; reject any superseded record","success_continuation":"CONTRADICTION","failure_outcome":"INVALID","error_code":"REGISTRY_EVIDENCE_INVALID","retryable":false,"stop":true},
+    {"step_id":"CONTRADICTION","order":15,"input_fields":["contradictory"],"comparison_operation":"must be false","success_continuation":"INVALIDATION","failure_outcome":"INVALID","error_code":"REGISTRY_EVIDENCE_CONTRADICTORY","retryable":false,"stop":true},
+    {"step_id":"INVALIDATION","order":16,"input_fields":["valid","stale"],"comparison_operation":"valid=true requires stale=false and valid=true","success_continuation":"STATUS","failure_outcome":"INVALID","error_code":"REGISTRY_EVIDENCE_INVALID","retryable":false,"stop":true},
+    {"step_id":"STATUS","order":17,"input_fields":["response_contract_status","lifecycle_state","implementation_status","release_status"],"comparison_operation":"closed predicate membership","success_continuation":"PREDICATE_FIELDS","failure_outcome":"INVALID","error_code":"REGISTRY_EVIDENCE_INVALID","retryable":false,"stop":true},
+    {"step_id":"PREDICATE_FIELDS","order":18,"input_fields":["required_validation_result"],"comparison_operation":"exact equality","success_continuation":"DEPENDENCY_RELATIONSHIP","failure_outcome":"INVALID","error_code":"REGISTRY_EVIDENCE_INVALID","retryable":false,"stop":true},
+    {"step_id":"DEPENDENCY_RELATIONSHIP","order":19,"input_fields":["task_id","dependency_id"],"comparison_operation":"exact association","success_continuation":"FINAL","failure_outcome":"INVALID","error_code":"REGISTRY_DEPENDENCY_INCOMPLETE","retryable":false,"stop":true},
+    {"step_id":"FINAL","order":20,"input_fields":["valid"],"comparison_operation":"all prior steps succeeded","success_continuation":"SATISFIED","failure_outcome":"INVALID","error_code":"REGISTRY_EVIDENCE_INVALID","retryable":false,"stop":true}
+  ],
+  "relationship_algorithms": {"EXACT_REPOSITORY":"repository_id equality","ALLOWED_EXTERNAL_REPOSITORY":"predicate allowlist membership","EXACT_COMMIT":"commit equality","ANCESTOR_COMMIT":"git merge-base equals evidence commit","DESCENDANT_COMMIT":"git merge-base equals predicate commit","RELEASE_COMMIT":"release commit equality","EXACT_REGISTRY_REVISION":"revision equality","AT_LEAST_REGISTRY_REVISION":"monotonic revision sequence >= required"},
+  "version_constraint_syntax":"EXACT:MAJOR.MINOR.PATCH|MAJOR:INTEGER",
+  "maximum_age_rule":"created_at plus maximum_age_seconds must be >= evaluation time; null disables age expiry",
+  "supersession_rule":"follow supersedes chain; any superseded record cannot satisfy",
+  "contradiction_rule":"any contradictory record is invalid and cannot satisfy"
+}

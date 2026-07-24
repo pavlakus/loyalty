@@ -1,0 +1,126 @@
+{
+  "schema_version": "1.0.0",
+  "state_domain": "release-status",
+  "transitions": [
+    {
+      "schema_version": "1.0.0",
+      "transition_id": "RELEASE_NOT_READY",
+      "source_state": "NOT_RELEASED",
+      "target_state": "READY_FOR_RELEASE",
+      "authorized_actor": "RELEASE_AGENT",
+      "required_preconditions": [
+        "docs/ai-engineering-framework/fcr/transitions/precondition-record-current.json"
+      ],
+      "required_evidence_predicates": [],
+      "allowed_error_codes": [
+        "REGISTRY_VALIDATION_FAILED"
+      ],
+      "invalid_transition_error": "REGISTRY_INVALID_TRANSITION",
+      "retryable": false,
+      "recovery_transition": null,
+      "terminal": false,
+      "side_effects": [
+        "append immutable state transition record"
+      ],
+      "emitted_evidence": [
+        "transition/RELEASE_NOT_READY.json"
+      ]
+    },
+    {
+      "schema_version": "1.0.0",
+      "transition_id": "RELEASE_READY_RELEASED",
+      "source_state": "READY_FOR_RELEASE",
+      "target_state": "RELEASED",
+      "authorized_actor": "RELEASE_AGENT",
+      "required_preconditions": [
+        "docs/ai-engineering-framework/fcr/transitions/precondition-record-current.json"
+      ],
+      "required_evidence_predicates": [],
+      "allowed_error_codes": [
+        "REGISTRY_VALIDATION_FAILED"
+      ],
+      "invalid_transition_error": "REGISTRY_INVALID_TRANSITION",
+      "retryable": false,
+      "recovery_transition": null,
+      "terminal": true,
+      "side_effects": [
+        "append immutable state transition record"
+      ],
+      "emitted_evidence": [
+        "transition/RELEASE_READY_RELEASED.json"
+      ]
+    },
+    {
+      "schema_version": "1.0.0",
+      "transition_id": "RELEASE_READY_BLOCKED",
+      "source_state": "READY_FOR_RELEASE",
+      "target_state": "BLOCKED",
+      "authorized_actor": "RELEASE_AGENT",
+      "required_preconditions": [
+        "docs/ai-engineering-framework/fcr/transitions/precondition-record-current.json"
+      ],
+      "required_evidence_predicates": [],
+      "allowed_error_codes": [
+        "REGISTRY_VALIDATION_FAILED"
+      ],
+      "invalid_transition_error": "REGISTRY_INVALID_TRANSITION",
+      "retryable": false,
+      "recovery_transition": null,
+      "terminal": false,
+      "side_effects": [
+        "append immutable state transition record"
+      ],
+      "emitted_evidence": [
+        "transition/RELEASE_READY_BLOCKED.json"
+      ]
+    },
+    {
+      "schema_version": "1.0.0",
+      "transition_id": "RELEASE_BLOCKED_READY",
+      "source_state": "BLOCKED",
+      "target_state": "READY_FOR_RELEASE",
+      "authorized_actor": "RELEASE_AGENT",
+      "required_preconditions": [
+        "docs/ai-engineering-framework/fcr/transitions/precondition-record-current.json"
+      ],
+      "required_evidence_predicates": [],
+      "allowed_error_codes": [
+        "REGISTRY_VALIDATION_FAILED"
+      ],
+      "invalid_transition_error": "REGISTRY_INVALID_TRANSITION",
+      "retryable": false,
+      "recovery_transition": null,
+      "terminal": false,
+      "side_effects": [
+        "append immutable state transition record"
+      ],
+      "emitted_evidence": [
+        "transition/RELEASE_BLOCKED_READY.json"
+      ]
+    },
+    {
+      "schema_version": "1.0.0",
+      "transition_id": "RELEASE_RELEASED_ROLLED_BACK",
+      "source_state": "RELEASED",
+      "target_state": "ROLLED_BACK",
+      "authorized_actor": "RELEASE_AGENT",
+      "required_preconditions": [
+        "docs/ai-engineering-framework/fcr/transitions/precondition-record-current.json"
+      ],
+      "required_evidence_predicates": [],
+      "allowed_error_codes": [
+        "REGISTRY_VALIDATION_FAILED"
+      ],
+      "invalid_transition_error": "REGISTRY_INVALID_TRANSITION",
+      "retryable": false,
+      "recovery_transition": null,
+      "terminal": true,
+      "side_effects": [
+        "append immutable state transition record"
+      ],
+      "emitted_evidence": [
+        "transition/RELEASE_RELEASED_ROLLED_BACK.json"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,257 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://loyalty.example/fcr/schema/common-types/1.0.0",
+  "title": "FCR Common Types",
+  "type": "object",
+  "$comment": "Definitions only; schema_version is forbidden on scalar definitions and explicitly inherited/required by consuming schemas.",
+  "required": [],
+  "properties": {},
+  "additionalProperties": false,
+  "$defs": {
+    "SchemaVersion": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "Id": {
+      "type": "string",
+      "pattern": "^[A-Z0-9][A-Z0-9._-]{0,127}$"
+    },
+    "Path": {
+      "type": "string",
+      "pattern": "^(?!/)(?!.*(?:^|/)\\.{1,2}(?:/|$))(?!.*//)[^\\u0000]+$"
+    },
+    "SchemaPath": {
+      "type": "string",
+      "pattern": "^(?!/)(?!.*(?:^|/)\\.{1,2}(?:/|$))(?!.*//)(?![A-Za-z][A-Za-z0-9+.-]*://)[^\\u0000]+\\.schema\\.json$"
+    },
+    "Actor": {
+      "type": "string",
+      "enum": [
+        "FCR",
+        "TASK_PREPARATION_AGENT",
+        "DISPATCHER",
+        "LIFECYCLE_ACTOR",
+        "REVIEW_AGENT",
+        "QA_AGENT",
+        "SECURITY_AGENT",
+        "RELEASE_AGENT",
+        "DEVOPS_AGENT",
+        "RECOVERY_CONTROLLER",
+        "AUTHORIZED_ADMINISTRATOR"
+      ]
+    },
+    "Sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "Timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "Z$"
+    },
+    "LifecycleState": {
+      "type": "string",
+      "enum": [
+        "DRAFT",
+        "TASK_PREPARATION",
+        "READY",
+        "ASSIGNED",
+        "IN_PROGRESS",
+        "IMPLEMENTATION_COMPLETE",
+        "READY_FOR_REVIEW",
+        "REVIEW",
+        "CHANGES_REQUIRED",
+        "QA",
+        "READY_FOR_MERGE",
+        "MERGED",
+        "DONE",
+        "BLOCKED",
+        "CANCELLED",
+        "DEFERRED"
+      ]
+    },
+    "ImplementationStatus": {
+      "type": "string",
+      "enum": [
+        "NOT_STARTED",
+        "IN_PROGRESS",
+        "COMPLETE",
+        "BLOCKED",
+        "CANCELLED"
+      ]
+    },
+    "ReleaseStatus": {
+      "type": "string",
+      "enum": [
+        "NOT_RELEASED",
+        "READY_FOR_RELEASE",
+        "RELEASED",
+        "ROLLED_BACK",
+        "BLOCKED"
+      ]
+    },
+    "RecordState": {
+      "type": "string",
+      "enum": [
+        "ACTIVE",
+        "SUPERSEDED",
+        "DEPRECATED",
+        "RETIRED"
+      ]
+    },
+    "TransactionState": {
+      "type": "string",
+      "enum": [
+        "NEW",
+        "STAGED",
+        "VALIDATING",
+        "VALIDATED",
+        "COMMITTING",
+        "COMMITTED_PENDING_LIFECYCLE",
+        "COMMITTED",
+        "RECOVERING",
+        "ROLLED_BACK",
+        "FAILED"
+      ]
+    },
+    "LockState": {
+      "type": "string",
+      "enum": [
+        "ACQUIRED",
+        "RELEASED",
+        "EXPIRED",
+        "TAKEOVER_PENDING"
+      ]
+    },
+    "ProjectionState": {
+      "type": "string",
+      "enum": [
+        "PENDING",
+        "MATERIALIZED",
+        "VERIFIED",
+        "DRIFTED",
+        "FAILED"
+      ]
+    },
+    "ResponseContractStatus": {
+      "type": "string",
+      "enum": [
+        "TASK PREPARATION BLOCKED",
+        "READY FOR IMPLEMENTATION",
+        "IMPLEMENTATION BLOCKED",
+        "READY FOR REVIEW",
+        "APPROVED",
+        "APPROVED WITH FOLLOW-UP",
+        "CHANGES REQUIRED",
+        "BLOCKED",
+        "QA APPROVED",
+        "QA APPROVED WITH FOLLOW-UP",
+        "QA CHANGES REQUIRED",
+        "QA BLOCKED",
+        "READY FOR MERGE",
+        "MERGED",
+        "DONE"
+      ]
+    },
+    "DocumentType": {
+      "type": "string",
+      "enum": [
+        "AGENTS",
+        "TASK_RECORD",
+        "MIP",
+        "ADR",
+        "DOMAIN_MODEL",
+        "MODULE_DEFINITION",
+        "ENGINEERING_STANDARD",
+        "CONTRACT",
+        "MANIFEST",
+        "EVIDENCE",
+        "PROJECTION"
+      ]
+    },
+    "Phase": {
+      "type": "string",
+      "enum": [
+        "PREPARE",
+        "IMPLEMENT",
+        "REVIEW",
+        "QA",
+        "SECURITY",
+        "RELEASE",
+        "PREFLIGHT",
+        "SCOPE_VALIDATION"
+      ]
+    },
+    "Classification": {
+      "type": "string",
+      "enum": [
+        "REQUIRED_EDITABLE",
+        "REQUIRED_READ_ONLY",
+        "OPTIONAL_EDITABLE",
+        "OPTIONAL_READ_ONLY",
+        "EXCLUDED",
+        "FORBIDDEN"
+      ]
+    },
+    "AccessClass": {
+      "type": "string",
+      "enum": [
+        "EDITABLE",
+        "READ_ONLY",
+        "FORBIDDEN"
+      ]
+    },
+    "AuthorityClass": {
+      "type": "string",
+      "enum": [
+        "REGISTRY_CANONICAL",
+        "LIFECYCLE_AUTHORITY",
+        "LOCKED_PRODUCT_DECISIONS",
+        "FINAL_BLUEPRINT",
+        "ACCEPTED_ADR",
+        "DOMAIN_MODEL",
+        "API_CONTRACT",
+        "EVENT_CONTRACT",
+        "SECURITY_CONTRACT",
+        "MODULE_DEFINITION",
+        "APPROVED_MIP",
+        "TASK_DOCUMENT",
+        "SCOPE_MANIFEST",
+        "RELEASE_EVIDENCE",
+        "SECURITY_EVIDENCE",
+        "QA_EVIDENCE",
+        "REVIEW_EVIDENCE",
+        "IMPLEMENTATION_EVIDENCE",
+        "ENGINEERING_STANDARD",
+        "GENERATED_PROJECTION",
+        "APPROVED_HUMAN_REQUEST",
+        "UNAPPROVED_HUMAN_REQUEST",
+        "LEGACY_SOURCE"
+      ]
+    },
+    "DependencyType": {
+      "type": "string",
+      "enum": [
+        "TASK",
+        "MODULE",
+        "CONTRACT",
+        "DOCUMENT",
+        "EVIDENCE",
+        "ADR",
+        "EXTERNAL_PREREQUISITE"
+      ]
+    },
+    "ResponseResult": {
+      "type": "string",
+      "enum": [
+        "PASS",
+        "FAIL",
+        "ERROR"
+      ]
+    },
+    "NonEmpty": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

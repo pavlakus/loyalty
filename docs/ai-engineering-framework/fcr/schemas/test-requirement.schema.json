@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://loyalty.example/fcr/schema/test-requirement/1.0.0",
+  "title": "test-requirement",
+  "type": "object",
+  "$comment": "Embedded; schema_version is inherited or forbidden as defined by the consuming record.",
+  "required": [
+    "test_id",
+    "test_type",
+    "command",
+    "required"
+  ],
+  "properties": {
+    "test_id": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "test_type": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "command": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "required": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false
+}

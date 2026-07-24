@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0.0",
+  "precedence": [
+    "EXACT_PATH",
+    "MOST_SPECIFIC_DIRECTORY",
+    "MOST_SPECIFIC_GLOB",
+    "MODULE_DEFAULT",
+    "GLOBAL_DEFAULT"
+  ],
+  "tie_breakers": [
+    "priority_desc",
+    "literal_segments_desc",
+    "literal_characters_desc",
+    "rule_id_asc"
+  ],
+  "unowned": "FORBIDDEN",
+  "protected": "FORBIDDEN"
+}

@@ -1,0 +1,174 @@
+{
+  "schema_version": "1.0.0",
+  "state_domain": "projection",
+  "transitions": [
+    {
+      "schema_version": "1.0.0",
+      "transition_id": "PROJECTION_PENDING_MATERIALIZED",
+      "source_state": "PENDING",
+      "target_state": "MATERIALIZED",
+      "authorized_actor": "FCR",
+      "required_preconditions": [
+        "docs/ai-engineering-framework/fcr/transitions/precondition-record-current.json"
+      ],
+      "required_evidence_predicates": [],
+      "allowed_error_codes": [
+        "REGISTRY_VALIDATION_FAILED"
+      ],
+      "invalid_transition_error": "REGISTRY_INVALID_TRANSITION",
+      "retryable": false,
+      "recovery_transition": null,
+      "terminal": false,
+      "side_effects": [
+        "append immutable state transition record"
+      ],
+      "emitted_evidence": [
+        "transition/PROJECTION_PENDING_MATERIALIZED.json"
+      ]
+    },
+    {
+      "schema_version": "1.0.0",
+      "transition_id": "PROJECTION_MATERIALIZED_VERIFIED",
+      "source_state": "MATERIALIZED",
+      "target_state": "VERIFIED",
+      "authorized_actor": "FCR",
+      "required_preconditions": [
+        "docs/ai-engineering-framework/fcr/transitions/precondition-record-current.json"
+      ],
+      "required_evidence_predicates": [],
+      "allowed_error_codes": [
+        "REGISTRY_VALIDATION_FAILED"
+      ],
+      "invalid_transition_error": "REGISTRY_INVALID_TRANSITION",
+      "retryable": false,
+      "recovery_transition": null,
+      "terminal": true,
+      "side_effects": [
+        "append immutable state transition record"
+      ],
+      "emitted_evidence": [
+        "transition/PROJECTION_MATERIALIZED_VERIFIED.json"
+      ]
+    },
+    {
+      "schema_version": "1.0.0",
+      "transition_id": "PROJECTION_MATERIALIZED_DRIFTED",
+      "source_state": "MATERIALIZED",
+      "target_state": "DRIFTED",
+      "authorized_actor": "FCR",
+      "required_preconditions": [
+        "docs/ai-engineering-framework/fcr/transitions/precondition-record-current.json"
+      ],
+      "required_evidence_predicates": [],
+      "allowed_error_codes": [
+        "REGISTRY_VALIDATION_FAILED"
+      ],
+      "invalid_transition_error": "REGISTRY_INVALID_TRANSITION",
+      "retryable": false,
+      "recovery_transition": null,
+      "terminal": false,
+      "side_effects": [
+        "append immutable state transition record"
+      ],
+      "emitted_evidence": [
+        "transition/PROJECTION_MATERIALIZED_DRIFTED.json"
+      ]
+    },
+    {
+      "schema_version": "1.0.0",
+      "transition_id": "PROJECTION_DRIFTED_MATERIALIZED",
+      "source_state": "DRIFTED",
+      "target_state": "MATERIALIZED",
+      "authorized_actor": "FCR",
+      "required_preconditions": [
+        "docs/ai-engineering-framework/fcr/transitions/precondition-record-current.json"
+      ],
+      "required_evidence_predicates": [],
+      "allowed_error_codes": [
+        "REGISTRY_VALIDATION_FAILED"
+      ],
+      "invalid_transition_error": "REGISTRY_INVALID_TRANSITION",
+      "retryable": false,
+      "recovery_transition": null,
+      "terminal": false,
+      "side_effects": [
+        "append immutable state transition record"
+      ],
+      "emitted_evidence": [
+        "transition/PROJECTION_DRIFTED_MATERIALIZED.json"
+      ]
+    },
+    {
+      "schema_version": "1.0.0",
+      "transition_id": "PROJECTION_PENDING_FAILED",
+      "source_state": "PENDING",
+      "target_state": "FAILED",
+      "authorized_actor": "FCR",
+      "required_preconditions": [
+        "docs/ai-engineering-framework/fcr/transitions/precondition-record-current.json"
+      ],
+      "required_evidence_predicates": [],
+      "allowed_error_codes": [
+        "REGISTRY_VALIDATION_FAILED"
+      ],
+      "invalid_transition_error": "REGISTRY_INVALID_TRANSITION",
+      "retryable": false,
+      "recovery_transition": null,
+      "terminal": true,
+      "side_effects": [
+        "append immutable state transition record"
+      ],
+      "emitted_evidence": [
+        "transition/PROJECTION_PENDING_FAILED.json"
+      ]
+    },
+    {
+      "schema_version": "1.0.0",
+      "transition_id": "PROJECTION_MATERIALIZED_FAILED",
+      "source_state": "MATERIALIZED",
+      "target_state": "FAILED",
+      "authorized_actor": "FCR",
+      "required_preconditions": [
+        "docs/ai-engineering-framework/fcr/transitions/precondition-record-current.json"
+      ],
+      "required_evidence_predicates": [],
+      "allowed_error_codes": [
+        "REGISTRY_VALIDATION_FAILED"
+      ],
+      "invalid_transition_error": "REGISTRY_INVALID_TRANSITION",
+      "retryable": false,
+      "recovery_transition": null,
+      "terminal": true,
+      "side_effects": [
+        "append immutable state transition record"
+      ],
+      "emitted_evidence": [
+        "transition/PROJECTION_MATERIALIZED_FAILED.json"
+      ]
+    },
+    {
+      "schema_version": "1.0.0",
+      "transition_id": "PROJECTION_DRIFTED_FAILED",
+      "source_state": "DRIFTED",
+      "target_state": "FAILED",
+      "authorized_actor": "FCR",
+      "required_preconditions": [
+        "docs/ai-engineering-framework/fcr/transitions/precondition-record-current.json"
+      ],
+      "required_evidence_predicates": [],
+      "allowed_error_codes": [
+        "REGISTRY_VALIDATION_FAILED"
+      ],
+      "invalid_transition_error": "REGISTRY_INVALID_TRANSITION",
+      "retryable": false,
+      "recovery_transition": null,
+      "terminal": true,
+      "side_effects": [
+        "append immutable state transition record"
+      ],
+      "emitted_evidence": [
+        "transition/PROJECTION_DRIFTED_FAILED.json"
+      ]
+    }
+  ]
+}

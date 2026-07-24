@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://loyalty.example/fcr/schema/bootstrap-record/1.0.0",
+  "title": "FCR bootstrap record",
+  "type": "object",
+  "$comment": "Independently persisted; schema_version is required. Branches identify activation, field mapping, rollback, legacy parsing and migration policy records.",
+  "required": ["schema_version"],
+  "properties": {
+    "schema_version": { "$ref": "./common-types.schema.json#/$defs/SchemaVersion" },
+    "contract_id": { "$ref": "./common-types.schema.json#/$defs/Id" },
+    "dual_read": { "type": "string", "const": "READ_ONLY_VERIFICATION_ONLY" },
+    "dual_write": { "type": "string", "const": "PROHIBITED" },
+    "phases": { "type": "array", "items": { "$ref": "./common-types.schema.json#/$defs/NonEmpty" }, "uniqueItems": true, "minItems": 1 },
+    "fields": { "type": "object", "patternProperties": { "^[a-z][a-z0-9_.]*$": { "$ref": "#/$defs/FieldMapping" } }, "minProperties": 1, "additionalProperties": false },
+    "trigger": { "$ref": "./common-types.schema.json#/$defs/Id" },
+    "authorized_actor": { "$ref": "./common-types.schema.json#/$defs/NonEmpty" },
+    "restores": { "$ref": "#/$defs/StringList" },
+    "destructive_delete": { "type": "boolean", "const": false },
+    "rules": { "type": "array", "items": { "$ref": "#/$defs/LegacyRule" }, "minItems": 1 },
+    "major_change": { "$ref": "./common-types.schema.json#/$defs/NonEmpty" },
+    "minor_change": { "$ref": "./common-types.schema.json#/$defs/NonEmpty" },
+    "patch_change": { "$ref": "./common-types.schema.json#/$defs/NonEmpty" },
+    "failed_migration": { "$ref": "./common-types.schema.json#/$defs/NonEmpty" }
+  },
+  "oneOf": [
+    { "required": ["contract_id", "dual_read", "dual_write", "phases"] },
+    { "required": ["fields"] },
+    { "required": ["contract_id", "trigger", "authorized_actor", "restores", "destructive_delete"] },
+    { "required": ["rules"] },
+    { "required": ["major_change", "minor_change", "patch_change", "failed_migration", "dual_write"] }
+  ],
+  "$defs": {
+    "StringList": { "type": "array", "items": { "$ref": "./common-types.schema.json#/$defs/NonEmpty" }, "uniqueItems": true, "minItems": 1 },
+    "FieldMapping": { "type": "object", "required": ["target_field", "primary_source", "ordered_fallback_sources", "source_field_or_pointer", "normalization_rule", "missing_behavior", "conflict_behavior", "provenance_rule", "source_revision_rule", "content_hash_rule", "blocking_error"], "properties": { "target_field": { "$ref": "./common-types.schema.json#/$defs/NonEmpty" }, "primary_source": { "$ref": "./common-types.schema.json#/$defs/NonEmpty" }, "ordered_fallback_sources": { "$ref": "#/$defs/StringList" }, "source_field_or_pointer": { "$ref": "./common-types.schema.json#/$defs/NonEmpty" }, "normalization_rule": { "$ref": "./common-types.schema.json#/$defs/NonEmpty" }, "missing_behavior": { "$ref": "./common-types.schema.json#/$defs/NonEmpty" }, "conflict_behavior": { "$ref": "./common-types.schema.json#/$defs/NonEmpty" }, "provenance_rule": { "$ref": "./common-types.schema.json#/$defs/NonEmpty" }, "source_revision_rule": { "$ref": "./common-types.schema.json#/$defs/NonEmpty" }, "content_hash_rule": { "$ref": "./common-types.schema.json#/$defs/NonEmpty" }, "blocking_error": { "$ref": "./common-types.schema.json#/$defs/Id" }, "default": {} }, "additionalProperties": false },
+    "LegacyRule": { "type": "object", "required": ["original_task_id", "parsed_namespace", "parsed_sequence", "legacy_suffix", "malformed_behavior", "duplicate_behavior"], "properties": { "original_task_id": { "$ref": "./common-types.schema.json#/$defs/Id" }, "parsed_namespace": { "$ref": "./common-types.schema.json#/$defs/Id" }, "parsed_sequence": { "type": "integer", "minimum": 0 }, "legacy_suffix": { "type": ["string", "null"] }, "malformed_behavior": { "$ref": "./common-types.schema.json#/$defs/NonEmpty" }, "duplicate_behavior": { "$ref": "./common-types.schema.json#/$defs/NonEmpty" } }, "additionalProperties": false }
+  },
+  "additionalProperties": false
+}

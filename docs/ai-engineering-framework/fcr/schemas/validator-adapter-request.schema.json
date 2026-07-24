@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://loyalty.example/fcr/schema/validator-adapter-request/1.0.0",
+  "title": "validator-adapter-request",
+  "type": "object",
+  "$comment": "Independently persisted; schema_version required.",
+  "required": [
+    "schema_version",
+    "request_id",
+    "adapter_id",
+    "adapter_version",
+    "snapshot",
+    "task_id",
+    "registry_revision",
+    "timeout_seconds",
+    "command",
+    "arguments",
+    "environment",
+    "cwd",
+    "expected_exit_codes",
+    "evidence_path"
+  ],
+  "properties": {
+    "schema_version": {
+      "$ref": "./common-types.schema.json#/$defs/SchemaVersion"
+    },
+    "request_id": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "adapter_id": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "adapter_version": {
+      "$ref": "./common-types.schema.json#/$defs/SchemaVersion"
+    },
+    "snapshot": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "task_id": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "registry_revision": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "timeout_seconds": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "command": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "arguments": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "environment": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "cwd": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "expected_exit_codes": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "evidence_path": {
+      "$ref": "./common-types.schema.json#/$defs/Path"
+    }
+  },
+  "additionalProperties": false
+}

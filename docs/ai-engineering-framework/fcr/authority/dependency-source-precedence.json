@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0.0",
+  "ordered_sources": [
+    "ACCEPTED_ADR",
+    "APPROVED_HUMAN_REQUEST",
+    "APPROVED_MIP",
+    "TASK_DOCUMENT",
+    "REGISTRY_CANONICAL",
+    "MODULE_DEFINITION",
+    "API_CONTRACT",
+    "EVENT_CONTRACT",
+    "SECURITY_CONTRACT",
+    "TASK_DOCUMENT",
+    "IMPLEMENTATION_EVIDENCE",
+    "REVIEW_EVIDENCE",
+    "QA_EVIDENCE",
+    "SECURITY_EVIDENCE",
+    "RELEASE_EVIDENCE",
+    "UNAPPROVED_HUMAN_REQUEST"
+  ],
+  "unapproved_human_request": "NON_AUTHORITATIVE_BLOCKING",
+  "approved_human_request_authorization": "APPROVED_HUMAN_REQUEST plus authorization evidence"
+}

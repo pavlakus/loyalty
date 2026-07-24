@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0.0",
+  "contract_id": "FCR_BOOTSTRAP_ROLLBACK",
+  "trigger": "REGISTRY_BOOTSTRAP_ROLLBACK_REQUIRED",
+  "authorized_actor": "HUMAN_MAINTAINER",
+  "restores": [
+    "TASK_INDEX",
+    "TASK_STATUS",
+    "TASK_DOCUMENTS",
+    "MANIFESTS",
+    "PROJECTIONS",
+    "AUTHORITY_MODE",
+    "TRANSACTIONS",
+    "LOCKS",
+    "EVIDENCE"
+  ],
+  "destructive_delete": false
+}

@@ -1,0 +1,593 @@
+{
+  "schema_version": "1.0.0",
+  "fields": {
+    "task_id": {
+      "target_field": "task_id",
+      "primary_source": "REGISTRY_CANONICAL",
+      "ordered_fallback_sources": [
+        "TASK_INDEX",
+        "TASK_STATUS",
+        "TASK_DOCUMENT",
+        "APPROVED_MIP",
+        "MODULE_DEFINITION",
+        "SCOPE_MANIFEST",
+        "LEGACY_SOURCE"
+      ],
+      "source_field_or_pointer": "/task_id",
+      "normalization_rule": "UTF8_NFC_TRIM_AND_CANONICAL_CASE",
+      "missing_behavior": "BLOCK",
+      "conflict_behavior": "BLOCK_WITH_SOURCE_AUTHORITY_CONFLICT",
+      "provenance_rule": "RECORD_AUTHORITY_CLASS_SOURCE_PATH_SOURCE_REVISION_CONTENT_HASH",
+      "source_revision_rule": "REQUIRE_SOURCE_REVISION",
+      "content_hash_rule": "RFC8785_SHA256",
+      "blocking_error": "REGISTRY_SOURCE_AUTHORITY_CONFLICT"
+    },
+    "legacy_identity.original_task_id": {
+      "target_field": "legacy_identity.original_task_id",
+      "primary_source": "REGISTRY_CANONICAL",
+      "ordered_fallback_sources": [
+        "TASK_INDEX",
+        "TASK_STATUS",
+        "TASK_DOCUMENT",
+        "APPROVED_MIP",
+        "MODULE_DEFINITION",
+        "SCOPE_MANIFEST",
+        "LEGACY_SOURCE"
+      ],
+      "source_field_or_pointer": "/legacy_identity/original_task_id",
+      "normalization_rule": "UTF8_NFC_TRIM_AND_CANONICAL_CASE",
+      "missing_behavior": "BLOCK",
+      "conflict_behavior": "BLOCK_WITH_SOURCE_AUTHORITY_CONFLICT",
+      "provenance_rule": "RECORD_AUTHORITY_CLASS_SOURCE_PATH_SOURCE_REVISION_CONTENT_HASH",
+      "source_revision_rule": "REQUIRE_SOURCE_REVISION",
+      "content_hash_rule": "RFC8785_SHA256",
+      "blocking_error": "REGISTRY_SOURCE_AUTHORITY_CONFLICT"
+    },
+    "namespace": {
+      "target_field": "namespace",
+      "primary_source": "REGISTRY_CANONICAL",
+      "ordered_fallback_sources": [
+        "TASK_INDEX",
+        "TASK_STATUS",
+        "TASK_DOCUMENT",
+        "APPROVED_MIP",
+        "MODULE_DEFINITION",
+        "SCOPE_MANIFEST",
+        "LEGACY_SOURCE"
+      ],
+      "source_field_or_pointer": "/namespace",
+      "normalization_rule": "UTF8_NFC_TRIM_AND_CANONICAL_CASE",
+      "missing_behavior": "BLOCK",
+      "conflict_behavior": "BLOCK_WITH_SOURCE_AUTHORITY_CONFLICT",
+      "provenance_rule": "RECORD_AUTHORITY_CLASS_SOURCE_PATH_SOURCE_REVISION_CONTENT_HASH",
+      "source_revision_rule": "REQUIRE_SOURCE_REVISION",
+      "content_hash_rule": "RFC8785_SHA256",
+      "blocking_error": "REGISTRY_SOURCE_AUTHORITY_CONFLICT"
+    },
+    "task_sequence": {
+      "target_field": "task_sequence",
+      "primary_source": "REGISTRY_CANONICAL",
+      "ordered_fallback_sources": [
+        "TASK_INDEX",
+        "TASK_STATUS",
+        "TASK_DOCUMENT",
+        "APPROVED_MIP",
+        "MODULE_DEFINITION",
+        "SCOPE_MANIFEST",
+        "LEGACY_SOURCE"
+      ],
+      "source_field_or_pointer": "/task_sequence",
+      "normalization_rule": "UTF8_NFC_TRIM_AND_CANONICAL_CASE",
+      "missing_behavior": "BLOCK",
+      "conflict_behavior": "BLOCK_WITH_SOURCE_AUTHORITY_CONFLICT",
+      "provenance_rule": "RECORD_AUTHORITY_CLASS_SOURCE_PATH_SOURCE_REVISION_CONTENT_HASH",
+      "source_revision_rule": "REQUIRE_SOURCE_REVISION",
+      "content_hash_rule": "RFC8785_SHA256",
+      "blocking_error": "REGISTRY_SOURCE_AUTHORITY_CONFLICT"
+    },
+    "legacy_identity.legacy_suffix": {
+      "target_field": "legacy_identity.legacy_suffix",
+      "primary_source": "REGISTRY_CANONICAL",
+      "ordered_fallback_sources": [
+        "TASK_INDEX",
+        "TASK_STATUS",
+        "TASK_DOCUMENT",
+        "APPROVED_MIP",
+        "MODULE_DEFINITION",
+        "SCOPE_MANIFEST",
+        "LEGACY_SOURCE"
+      ],
+      "source_field_or_pointer": "/legacy_identity/legacy_suffix",
+      "normalization_rule": "UTF8_NFC_TRIM_AND_CANONICAL_CASE",
+      "missing_behavior": "BLOCK",
+      "conflict_behavior": "BLOCK_WITH_SOURCE_AUTHORITY_CONFLICT",
+      "provenance_rule": "RECORD_AUTHORITY_CLASS_SOURCE_PATH_SOURCE_REVISION_CONTENT_HASH",
+      "source_revision_rule": "REQUIRE_SOURCE_REVISION",
+      "content_hash_rule": "RFC8785_SHA256",
+      "blocking_error": "REGISTRY_SOURCE_AUTHORITY_CONFLICT"
+    },
+    "title": {
+      "target_field": "title",
+      "primary_source": "REGISTRY_CANONICAL",
+      "ordered_fallback_sources": [
+        "TASK_INDEX",
+        "TASK_STATUS",
+        "TASK_DOCUMENT",
+        "APPROVED_MIP",
+        "MODULE_DEFINITION",
+        "SCOPE_MANIFEST",
+        "LEGACY_SOURCE"
+      ],
+      "source_field_or_pointer": "/title",
+      "normalization_rule": "UTF8_NFC_TRIM_AND_CANONICAL_CASE",
+      "missing_behavior": "BLOCK",
+      "conflict_behavior": "BLOCK_WITH_SOURCE_AUTHORITY_CONFLICT",
+      "provenance_rule": "RECORD_AUTHORITY_CLASS_SOURCE_PATH_SOURCE_REVISION_CONTENT_HASH",
+      "source_revision_rule": "REQUIRE_SOURCE_REVISION",
+      "content_hash_rule": "RFC8785_SHA256",
+      "blocking_error": "REGISTRY_SOURCE_AUTHORITY_CONFLICT"
+    },
+    "slug": {
+      "target_field": "slug",
+      "primary_source": "REGISTRY_CANONICAL",
+      "ordered_fallback_sources": [
+        "TASK_INDEX",
+        "TASK_STATUS",
+        "TASK_DOCUMENT",
+        "APPROVED_MIP",
+        "MODULE_DEFINITION",
+        "SCOPE_MANIFEST",
+        "LEGACY_SOURCE"
+      ],
+      "source_field_or_pointer": "/slug",
+      "normalization_rule": "UTF8_NFC_TRIM_AND_CANONICAL_CASE",
+      "missing_behavior": "BLOCK",
+      "conflict_behavior": "BLOCK_WITH_SOURCE_AUTHORITY_CONFLICT",
+      "provenance_rule": "RECORD_AUTHORITY_CLASS_SOURCE_PATH_SOURCE_REVISION_CONTENT_HASH",
+      "source_revision_rule": "REQUIRE_SOURCE_REVISION",
+      "content_hash_rule": "RFC8785_SHA256",
+      "blocking_error": "REGISTRY_SOURCE_AUTHORITY_CONFLICT"
+    },
+    "category": {
+      "target_field": "category",
+      "primary_source": "REGISTRY_CANONICAL",
+      "ordered_fallback_sources": [
+        "TASK_INDEX",
+        "TASK_STATUS",
+        "TASK_DOCUMENT",
+        "APPROVED_MIP",
+        "MODULE_DEFINITION",
+        "SCOPE_MANIFEST",
+        "LEGACY_SOURCE"
+      ],
+      "source_field_or_pointer": "/category",
+      "normalization_rule": "UTF8_NFC_TRIM_AND_CANONICAL_CASE",
+      "missing_behavior": "BLOCK",
+      "conflict_behavior": "BLOCK_WITH_SOURCE_AUTHORITY_CONFLICT",
+      "provenance_rule": "RECORD_AUTHORITY_CLASS_SOURCE_PATH_SOURCE_REVISION_CONTENT_HASH",
+      "source_revision_rule": "REQUIRE_SOURCE_REVISION",
+      "content_hash_rule": "RFC8785_SHA256",
+      "blocking_error": "REGISTRY_SOURCE_AUTHORITY_CONFLICT"
+    },
+    "module_id": {
+      "target_field": "module_id",
+      "primary_source": "REGISTRY_CANONICAL",
+      "ordered_fallback_sources": [
+        "TASK_INDEX",
+        "TASK_STATUS",
+        "TASK_DOCUMENT",
+        "APPROVED_MIP",
+        "MODULE_DEFINITION",
+        "SCOPE_MANIFEST",
+        "LEGACY_SOURCE"
+      ],
+      "source_field_or_pointer": "/module_id",
+      "normalization_rule": "UTF8_NFC_TRIM_AND_CANONICAL_CASE",
+      "missing_behavior": "BLOCK",
+      "conflict_behavior": "BLOCK_WITH_SOURCE_AUTHORITY_CONFLICT",
+      "provenance_rule": "RECORD_AUTHORITY_CLASS_SOURCE_PATH_SOURCE_REVISION_CONTENT_HASH",
+      "source_revision_rule": "REQUIRE_SOURCE_REVISION",
+      "content_hash_rule": "RFC8785_SHA256",
+      "blocking_error": "REGISTRY_SOURCE_AUTHORITY_CONFLICT"
+    },
+    "owner_type": {
+      "target_field": "owner_type",
+      "primary_source": "REGISTRY_CANONICAL",
+      "ordered_fallback_sources": [
+        "TASK_INDEX",
+        "TASK_STATUS",
+        "TASK_DOCUMENT",
+        "APPROVED_MIP",
+        "MODULE_DEFINITION",
+        "SCOPE_MANIFEST",
+        "LEGACY_SOURCE"
+      ],
+      "source_field_or_pointer": "/owner_type",
+      "normalization_rule": "UTF8_NFC_TRIM_AND_CANONICAL_CASE",
+      "missing_behavior": "BLOCK",
+      "conflict_behavior": "BLOCK_WITH_SOURCE_AUTHORITY_CONFLICT",
+      "provenance_rule": "RECORD_AUTHORITY_CLASS_SOURCE_PATH_SOURCE_REVISION_CONTENT_HASH",
+      "source_revision_rule": "REQUIRE_SOURCE_REVISION",
+      "content_hash_rule": "RFC8785_SHA256",
+      "blocking_error": "REGISTRY_SOURCE_AUTHORITY_CONFLICT"
+    },
+    "owner_id": {
+      "target_field": "owner_id",
+      "primary_source": "REGISTRY_CANONICAL",
+      "ordered_fallback_sources": [
+        "TASK_INDEX",
+        "TASK_STATUS",
+        "TASK_DOCUMENT",
+        "APPROVED_MIP",
+        "MODULE_DEFINITION",
+        "SCOPE_MANIFEST",
+        "LEGACY_SOURCE"
+      ],
+      "source_field_or_pointer": "/owner_id",
+      "normalization_rule": "UTF8_NFC_TRIM_AND_CANONICAL_CASE",
+      "missing_behavior": "BLOCK",
+      "conflict_behavior": "BLOCK_WITH_SOURCE_AUTHORITY_CONFLICT",
+      "provenance_rule": "RECORD_AUTHORITY_CLASS_SOURCE_PATH_SOURCE_REVISION_CONTENT_HASH",
+      "source_revision_rule": "REQUIRE_SOURCE_REVISION",
+      "content_hash_rule": "RFC8785_SHA256",
+      "blocking_error": "REGISTRY_SOURCE_AUTHORITY_CONFLICT"
+    },
+    "assigned_role": {
+      "target_field": "assigned_role",
+      "primary_source": "REGISTRY_CANONICAL",
+      "ordered_fallback_sources": [
+        "TASK_INDEX",
+        "TASK_STATUS",
+        "TASK_DOCUMENT",
+        "APPROVED_MIP",
+        "MODULE_DEFINITION",
+        "SCOPE_MANIFEST",
+        "LEGACY_SOURCE"
+      ],
+      "source_field_or_pointer": "/assigned_role",
+      "normalization_rule": "UTF8_NFC_TRIM_AND_CANONICAL_CASE",
+      "missing_behavior": "BLOCK",
+      "conflict_behavior": "BLOCK_WITH_SOURCE_AUTHORITY_CONFLICT",
+      "provenance_rule": "RECORD_AUTHORITY_CLASS_SOURCE_PATH_SOURCE_REVISION_CONTENT_HASH",
+      "source_revision_rule": "REQUIRE_SOURCE_REVISION",
+      "content_hash_rule": "RFC8785_SHA256",
+      "blocking_error": "REGISTRY_SOURCE_AUTHORITY_CONFLICT"
+    },
+    "lifecycle_state": {
+      "target_field": "lifecycle_state",
+      "primary_source": "REGISTRY_CANONICAL",
+      "ordered_fallback_sources": [
+        "TASK_INDEX",
+        "TASK_STATUS",
+        "TASK_DOCUMENT",
+        "APPROVED_MIP",
+        "MODULE_DEFINITION",
+        "SCOPE_MANIFEST",
+        "LEGACY_SOURCE"
+      ],
+      "source_field_or_pointer": "/lifecycle_state",
+      "normalization_rule": "UTF8_NFC_TRIM_AND_CANONICAL_CASE",
+      "missing_behavior": "BLOCK",
+      "conflict_behavior": "BLOCK_WITH_SOURCE_AUTHORITY_CONFLICT",
+      "provenance_rule": "RECORD_AUTHORITY_CLASS_SOURCE_PATH_SOURCE_REVISION_CONTENT_HASH",
+      "source_revision_rule": "REQUIRE_SOURCE_REVISION",
+      "content_hash_rule": "RFC8785_SHA256",
+      "blocking_error": "REGISTRY_SOURCE_AUTHORITY_CONFLICT"
+    },
+    "implementation_status": {
+      "target_field": "implementation_status",
+      "primary_source": "REGISTRY_CANONICAL",
+      "ordered_fallback_sources": [
+        "TASK_INDEX",
+        "TASK_STATUS",
+        "TASK_DOCUMENT",
+        "APPROVED_MIP",
+        "MODULE_DEFINITION",
+        "SCOPE_MANIFEST",
+        "LEGACY_SOURCE"
+      ],
+      "source_field_or_pointer": "/implementation_status",
+      "normalization_rule": "UTF8_NFC_TRIM_AND_CANONICAL_CASE",
+      "missing_behavior": "BLOCK",
+      "conflict_behavior": "BLOCK_WITH_SOURCE_AUTHORITY_CONFLICT",
+      "provenance_rule": "RECORD_AUTHORITY_CLASS_SOURCE_PATH_SOURCE_REVISION_CONTENT_HASH",
+      "source_revision_rule": "REQUIRE_SOURCE_REVISION",
+      "content_hash_rule": "RFC8785_SHA256",
+      "blocking_error": "REGISTRY_SOURCE_AUTHORITY_CONFLICT"
+    },
+    "release_status": {
+      "target_field": "release_status",
+      "primary_source": "REGISTRY_CANONICAL",
+      "ordered_fallback_sources": [
+        "TASK_INDEX",
+        "TASK_STATUS",
+        "TASK_DOCUMENT",
+        "APPROVED_MIP",
+        "MODULE_DEFINITION",
+        "SCOPE_MANIFEST",
+        "LEGACY_SOURCE"
+      ],
+      "source_field_or_pointer": "/release_status",
+      "normalization_rule": "UTF8_NFC_TRIM_AND_CANONICAL_CASE",
+      "missing_behavior": "BLOCK",
+      "conflict_behavior": "BLOCK_WITH_SOURCE_AUTHORITY_CONFLICT",
+      "provenance_rule": "RECORD_AUTHORITY_CLASS_SOURCE_PATH_SOURCE_REVISION_CONTENT_HASH",
+      "source_revision_rule": "REQUIRE_SOURCE_REVISION",
+      "content_hash_rule": "RFC8785_SHA256",
+      "blocking_error": "REGISTRY_SOURCE_AUTHORITY_CONFLICT"
+    },
+    "scope.editable_paths": {
+      "target_field": "scope.editable_paths",
+      "primary_source": "REGISTRY_CANONICAL",
+      "ordered_fallback_sources": [
+        "TASK_INDEX",
+        "TASK_STATUS",
+        "TASK_DOCUMENT",
+        "APPROVED_MIP",
+        "MODULE_DEFINITION",
+        "SCOPE_MANIFEST",
+        "LEGACY_SOURCE"
+      ],
+      "source_field_or_pointer": "/scope/editable_paths",
+      "normalization_rule": "UTF8_NFC_TRIM_AND_CANONICAL_CASE",
+      "missing_behavior": "BLOCK",
+      "conflict_behavior": "BLOCK_WITH_SOURCE_AUTHORITY_CONFLICT",
+      "provenance_rule": "RECORD_AUTHORITY_CLASS_SOURCE_PATH_SOURCE_REVISION_CONTENT_HASH",
+      "source_revision_rule": "REQUIRE_SOURCE_REVISION",
+      "content_hash_rule": "RFC8785_SHA256",
+      "blocking_error": "REGISTRY_SOURCE_AUTHORITY_CONFLICT"
+    },
+    "scope.read_only_paths": {
+      "target_field": "scope.read_only_paths",
+      "primary_source": "REGISTRY_CANONICAL",
+      "ordered_fallback_sources": [
+        "TASK_INDEX",
+        "TASK_STATUS",
+        "TASK_DOCUMENT",
+        "APPROVED_MIP",
+        "MODULE_DEFINITION",
+        "SCOPE_MANIFEST",
+        "LEGACY_SOURCE"
+      ],
+      "source_field_or_pointer": "/scope/read_only_paths",
+      "normalization_rule": "UTF8_NFC_TRIM_AND_CANONICAL_CASE",
+      "missing_behavior": "BLOCK",
+      "conflict_behavior": "BLOCK_WITH_SOURCE_AUTHORITY_CONFLICT",
+      "provenance_rule": "RECORD_AUTHORITY_CLASS_SOURCE_PATH_SOURCE_REVISION_CONTENT_HASH",
+      "source_revision_rule": "REQUIRE_SOURCE_REVISION",
+      "content_hash_rule": "RFC8785_SHA256",
+      "blocking_error": "REGISTRY_SOURCE_AUTHORITY_CONFLICT"
+    },
+    "scope.forbidden_paths": {
+      "target_field": "scope.forbidden_paths",
+      "primary_source": "REGISTRY_CANONICAL",
+      "ordered_fallback_sources": [
+        "TASK_INDEX",
+        "TASK_STATUS",
+        "TASK_DOCUMENT",
+        "APPROVED_MIP",
+        "MODULE_DEFINITION",
+        "SCOPE_MANIFEST",
+        "LEGACY_SOURCE"
+      ],
+      "source_field_or_pointer": "/scope/forbidden_paths",
+      "normalization_rule": "UTF8_NFC_TRIM_AND_CANONICAL_CASE",
+      "missing_behavior": "BLOCK",
+      "conflict_behavior": "BLOCK_WITH_SOURCE_AUTHORITY_CONFLICT",
+      "provenance_rule": "RECORD_AUTHORITY_CLASS_SOURCE_PATH_SOURCE_REVISION_CONTENT_HASH",
+      "source_revision_rule": "REQUIRE_SOURCE_REVISION",
+      "content_hash_rule": "RFC8785_SHA256",
+      "blocking_error": "REGISTRY_SOURCE_AUTHORITY_CONFLICT"
+    },
+    "dependencies": {
+      "target_field": "dependencies",
+      "primary_source": "REGISTRY_CANONICAL",
+      "ordered_fallback_sources": [
+        "TASK_INDEX",
+        "TASK_STATUS",
+        "TASK_DOCUMENT",
+        "APPROVED_MIP",
+        "MODULE_DEFINITION",
+        "SCOPE_MANIFEST",
+        "LEGACY_SOURCE"
+      ],
+      "source_field_or_pointer": "/dependencies",
+      "normalization_rule": "UTF8_NFC_TRIM_AND_CANONICAL_CASE",
+      "missing_behavior": "BLOCK",
+      "conflict_behavior": "BLOCK_WITH_SOURCE_AUTHORITY_CONFLICT",
+      "provenance_rule": "RECORD_AUTHORITY_CLASS_SOURCE_PATH_SOURCE_REVISION_CONTENT_HASH",
+      "source_revision_rule": "REQUIRE_SOURCE_REVISION",
+      "content_hash_rule": "RFC8785_SHA256",
+      "blocking_error": "REGISTRY_SOURCE_AUTHORITY_CONFLICT"
+    },
+    "required_documents": {
+      "target_field": "required_documents",
+      "primary_source": "REGISTRY_CANONICAL",
+      "ordered_fallback_sources": [
+        "TASK_INDEX",
+        "TASK_STATUS",
+        "TASK_DOCUMENT",
+        "APPROVED_MIP",
+        "MODULE_DEFINITION",
+        "SCOPE_MANIFEST",
+        "LEGACY_SOURCE"
+      ],
+      "source_field_or_pointer": "/required_documents",
+      "normalization_rule": "UTF8_NFC_TRIM_AND_CANONICAL_CASE",
+      "missing_behavior": "BLOCK",
+      "conflict_behavior": "BLOCK_WITH_SOURCE_AUTHORITY_CONFLICT",
+      "provenance_rule": "RECORD_AUTHORITY_CLASS_SOURCE_PATH_SOURCE_REVISION_CONTENT_HASH",
+      "source_revision_rule": "REQUIRE_SOURCE_REVISION",
+      "content_hash_rule": "RFC8785_SHA256",
+      "blocking_error": "REGISTRY_SOURCE_AUTHORITY_CONFLICT"
+    },
+    "required_evidence": {
+      "target_field": "required_evidence",
+      "primary_source": "REGISTRY_CANONICAL",
+      "ordered_fallback_sources": [
+        "TASK_INDEX",
+        "TASK_STATUS",
+        "TASK_DOCUMENT",
+        "APPROVED_MIP",
+        "MODULE_DEFINITION",
+        "SCOPE_MANIFEST",
+        "LEGACY_SOURCE"
+      ],
+      "source_field_or_pointer": "/required_evidence",
+      "normalization_rule": "UTF8_NFC_TRIM_AND_CANONICAL_CASE",
+      "missing_behavior": "BLOCK",
+      "conflict_behavior": "BLOCK_WITH_SOURCE_AUTHORITY_CONFLICT",
+      "provenance_rule": "RECORD_AUTHORITY_CLASS_SOURCE_PATH_SOURCE_REVISION_CONTENT_HASH",
+      "source_revision_rule": "REQUIRE_SOURCE_REVISION",
+      "content_hash_rule": "RFC8785_SHA256",
+      "blocking_error": "REGISTRY_SOURCE_AUTHORITY_CONFLICT"
+    },
+    "acceptance_criteria": {
+      "target_field": "acceptance_criteria",
+      "primary_source": "REGISTRY_CANONICAL",
+      "ordered_fallback_sources": [
+        "TASK_INDEX",
+        "TASK_STATUS",
+        "TASK_DOCUMENT",
+        "APPROVED_MIP",
+        "MODULE_DEFINITION",
+        "SCOPE_MANIFEST",
+        "LEGACY_SOURCE"
+      ],
+      "source_field_or_pointer": "/acceptance_criteria",
+      "normalization_rule": "UTF8_NFC_TRIM_AND_CANONICAL_CASE",
+      "missing_behavior": "BLOCK",
+      "conflict_behavior": "BLOCK_WITH_SOURCE_AUTHORITY_CONFLICT",
+      "provenance_rule": "RECORD_AUTHORITY_CLASS_SOURCE_PATH_SOURCE_REVISION_CONTENT_HASH",
+      "source_revision_rule": "REQUIRE_SOURCE_REVISION",
+      "content_hash_rule": "RFC8785_SHA256",
+      "blocking_error": "REGISTRY_SOURCE_AUTHORITY_CONFLICT"
+    },
+    "mandatory_tests": {
+      "target_field": "mandatory_tests",
+      "primary_source": "REGISTRY_CANONICAL",
+      "ordered_fallback_sources": [
+        "TASK_INDEX",
+        "TASK_STATUS",
+        "TASK_DOCUMENT",
+        "APPROVED_MIP",
+        "MODULE_DEFINITION",
+        "SCOPE_MANIFEST",
+        "LEGACY_SOURCE"
+      ],
+      "source_field_or_pointer": "/mandatory_tests",
+      "normalization_rule": "UTF8_NFC_TRIM_AND_CANONICAL_CASE",
+      "missing_behavior": "BLOCK",
+      "conflict_behavior": "BLOCK_WITH_SOURCE_AUTHORITY_CONFLICT",
+      "provenance_rule": "RECORD_AUTHORITY_CLASS_SOURCE_PATH_SOURCE_REVISION_CONTENT_HASH",
+      "source_revision_rule": "REQUIRE_SOURCE_REVISION",
+      "content_hash_rule": "RFC8785_SHA256",
+      "blocking_error": "REGISTRY_SOURCE_AUTHORITY_CONFLICT"
+    },
+    "contracts": {
+      "target_field": "contracts",
+      "primary_source": "REGISTRY_CANONICAL",
+      "ordered_fallback_sources": [
+        "TASK_INDEX",
+        "TASK_STATUS",
+        "TASK_DOCUMENT",
+        "APPROVED_MIP",
+        "MODULE_DEFINITION",
+        "SCOPE_MANIFEST",
+        "LEGACY_SOURCE"
+      ],
+      "source_field_or_pointer": "/contracts",
+      "normalization_rule": "UTF8_NFC_TRIM_AND_CANONICAL_CASE",
+      "missing_behavior": "BLOCK",
+      "conflict_behavior": "BLOCK_WITH_SOURCE_AUTHORITY_CONFLICT",
+      "provenance_rule": "RECORD_AUTHORITY_CLASS_SOURCE_PATH_SOURCE_REVISION_CONTENT_HASH",
+      "source_revision_rule": "REQUIRE_SOURCE_REVISION",
+      "content_hash_rule": "RFC8785_SHA256",
+      "blocking_error": "REGISTRY_SOURCE_AUTHORITY_CONFLICT"
+    },
+    "task_metadata": {
+      "target_field": "task_metadata",
+      "primary_source": "REGISTRY_CANONICAL",
+      "ordered_fallback_sources": [
+        "TASK_INDEX",
+        "TASK_STATUS",
+        "TASK_DOCUMENT",
+        "APPROVED_MIP",
+        "MODULE_DEFINITION",
+        "SCOPE_MANIFEST",
+        "LEGACY_SOURCE"
+      ],
+      "source_field_or_pointer": "/task_metadata",
+      "normalization_rule": "UTF8_NFC_TRIM_AND_CANONICAL_CASE",
+      "missing_behavior": "BLOCK",
+      "conflict_behavior": "BLOCK_WITH_SOURCE_AUTHORITY_CONFLICT",
+      "provenance_rule": "RECORD_AUTHORITY_CLASS_SOURCE_PATH_SOURCE_REVISION_CONTENT_HASH",
+      "source_revision_rule": "REQUIRE_SOURCE_REVISION",
+      "content_hash_rule": "RFC8785_SHA256",
+      "blocking_error": "REGISTRY_SOURCE_AUTHORITY_CONFLICT"
+    },
+    "repository_id": {
+      "target_field": "repository_id",
+      "primary_source": "REGISTRY_CANONICAL",
+      "ordered_fallback_sources": [
+        "TASK_INDEX",
+        "TASK_STATUS",
+        "TASK_DOCUMENT",
+        "APPROVED_MIP",
+        "MODULE_DEFINITION",
+        "SCOPE_MANIFEST",
+        "LEGACY_SOURCE"
+      ],
+      "source_field_or_pointer": "/repository_id",
+      "normalization_rule": "UTF8_NFC_TRIM_AND_CANONICAL_CASE",
+      "missing_behavior": "BLOCK",
+      "conflict_behavior": "BLOCK_WITH_SOURCE_AUTHORITY_CONFLICT",
+      "provenance_rule": "RECORD_AUTHORITY_CLASS_SOURCE_PATH_SOURCE_REVISION_CONTENT_HASH",
+      "source_revision_rule": "REQUIRE_SOURCE_REVISION",
+      "content_hash_rule": "RFC8785_SHA256",
+      "blocking_error": "REGISTRY_SOURCE_AUTHORITY_CONFLICT"
+    },
+    "repository_revision": {
+      "target_field": "repository_revision",
+      "primary_source": "REGISTRY_CANONICAL",
+      "ordered_fallback_sources": [
+        "TASK_INDEX",
+        "TASK_STATUS",
+        "TASK_DOCUMENT",
+        "APPROVED_MIP",
+        "MODULE_DEFINITION",
+        "SCOPE_MANIFEST",
+        "LEGACY_SOURCE"
+      ],
+      "source_field_or_pointer": "/repository_revision",
+      "normalization_rule": "UTF8_NFC_TRIM_AND_CANONICAL_CASE",
+      "missing_behavior": "BLOCK",
+      "conflict_behavior": "BLOCK_WITH_SOURCE_AUTHORITY_CONFLICT",
+      "provenance_rule": "RECORD_AUTHORITY_CLASS_SOURCE_PATH_SOURCE_REVISION_CONTENT_HASH",
+      "source_revision_rule": "REQUIRE_SOURCE_REVISION",
+      "content_hash_rule": "RFC8785_SHA256",
+      "blocking_error": "REGISTRY_SOURCE_AUTHORITY_CONFLICT"
+    },
+    "record_revision": {
+      "target_field": "record_revision",
+      "primary_source": "REGISTRY_CANONICAL",
+      "ordered_fallback_sources": [
+        "TASK_INDEX",
+        "TASK_STATUS",
+        "TASK_DOCUMENT",
+        "APPROVED_MIP",
+        "MODULE_DEFINITION",
+        "SCOPE_MANIFEST",
+        "LEGACY_SOURCE"
+      ],
+      "source_field_or_pointer": "/record_revision",
+      "normalization_rule": "UTF8_NFC_TRIM_AND_CANONICAL_CASE",
+      "missing_behavior": "BLOCK",
+      "conflict_behavior": "BLOCK_WITH_SOURCE_AUTHORITY_CONFLICT",
+      "provenance_rule": "RECORD_AUTHORITY_CLASS_SOURCE_PATH_SOURCE_REVISION_CONTENT_HASH",
+      "source_revision_rule": "REQUIRE_SOURCE_REVISION",
+      "content_hash_rule": "RFC8785_SHA256",
+      "blocking_error": "REGISTRY_SOURCE_AUTHORITY_CONFLICT"
+    }
+  }
+}

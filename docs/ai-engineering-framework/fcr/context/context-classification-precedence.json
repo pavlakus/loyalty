@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "precedence": [
+    "FORBIDDEN",
+    "EXCLUDED",
+    "REQUIRED_READ_ONLY",
+    "REQUIRED_EDITABLE",
+    "OPTIONAL_READ_ONLY",
+    "OPTIONAL_EDITABLE"
+  ],
+  "disjoint": true
+}

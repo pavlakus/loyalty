@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://loyalty.example/fcr/contract-schema/fcr-v2-003-validate-preflight-request/1.0.0",
+  "title": "fcr-v2-003-validate-preflight request",
+  "type": "object",
+  "$comment": "Standalone Draft 2020-12 operation schema.",
+  "required": [
+    "schema_version",
+    "request_id",
+    "operation_id",
+    "correlation_id",
+    "repository_revision",
+    "registry_revision",
+    "idempotency_key",
+    "payload"
+  ],
+  "properties": {
+    "schema_version": {
+      "$ref": "../schemas/common-types.schema.json#/$defs/SchemaVersion"
+    },
+    "request_id": {
+      "$ref": "../schemas/common-types.schema.json#/$defs/Id"
+    },
+    "operation_id": {
+      "$ref": "../schemas/common-types.schema.json#/$defs/Id"
+    },
+    "correlation_id": {
+      "$ref": "../schemas/common-types.schema.json#/$defs/Id"
+    },
+    "repository_revision": {
+      "$ref": "../schemas/common-types.schema.json#/$defs/Id"
+    },
+    "registry_revision": {
+      "$ref": "../schemas/common-types.schema.json#/$defs/Id"
+    },
+    "idempotency_key": {
+      "$ref": "../schemas/common-types.schema.json#/$defs/Sha256"
+    },
+    "payload": {
+      "type": "object",
+      "required": [
+        "snapshot_id",
+        "task_id"
+      ],
+      "properties": {
+        "snapshot_id": {
+          "$ref": "../schemas/common-types.schema.json#/$defs/Id"
+        },
+        "task_id": {
+          "$ref": "../schemas/common-types.schema.json#/$defs/Id"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

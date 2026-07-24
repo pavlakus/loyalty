@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0.0",
+  "contract_id": "FCR-FCR_V2_001_VALIDATE_MANIFEST",
+  "contract_version": "1.0.0",
+  "operation_id": "fcr-v2-001-validate-manifest",
+  "caller": "FCR",
+  "callee": "V2-001",
+  "request_schema": "docs/ai-engineering-framework/fcr/contracts/fcr-v2-001-validate-manifest.request.schema.json",
+  "success_schema": "docs/ai-engineering-framework/fcr/contracts/fcr-v2-001-validate-manifest.success.schema.json",
+  "failure_schema": "docs/ai-engineering-framework/fcr/contracts/fcr-v2-001-validate-manifest.failure.schema.json",
+  "allowed_reads": [
+    "committed registry snapshot"
+  ],
+  "allowed_writes": [],
+  "forbidden_writes": [
+    "task identity",
+    "scope",
+    "dependencies",
+    "lifecycle"
+  ],
+  "timeout_seconds": 120,
+  "retry_policy": {
+    "type": "same-idempotency-key",
+    "max_attempts": 3
+  },
+  "idempotency_policy": "same key and same request returns stored result; same key with different request fails",
+  "evidence_path": "implementation/workflow-state/evidence/registry/fcr-v2-001-validate-manifest.json",
+  "error_mapping": [
+    "REGISTRY_VALIDATION_FAILED",
+    "REGISTRY_PERSISTENCE_FAILED"
+  ],
+  "compatibility_policy": "major mismatch blocks; minor optional additions only",
+  "executable": "python3",
+  "script_path": "scripts/validate-task-scope-manifest.py",
+  "argument_type": "manifest_repository_relative_path",
+  "argument_source": "snapshot.candidate_manifest_path",
+  "success_exit_codes": [
+    0
+  ],
+  "failure_exit_codes": [
+    1,
+    2
+  ],
+  "current_working_directory": "snapshot_root",
+  "environment_allowlist": [
+    "PATH",
+    "PYTHONPATH"
+  ],
+  "stdout_handling": "CAPTURE_UTF8_AND_SHA256",
+  "stderr_handling": "CAPTURE_UTF8_AND_SHA256",
+  "candidate_path_requirements": "required canonical files in snapshot",
+  "cleanup_behavior": "delete_success_retain_diagnostic_failure"
+}

@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://loyalty.example/fcr/contract-schema/request-lifecycle-transition-request/1.0.0",
+  "title": "request-lifecycle-transition request",
+  "type": "object",
+  "$comment": "Standalone Draft 2020-12 operation schema.",
+  "required": [
+    "schema_version",
+    "request_id",
+    "operation_id",
+    "correlation_id",
+    "repository_revision",
+    "registry_revision",
+    "idempotency_key",
+    "payload"
+  ],
+  "properties": {
+    "schema_version": {
+      "$ref": "../schemas/common-types.schema.json#/$defs/SchemaVersion"
+    },
+    "request_id": {
+      "$ref": "../schemas/common-types.schema.json#/$defs/Id"
+    },
+    "operation_id": {
+      "$ref": "../schemas/common-types.schema.json#/$defs/Id"
+    },
+    "correlation_id": {
+      "$ref": "../schemas/common-types.schema.json#/$defs/Id"
+    },
+    "repository_revision": {
+      "$ref": "../schemas/common-types.schema.json#/$defs/Id"
+    },
+    "registry_revision": {
+      "$ref": "../schemas/common-types.schema.json#/$defs/Id"
+    },
+    "idempotency_key": {
+      "$ref": "../schemas/common-types.schema.json#/$defs/Sha256"
+    },
+    "payload": {
+      "type": "object",
+      "required": [
+        "task_id",
+        "source_state",
+        "target_state",
+        "transition_evidence"
+      ],
+      "properties": {
+        "task_id": {
+          "$ref": "../schemas/common-types.schema.json#/$defs/Id"
+        },
+        "source_state": {
+          "$ref": "../schemas/common-types.schema.json#/$defs/NonEmpty"
+        },
+        "target_state": {
+          "$ref": "../schemas/common-types.schema.json#/$defs/NonEmpty"
+        },
+        "transition_evidence": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://loyalty.example/fcr/schema/framework-error/1.0.0",
+  "title": "framework-error",
+  "type": "object",
+  "$comment": "Independently persisted; schema_version required.",
+  "required": [
+    "code",
+    "schema_version",
+    "severity",
+    "response_contract_status",
+    "blocker_category",
+    "retryable",
+    "resume_condition",
+    "human_message_template",
+    "machine_metadata_schema_ref",
+    "evidence_requirements",
+    "cleanup_behavior",
+    "transaction_effect",
+    "lifecycle_effect",
+    "escalation_required",
+    "recovery_operation",
+    "terminal"
+  ],
+  "properties": {
+    "code": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "schema_version": {
+      "$ref": "./common-types.schema.json#/$defs/SchemaVersion"
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "P0",
+        "P1",
+        "P2",
+        "P3"
+      ]
+    },
+    "response_contract_status": {
+      "$ref": "./common-types.schema.json#/$defs/ResponseContractStatus"
+    },
+    "blocker_category": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "retryable": {
+      "type": "boolean"
+    },
+    "resume_condition": {
+      "$ref": "./common-types.schema.json#/$defs/NonEmpty"
+    },
+    "human_message_template": {
+      "$ref": "./common-types.schema.json#/$defs/NonEmpty"
+    },
+    "machine_metadata_schema_ref": {
+      "$ref": "./common-types.schema.json#/$defs/SchemaPath"
+    },
+    "evidence_requirements": {
+      "type": "array",
+      "items": {
+        "$ref": "./evidence-ref.schema.json"
+      }
+    },
+    "cleanup_behavior": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "transaction_effect": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "lifecycle_effect": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "escalation_required": {
+      "type": "boolean"
+    },
+    "recovery_operation": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "terminal": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false
+}

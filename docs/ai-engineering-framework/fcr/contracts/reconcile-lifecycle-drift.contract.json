@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0.0",
+  "contract_id": "FCR-RECONCILE_LIFECYCLE_DRIFT",
+  "contract_version": "1.0.0",
+  "operation_id": "reconcile-lifecycle-drift",
+  "caller": "FCR",
+  "callee": "Lifecycle Actor",
+  "request_schema": "docs/ai-engineering-framework/fcr/contracts/reconcile-lifecycle-drift.request.schema.json",
+  "success_schema": "docs/ai-engineering-framework/fcr/contracts/reconcile-lifecycle-drift.success.schema.json",
+  "failure_schema": "docs/ai-engineering-framework/fcr/contracts/reconcile-lifecycle-drift.failure.schema.json",
+  "allowed_reads": [
+    "committed registry snapshot"
+  ],
+  "allowed_writes": [],
+  "forbidden_writes": [
+    "task identity",
+    "scope",
+    "dependencies",
+    "lifecycle"
+  ],
+  "timeout_seconds": 120,
+  "retry_policy": {
+    "type": "same-idempotency-key",
+    "max_attempts": 3
+  },
+  "idempotency_policy": "same key and same request returns stored result; same key with different request fails",
+  "evidence_path": "implementation/workflow-state/evidence/registry/reconcile-lifecycle-drift.json",
+  "error_mapping": [
+    "REGISTRY_VALIDATION_FAILED",
+    "REGISTRY_PERSISTENCE_FAILED"
+  ],
+  "compatibility_policy": "major mismatch blocks; minor optional additions only"
+}

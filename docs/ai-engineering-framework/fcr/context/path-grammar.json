@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0.0",
+  "features": {
+    "*": "SUPPORTED_DIRECTLY",
+    "?": "REJECTED",
+    "character_classes": "REJECTED",
+    "escaped_literals": "REJECTED",
+    "**": "SUPPORTED_DIRECTLY"
+  },
+  "case_sensitive": true,
+  "separator": "/",
+  "unicode_normalization": "NFC",
+  "symlinks": "RESOLVE_AND_REJECT_ESCAPE",
+  "parent_traversal": "REJECT"
+}

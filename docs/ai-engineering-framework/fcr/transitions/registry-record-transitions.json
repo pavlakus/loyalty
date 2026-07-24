@@ -1,0 +1,78 @@
+{
+  "schema_version": "1.0.0",
+  "state_domain": "registry-record",
+  "transitions": [
+    {
+      "schema_version": "1.0.0",
+      "transition_id": "RECORD_ACTIVE_SUPERSEDED",
+      "source_state": "ACTIVE",
+      "target_state": "SUPERSEDED",
+      "authorized_actor": "FCR",
+      "required_preconditions": [
+        "docs/ai-engineering-framework/fcr/transitions/precondition-record-current.json"
+      ],
+      "required_evidence_predicates": [],
+      "allowed_error_codes": [
+        "REGISTRY_VALIDATION_FAILED"
+      ],
+      "invalid_transition_error": "REGISTRY_INVALID_TRANSITION",
+      "retryable": false,
+      "recovery_transition": null,
+      "terminal": true,
+      "side_effects": [
+        "append immutable state transition record"
+      ],
+      "emitted_evidence": [
+        "transition/RECORD_ACTIVE_SUPERSEDED.json"
+      ]
+    },
+    {
+      "schema_version": "1.0.0",
+      "transition_id": "RECORD_ACTIVE_DEPRECATED",
+      "source_state": "ACTIVE",
+      "target_state": "DEPRECATED",
+      "authorized_actor": "FCR",
+      "required_preconditions": [
+        "docs/ai-engineering-framework/fcr/transitions/precondition-record-current.json"
+      ],
+      "required_evidence_predicates": [],
+      "allowed_error_codes": [
+        "REGISTRY_VALIDATION_FAILED"
+      ],
+      "invalid_transition_error": "REGISTRY_INVALID_TRANSITION",
+      "retryable": false,
+      "recovery_transition": null,
+      "terminal": false,
+      "side_effects": [
+        "append immutable state transition record"
+      ],
+      "emitted_evidence": [
+        "transition/RECORD_ACTIVE_DEPRECATED.json"
+      ]
+    },
+    {
+      "schema_version": "1.0.0",
+      "transition_id": "RECORD_DEPRECATED_RETIRED",
+      "source_state": "DEPRECATED",
+      "target_state": "RETIRED",
+      "authorized_actor": "FCR",
+      "required_preconditions": [
+        "docs/ai-engineering-framework/fcr/transitions/precondition-record-current.json"
+      ],
+      "required_evidence_predicates": [],
+      "allowed_error_codes": [
+        "REGISTRY_VALIDATION_FAILED"
+      ],
+      "invalid_transition_error": "REGISTRY_INVALID_TRANSITION",
+      "retryable": false,
+      "recovery_transition": null,
+      "terminal": true,
+      "side_effects": [
+        "append immutable state transition record"
+      ],
+      "emitted_evidence": [
+        "transition/RECORD_DEPRECATED_RETIRED.json"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0.0",
+  "predicate_id": "RELEASE_COMPLETE",
+  "evidence_phase": "RELEASE",
+  "evidence_type": "RELEASE",
+  "canonical_path_pattern": "implementation/workflow-state/evidence/<TASK-ID>/release.md",
+  "required_agent_role": "release-agent",
+  "allowed_response_contract_statuses": [
+    "READY FOR MERGE",
+    "MERGED",
+    "DONE"
+  ],
+  "required_lifecycle_states": [
+    "READY_FOR_MERGE",
+    "MERGED",
+    "DONE"
+  ],
+  "required_implementation_statuses": [
+    "COMPLETE"
+  ],
+  "required_release_statuses": [
+    "RELEASED"
+  ],
+  "required_validation_result": "PASS",
+  "repository_relationship": "SAME",
+  "revision_relationship": "EXACT",
+  "commit_relationship": "RELEASE_COMMIT",
+  "required_validator": "FCR_RELEASE",
+  "validator_version_constraint": "MAJOR:1",
+  "input_revision_relationship": "EXACT",
+  "content_hash_requirement": "REQUIRED",
+  "maximum_age_seconds": 0,
+  "supersession_rule": "CURRENT_ONLY",
+  "stale_rule": "release revision mismatch",
+  "contradiction_rule": "contradictory or superseded evidence",
+  "invalidation_rule": "deployed commit mismatch",
+  "missing_behavior": "BLOCK",
+  "failure_error_code": "REGISTRY_EVIDENCE_MISSING"
+}

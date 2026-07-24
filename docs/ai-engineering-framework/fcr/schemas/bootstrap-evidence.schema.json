@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://loyalty.example/fcr/schema/bootstrap-evidence/1.0.0",
+  "title": "bootstrap-evidence",
+  "type": "object",
+  "$comment": "Independently persisted; schema_version required.",
+  "required": [
+    "schema_version",
+    "evidence_id",
+    "phase",
+    "source_paths",
+    "source_hashes",
+    "import_order",
+    "conflicts",
+    "initial_revision",
+    "transaction_id",
+    "created_at",
+    "valid"
+  ],
+  "properties": {
+    "schema_version": {
+      "$ref": "./common-types.schema.json#/$defs/SchemaVersion"
+    },
+    "evidence_id": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "phase": {
+      "$ref": "./common-types.schema.json#/$defs/Phase"
+    },
+    "source_paths": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "source_hashes": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "import_order": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "conflicts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false
+      }
+    },
+    "initial_revision": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "transaction_id": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "created_at": {
+      "$ref": "./common-types.schema.json#/$defs/Timestamp"
+    },
+    "valid": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false
+}

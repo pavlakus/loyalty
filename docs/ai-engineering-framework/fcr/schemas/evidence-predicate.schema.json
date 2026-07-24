@@ -1,0 +1,142 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://loyalty.example/fcr/schema/evidence-predicate/1.0.0",
+  "title": "evidence-predicate",
+  "type": "object",
+  "$comment": "Independently persisted; schema_version required.",
+  "required": [
+    "schema_version",
+    "predicate_id",
+    "evidence_phase",
+    "evidence_type",
+    "canonical_path_pattern",
+    "required_agent_role",
+    "allowed_response_contract_statuses",
+    "required_lifecycle_states",
+    "required_implementation_statuses",
+    "required_release_statuses",
+    "required_validation_result",
+    "repository_relationship",
+    "revision_relationship",
+    "commit_relationship",
+    "required_validator",
+    "validator_version_constraint",
+    "input_revision_relationship",
+    "content_hash_requirement",
+    "maximum_age_seconds",
+    "supersession_rule",
+    "stale_rule",
+    "contradiction_rule",
+    "invalidation_rule",
+    "missing_behavior",
+    "failure_error_code"
+  ],
+  "properties": {
+    "schema_version": {
+      "$ref": "./common-types.schema.json#/$defs/SchemaVersion"
+    },
+    "predicate_id": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "evidence_phase": {
+      "$ref": "./common-types.schema.json#/$defs/Phase"
+    },
+    "evidence_type": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "canonical_path_pattern": {
+      "$ref": "./common-types.schema.json#/$defs/NonEmpty"
+    },
+    "required_agent_role": {
+      "$ref": "./common-types.schema.json#/$defs/NonEmpty"
+    },
+    "allowed_response_contract_statuses": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "required_lifecycle_states": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "required_implementation_statuses": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "required_release_statuses": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "required_validation_result": {
+      "type": "string",
+      "enum": [
+        "PASS",
+        "FAIL",
+        "ERROR"
+      ]
+    },
+    "repository_relationship": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "revision_relationship": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "commit_relationship": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "required_validator": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "validator_version_constraint": {
+      "$ref": "./common-types.schema.json#/$defs/NonEmpty"
+    },
+    "input_revision_relationship": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "content_hash_requirement": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "maximum_age_seconds": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "supersession_rule": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "stale_rule": {
+      "$ref": "./common-types.schema.json#/$defs/NonEmpty"
+    },
+    "contradiction_rule": {
+      "$ref": "./common-types.schema.json#/$defs/NonEmpty"
+    },
+    "invalidation_rule": {
+      "$ref": "./common-types.schema.json#/$defs/NonEmpty"
+    },
+    "missing_behavior": {
+      "type": "string",
+      "enum": [
+        "BLOCK",
+        "FAIL",
+        "IGNORE"
+      ]
+    },
+    "failure_error_code": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    }
+  },
+  "additionalProperties": false
+}

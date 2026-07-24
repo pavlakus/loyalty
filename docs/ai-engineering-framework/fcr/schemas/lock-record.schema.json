@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://loyalty.example/fcr/schema/lock-record/2.0.0",
+  "title": "lock-record",
+  "type": "object",
+  "$comment": "Independently persisted; schema_version is 2.0.0. In V2-007C, heartbeat_at equals acquired_at, expires_at is null, and takeover_count is 0.",
+  "required": [
+    "schema_version",
+    "lock_id",
+    "namespace",
+    "owner_transaction_id",
+    "owner_identity",
+    "state",
+    "acquired_at",
+    "heartbeat_at",
+    "expires_at",
+    "takeover_count"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "2.0.0"
+    },
+    "lock_id": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "namespace": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "owner_transaction_id": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "owner_identity": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "state": {
+      "$ref": "./common-types.schema.json#/$defs/LockState"
+    },
+    "acquired_at": {
+      "$ref": "./common-types.schema.json#/$defs/Timestamp"
+    },
+    "heartbeat_at": {
+      "$ref": "./common-types.schema.json#/$defs/Timestamp"
+    },
+    "expires_at": {
+      "anyOf": [
+        {
+          "$ref": "./common-types.schema.json#/$defs/Timestamp"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "takeover_count": {
+      "type": "integer",
+      "minimum": 0
+    }
+  },
+  "additionalProperties": false
+}

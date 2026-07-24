@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://loyalty.example/fcr/schema/operation-failure/1.0.0",
+  "title": "operation-failure",
+  "type": "object",
+  "$comment": "Independently persisted; schema_version required.",
+  "required": [
+    "schema_version",
+    "request_id",
+    "operation_id",
+    "response_contract_status",
+    "retryable",
+    "cleanup_behavior",
+    "evidence_path"
+  ],
+  "properties": {
+    "schema_version": {
+      "$ref": "./common-types.schema.json#/$defs/SchemaVersion"
+    },
+    "request_id": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "operation_id": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "error_code": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "response_contract_status": {
+      "$ref": "./common-types.schema.json#/$defs/ResponseContractStatus"
+    },
+    "retryable": {
+      "type": "boolean"
+    },
+    "cleanup_behavior": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "evidence_path": {
+      "$ref": "./common-types.schema.json#/$defs/Path"
+    }
+  },
+  "additionalProperties": false
+}

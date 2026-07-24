@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://loyalty.example/fcr/error-metadata/persistence/1.0.0",
+  "title": "FCR persistence error metadata",
+  "type": "object",
+  "$comment": "Closed error metadata schema.",
+  "required": [
+    "transaction_id",
+    "request_id",
+    "task_id",
+    "module_id",
+    "repository_id",
+    "repository_revision",
+    "registry_revision",
+    "failure_phase",
+    "source_ids",
+    "validator_name",
+    "validator_version",
+    "recovery_id",
+    "journal_step"
+  ],
+  "properties": {
+    "transaction_id": {
+      "type": "string"
+    },
+    "request_id": {
+      "type": "string"
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "module_id": {
+      "type": "string"
+    },
+    "repository_id": {
+      "type": "string"
+    },
+    "repository_revision": {
+      "type": "string"
+    },
+    "registry_revision": {
+      "type": "string"
+    },
+    "failure_phase": {
+      "type": "string"
+    },
+    "source_ids": {
+      "type": "string"
+    },
+    "validator_name": {
+      "type": "string"
+    },
+    "validator_version": {
+      "type": "string"
+    },
+    "recovery_id": {
+      "type": "string"
+    },
+    "journal_step": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

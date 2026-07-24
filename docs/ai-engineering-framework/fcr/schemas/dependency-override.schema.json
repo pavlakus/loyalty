@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://loyalty.example/fcr/schema/dependency-override/1.0.0",
+  "title": "dependency-override",
+  "type": "object",
+  "$comment": "Independently persisted; schema_version required.",
+  "required": [
+    "schema_version",
+    "override_id",
+    "task_id",
+    "operation",
+    "dependency_type",
+    "dependency_id",
+    "source",
+    "authorized_by",
+    "reason",
+    "created_at",
+    "expires_at",
+    "audit_evidence"
+  ],
+  "properties": {
+    "schema_version": {
+      "$ref": "./common-types.schema.json#/$defs/SchemaVersion"
+    },
+    "override_id": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "task_id": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "operation": {
+      "type": "string",
+      "enum": [
+        "ADD",
+        "REMOVE",
+        "ADD_RULE",
+        "REMOVE_RULE",
+        "CHANGE_ACCESS"
+      ]
+    },
+    "dependency_type": {
+      "$ref": "./common-types.schema.json#/$defs/DependencyType"
+    },
+    "dependency_id": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "authorized_by": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "reason": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "created_at": {
+      "$ref": "./common-types.schema.json#/$defs/Timestamp"
+    },
+    "expires_at": {
+      "$ref": "./common-types.schema.json#/$defs/Timestamp"
+    },
+    "audit_evidence": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    }
+  },
+  "additionalProperties": false
+}

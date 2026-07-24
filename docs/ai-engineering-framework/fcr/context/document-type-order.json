@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0.0",
+  "order": [
+    "AGENTS",
+    "TASK_RECORD",
+    "MIP",
+    "ADR",
+    "DOMAIN_MODEL",
+    "MODULE_DEFINITION",
+    "ENGINEERING_STANDARD",
+    "CONTRACT",
+    "MANIFEST",
+    "EVIDENCE",
+    "PROJECTION"
+  ]
+}

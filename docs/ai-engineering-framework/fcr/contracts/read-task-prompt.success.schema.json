@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://loyalty.example/fcr/contract-schema/read-task-prompt-success/1.0.0",
+  "title": "read-task-prompt success",
+  "type": "object",
+  "$comment": "Standalone Draft 2020-12 operation schema.",
+  "required": [
+    "schema_version",
+    "request_id",
+    "operation_id",
+    "correlation_id",
+    "result",
+    "output",
+    "evidence_path",
+    "completed_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "$ref": "../schemas/common-types.schema.json#/$defs/SchemaVersion"
+    },
+    "request_id": {
+      "$ref": "../schemas/common-types.schema.json#/$defs/Id"
+    },
+    "operation_id": {
+      "$ref": "../schemas/common-types.schema.json#/$defs/Id"
+    },
+    "correlation_id": {
+      "$ref": "../schemas/common-types.schema.json#/$defs/Id"
+    },
+    "result": {
+      "const": "PASS"
+    },
+    "output": {
+      "type": "object",
+      "required": [
+        "operation_result"
+      ],
+      "properties": {
+        "operation_result": {
+          "type": "string",
+          "minLength": 1
+        },
+        "task_id": {
+          "$ref": "../schemas/common-types.schema.json#/$defs/Id"
+        },
+        "prompt_type": {
+          "$ref": "../schemas/common-types.schema.json#/$defs/NonEmpty"
+        }
+      },
+      "additionalProperties": false
+    },
+    "evidence_path": {
+      "$ref": "../schemas/common-types.schema.json#/$defs/Path"
+    },
+    "completed_at": {
+      "$ref": "../schemas/common-types.schema.json#/$defs/Timestamp"
+    }
+  },
+  "additionalProperties": false
+}

@@ -15,9 +15,16 @@
     "typecheck": "turbo run typecheck",
     "typecheck:negative": "node tests/typecheck/verify-negative-strictness.mjs",
     "workspace:list": "pnpm -r list --depth -1",
-    "verify:lockfile": "pnpm install --frozen-lockfile"
+    "verify:lockfile": "pnpm install --frozen-lockfile",
+    "validate:fcr": "node scripts/validate-fcr-artifacts.mjs",
+    "fcr:build": "pnpm --filter @loyalty-platform/fcr build",
+    "fcr:typecheck": "pnpm --filter @loyalty-platform/fcr typecheck",
+    "fcr:test": "pnpm --filter @loyalty-platform/fcr test",
+    "fcr": "pnpm --filter @loyalty-platform/fcr exec node dist/cli.js"
   },
   "devDependencies": {
+    "ajv": "^8.20.0",
+    "ajv-formats": "3.0.1",
     "turbo": "2.5.4",
     "typescript": "5.8.3"
   }

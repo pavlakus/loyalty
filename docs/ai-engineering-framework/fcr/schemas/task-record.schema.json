@@ -1,0 +1,194 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://loyalty.example/fcr/schema/task-record/1.0.0",
+  "title": "task-record",
+  "type": "object",
+  "$comment": "Independently persisted; schema_version required.",
+  "required": [
+    "schema_version",
+    "task_id",
+    "task_namespace",
+    "task_sequence",
+    "title",
+    "slug",
+    "identity_fingerprint",
+    "category",
+    "module_id",
+    "assigned_role",
+    "owner_type",
+    "owner_id",
+    "lifecycle_state",
+    "status",
+    "implementation_status",
+    "release_status",
+    "registry_record_state",
+    "dependencies",
+    "task_document_path",
+    "manifest_path",
+    "prompt_paths",
+    "evidence_paths",
+    "repository_id",
+    "repository_revision",
+    "created_at",
+    "updated_at",
+    "created_by",
+    "updated_by",
+    "record_revision"
+  ],
+  "properties": {
+    "schema_version": {
+      "$ref": "./common-types.schema.json#/$defs/SchemaVersion"
+    },
+    "task_id": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "task_namespace": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "task_sequence": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 160
+    },
+    "slug": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "identity_fingerprint": {
+      "$ref": "./common-types.schema.json#/$defs/Sha256"
+    },
+    "category": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "module_id": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "assigned_role": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "owner_type": {
+      "type": "string",
+      "enum": [
+        "AGENT_ROLE",
+        "HUMAN",
+        "TEAM"
+      ]
+    },
+    "owner_id": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "lifecycle_state": {
+      "$ref": "./common-types.schema.json#/$defs/LifecycleState"
+    },
+    "status": {
+      "$ref": "./common-types.schema.json#/$defs/LifecycleState"
+    },
+    "implementation_status": {
+      "$ref": "./common-types.schema.json#/$defs/ImplementationStatus"
+    },
+    "release_status": {
+      "$ref": "./common-types.schema.json#/$defs/ReleaseStatus"
+    },
+    "registry_record_state": {
+      "$ref": "./common-types.schema.json#/$defs/RecordState"
+    },
+    "dependencies": {
+      "type": "array",
+      "items": {
+        "$ref": "./dependency-ref.schema.json"
+      },
+      "uniqueItems": true
+    },
+    "task_document_path": {
+      "$ref": "./common-types.schema.json#/$defs/Path"
+    },
+    "manifest_path": {
+      "$ref": "./common-types.schema.json#/$defs/Path"
+    },
+    "prompt_paths": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false
+      }
+    },
+    "evidence_paths": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false
+      }
+    },
+    "repository_id": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "repository_revision": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "created_at": {
+      "$ref": "./common-types.schema.json#/$defs/Timestamp"
+    },
+    "updated_at": {
+      "$ref": "./common-types.schema.json#/$defs/Timestamp"
+    },
+    "created_by": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "updated_by": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "record_revision": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "legacy_identity": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "original_task_id": {
+          "$ref": "./common-types.schema.json#/$defs/Id"
+        },
+        "parsed_namespace": {
+          "$ref": "./common-types.schema.json#/$defs/Id"
+        },
+        "parsed_sequence": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "legacy_suffix": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "parse_status": {
+          "type": "string",
+          "enum": [
+            "PARSED",
+            "MALFORMED",
+            "DUPLICATE",
+            "UNPARSED"
+          ]
+        },
+        "source_path": {
+          "$ref": "./common-types.schema.json#/$defs/Path"
+        }
+      },
+      "required": [
+        "original_task_id",
+        "parsed_namespace",
+        "parsed_sequence",
+        "legacy_suffix",
+        "parse_status",
+        "source_path"
+      ],
+      "$comment": "Inherited from TaskRecord"
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0.0",
+  "rules": [
+    {
+      "original_task_id": "LP-AI-000001",
+      "parsed_namespace": "LP-AI",
+      "parsed_sequence": 1,
+      "legacy_suffix": null,
+      "malformed_behavior": "BLOCK_REGISTRY_BOOTSTRAP_CONFLICT",
+      "duplicate_behavior": "BLOCK_REGISTRY_BOOTSTRAP_CONFLICT"
+    },
+    {
+      "original_task_id": "LP-AI-000001A",
+      "parsed_namespace": "LP-AI",
+      "parsed_sequence": 1,
+      "legacy_suffix": "A",
+      "malformed_behavior": "BLOCK_REGISTRY_BOOTSTRAP_CONFLICT",
+      "duplicate_behavior": "BLOCK_REGISTRY_BOOTSTRAP_CONFLICT"
+    },
+    {
+      "original_task_id": "LP-AI-000002",
+      "parsed_namespace": "LP-AI",
+      "parsed_sequence": 2,
+      "legacy_suffix": null,
+      "malformed_behavior": "BLOCK_REGISTRY_BOOTSTRAP_CONFLICT",
+      "duplicate_behavior": "BLOCK_REGISTRY_BOOTSTRAP_CONFLICT"
+    },
+    {
+      "original_task_id": "V2-001",
+      "parsed_namespace": "V2",
+      "parsed_sequence": 1,
+      "legacy_suffix": null,
+      "malformed_behavior": "BLOCK_REGISTRY_BOOTSTRAP_CONFLICT",
+      "duplicate_behavior": "BLOCK_REGISTRY_BOOTSTRAP_CONFLICT"
+    },
+    {
+      "original_task_id": "V2-002",
+      "parsed_namespace": "V2",
+      "parsed_sequence": 2,
+      "legacy_suffix": null,
+      "malformed_behavior": "BLOCK_REGISTRY_BOOTSTRAP_CONFLICT",
+      "duplicate_behavior": "BLOCK_REGISTRY_BOOTSTRAP_CONFLICT"
+    },
+    {
+      "original_task_id": "V2-003",
+      "parsed_namespace": "V2",
+      "parsed_sequence": 3,
+      "legacy_suffix": null,
+      "malformed_behavior": "BLOCK_REGISTRY_BOOTSTRAP_CONFLICT",
+      "duplicate_behavior": "BLOCK_REGISTRY_BOOTSTRAP_CONFLICT"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://loyalty.example/fcr/schema/registry-revision-manifest/1.0.0",
+  "title": "registry-revision-manifest",
+  "type": "object",
+  "$comment": "Independently persisted; schema_version required.",
+  "required": [
+    "schema_version",
+    "revision_id",
+    "record_hashes",
+    "projection_hashes",
+    "canonical_hash"
+  ],
+  "properties": {
+    "schema_version": {
+      "$ref": "./common-types.schema.json#/$defs/SchemaVersion"
+    },
+    "revision_id": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "record_hashes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false
+      }
+    },
+    "projection_hashes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false
+      }
+    },
+    "canonical_hash": {
+      "$ref": "./common-types.schema.json#/$defs/Sha256"
+    }
+  },
+  "additionalProperties": false
+}

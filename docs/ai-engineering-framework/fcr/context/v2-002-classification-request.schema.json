@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://loyalty.example/fcr/context/v2-002-request/1.0.0",
+  "title": "V2-002 Classification Request",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "task_id",
+    "manifest_path",
+    "repository_root"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "manifest_path": {
+      "type": "string"
+    },
+    "repository_root": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://loyalty.example/fcr/schema/registry-revision/1.0.0",
+  "title": "registry-revision",
+  "type": "object",
+  "$comment": "Independently persisted; schema_version required.",
+  "required": [
+    "schema_version",
+    "revision_id",
+    "repository_id",
+    "repository_revision",
+    "record_hashes",
+    "projection_hashes",
+    "created_at",
+    "created_by",
+    "transaction_id"
+  ],
+  "properties": {
+    "schema_version": {
+      "$ref": "./common-types.schema.json#/$defs/SchemaVersion"
+    },
+    "revision_id": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "parent_revision": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "repository_id": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "repository_revision": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "record_hashes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false
+      }
+    },
+    "projection_hashes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false
+      }
+    },
+    "created_at": {
+      "$ref": "./common-types.schema.json#/$defs/Timestamp"
+    },
+    "created_by": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "transaction_id": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    }
+  },
+  "additionalProperties": false
+}

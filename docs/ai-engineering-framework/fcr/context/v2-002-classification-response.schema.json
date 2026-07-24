@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://loyalty.example/fcr/context/v2-002-response/1.0.0",
+  "title": "V2-002 Classification Response",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "task_id",
+    "result",
+    "changed_paths",
+    "standalone_hash",
+    "nested_hash"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "result": {
+      "type": "string",
+      "enum": [
+        "PASS",
+        "FAIL",
+        "DIVERGENCE"
+      ]
+    },
+    "changed_paths": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false
+      }
+    },
+    "standalone_hash": {
+      "type": "string"
+    },
+    "nested_hash": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

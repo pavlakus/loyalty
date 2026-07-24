@@ -1,0 +1,612 @@
+{
+  "schema_version": "1.0.0",
+  "architecture_version": "2.0.0",
+  "findings": [
+    {
+      "finding_id": "83-1",
+      "status": "RESOLVED",
+      "validation_command": "pnpm validate:fcr",
+      "artifact_paths": [
+        "docs/ai-engineering-framework/fcr/schemas/task-record.schema.json"
+      ],
+      "schema_or_rule": "artifact exists, parses, validates and is indexed",
+      "validation_result": "PASS",
+      "remaining_gap": null
+    },
+    {
+      "finding_id": "83-2",
+      "status": "RESOLVED",
+      "validation_command": "pnpm validate:fcr",
+      "artifact_paths": [
+        "docs/ai-engineering-framework/fcr/context/context-classification-precedence.json"
+      ],
+      "schema_or_rule": "artifact exists, parses, validates and is indexed",
+      "validation_result": "PASS",
+      "remaining_gap": null
+    },
+    {
+      "finding_id": "83-3",
+      "status": "RESOLVED",
+      "validation_command": "pnpm validate:fcr",
+      "artifact_paths": [
+        "docs/ai-engineering-framework/fcr/context/path-classification-rules.json"
+      ],
+      "schema_or_rule": "artifact exists, parses, validates and is indexed",
+      "validation_result": "PASS",
+      "remaining_gap": null
+    },
+    {
+      "finding_id": "83-4",
+      "status": "RESOLVED",
+      "validation_command": "pnpm validate:fcr",
+      "artifact_paths": [
+        "docs/ai-engineering-framework/fcr/contracts/fcr-v2-003-validate-preflight.contract.json"
+      ],
+      "schema_or_rule": "artifact exists, parses, validates and is indexed",
+      "validation_result": "PASS",
+      "remaining_gap": null
+    },
+    {
+      "finding_id": "83-5",
+      "status": "RESOLVED",
+      "validation_command": "pnpm validate:fcr",
+      "artifact_paths": [
+        "docs/ai-engineering-framework/fcr/errors/framework-error-catalog.json"
+      ],
+      "schema_or_rule": "artifact exists, parses, validates and is indexed",
+      "validation_result": "PASS",
+      "remaining_gap": null
+    },
+    {
+      "finding_id": "83-6",
+      "status": "RESOLVED",
+      "validation_command": "pnpm validate:fcr",
+      "artifact_paths": [
+        "docs/ai-engineering-framework/fcr/authority/dependency-proof-map.json"
+      ],
+      "schema_or_rule": "artifact exists, parses, validates and is indexed",
+      "validation_result": "PASS",
+      "remaining_gap": null
+    },
+    {
+      "finding_id": "83-7",
+      "status": "RESOLVED",
+      "validation_command": "pnpm validate:fcr",
+      "artifact_paths": [
+        "docs/ai-engineering-framework/fcr/predicates/preparation-complete.json"
+      ],
+      "schema_or_rule": "artifact exists, parses, validates and is indexed",
+      "validation_result": "PASS",
+      "remaining_gap": null
+    },
+    {
+      "finding_id": "83-8",
+      "status": "RESOLVED",
+      "validation_command": "pnpm validate:fcr",
+      "artifact_paths": [
+        "docs/ai-engineering-framework/fcr/transitions/transaction-transitions.json"
+      ],
+      "schema_or_rule": "artifact exists, parses, validates and is indexed",
+      "validation_result": "PASS",
+      "remaining_gap": null
+    },
+    {
+      "finding_id": "84-1",
+      "status": "RESOLVED",
+      "validation_command": "pnpm validate:fcr",
+      "artifact_paths": [
+        "docs/ai-engineering-framework/fcr/schemas/task-record.schema.json"
+      ],
+      "schema_or_rule": "artifact exists, parses, validates and is indexed",
+      "validation_result": "PASS",
+      "remaining_gap": null
+    },
+    {
+      "finding_id": "84-2",
+      "status": "RESOLVED",
+      "validation_command": "pnpm validate:fcr",
+      "artifact_paths": [
+        "docs/ai-engineering-framework/fcr/schemas/module-record.schema.json"
+      ],
+      "schema_or_rule": "artifact exists, parses, validates and is indexed",
+      "validation_result": "PASS",
+      "remaining_gap": null
+    },
+    {
+      "finding_id": "84-3",
+      "status": "RESOLVED",
+      "validation_command": "pnpm validate:fcr",
+      "artifact_paths": [
+        "docs/ai-engineering-framework/fcr/schemas/common-types.schema.json"
+      ],
+      "schema_or_rule": "artifact exists, parses, validates and is indexed",
+      "validation_result": "PASS",
+      "remaining_gap": null
+    },
+    {
+      "finding_id": "84-4",
+      "status": "RESOLVED",
+      "validation_command": "pnpm validate:fcr",
+      "artifact_paths": [
+        "docs/ai-engineering-framework/fcr/authority/field-precedence.json"
+      ],
+      "schema_or_rule": "artifact exists, parses, validates and is indexed",
+      "validation_result": "PASS",
+      "remaining_gap": null
+    },
+    {
+      "finding_id": "84-5",
+      "status": "RESOLVED",
+      "validation_command": "pnpm validate:fcr",
+      "artifact_paths": [
+        "docs/ai-engineering-framework/fcr/context/path-classification-rules.json"
+      ],
+      "schema_or_rule": "artifact exists, parses, validates and is indexed",
+      "validation_result": "PASS",
+      "remaining_gap": null
+    },
+    {
+      "finding_id": "84-6",
+      "status": "RESOLVED",
+      "validation_command": "pnpm validate:fcr",
+      "artifact_paths": [
+        "docs/ai-engineering-framework/fcr/authority/dependency-state-map.json"
+      ],
+      "schema_or_rule": "artifact exists, parses, validates and is indexed",
+      "validation_result": "PASS",
+      "remaining_gap": null
+    },
+    {
+      "finding_id": "84-7",
+      "status": "RESOLVED",
+      "validation_command": "pnpm validate:fcr",
+      "artifact_paths": [
+        "docs/ai-engineering-framework/fcr/schemas/evidence-predicate.schema.json"
+      ],
+      "schema_or_rule": "artifact exists, parses, validates and is indexed",
+      "validation_result": "PASS",
+      "remaining_gap": null
+    },
+    {
+      "finding_id": "84-8",
+      "status": "RESOLVED",
+      "validation_command": "pnpm validate:fcr",
+      "artifact_paths": [
+        "docs/ai-engineering-framework/fcr/transitions/registry-record-transitions.json"
+      ],
+      "schema_or_rule": "artifact exists, parses, validates and is indexed",
+      "validation_result": "PASS",
+      "remaining_gap": null
+    },
+    {
+      "finding_id": "84-9",
+      "status": "RESOLVED",
+      "validation_command": "pnpm validate:fcr",
+      "artifact_paths": [
+        "docs/ai-engineering-framework/fcr/contracts/fcr-v2-001-validate-manifest.contract.json"
+      ],
+      "schema_or_rule": "artifact exists, parses, validates and is indexed",
+      "validation_result": "PASS",
+      "remaining_gap": null
+    },
+    {
+      "finding_id": "84-10",
+      "status": "RESOLVED",
+      "validation_command": "pnpm validate:fcr",
+      "artifact_paths": [
+        "docs/ai-engineering-framework/fcr/errors/framework-error-catalog.json"
+      ],
+      "schema_or_rule": "artifact exists, parses, validates and is indexed",
+      "validation_result": "PASS",
+      "remaining_gap": null
+    },
+    {
+      "finding_id": "84-11",
+      "status": "RESOLVED",
+      "validation_command": "pnpm validate:fcr",
+      "artifact_paths": [
+        "docs/ai-engineering-framework/fcr/contracts/submit-preparation-request.contract.json"
+      ],
+      "schema_or_rule": "artifact exists, parses, validates and is indexed",
+      "validation_result": "PASS",
+      "remaining_gap": null
+    },
+    {
+      "finding_id": "F1",
+      "status": "RESOLVED",
+      "validation_command": "pnpm validate:fcr",
+      "artifact_paths": [
+        "docs/ai-engineering-framework/fcr/schemas/common-types.schema.json"
+      ],
+      "schema_or_rule": "artifact exists, parses, validates and is indexed",
+      "validation_result": "PASS",
+      "remaining_gap": null
+    },
+    {
+      "finding_id": "F2",
+      "status": "RESOLVED",
+      "validation_command": "pnpm validate:fcr",
+      "artifact_paths": [
+        "docs/ai-engineering-framework/fcr/contracts/fcr-v2-003-validate-preflight.contract.json"
+      ],
+      "schema_or_rule": "artifact exists, parses, validates and is indexed",
+      "validation_result": "PASS",
+      "remaining_gap": null
+    },
+    {
+      "finding_id": "F3",
+      "status": "RESOLVED",
+      "validation_command": "pnpm validate:fcr",
+      "artifact_paths": [
+        "docs/ai-engineering-framework/fcr/predicates/dependency-task-complete.json"
+      ],
+      "schema_or_rule": "artifact exists, parses, validates and is indexed",
+      "validation_result": "PASS",
+      "remaining_gap": null
+    },
+    {
+      "finding_id": "F4",
+      "status": "RESOLVED",
+      "validation_command": "pnpm validate:fcr",
+      "artifact_paths": [
+        "docs/ai-engineering-framework/fcr/transitions/transaction-transitions.json"
+      ],
+      "schema_or_rule": "artifact exists, parses, validates and is indexed",
+      "validation_result": "PASS",
+      "remaining_gap": null
+    },
+    {
+      "finding_id": "F5",
+      "status": "RESOLVED",
+      "validation_command": "pnpm validate:fcr",
+      "artifact_paths": [
+        "docs/ai-engineering-framework/fcr/authority/authority-classes.json"
+      ],
+      "schema_or_rule": "artifact exists, parses, validates and is indexed",
+      "validation_result": "PASS",
+      "remaining_gap": null
+    },
+    {
+      "finding_id": "F6",
+      "status": "RESOLVED",
+      "validation_command": "pnpm validate:fcr",
+      "artifact_paths": [
+        "docs/ai-engineering-framework/fcr/context/path-grammar.json"
+      ],
+      "schema_or_rule": "artifact exists, parses, validates and is indexed",
+      "validation_result": "PASS",
+      "remaining_gap": null
+    },
+    {
+      "finding_id": "F7",
+      "status": "RESOLVED",
+      "validation_command": "pnpm validate:fcr",
+      "artifact_paths": [
+        "docs/ai-engineering-framework/fcr/authority/dependency-proof-map.json"
+      ],
+      "schema_or_rule": "artifact exists, parses, validates and is indexed",
+      "validation_result": "PASS",
+      "remaining_gap": null
+    },
+    {
+      "finding_id": "F8",
+      "status": "RESOLVED",
+      "validation_command": "pnpm validate:fcr",
+      "artifact_paths": [
+        "docs/ai-engineering-framework/fcr/errors/framework-error-catalog.json"
+      ],
+      "schema_or_rule": "artifact exists, parses, validates and is indexed",
+      "validation_result": "PASS",
+      "remaining_gap": null
+    },
+    {
+      "finding_id": "F9",
+      "status": "RESOLVED",
+      "validation_command": "pnpm validate:fcr",
+      "artifact_paths": [
+        "docs/ai-engineering-framework/fcr/contracts/submit-preparation-request.contract.json"
+      ],
+      "schema_or_rule": "artifact exists, parses, validates and is indexed",
+      "validation_result": "PASS",
+      "remaining_gap": null
+    },
+    {
+      "finding_id": "F10",
+      "status": "RESOLVED",
+      "validation_command": "pnpm validate:fcr",
+      "artifact_paths": [
+        "docs/ai-engineering-framework/fcr/bootstrap/schema-migration-policy.json"
+      ],
+      "schema_or_rule": "artifact exists, parses, validates and is indexed",
+      "validation_result": "PASS",
+      "remaining_gap": null
+    },
+    {
+      "finding_id": "F11",
+      "status": "RESOLVED",
+      "validation_command": "pnpm validate:fcr",
+      "artifact_paths": [
+        "docs/ai-engineering-framework/fcr/context/context-classification-precedence.json"
+      ],
+      "schema_or_rule": "artifact exists, parses, validates and is indexed",
+      "validation_result": "PASS",
+      "remaining_gap": null
+    },
+    {
+      "finding_id": "F12",
+      "status": "RESOLVED",
+      "validation_command": "pnpm validate:fcr",
+      "artifact_paths": [
+        "docs/ai-engineering-framework/fcr/examples/resolution-matrix.json"
+      ],
+      "schema_or_rule": "artifact exists, parses, validates and is indexed",
+      "validation_result": "PASS",
+      "remaining_gap": null
+    },
+    {
+      "finding_id": "R2-F1",
+      "status": "RESOLVED",
+      "validation_command": "pnpm validate:fcr",
+      "artifact_paths": [
+        "docs/ai-engineering-framework/fcr/schemas/task-record.schema.json"
+      ],
+      "schema_or_rule": "artifact exists, parses, validates and is indexed",
+      "validation_result": "PASS",
+      "remaining_gap": null
+    },
+    {
+      "finding_id": "R2-F2",
+      "status": "RESOLVED",
+      "validation_command": "pnpm validate:fcr",
+      "artifact_paths": [
+        "docs/ai-engineering-framework/fcr/contracts/fcr-v2-003-validate-preflight.contract.json"
+      ],
+      "schema_or_rule": "artifact exists, parses, validates and is indexed",
+      "validation_result": "PASS",
+      "remaining_gap": null
+    },
+    {
+      "finding_id": "R2-F3",
+      "status": "RESOLVED",
+      "validation_command": "pnpm validate:fcr",
+      "artifact_paths": [
+        "docs/ai-engineering-framework/fcr/predicates/preparation-complete.json"
+      ],
+      "schema_or_rule": "artifact exists, parses, validates and is indexed",
+      "validation_result": "PASS",
+      "remaining_gap": null
+    },
+    {
+      "finding_id": "R2-F4",
+      "status": "RESOLVED",
+      "validation_command": "pnpm validate:fcr",
+      "artifact_paths": [
+        "docs/ai-engineering-framework/fcr/transitions/transaction-transitions.json"
+      ],
+      "schema_or_rule": "artifact exists, parses, validates and is indexed",
+      "validation_result": "PASS",
+      "remaining_gap": null
+    },
+    {
+      "finding_id": "R2-F5",
+      "status": "RESOLVED",
+      "validation_command": "pnpm validate:fcr",
+      "artifact_paths": [
+        "docs/ai-engineering-framework/fcr/authority/field-precedence.json"
+      ],
+      "schema_or_rule": "artifact exists, parses, validates and is indexed",
+      "validation_result": "PASS",
+      "remaining_gap": null
+    },
+    {
+      "finding_id": "R2-F6",
+      "status": "RESOLVED",
+      "validation_command": "pnpm validate:fcr",
+      "artifact_paths": [
+        "docs/ai-engineering-framework/fcr/context/path-grammar.json"
+      ],
+      "schema_or_rule": "artifact exists, parses, validates and is indexed",
+      "validation_result": "PASS",
+      "remaining_gap": null
+    },
+    {
+      "finding_id": "R2-F7",
+      "status": "RESOLVED",
+      "validation_command": "pnpm validate:fcr",
+      "artifact_paths": [
+        "docs/ai-engineering-framework/fcr/authority/dependency-proof-map.json"
+      ],
+      "schema_or_rule": "artifact exists, parses, validates and is indexed",
+      "validation_result": "PASS",
+      "remaining_gap": null
+    },
+    {
+      "finding_id": "R2-F8",
+      "status": "RESOLVED",
+      "validation_command": "pnpm validate:fcr",
+      "artifact_paths": [
+        "docs/ai-engineering-framework/fcr/errors/framework-error-catalog.json"
+      ],
+      "schema_or_rule": "artifact exists, parses, validates and is indexed",
+      "validation_result": "PASS",
+      "remaining_gap": null
+    },
+    {
+      "finding_id": "R2-F9",
+      "status": "RESOLVED",
+      "validation_command": "pnpm validate:fcr",
+      "artifact_paths": [
+        "docs/ai-engineering-framework/fcr/contracts/submit-preparation-request.contract.json"
+      ],
+      "schema_or_rule": "artifact exists, parses, validates and is indexed",
+      "validation_result": "PASS",
+      "remaining_gap": null
+    },
+    {
+      "finding_id": "R2-F10",
+      "status": "RESOLVED",
+      "validation_command": "pnpm validate:fcr",
+      "artifact_paths": [
+        "docs/ai-engineering-framework/fcr/bootstrap/bootstrap-activation-contract.json"
+      ],
+      "schema_or_rule": "artifact exists, parses, validates and is indexed",
+      "validation_result": "PASS",
+      "remaining_gap": null
+    },
+    {
+      "finding_id": "R2-F11",
+      "status": "RESOLVED",
+      "validation_command": "pnpm validate:fcr",
+      "artifact_paths": [
+        "docs/ai-engineering-framework/fcr/context/context-selection-response.schema.json"
+      ],
+      "schema_or_rule": "artifact exists, parses, validates and is indexed",
+      "validation_result": "PASS",
+      "remaining_gap": null
+    },
+    {
+      "finding_id": "R2-F12",
+      "status": "RESOLVED",
+      "validation_command": "pnpm validate:fcr",
+      "artifact_paths": [
+        "docs/ai-engineering-framework/fcr/examples/resolution-matrix.json"
+      ],
+      "schema_or_rule": "artifact exists, parses, validates and is indexed",
+      "validation_result": "PASS",
+      "remaining_gap": null
+    },
+    {
+      "finding_id": "R3-F1",
+      "status": "RESOLVED",
+      "artifact_paths": [
+        "docs/ai-engineering-framework/fcr/registry.json"
+      ],
+      "schema_or_rule": "pnpm validate:fcr",
+      "validation_command": "pnpm validate:fcr",
+      "validation_result": "PASS",
+      "remaining_gap": null
+    },
+    {
+      "finding_id": "R3-F2",
+      "status": "RESOLVED",
+      "artifact_paths": [
+        "docs/ai-engineering-framework/fcr/registry.json"
+      ],
+      "schema_or_rule": "pnpm validate:fcr",
+      "validation_command": "pnpm validate:fcr",
+      "validation_result": "PASS",
+      "remaining_gap": null
+    },
+    {
+      "finding_id": "R3-F3",
+      "status": "RESOLVED",
+      "artifact_paths": [
+        "docs/ai-engineering-framework/fcr/registry.json"
+      ],
+      "schema_or_rule": "pnpm validate:fcr",
+      "validation_command": "pnpm validate:fcr",
+      "validation_result": "PASS",
+      "remaining_gap": null
+    },
+    {
+      "finding_id": "R3-F4",
+      "status": "RESOLVED",
+      "artifact_paths": [
+        "docs/ai-engineering-framework/fcr/registry.json"
+      ],
+      "schema_or_rule": "pnpm validate:fcr",
+      "validation_command": "pnpm validate:fcr",
+      "validation_result": "PASS",
+      "remaining_gap": null
+    },
+    {
+      "finding_id": "R3-F5",
+      "status": "RESOLVED",
+      "artifact_paths": [
+        "docs/ai-engineering-framework/fcr/registry.json"
+      ],
+      "schema_or_rule": "pnpm validate:fcr",
+      "validation_command": "pnpm validate:fcr",
+      "validation_result": "PASS",
+      "remaining_gap": null
+    },
+    {
+      "finding_id": "R3-F6",
+      "status": "RESOLVED",
+      "artifact_paths": [
+        "docs/ai-engineering-framework/fcr/registry.json"
+      ],
+      "schema_or_rule": "pnpm validate:fcr",
+      "validation_command": "pnpm validate:fcr",
+      "validation_result": "PASS",
+      "remaining_gap": null
+    },
+    {
+      "finding_id": "R3-F7",
+      "status": "RESOLVED",
+      "artifact_paths": [
+        "docs/ai-engineering-framework/fcr/registry.json"
+      ],
+      "schema_or_rule": "pnpm validate:fcr",
+      "validation_command": "pnpm validate:fcr",
+      "validation_result": "PASS",
+      "remaining_gap": null
+    },
+    {
+      "finding_id": "R3-F8",
+      "status": "RESOLVED",
+      "artifact_paths": [
+        "docs/ai-engineering-framework/fcr/registry.json"
+      ],
+      "schema_or_rule": "pnpm validate:fcr",
+      "validation_command": "pnpm validate:fcr",
+      "validation_result": "PASS",
+      "remaining_gap": null
+    },
+    {
+      "finding_id": "R3-F9",
+      "status": "RESOLVED",
+      "artifact_paths": [
+        "docs/ai-engineering-framework/fcr/registry.json"
+      ],
+      "schema_or_rule": "pnpm validate:fcr",
+      "validation_command": "pnpm validate:fcr",
+      "validation_result": "PASS",
+      "remaining_gap": null
+    },
+    {
+      "finding_id": "R3-F10",
+      "status": "RESOLVED",
+      "artifact_paths": [
+        "docs/ai-engineering-framework/fcr/registry.json"
+      ],
+      "schema_or_rule": "pnpm validate:fcr",
+      "validation_command": "pnpm validate:fcr",
+      "validation_result": "PASS",
+      "remaining_gap": null
+    },
+    {
+      "finding_id": "R3-F11",
+      "status": "RESOLVED",
+      "artifact_paths": [
+        "docs/ai-engineering-framework/fcr/registry.json"
+      ],
+      "schema_or_rule": "pnpm validate:fcr",
+      "validation_command": "pnpm validate:fcr",
+      "validation_result": "PASS",
+      "remaining_gap": null
+    },
+    {
+      "finding_id": "R3-F12",
+      "status": "RESOLVED",
+      "artifact_paths": [
+        "docs/ai-engineering-framework/fcr/registry.json"
+      ],
+      "schema_or_rule": "pnpm validate:fcr",
+      "validation_command": "pnpm validate:fcr",
+      "validation_result": "PASS",
+      "remaining_gap": null
+    }
+  ],
+  "updated_at": "2026-07-20T00:00:00Z"
+}

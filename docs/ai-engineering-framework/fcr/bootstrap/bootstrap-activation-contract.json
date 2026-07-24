@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0.0",
+  "contract_id": "FCR_BOOTSTRAP_ACTIVATION",
+  "dual_read": "READ_ONLY_VERIFICATION_ONLY",
+  "dual_write": "PROHIBITED",
+  "phases": [
+    "VERIFY",
+    "REPORT_CONFLICTS",
+    "RECONCILE",
+    "COMMIT_INITIAL_REVISION",
+    "GENERATE_PROJECTIONS",
+    "COMPARE_PROJECTIONS",
+    "SWITCH_AUTHORITY",
+    "EMIT_EVIDENCE"
+  ]
+}

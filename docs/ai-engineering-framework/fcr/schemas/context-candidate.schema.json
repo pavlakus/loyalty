@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://loyalty.example/fcr/schema/context-candidate/1.0.0",
+  "title": "context-candidate",
+  "type": "object",
+  "$comment": "Independently persisted; schema_version required.",
+  "required": [
+    "schema_version",
+    "candidate_id",
+    "document_id",
+    "repository_id",
+    "normalized_path",
+    "source_revision",
+    "content_hash",
+    "document_type",
+    "classification",
+    "read_only",
+    "required",
+    "excluded",
+    "forbidden"
+  ],
+  "properties": {
+    "schema_version": {
+      "$ref": "./common-types.schema.json#/$defs/SchemaVersion"
+    },
+    "candidate_id": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "document_id": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "repository_id": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "normalized_path": {
+      "$ref": "./common-types.schema.json#/$defs/Path"
+    },
+    "source_revision": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "content_hash": {
+      "$ref": "./common-types.schema.json#/$defs/Sha256"
+    },
+    "document_type": {
+      "$ref": "./common-types.schema.json#/$defs/DocumentType"
+    },
+    "classification": {
+      "$ref": "./common-types.schema.json#/$defs/Classification"
+    },
+    "read_only": {
+      "type": "boolean"
+    },
+    "required": {
+      "type": "boolean"
+    },
+    "excluded": {
+      "type": "boolean"
+    },
+    "forbidden": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false
+}
