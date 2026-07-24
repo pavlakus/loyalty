@@ -67,3 +67,27 @@ No LP-000003 implementation defect was identified. The task must not transition 
 ## Lifecycle Recommendation
 
 Keep LP-000003 at `READY_FOR_MERGE` pending repository-level lockfile reconciliation and post-merge validation. Do not mark `MERGED` or `DONE` from this failed closure attempt.
+
+## Post-Merge Revalidation After FCR Baseline Recovery
+
+- Task ID: LP-000003
+- Phase: Post-Merge
+- Agent role: Release / QA Agent
+- Date and command context: 2026-07-24, clean `development` worktree after FCR baseline merge `bb7a916d9b490d7ef920203295b2f5ccf5cb529e`.
+- Existing LP-000003 merge verified: `cb48ceb9c872eeb0b71074dbcf137e443b2c8fb1`.
+
+The unrelated V2-007C-IMP-16 correction restored the pre-existing FCR baseline. The following commands were rerun in the clean development worktree and all exited 0:
+
+```text
+CI=true pnpm install --frozen-lockfile — PASS; lockfile up to date
+pnpm run workspace:list — PASS; all 17 workspace projects discovered
+pnpm run build — PASS; 16/16 build tasks
+pnpm run lint — PASS; 15/15 lint tasks
+pnpm run typecheck — PASS; 16/16 typecheck tasks
+pnpm run test — PASS; 32/32 tasks, FCR 118/118 tests
+pnpm validate:fcr — PASS; 223 JSON files, 150 schemas, 25 operation IDs, 0 errors
+git diff --check — PASS
+git status --short — PASS; clean target worktree
+```
+
+The source commit remains an ancestor of `development`, the approved merge evidence remains valid, and no LP-000003 implementation files changed during baseline recovery. No unresolved P0 or P1 findings remain. LP-000003 therefore meets post-merge closure requirements and is transitioned to `DONE`.
