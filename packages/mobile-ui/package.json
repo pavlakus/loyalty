@@ -7,6 +7,6 @@
     "build": "node -e \"console.log('mobile-ui placeholder build')\"",
     "lint": "node -e \"console.log('mobile-ui placeholder lint')\"",
     "test": "node -e \"console.log('mobile-ui placeholder test')\"",
-    "typecheck": "node -e \"console.log('mobile-ui placeholder typecheck')\""
+    "typecheck": "tsc -p tsconfig.json --noEmit"
   }
 }

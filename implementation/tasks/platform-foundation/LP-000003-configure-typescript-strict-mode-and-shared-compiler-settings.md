@@ -6,9 +6,9 @@
 
 ## 2. Status
 
-`BLOCKED`
+`READY_FOR_MERGE`
 
-Blocked by incomplete dependency `LP-000002`, which is currently `READY_FOR_REVIEW` in `implementation/TASK-STATUS.md` and `implementation/tasks/platform-foundation/TASK-INDEX.md`.
+Task Preparation, implementation, independent review and QA are complete. Review, QA and Security approvals are recorded with no unresolved P0 or P1 findings. Its dependency `LP-000002` is `DONE` in both `implementation/TASK-STATUS.md` and `implementation/tasks/platform-foundation/TASK-INDEX.md`. Human maintainer merge is required next.
 
 ## 3. Category
 
@@ -87,8 +87,8 @@ Required completed dependencies:
 
 Current dependency status:
 
-- `LP-000002` is `READY_FOR_REVIEW`, not complete.
-- `LP-000003` must remain `BLOCKED` until LP-000002 reaches a lifecycle state that proves the repository workspace foundation is accepted for follow-on implementation.
+- `LP-000002` is `DONE`.
+- Task Preparation completed after dependency and readiness validation.
 
 ## 17. Required Documents
 

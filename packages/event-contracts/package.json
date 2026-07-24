@@ -7,6 +7,6 @@
     "build": "node -e \"console.log('event-contracts placeholder build')\"",
     "lint": "node -e \"console.log('event-contracts placeholder lint')\"",
     "test": "node -e \"console.log('event-contracts placeholder test')\"",
-    "typecheck": "node -e \"console.log('event-contracts placeholder typecheck')\""
+    "typecheck": "tsc -p tsconfig.json --noEmit"
   }
 }
