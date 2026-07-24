@@ -2,7 +2,7 @@
 
 ## Status
 
-`READY_FOR_REVIEW`
+`QA`
 
 ## Category
 
