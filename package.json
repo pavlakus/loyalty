@@ -13,10 +13,12 @@
     "lint": "turbo run lint",
     "test": "turbo run test",
     "typecheck": "turbo run typecheck",
+    "typecheck:negative": "node tests/typecheck/verify-negative-strictness.mjs",
     "workspace:list": "pnpm -r list --depth -1",
     "verify:lockfile": "pnpm install --frozen-lockfile"
   },
   "devDependencies": {
-    "turbo": "2.5.4"
+    "turbo": "2.5.4",
+    "typescript": "5.8.3"
   }
 }

@@ -7,6 +7,6 @@
     "build": "node -e \"console.log('config placeholder build')\"",
     "lint": "node -e \"console.log('config placeholder lint')\"",
     "test": "node -e \"console.log('config placeholder test')\"",
-    "typecheck": "node -e \"console.log('config placeholder typecheck')\""
+    "typecheck": "tsc -p tsconfig.json --noEmit"
   }
 }
