@@ -13,7 +13,7 @@
 |---|---|---|---|---|---|
 | LP-000001 | Approve Platform Foundation ADR Set | DONE | `agent/architect/LP-000001-foundation-adrs` | APPROVED | Merged into `development` at `0b937ab`; ADR-001 through ADR-008 are Accepted |
 | LP-000002 | Initialize Monorepo and Workspace | READY_FOR_REVIEW | `agent/devops/LP-000002-monorepo-workspace` | CHANGES_REQUIRED corrected | Root lint/typecheck scripts, Turborepo lint/typecheck tasks and package placeholder scripts added; validation passed; ready for re-review |
-| LP-000003 | Configure TypeScript Strict Mode | READY_FOR_MERGE | `agent/devops/LP-000003-typescript-strict-mode` | APPROVED; QA APPROVED; Security APPROVED | All validation passed; merge requires human maintainer |
+| LP-000003 | Configure TypeScript Strict Mode | MERGED | `development` | APPROVED; QA APPROVED; Security APPROVED | Merged at `cb48ceb9c872eeb0b71074dbcf137e443b2c8fb1`; post-merge closure blocked by pre-existing FCR lockfile mismatch owned by V2-007C-IMP-16 |
 | LP-000004 | Configure Linting, Formatting and Module Boundaries | BLOCKED |  | Pending | Blocked by LP-000002 and LP-000003 |
 | LP-000005 | Create Backend Service Bootstrap | BLOCKED |  | Pending | Blocked by repository foundation |
 

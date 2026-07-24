@@ -6,7 +6,7 @@
 
 ## 2. Status
 
-`READY_FOR_MERGE`
+`MERGED`
 
 Task Preparation, implementation, independent review and QA are complete. Review, QA and Security approvals are recorded with no unresolved P0 or P1 findings. Its dependency `LP-000002` is `DONE` in both `implementation/TASK-STATUS.md` and `implementation/tasks/platform-foundation/TASK-INDEX.md`. Human maintainer merge is required next.
 
