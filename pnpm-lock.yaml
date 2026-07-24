@@ -181,7 +181,11 @@ importers:
 
   packages/validation: {}
 
-  services/api: {}
+  services/api:
+    devDependencies:
+      '@types/node':
+        specifier: 26.1.0
+        version: 26.1.0
 
 packages:
 

@@ -2,11 +2,16 @@
   "name": "@loyalty-platform/api",
   "version": "0.0.0",
   "private": true,
-  "description": "Modular monolith API placeholder.",
+  "description": "Modular monolith API bootstrap.",
   "scripts": {
-    "build": "node -e \"console.log('api placeholder build')\"",
-    "lint": "node -e \"console.log('api placeholder lint')\"",
-    "test": "node -e \"console.log('api placeholder test')\"",
+    "build": "tsc -p tsconfig.json",
+    "lint": "eslint --no-ignore test --global fetch --max-warnings=0",
+    "start": "node dist/server.js",
+    "test": "pnpm run build && node --test test/*.test.mjs",
     "typecheck": "tsc -p tsconfig.json --noEmit"
-  }
+  },
+  "devDependencies": {
+    "@types/node": "26.1.0"
+  },
+  "type": "module"
 }
