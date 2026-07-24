@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0.0",
+  "contract_id": "FCR-MAP_RESPONSE_STATUS_TO_FCR_RESULT",
+  "contract_version": "1.0.0",
+  "operation_id": "map-response-status-to-fcr-result",
+  "caller": "FCR",
+  "callee": "Response Validator",
+  "request_schema": "docs/ai-engineering-framework/fcr/contracts/map-response-status-to-fcr-result.request.schema.json",
+  "success_schema": "docs/ai-engineering-framework/fcr/contracts/map-response-status-to-fcr-result.success.schema.json",
+  "failure_schema": "docs/ai-engineering-framework/fcr/contracts/map-response-status-to-fcr-result.failure.schema.json",
+  "allowed_reads": [
+    "committed registry snapshot"
+  ],
+  "allowed_writes": [],
+  "forbidden_writes": [
+    "task identity",
+    "scope",
+    "dependencies",
+    "lifecycle"
+  ],
+  "timeout_seconds": 120,
+  "retry_policy": {
+    "type": "same-idempotency-key",
+    "max_attempts": 3
+  },
+  "idempotency_policy": "same key and same request returns stored result; same key with different request fails",
+  "evidence_path": "implementation/workflow-state/evidence/registry/map-response-status-to-fcr-result.json",
+  "error_mapping": [
+    "REGISTRY_VALIDATION_FAILED",
+    "REGISTRY_PERSISTENCE_FAILED"
+  ],
+  "compatibility_policy": "major mismatch blocks; minor optional additions only"
+}

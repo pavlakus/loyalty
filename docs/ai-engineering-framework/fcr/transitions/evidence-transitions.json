@@ -1,0 +1,150 @@
+{
+  "schema_version": "1.0.0",
+  "state_domain": "evidence",
+  "transitions": [
+    {
+      "schema_version": "1.0.0",
+      "transition_id": "EVIDENCE_MISSING_PRESENT",
+      "source_state": "MISSING",
+      "target_state": "PRESENT",
+      "authorized_actor": "FCR",
+      "required_preconditions": [
+        "docs/ai-engineering-framework/fcr/transitions/precondition-record-current.json"
+      ],
+      "required_evidence_predicates": [],
+      "allowed_error_codes": [
+        "REGISTRY_VALIDATION_FAILED"
+      ],
+      "invalid_transition_error": "REGISTRY_INVALID_TRANSITION",
+      "retryable": false,
+      "recovery_transition": null,
+      "terminal": false,
+      "side_effects": [
+        "append immutable state transition record"
+      ],
+      "emitted_evidence": [
+        "transition/EVIDENCE_MISSING_PRESENT.json"
+      ]
+    },
+    {
+      "schema_version": "1.0.0",
+      "transition_id": "EVIDENCE_PRESENT_VALID",
+      "source_state": "PRESENT",
+      "target_state": "VALID",
+      "authorized_actor": "FCR",
+      "required_preconditions": [
+        "docs/ai-engineering-framework/fcr/transitions/precondition-record-current.json"
+      ],
+      "required_evidence_predicates": [],
+      "allowed_error_codes": [
+        "REGISTRY_VALIDATION_FAILED"
+      ],
+      "invalid_transition_error": "REGISTRY_INVALID_TRANSITION",
+      "retryable": false,
+      "recovery_transition": null,
+      "terminal": false,
+      "side_effects": [
+        "append immutable state transition record"
+      ],
+      "emitted_evidence": [
+        "transition/EVIDENCE_PRESENT_VALID.json"
+      ]
+    },
+    {
+      "schema_version": "1.0.0",
+      "transition_id": "EVIDENCE_PRESENT_INVALID",
+      "source_state": "PRESENT",
+      "target_state": "INVALID",
+      "authorized_actor": "FCR",
+      "required_preconditions": [
+        "docs/ai-engineering-framework/fcr/transitions/precondition-record-current.json"
+      ],
+      "required_evidence_predicates": [],
+      "allowed_error_codes": [
+        "REGISTRY_VALIDATION_FAILED"
+      ],
+      "invalid_transition_error": "REGISTRY_INVALID_TRANSITION",
+      "retryable": false,
+      "recovery_transition": null,
+      "terminal": true,
+      "side_effects": [
+        "append immutable state transition record"
+      ],
+      "emitted_evidence": [
+        "transition/EVIDENCE_PRESENT_INVALID.json"
+      ]
+    },
+    {
+      "schema_version": "1.0.0",
+      "transition_id": "EVIDENCE_PRESENT_STALE",
+      "source_state": "PRESENT",
+      "target_state": "STALE",
+      "authorized_actor": "FCR",
+      "required_preconditions": [
+        "docs/ai-engineering-framework/fcr/transitions/precondition-record-current.json"
+      ],
+      "required_evidence_predicates": [],
+      "allowed_error_codes": [
+        "REGISTRY_VALIDATION_FAILED"
+      ],
+      "invalid_transition_error": "REGISTRY_INVALID_TRANSITION",
+      "retryable": false,
+      "recovery_transition": null,
+      "terminal": true,
+      "side_effects": [
+        "append immutable state transition record"
+      ],
+      "emitted_evidence": [
+        "transition/EVIDENCE_PRESENT_STALE.json"
+      ]
+    },
+    {
+      "schema_version": "1.0.0",
+      "transition_id": "EVIDENCE_PRESENT_CONTRADICTORY",
+      "source_state": "PRESENT",
+      "target_state": "CONTRADICTORY",
+      "authorized_actor": "FCR",
+      "required_preconditions": [
+        "docs/ai-engineering-framework/fcr/transitions/precondition-record-current.json"
+      ],
+      "required_evidence_predicates": [],
+      "allowed_error_codes": [
+        "REGISTRY_VALIDATION_FAILED"
+      ],
+      "invalid_transition_error": "REGISTRY_INVALID_TRANSITION",
+      "retryable": false,
+      "recovery_transition": null,
+      "terminal": true,
+      "side_effects": [
+        "append immutable state transition record"
+      ],
+      "emitted_evidence": [
+        "transition/EVIDENCE_PRESENT_CONTRADICTORY.json"
+      ]
+    },
+    {
+      "schema_version": "1.0.0",
+      "transition_id": "EVIDENCE_VALID_SUPERSEDED",
+      "source_state": "VALID",
+      "target_state": "SUPERSEDED",
+      "authorized_actor": "FCR",
+      "required_preconditions": [
+        "docs/ai-engineering-framework/fcr/transitions/precondition-record-current.json"
+      ],
+      "required_evidence_predicates": [],
+      "allowed_error_codes": [
+        "REGISTRY_VALIDATION_FAILED"
+      ],
+      "invalid_transition_error": "REGISTRY_INVALID_TRANSITION",
+      "retryable": false,
+      "recovery_transition": null,
+      "terminal": true,
+      "side_effects": [
+        "append immutable state transition record"
+      ],
+      "emitted_evidence": [
+        "transition/EVIDENCE_VALID_SUPERSEDED.json"
+      ]
+    }
+  ]
+}

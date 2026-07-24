@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://loyalty.example/fcr/schema/lifecycle-reconciliation-request/1.0.0",
+  "title": "lifecycle-reconciliation-request",
+  "type": "object",
+  "$comment": "Independently persisted; schema_version required.",
+  "required": [
+    "schema_version",
+    "request_id",
+    "task_id",
+    "reason",
+    "evidence",
+    "authorized_actor",
+    "expected_revision"
+  ],
+  "properties": {
+    "schema_version": {
+      "$ref": "./common-types.schema.json#/$defs/SchemaVersion"
+    },
+    "request_id": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "task_id": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "reason": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false
+      }
+    },
+    "authorized_actor": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "expected_revision": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0.0",
+  "contract_id": "FCR-READ_DISPATCHABLE_TASK",
+  "contract_version": "1.0.0",
+  "operation_id": "read-dispatchable-task",
+  "caller": "Dispatcher",
+  "callee": "FCR",
+  "request_schema": "docs/ai-engineering-framework/fcr/contracts/read-dispatchable-task.request.schema.json",
+  "success_schema": "docs/ai-engineering-framework/fcr/contracts/read-dispatchable-task.success.schema.json",
+  "failure_schema": "docs/ai-engineering-framework/fcr/contracts/read-dispatchable-task.failure.schema.json",
+  "allowed_reads": [
+    "committed registry snapshot"
+  ],
+  "allowed_writes": [
+    "transaction candidate or audit record"
+  ],
+  "forbidden_writes": [
+    "task identity",
+    "scope",
+    "dependencies",
+    "lifecycle"
+  ],
+  "timeout_seconds": 120,
+  "retry_policy": {
+    "type": "same-idempotency-key",
+    "max_attempts": 3
+  },
+  "idempotency_policy": "same key and same request returns stored result; same key with different request fails",
+  "evidence_path": "implementation/workflow-state/evidence/registry/read-dispatchable-task.json",
+  "error_mapping": [
+    "REGISTRY_VALIDATION_FAILED",
+    "REGISTRY_PERSISTENCE_FAILED"
+  ],
+  "compatibility_policy": "major mismatch blocks; minor optional additions only"
+}

@@ -1,0 +1,143 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://loyalty.example/fcr/schema/validator-snapshot/1.0.0",
+  "title": "validator-snapshot",
+  "type": "object",
+  "$comment": "Independently persisted; schema_version required.",
+  "required": [
+    "schema_version",
+    "snapshot_id",
+    "source_repository_id",
+    "source_repository_revision",
+    "source_commit",
+    "source_branch",
+    "snapshot_root",
+    "snapshot_git_dir",
+    "snapshot_index_file",
+    "snapshot_worktree_mode",
+    "candidate_task_document_path",
+    "candidate_manifest_path",
+    "candidate_task_status_path",
+    "candidate_task_index_path",
+    "candidate_registry_root",
+    "generated_files",
+    "preserved_unrelated_changes",
+    "created_at",
+    "expires_at",
+    "owner_transaction_id",
+    "detached_head",
+    "independent_index",
+    "active_transaction_protection",
+    "snapshot_state",
+    "cleanup_state",
+    "stale_state",
+    "stale_cleanup_eligible",
+    "retention_reason",
+    "takeover_eligibility"
+  ],
+  "properties": {
+    "schema_version": {
+      "$ref": "./common-types.schema.json#/$defs/SchemaVersion"
+    },
+    "snapshot_id": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "source_repository_id": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "source_repository_revision": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "source_commit": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "source_branch": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "snapshot_root": {
+      "$ref": "./common-types.schema.json#/$defs/Path"
+    },
+    "snapshot_git_dir": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "snapshot_index_file": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "snapshot_worktree_mode": {
+      "type": "string",
+      "const": "TEMPORARY_DETACHED_GIT_WORKTREE"
+    },
+    "candidate_task_document_path": {
+      "$ref": "./common-types.schema.json#/$defs/Path"
+    },
+    "candidate_manifest_path": {
+      "$ref": "./common-types.schema.json#/$defs/Path"
+    },
+    "candidate_task_status_path": {
+      "$ref": "./common-types.schema.json#/$defs/Path"
+    },
+    "candidate_task_index_path": {
+      "$ref": "./common-types.schema.json#/$defs/Path"
+    },
+    "candidate_registry_root": {
+      "$ref": "./common-types.schema.json#/$defs/Path"
+    },
+    "generated_files": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false
+      }
+    },
+    "preserved_unrelated_changes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false
+      }
+    },
+    "created_at": {
+      "$ref": "./common-types.schema.json#/$defs/Timestamp"
+    },
+    "expires_at": {
+      "$ref": "./common-types.schema.json#/$defs/Timestamp"
+    },
+    "owner_transaction_id": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "detached_head": {
+      "const": true
+    },
+    "independent_index": {
+      "const": true
+    },
+    "active_transaction_protection": {
+      "type": "boolean",
+      "const": true
+    },
+    "snapshot_state": {
+      "type": "string",
+      "enum": ["CREATING", "ACTIVE", "VALIDATING", "RETAINED_DIAGNOSTIC", "EXPIRED", "CLEANED", "FAILED"]
+    },
+    "cleanup_state": {
+      "type": "string",
+      "enum": ["PENDING", "REMOVED", "RETAINED", "FORCED_REMOVED"]
+    },
+    "stale_state": {
+      "type": "string",
+      "enum": ["CURRENT", "STALE", "TAKEOVER_ELIGIBLE", "TAKEOVER_PROTECTED"]
+    },
+    "stale_cleanup_eligible": {
+      "type": "boolean"
+    },
+    "retention_reason": {
+      "type": "string",
+      "enum": ["NONE", "DIAGNOSTIC_FAILURE", "ACTIVE_TRANSACTION", "STALE_RECOVERY"]
+    },
+    "takeover_eligibility": {
+      "type": "string",
+      "enum": ["NOT_ELIGIBLE", "ELIGIBLE", "PROTECTED"]
+    }
+  },
+  "additionalProperties": false
+}

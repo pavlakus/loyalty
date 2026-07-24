@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://loyalty.example/fcr/schema/precondition-record-current/1.0.0",
+  "title": "precondition-record-current",
+  "type": "object",
+  "$comment": "Independently persisted; schema_version required.",
+  "required": ["schema_version", "precondition_id", "applicable_state_domains", "registry_revision_relationship", "record_revision_relationship", "source_repository_relationship", "stale_detection", "comparison_algorithm", "success_result", "failure_result", "blocking_error", "retryable", "recovery_operation"],
+  "properties": {
+    "schema_version": {"$ref": "./common-types.schema.json#/$defs/SchemaVersion"},
+    "precondition_id": {"const": "PRECONDITION_RECORD_CURRENT"},
+    "applicable_state_domains": {"type": "array", "items": {"type": "string", "minLength": 1}, "minItems": 1, "uniqueItems": true},
+    "registry_revision_relationship": {"const": "EXACT_REGISTRY_REVISION"},
+    "record_revision_relationship": {"const": "EXACT_RECORD_REVISION"},
+    "source_repository_relationship": {"const": "EXACT_REPOSITORY"},
+    "stale_detection": {"const": "COMPARE_SOURCE_AND_RECORD_REVISIONS"},
+    "comparison_algorithm": {"const": "RFC8785_CANONICAL_JSON_SHA256"},
+    "success_result": {"const": "CURRENT"},
+    "failure_result": {"const": "STALE"},
+    "blocking_error": {"const": "REGISTRY_STALE_RECORD"},
+    "retryable": {"type": "boolean"},
+    "recovery_operation": {"type": "string", "minLength": 1}
+  },
+  "additionalProperties": false
+}

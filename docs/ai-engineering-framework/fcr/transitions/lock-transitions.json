@@ -1,0 +1,127 @@
+{
+  "schema_version": "1.0.0",
+  "state_domain": "lock",
+  "transitions": [
+    {
+      "schema_version": "1.0.0",
+      "transition_id": "LOCK_ACQUIRED_RELEASED",
+      "source_state": "ACQUIRED",
+      "target_state": "RELEASED",
+      "authorized_actor": "FCR",
+      "required_preconditions": [
+        "docs/ai-engineering-framework/fcr/transitions/precondition-record-current.json"
+      ],
+      "required_evidence_predicates": [],
+      "allowed_error_codes": [
+        "REGISTRY_VALIDATION_FAILED"
+      ],
+      "invalid_transition_error": "REGISTRY_INVALID_TRANSITION",
+      "retryable": false,
+      "recovery_transition": null,
+      "terminal": true,
+      "side_effects": [
+        "persist immutable lock-transition record",
+        "delete active REGISTRY_WRITE lock file only after successful transition persistence"
+      ],
+      "emitted_evidence": [
+        "transition/LOCK_ACQUIRED_RELEASED.json"
+      ]
+    },
+    {
+      "schema_version": "1.0.0",
+      "transition_id": "LOCK_ACQUIRED_EXPIRED",
+      "source_state": "ACQUIRED",
+      "target_state": "EXPIRED",
+      "authorized_actor": "FCR",
+      "required_preconditions": [
+        "docs/ai-engineering-framework/fcr/transitions/precondition-record-current.json"
+      ],
+      "required_evidence_predicates": [],
+      "allowed_error_codes": [
+        "REGISTRY_VALIDATION_FAILED"
+      ],
+      "invalid_transition_error": "REGISTRY_INVALID_TRANSITION",
+      "retryable": false,
+      "recovery_transition": null,
+      "terminal": false,
+      "side_effects": [
+        "append immutable state transition record"
+      ],
+      "emitted_evidence": [
+        "transition/LOCK_ACQUIRED_EXPIRED.json"
+      ]
+    },
+    {
+      "schema_version": "1.0.0",
+      "transition_id": "LOCK_EXPIRED_TAKEOVER",
+      "source_state": "EXPIRED",
+      "target_state": "TAKEOVER_PENDING",
+      "authorized_actor": "FCR",
+      "required_preconditions": [
+        "docs/ai-engineering-framework/fcr/transitions/precondition-record-current.json"
+      ],
+      "required_evidence_predicates": [],
+      "allowed_error_codes": [
+        "REGISTRY_VALIDATION_FAILED"
+      ],
+      "invalid_transition_error": "REGISTRY_INVALID_TRANSITION",
+      "retryable": false,
+      "recovery_transition": null,
+      "terminal": false,
+      "side_effects": [
+        "append immutable state transition record"
+      ],
+      "emitted_evidence": [
+        "transition/LOCK_EXPIRED_TAKEOVER.json"
+      ]
+    },
+    {
+      "schema_version": "1.0.0",
+      "transition_id": "LOCK_TAKEOVER_ACQUIRED",
+      "source_state": "TAKEOVER_PENDING",
+      "target_state": "ACQUIRED",
+      "authorized_actor": "FCR",
+      "required_preconditions": [
+        "docs/ai-engineering-framework/fcr/transitions/precondition-record-current.json"
+      ],
+      "required_evidence_predicates": [],
+      "allowed_error_codes": [
+        "REGISTRY_VALIDATION_FAILED"
+      ],
+      "invalid_transition_error": "REGISTRY_INVALID_TRANSITION",
+      "retryable": false,
+      "recovery_transition": null,
+      "terminal": false,
+      "side_effects": [
+        "append immutable state transition record"
+      ],
+      "emitted_evidence": [
+        "transition/LOCK_TAKEOVER_ACQUIRED.json"
+      ]
+    },
+    {
+      "schema_version": "1.0.0",
+      "transition_id": "LOCK_TAKEOVER_EXPIRED",
+      "source_state": "TAKEOVER_PENDING",
+      "target_state": "EXPIRED",
+      "authorized_actor": "FCR",
+      "required_preconditions": [
+        "docs/ai-engineering-framework/fcr/transitions/precondition-record-current.json"
+      ],
+      "required_evidence_predicates": [],
+      "allowed_error_codes": [
+        "REGISTRY_VALIDATION_FAILED"
+      ],
+      "invalid_transition_error": "REGISTRY_INVALID_TRANSITION",
+      "retryable": false,
+      "recovery_transition": null,
+      "terminal": false,
+      "side_effects": [
+        "append immutable state transition record"
+      ],
+      "emitted_evidence": [
+        "transition/LOCK_TAKEOVER_EXPIRED.json"
+      ]
+    }
+  ]
+}

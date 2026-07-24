@@ -1,0 +1,5 @@
+{
+  "schema_version": "1.0.0",
+  "operation_id": "verify-external-prerequisite",
+  "schema": "external-prerequisite-request.schema.json"
+}

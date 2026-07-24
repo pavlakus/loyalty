@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://loyalty.example/fcr/schema/validator-adapter-response/1.0.0",
+  "title": "validator-adapter-response",
+  "type": "object",
+  "$comment": "Independently persisted; schema_version required.",
+  "required": [
+    "schema_version",
+    "request_id",
+    "validator_name",
+    "validator_contract_version",
+    "implementation_version",
+    "input_snapshot",
+    "input_revision",
+    "command",
+    "exit_code",
+    "overall_status",
+    "can_continue",
+    "checks",
+    "failures",
+    "stdout_hash",
+    "stderr_hash",
+    "started_at",
+    "completed_at",
+    "evidence_path",
+    "error_mapping"
+  ],
+  "properties": {
+    "schema_version": {
+      "$ref": "./common-types.schema.json#/$defs/SchemaVersion"
+    },
+    "request_id": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "validator_name": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "validator_contract_version": {
+      "$ref": "./common-types.schema.json#/$defs/SchemaVersion"
+    },
+    "implementation_version": {
+      "$ref": "./common-types.schema.json#/$defs/SchemaVersion"
+    },
+    "input_snapshot": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "input_revision": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "command": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "exit_code": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "overall_status": {
+      "$ref": "./common-types.schema.json#/$defs/ResponseResult"
+    },
+    "can_continue": {
+      "type": "boolean"
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false
+      }
+    },
+    "failures": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false
+      }
+    },
+    "stdout_hash": {
+      "$ref": "./common-types.schema.json#/$defs/Sha256"
+    },
+    "stderr_hash": {
+      "$ref": "./common-types.schema.json#/$defs/Sha256"
+    },
+    "started_at": {
+      "$ref": "./common-types.schema.json#/$defs/Timestamp"
+    },
+    "completed_at": {
+      "$ref": "./common-types.schema.json#/$defs/Timestamp"
+    },
+    "evidence_path": {
+      "$ref": "./common-types.schema.json#/$defs/Path"
+    },
+    "error_mapping": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    }
+  },
+  "additionalProperties": false
+}

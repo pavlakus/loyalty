@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0.0",
+  "allowed_operations": [
+    "ADD_RULE",
+    "REMOVE_RULE",
+    "CHANGE_ACCESS"
+  ],
+  "authorized_actor": "AUTHORIZED_WORKFLOW_ACTOR",
+  "authorization_evidence": "SCOPE_OVERRIDE_APPROVED",
+  "non_overridable": [
+    "PROTECTED_PATH",
+    "GLOBAL_DENY",
+    "MODULE_DENY"
+  ]
+}

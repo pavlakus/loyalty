@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://loyalty.example/fcr/schema/external-prerequisite-request/1.0.0",
+  "title": "external-prerequisite-request",
+  "type": "object",
+  "$comment": "Independently persisted; schema_version required.",
+  "required": [
+    "schema_version",
+    "request_id",
+    "dependency_id",
+    "repository_id",
+    "registry_revision",
+    "required_state",
+    "idempotency_key"
+  ],
+  "properties": {
+    "schema_version": {
+      "$ref": "./common-types.schema.json#/$defs/SchemaVersion"
+    },
+    "request_id": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "dependency_id": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "repository_id": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "registry_revision": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "required_state": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "idempotency_key": {
+      "$ref": "./common-types.schema.json#/$defs/Sha256"
+    }
+  },
+  "additionalProperties": false
+}

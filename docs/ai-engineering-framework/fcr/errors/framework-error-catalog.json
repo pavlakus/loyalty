@@ -1,0 +1,1488 @@
+{
+  "schema_version": "1.0.0",
+  "errors": [
+    {
+      "code": "REGISTRY_MODULE_UNKNOWN",
+      "schema_version": "1.0.0",
+      "severity": "P1",
+      "response_contract_status": "TASK PREPARATION BLOCKED",
+      "blocker_category": "VALIDATION",
+      "retryable": false,
+      "resume_condition": "resolve REGISTRY_MODULE_UNKNOWN",
+      "human_message_template": "REGISTRY_MODULE_UNKNOWN: resolve REGISTRY_MODULE_UNKNOWN",
+      "machine_metadata_schema_ref": "docs/ai-engineering-framework/fcr/errors/schemas/error-identity.schema.json",
+      "evidence_requirements": [
+        {
+          "evidence_id": "ERROR_REGISTRY_MODULE_UNKNOWN",
+          "canonical_path": "implementation/workflow-state/evidence/registry/errors/REGISTRY_MODULE_UNKNOWN.json",
+          "required": true,
+          "predicate_id": "PREPARATION_COMPLETE"
+        }
+      ],
+      "cleanup_behavior": "RELEASE_LOCKS",
+      "transaction_effect": "BLOCK",
+      "lifecycle_effect": "REMAIN_CURRENT",
+      "escalation_required": false,
+      "recovery_operation": "NONE",
+      "terminal": false
+    },
+    {
+      "code": "REGISTRY_MODULE_AMBIGUOUS",
+      "schema_version": "1.0.0",
+      "severity": "P1",
+      "response_contract_status": "TASK PREPARATION BLOCKED",
+      "blocker_category": "VALIDATION",
+      "retryable": false,
+      "resume_condition": "resolve REGISTRY_MODULE_AMBIGUOUS",
+      "human_message_template": "REGISTRY_MODULE_AMBIGUOUS: resolve REGISTRY_MODULE_AMBIGUOUS",
+      "machine_metadata_schema_ref": "docs/ai-engineering-framework/fcr/errors/schemas/error-identity.schema.json",
+      "evidence_requirements": [
+        {
+          "evidence_id": "ERROR_REGISTRY_MODULE_AMBIGUOUS",
+          "canonical_path": "implementation/workflow-state/evidence/registry/errors/REGISTRY_MODULE_AMBIGUOUS.json",
+          "required": true,
+          "predicate_id": "PREPARATION_COMPLETE"
+        }
+      ],
+      "cleanup_behavior": "RELEASE_LOCKS",
+      "transaction_effect": "BLOCK",
+      "lifecycle_effect": "REMAIN_CURRENT",
+      "escalation_required": false,
+      "recovery_operation": "NONE",
+      "terminal": false
+    },
+    {
+      "code": "REGISTRY_MODULE_DEPRECATED",
+      "schema_version": "1.0.0",
+      "severity": "P1",
+      "response_contract_status": "TASK PREPARATION BLOCKED",
+      "blocker_category": "VALIDATION",
+      "retryable": false,
+      "resume_condition": "resolve REGISTRY_MODULE_DEPRECATED",
+      "human_message_template": "REGISTRY_MODULE_DEPRECATED: resolve REGISTRY_MODULE_DEPRECATED",
+      "machine_metadata_schema_ref": "docs/ai-engineering-framework/fcr/errors/schemas/error-identity.schema.json",
+      "evidence_requirements": [
+        {
+          "evidence_id": "ERROR_REGISTRY_MODULE_DEPRECATED",
+          "canonical_path": "implementation/workflow-state/evidence/registry/errors/REGISTRY_MODULE_DEPRECATED.json",
+          "required": true,
+          "predicate_id": "PREPARATION_COMPLETE"
+        }
+      ],
+      "cleanup_behavior": "RELEASE_LOCKS",
+      "transaction_effect": "BLOCK",
+      "lifecycle_effect": "REMAIN_CURRENT",
+      "escalation_required": false,
+      "recovery_operation": "NONE",
+      "terminal": false
+    },
+    {
+      "code": "REGISTRY_MODULE_RETIRED",
+      "schema_version": "1.0.0",
+      "severity": "P1",
+      "response_contract_status": "TASK PREPARATION BLOCKED",
+      "blocker_category": "VALIDATION",
+      "retryable": false,
+      "resume_condition": "resolve REGISTRY_MODULE_RETIRED",
+      "human_message_template": "REGISTRY_MODULE_RETIRED: resolve REGISTRY_MODULE_RETIRED",
+      "machine_metadata_schema_ref": "docs/ai-engineering-framework/fcr/errors/schemas/error-identity.schema.json",
+      "evidence_requirements": [
+        {
+          "evidence_id": "ERROR_REGISTRY_MODULE_RETIRED",
+          "canonical_path": "implementation/workflow-state/evidence/registry/errors/REGISTRY_MODULE_RETIRED.json",
+          "required": true,
+          "predicate_id": "PREPARATION_COMPLETE"
+        }
+      ],
+      "cleanup_behavior": "RELEASE_LOCKS",
+      "transaction_effect": "BLOCK",
+      "lifecycle_effect": "REMAIN_CURRENT",
+      "escalation_required": false,
+      "recovery_operation": "NONE",
+      "terminal": false
+    },
+    {
+      "code": "REGISTRY_MODULE_ALIAS_COLLISION",
+      "schema_version": "1.0.0",
+      "severity": "P1",
+      "response_contract_status": "TASK PREPARATION BLOCKED",
+      "blocker_category": "VALIDATION",
+      "retryable": false,
+      "resume_condition": "resolve REGISTRY_MODULE_ALIAS_COLLISION",
+      "human_message_template": "REGISTRY_MODULE_ALIAS_COLLISION: resolve REGISTRY_MODULE_ALIAS_COLLISION",
+      "machine_metadata_schema_ref": "docs/ai-engineering-framework/fcr/errors/schemas/error-identity.schema.json",
+      "evidence_requirements": [
+        {
+          "evidence_id": "ERROR_REGISTRY_MODULE_ALIAS_COLLISION",
+          "canonical_path": "implementation/workflow-state/evidence/registry/errors/REGISTRY_MODULE_ALIAS_COLLISION.json",
+          "required": true,
+          "predicate_id": "PREPARATION_COMPLETE"
+        }
+      ],
+      "cleanup_behavior": "RELEASE_LOCKS",
+      "transaction_effect": "BLOCK",
+      "lifecycle_effect": "REMAIN_CURRENT",
+      "escalation_required": false,
+      "recovery_operation": "NONE",
+      "terminal": false
+    },
+    {
+      "code": "REGISTRY_DUPLICATE_LOGICAL_TASK",
+      "schema_version": "1.0.0",
+      "severity": "P1",
+      "response_contract_status": "TASK PREPARATION BLOCKED",
+      "blocker_category": "VALIDATION",
+      "retryable": false,
+      "resume_condition": "resolve REGISTRY_DUPLICATE_LOGICAL_TASK",
+      "human_message_template": "REGISTRY_DUPLICATE_LOGICAL_TASK: resolve REGISTRY_DUPLICATE_LOGICAL_TASK",
+      "machine_metadata_schema_ref": "docs/ai-engineering-framework/fcr/errors/schemas/error-identity.schema.json",
+      "evidence_requirements": [
+        {
+          "evidence_id": "ERROR_REGISTRY_DUPLICATE_LOGICAL_TASK",
+          "canonical_path": "implementation/workflow-state/evidence/registry/errors/REGISTRY_DUPLICATE_LOGICAL_TASK.json",
+          "required": true,
+          "predicate_id": "PREPARATION_COMPLETE"
+        }
+      ],
+      "cleanup_behavior": "RELEASE_LOCKS",
+      "transaction_effect": "BLOCK",
+      "lifecycle_effect": "REMAIN_CURRENT",
+      "escalation_required": false,
+      "recovery_operation": "NONE",
+      "terminal": false
+    },
+    {
+      "code": "REGISTRY_TASK_ID_COLLISION",
+      "schema_version": "1.0.0",
+      "severity": "P1",
+      "response_contract_status": "TASK PREPARATION BLOCKED",
+      "blocker_category": "VALIDATION",
+      "retryable": false,
+      "resume_condition": "resolve REGISTRY_TASK_ID_COLLISION",
+      "human_message_template": "REGISTRY_TASK_ID_COLLISION: resolve REGISTRY_TASK_ID_COLLISION",
+      "machine_metadata_schema_ref": "docs/ai-engineering-framework/fcr/errors/schemas/error-identity.schema.json",
+      "evidence_requirements": [
+        {
+          "evidence_id": "ERROR_REGISTRY_TASK_ID_COLLISION",
+          "canonical_path": "implementation/workflow-state/evidence/registry/errors/REGISTRY_TASK_ID_COLLISION.json",
+          "required": true,
+          "predicate_id": "PREPARATION_COMPLETE"
+        }
+      ],
+      "cleanup_behavior": "RELEASE_LOCKS",
+      "transaction_effect": "BLOCK",
+      "lifecycle_effect": "REMAIN_CURRENT",
+      "escalation_required": false,
+      "recovery_operation": "NONE",
+      "terminal": false
+    },
+    {
+      "code": "REGISTRY_TASK_STALE",
+      "schema_version": "1.0.0",
+      "severity": "P1",
+      "response_contract_status": "TASK PREPARATION BLOCKED",
+      "blocker_category": "VALIDATION",
+      "retryable": false,
+      "resume_condition": "resolve REGISTRY_TASK_STALE",
+      "human_message_template": "REGISTRY_TASK_STALE: resolve REGISTRY_TASK_STALE",
+      "machine_metadata_schema_ref": "docs/ai-engineering-framework/fcr/errors/schemas/error-identity.schema.json",
+      "evidence_requirements": [
+        {
+          "evidence_id": "ERROR_REGISTRY_TASK_STALE",
+          "canonical_path": "implementation/workflow-state/evidence/registry/errors/REGISTRY_TASK_STALE.json",
+          "required": true,
+          "predicate_id": "PREPARATION_COMPLETE"
+        }
+      ],
+      "cleanup_behavior": "RELEASE_LOCKS",
+      "transaction_effect": "BLOCK",
+      "lifecycle_effect": "REMAIN_CURRENT",
+      "escalation_required": false,
+      "recovery_operation": "NONE",
+      "terminal": false
+    },
+    {
+      "code": "REGISTRY_RESERVATION_ABANDONED",
+      "schema_version": "1.0.0",
+      "severity": "P1",
+      "response_contract_status": "TASK PREPARATION BLOCKED",
+      "blocker_category": "VALIDATION",
+      "retryable": false,
+      "resume_condition": "resolve REGISTRY_RESERVATION_ABANDONED",
+      "human_message_template": "REGISTRY_RESERVATION_ABANDONED: resolve REGISTRY_RESERVATION_ABANDONED",
+      "machine_metadata_schema_ref": "docs/ai-engineering-framework/fcr/errors/schemas/error-validation.schema.json",
+      "evidence_requirements": [
+        {
+          "evidence_id": "ERROR_REGISTRY_RESERVATION_ABANDONED",
+          "canonical_path": "implementation/workflow-state/evidence/registry/errors/REGISTRY_RESERVATION_ABANDONED.json",
+          "required": true,
+          "predicate_id": "PREPARATION_COMPLETE"
+        }
+      ],
+      "cleanup_behavior": "RELEASE_LOCKS",
+      "transaction_effect": "BLOCK",
+      "lifecycle_effect": "REMAIN_CURRENT",
+      "escalation_required": false,
+      "recovery_operation": "NONE",
+      "terminal": false
+    },
+    {
+      "code": "REGISTRY_IDEMPOTENCY_CONFLICT",
+      "schema_version": "1.0.0",
+      "severity": "P1",
+      "response_contract_status": "TASK PREPARATION BLOCKED",
+      "blocker_category": "VALIDATION",
+      "retryable": false,
+      "resume_condition": "resolve REGISTRY_IDEMPOTENCY_CONFLICT",
+      "human_message_template": "REGISTRY_IDEMPOTENCY_CONFLICT: resolve REGISTRY_IDEMPOTENCY_CONFLICT",
+      "machine_metadata_schema_ref": "docs/ai-engineering-framework/fcr/errors/schemas/error-identity.schema.json",
+      "evidence_requirements": [
+        {
+          "evidence_id": "ERROR_REGISTRY_IDEMPOTENCY_CONFLICT",
+          "canonical_path": "implementation/workflow-state/evidence/registry/errors/REGISTRY_IDEMPOTENCY_CONFLICT.json",
+          "required": true,
+          "predicate_id": "PREPARATION_COMPLETE"
+        }
+      ],
+      "cleanup_behavior": "RELEASE_LOCKS",
+      "transaction_effect": "BLOCK",
+      "lifecycle_effect": "REMAIN_CURRENT",
+      "escalation_required": false,
+      "recovery_operation": "NONE",
+      "terminal": false
+    },
+    {
+      "code": "REGISTRY_REVISION_CONFLICT",
+      "schema_version": "1.0.0",
+      "severity": "P1",
+      "response_contract_status": "TASK PREPARATION BLOCKED",
+      "blocker_category": "VALIDATION",
+      "retryable": false,
+      "resume_condition": "resolve REGISTRY_REVISION_CONFLICT",
+      "human_message_template": "REGISTRY_REVISION_CONFLICT: resolve REGISTRY_REVISION_CONFLICT",
+      "machine_metadata_schema_ref": "docs/ai-engineering-framework/fcr/errors/schemas/error-repository.schema.json",
+      "evidence_requirements": [
+        {
+          "evidence_id": "ERROR_REGISTRY_REVISION_CONFLICT",
+          "canonical_path": "implementation/workflow-state/evidence/registry/errors/REGISTRY_REVISION_CONFLICT.json",
+          "required": true,
+          "predicate_id": "PREPARATION_COMPLETE"
+        }
+      ],
+      "cleanup_behavior": "RELEASE_LOCKS",
+      "transaction_effect": "BLOCK",
+      "lifecycle_effect": "REMAIN_CURRENT",
+      "escalation_required": false,
+      "recovery_operation": "NONE",
+      "terminal": false
+    },
+    {
+      "code": "REGISTRY_LOCK_CONFLICT",
+      "schema_version": "1.0.0",
+      "severity": "P1",
+      "response_contract_status": "TASK PREPARATION BLOCKED",
+      "blocker_category": "VALIDATION",
+      "retryable": false,
+      "resume_condition": "resolve REGISTRY_LOCK_CONFLICT",
+      "human_message_template": "REGISTRY_LOCK_CONFLICT: resolve REGISTRY_LOCK_CONFLICT",
+      "machine_metadata_schema_ref": "docs/ai-engineering-framework/fcr/errors/schemas/error-repository.schema.json",
+      "evidence_requirements": [
+        {
+          "evidence_id": "ERROR_REGISTRY_LOCK_CONFLICT",
+          "canonical_path": "implementation/workflow-state/evidence/registry/errors/REGISTRY_LOCK_CONFLICT.json",
+          "required": true,
+          "predicate_id": "PREPARATION_COMPLETE"
+        }
+      ],
+      "cleanup_behavior": "RELEASE_LOCKS",
+      "transaction_effect": "BLOCK",
+      "lifecycle_effect": "REMAIN_CURRENT",
+      "escalation_required": false,
+      "recovery_operation": "NONE",
+      "terminal": false
+    },
+    {
+      "code": "REGISTRY_SCHEMA_INVALID",
+      "schema_version": "1.0.0",
+      "severity": "P1",
+      "response_contract_status": "TASK PREPARATION BLOCKED",
+      "blocker_category": "VALIDATION",
+      "retryable": false,
+      "resume_condition": "resolve REGISTRY_SCHEMA_INVALID",
+      "human_message_template": "REGISTRY_SCHEMA_INVALID: resolve REGISTRY_SCHEMA_INVALID",
+      "machine_metadata_schema_ref": "docs/ai-engineering-framework/fcr/errors/schemas/error-validation.schema.json",
+      "evidence_requirements": [
+        {
+          "evidence_id": "ERROR_REGISTRY_SCHEMA_INVALID",
+          "canonical_path": "implementation/workflow-state/evidence/registry/errors/REGISTRY_SCHEMA_INVALID.json",
+          "required": true,
+          "predicate_id": "PREPARATION_COMPLETE"
+        }
+      ],
+      "cleanup_behavior": "RELEASE_LOCKS",
+      "transaction_effect": "BLOCK",
+      "lifecycle_effect": "REMAIN_CURRENT",
+      "escalation_required": false,
+      "recovery_operation": "NONE",
+      "terminal": false
+    },
+    {
+      "code": "REGISTRY_VALIDATION_FAILED",
+      "schema_version": "1.0.0",
+      "severity": "P1",
+      "response_contract_status": "TASK PREPARATION BLOCKED",
+      "blocker_category": "VALIDATION",
+      "retryable": false,
+      "resume_condition": "resolve REGISTRY_VALIDATION_FAILED",
+      "human_message_template": "REGISTRY_VALIDATION_FAILED: resolve REGISTRY_VALIDATION_FAILED",
+      "machine_metadata_schema_ref": "docs/ai-engineering-framework/fcr/errors/schemas/error-validation.schema.json",
+      "evidence_requirements": [
+        {
+          "evidence_id": "ERROR_REGISTRY_VALIDATION_FAILED",
+          "canonical_path": "implementation/workflow-state/evidence/registry/errors/REGISTRY_VALIDATION_FAILED.json",
+          "required": true,
+          "predicate_id": "PREPARATION_COMPLETE"
+        }
+      ],
+      "cleanup_behavior": "RELEASE_LOCKS",
+      "transaction_effect": "BLOCK",
+      "lifecycle_effect": "REMAIN_CURRENT",
+      "escalation_required": false,
+      "recovery_operation": "NONE",
+      "terminal": false
+    },
+    {
+      "code": "REGISTRY_SOURCE_AUTHORITY_CONFLICT",
+      "schema_version": "1.0.0",
+      "severity": "P1",
+      "response_contract_status": "TASK PREPARATION BLOCKED",
+      "blocker_category": "VALIDATION",
+      "retryable": false,
+      "resume_condition": "resolve REGISTRY_SOURCE_AUTHORITY_CONFLICT",
+      "human_message_template": "REGISTRY_SOURCE_AUTHORITY_CONFLICT: resolve REGISTRY_SOURCE_AUTHORITY_CONFLICT",
+      "machine_metadata_schema_ref": "docs/ai-engineering-framework/fcr/errors/schemas/error-authority.schema.json",
+      "evidence_requirements": [
+        {
+          "evidence_id": "ERROR_REGISTRY_SOURCE_AUTHORITY_CONFLICT",
+          "canonical_path": "implementation/workflow-state/evidence/registry/errors/REGISTRY_SOURCE_AUTHORITY_CONFLICT.json",
+          "required": true,
+          "predicate_id": "PREPARATION_COMPLETE"
+        }
+      ],
+      "cleanup_behavior": "RELEASE_LOCKS",
+      "transaction_effect": "BLOCK",
+      "lifecycle_effect": "REMAIN_CURRENT",
+      "escalation_required": false,
+      "recovery_operation": "NONE",
+      "terminal": false
+    },
+    {
+      "code": "REGISTRY_SOURCE_UNTRUSTED",
+      "schema_version": "1.0.0",
+      "severity": "P1",
+      "response_contract_status": "TASK PREPARATION BLOCKED",
+      "blocker_category": "VALIDATION",
+      "retryable": false,
+      "resume_condition": "resolve REGISTRY_SOURCE_UNTRUSTED",
+      "human_message_template": "REGISTRY_SOURCE_UNTRUSTED: resolve REGISTRY_SOURCE_UNTRUSTED",
+      "machine_metadata_schema_ref": "docs/ai-engineering-framework/fcr/errors/schemas/error-authority.schema.json",
+      "evidence_requirements": [
+        {
+          "evidence_id": "ERROR_REGISTRY_SOURCE_UNTRUSTED",
+          "canonical_path": "implementation/workflow-state/evidence/registry/errors/REGISTRY_SOURCE_UNTRUSTED.json",
+          "required": true,
+          "predicate_id": "PREPARATION_COMPLETE"
+        }
+      ],
+      "cleanup_behavior": "RELEASE_LOCKS",
+      "transaction_effect": "BLOCK",
+      "lifecycle_effect": "REMAIN_CURRENT",
+      "escalation_required": false,
+      "recovery_operation": "NONE",
+      "terminal": false
+    },
+    {
+      "code": "REGISTRY_SOURCE_REVISION_MISMATCH",
+      "schema_version": "1.0.0",
+      "severity": "P1",
+      "response_contract_status": "TASK PREPARATION BLOCKED",
+      "blocker_category": "VALIDATION",
+      "retryable": false,
+      "resume_condition": "resolve REGISTRY_SOURCE_REVISION_MISMATCH",
+      "human_message_template": "REGISTRY_SOURCE_REVISION_MISMATCH: resolve REGISTRY_SOURCE_REVISION_MISMATCH",
+      "machine_metadata_schema_ref": "docs/ai-engineering-framework/fcr/errors/schemas/error-repository.schema.json",
+      "evidence_requirements": [
+        {
+          "evidence_id": "ERROR_REGISTRY_SOURCE_REVISION_MISMATCH",
+          "canonical_path": "implementation/workflow-state/evidence/registry/errors/REGISTRY_SOURCE_REVISION_MISMATCH.json",
+          "required": true,
+          "predicate_id": "PREPARATION_COMPLETE"
+        }
+      ],
+      "cleanup_behavior": "RELEASE_LOCKS",
+      "transaction_effect": "BLOCK",
+      "lifecycle_effect": "REMAIN_CURRENT",
+      "escalation_required": false,
+      "recovery_operation": "NONE",
+      "terminal": false
+    },
+    {
+      "code": "REGISTRY_CONTENT_HASH_MISMATCH",
+      "schema_version": "1.0.0",
+      "severity": "P1",
+      "response_contract_status": "TASK PREPARATION BLOCKED",
+      "blocker_category": "VALIDATION",
+      "retryable": false,
+      "resume_condition": "resolve REGISTRY_CONTENT_HASH_MISMATCH",
+      "human_message_template": "REGISTRY_CONTENT_HASH_MISMATCH: resolve REGISTRY_CONTENT_HASH_MISMATCH",
+      "machine_metadata_schema_ref": "docs/ai-engineering-framework/fcr/errors/schemas/error-validation.schema.json",
+      "evidence_requirements": [
+        {
+          "evidence_id": "ERROR_REGISTRY_CONTENT_HASH_MISMATCH",
+          "canonical_path": "implementation/workflow-state/evidence/registry/errors/REGISTRY_CONTENT_HASH_MISMATCH.json",
+          "required": true,
+          "predicate_id": "PREPARATION_COMPLETE"
+        }
+      ],
+      "cleanup_behavior": "RELEASE_LOCKS",
+      "transaction_effect": "BLOCK",
+      "lifecycle_effect": "REMAIN_CURRENT",
+      "escalation_required": false,
+      "recovery_operation": "NONE",
+      "terminal": false
+    },
+    {
+      "code": "REGISTRY_DOCUMENT_MISSING",
+      "schema_version": "1.0.0",
+      "severity": "P1",
+      "response_contract_status": "TASK PREPARATION BLOCKED",
+      "blocker_category": "VALIDATION",
+      "retryable": false,
+      "resume_condition": "resolve REGISTRY_DOCUMENT_MISSING",
+      "human_message_template": "REGISTRY_DOCUMENT_MISSING: resolve REGISTRY_DOCUMENT_MISSING",
+      "machine_metadata_schema_ref": "docs/ai-engineering-framework/fcr/errors/schemas/error-validation.schema.json",
+      "evidence_requirements": [
+        {
+          "evidence_id": "ERROR_REGISTRY_DOCUMENT_MISSING",
+          "canonical_path": "implementation/workflow-state/evidence/registry/errors/REGISTRY_DOCUMENT_MISSING.json",
+          "required": true,
+          "predicate_id": "PREPARATION_COMPLETE"
+        }
+      ],
+      "cleanup_behavior": "RELEASE_LOCKS",
+      "transaction_effect": "BLOCK",
+      "lifecycle_effect": "REMAIN_CURRENT",
+      "escalation_required": false,
+      "recovery_operation": "NONE",
+      "terminal": false
+    },
+    {
+      "code": "REGISTRY_DEPENDENCY_MISSING",
+      "schema_version": "1.0.0",
+      "severity": "P1",
+      "response_contract_status": "TASK PREPARATION BLOCKED",
+      "blocker_category": "VALIDATION",
+      "retryable": false,
+      "resume_condition": "resolve REGISTRY_DEPENDENCY_MISSING",
+      "human_message_template": "REGISTRY_DEPENDENCY_MISSING: resolve REGISTRY_DEPENDENCY_MISSING",
+      "machine_metadata_schema_ref": "docs/ai-engineering-framework/fcr/errors/schemas/error-dependency.schema.json",
+      "evidence_requirements": [
+        {
+          "evidence_id": "ERROR_REGISTRY_DEPENDENCY_MISSING",
+          "canonical_path": "implementation/workflow-state/evidence/registry/errors/REGISTRY_DEPENDENCY_MISSING.json",
+          "required": true,
+          "predicate_id": "PREPARATION_COMPLETE"
+        }
+      ],
+      "cleanup_behavior": "RELEASE_LOCKS",
+      "transaction_effect": "BLOCK",
+      "lifecycle_effect": "REMAIN_CURRENT",
+      "escalation_required": false,
+      "recovery_operation": "NONE",
+      "terminal": false
+    },
+    {
+      "code": "REGISTRY_DEPENDENCY_INCOMPLETE",
+      "schema_version": "1.0.0",
+      "severity": "P1",
+      "response_contract_status": "TASK PREPARATION BLOCKED",
+      "blocker_category": "VALIDATION",
+      "retryable": false,
+      "resume_condition": "resolve REGISTRY_DEPENDENCY_INCOMPLETE",
+      "human_message_template": "REGISTRY_DEPENDENCY_INCOMPLETE: resolve REGISTRY_DEPENDENCY_INCOMPLETE",
+      "machine_metadata_schema_ref": "docs/ai-engineering-framework/fcr/errors/schemas/error-dependency.schema.json",
+      "evidence_requirements": [
+        {
+          "evidence_id": "ERROR_REGISTRY_DEPENDENCY_INCOMPLETE",
+          "canonical_path": "implementation/workflow-state/evidence/registry/errors/REGISTRY_DEPENDENCY_INCOMPLETE.json",
+          "required": true,
+          "predicate_id": "PREPARATION_COMPLETE"
+        }
+      ],
+      "cleanup_behavior": "RELEASE_LOCKS",
+      "transaction_effect": "BLOCK",
+      "lifecycle_effect": "REMAIN_CURRENT",
+      "escalation_required": false,
+      "recovery_operation": "NONE",
+      "terminal": false
+    },
+    {
+      "code": "REGISTRY_DEPENDENCY_CYCLE",
+      "schema_version": "1.0.0",
+      "severity": "P1",
+      "response_contract_status": "TASK PREPARATION BLOCKED",
+      "blocker_category": "VALIDATION",
+      "retryable": false,
+      "resume_condition": "resolve REGISTRY_DEPENDENCY_CYCLE",
+      "human_message_template": "REGISTRY_DEPENDENCY_CYCLE: resolve REGISTRY_DEPENDENCY_CYCLE",
+      "machine_metadata_schema_ref": "docs/ai-engineering-framework/fcr/errors/schemas/error-dependency.schema.json",
+      "evidence_requirements": [
+        {
+          "evidence_id": "ERROR_REGISTRY_DEPENDENCY_CYCLE",
+          "canonical_path": "implementation/workflow-state/evidence/registry/errors/REGISTRY_DEPENDENCY_CYCLE.json",
+          "required": true,
+          "predicate_id": "PREPARATION_COMPLETE"
+        }
+      ],
+      "cleanup_behavior": "RELEASE_LOCKS",
+      "transaction_effect": "BLOCK",
+      "lifecycle_effect": "REMAIN_CURRENT",
+      "escalation_required": false,
+      "recovery_operation": "NONE",
+      "terminal": false
+    },
+    {
+      "code": "REGISTRY_DEPENDENCY_OVERRIDE_INVALID",
+      "schema_version": "1.0.0",
+      "severity": "P1",
+      "response_contract_status": "TASK PREPARATION BLOCKED",
+      "blocker_category": "VALIDATION",
+      "retryable": false,
+      "resume_condition": "resolve REGISTRY_DEPENDENCY_OVERRIDE_INVALID",
+      "human_message_template": "REGISTRY_DEPENDENCY_OVERRIDE_INVALID: resolve REGISTRY_DEPENDENCY_OVERRIDE_INVALID",
+      "machine_metadata_schema_ref": "docs/ai-engineering-framework/fcr/errors/schemas/error-dependency.schema.json",
+      "evidence_requirements": [
+        {
+          "evidence_id": "ERROR_REGISTRY_DEPENDENCY_OVERRIDE_INVALID",
+          "canonical_path": "implementation/workflow-state/evidence/registry/errors/REGISTRY_DEPENDENCY_OVERRIDE_INVALID.json",
+          "required": true,
+          "predicate_id": "PREPARATION_COMPLETE"
+        }
+      ],
+      "cleanup_behavior": "RELEASE_LOCKS",
+      "transaction_effect": "BLOCK",
+      "lifecycle_effect": "REMAIN_CURRENT",
+      "escalation_required": false,
+      "recovery_operation": "NONE",
+      "terminal": false
+    },
+    {
+      "code": "REGISTRY_DEPENDENCY_DUPLICATE",
+      "schema_version": "1.0.0",
+      "severity": "P1",
+      "response_contract_status": "TASK PREPARATION BLOCKED",
+      "blocker_category": "VALIDATION",
+      "retryable": false,
+      "resume_condition": "resolve REGISTRY_DEPENDENCY_DUPLICATE",
+      "human_message_template": "REGISTRY_DEPENDENCY_DUPLICATE: resolve REGISTRY_DEPENDENCY_DUPLICATE",
+      "machine_metadata_schema_ref": "docs/ai-engineering-framework/fcr/errors/schemas/error-dependency.schema.json",
+      "evidence_requirements": [
+        {
+          "evidence_id": "ERROR_REGISTRY_DEPENDENCY_DUPLICATE",
+          "canonical_path": "implementation/workflow-state/evidence/registry/errors/REGISTRY_DEPENDENCY_DUPLICATE.json",
+          "required": true,
+          "predicate_id": "PREPARATION_COMPLETE"
+        }
+      ],
+      "cleanup_behavior": "RELEASE_LOCKS",
+      "transaction_effect": "BLOCK",
+      "lifecycle_effect": "REMAIN_CURRENT",
+      "escalation_required": false,
+      "recovery_operation": "NONE",
+      "terminal": false
+    },
+    {
+      "code": "REGISTRY_OVERRIDE_EXPIRED",
+      "schema_version": "1.0.0",
+      "severity": "P1",
+      "response_contract_status": "TASK PREPARATION BLOCKED",
+      "blocker_category": "VALIDATION",
+      "retryable": false,
+      "resume_condition": "resolve REGISTRY_OVERRIDE_EXPIRED",
+      "human_message_template": "REGISTRY_OVERRIDE_EXPIRED: resolve REGISTRY_OVERRIDE_EXPIRED",
+      "machine_metadata_schema_ref": "docs/ai-engineering-framework/fcr/errors/schemas/error-dependency.schema.json",
+      "evidence_requirements": [
+        {
+          "evidence_id": "ERROR_REGISTRY_OVERRIDE_EXPIRED",
+          "canonical_path": "implementation/workflow-state/evidence/registry/errors/REGISTRY_OVERRIDE_EXPIRED.json",
+          "required": true,
+          "predicate_id": "PREPARATION_COMPLETE"
+        }
+      ],
+      "cleanup_behavior": "RELEASE_LOCKS",
+      "transaction_effect": "BLOCK",
+      "lifecycle_effect": "REMAIN_CURRENT",
+      "escalation_required": false,
+      "recovery_operation": "NONE",
+      "terminal": false
+    },
+    {
+      "code": "REGISTRY_OWNERSHIP_CONFLICT",
+      "schema_version": "1.0.0",
+      "severity": "P1",
+      "response_contract_status": "TASK PREPARATION BLOCKED",
+      "blocker_category": "VALIDATION",
+      "retryable": false,
+      "resume_condition": "resolve REGISTRY_OWNERSHIP_CONFLICT",
+      "human_message_template": "REGISTRY_OWNERSHIP_CONFLICT: resolve REGISTRY_OWNERSHIP_CONFLICT",
+      "machine_metadata_schema_ref": "docs/ai-engineering-framework/fcr/errors/schemas/error-scope.schema.json",
+      "evidence_requirements": [
+        {
+          "evidence_id": "ERROR_REGISTRY_OWNERSHIP_CONFLICT",
+          "canonical_path": "implementation/workflow-state/evidence/registry/errors/REGISTRY_OWNERSHIP_CONFLICT.json",
+          "required": true,
+          "predicate_id": "PREPARATION_COMPLETE"
+        }
+      ],
+      "cleanup_behavior": "RELEASE_LOCKS",
+      "transaction_effect": "BLOCK",
+      "lifecycle_effect": "REMAIN_CURRENT",
+      "escalation_required": false,
+      "recovery_operation": "NONE",
+      "terminal": false
+    },
+    {
+      "code": "REGISTRY_SCOPE_CONFLICT",
+      "schema_version": "1.0.0",
+      "severity": "P1",
+      "response_contract_status": "TASK PREPARATION BLOCKED",
+      "blocker_category": "VALIDATION",
+      "retryable": false,
+      "resume_condition": "resolve REGISTRY_SCOPE_CONFLICT",
+      "human_message_template": "REGISTRY_SCOPE_CONFLICT: resolve REGISTRY_SCOPE_CONFLICT",
+      "machine_metadata_schema_ref": "docs/ai-engineering-framework/fcr/errors/schemas/error-scope.schema.json",
+      "evidence_requirements": [
+        {
+          "evidence_id": "ERROR_REGISTRY_SCOPE_CONFLICT",
+          "canonical_path": "implementation/workflow-state/evidence/registry/errors/REGISTRY_SCOPE_CONFLICT.json",
+          "required": true,
+          "predicate_id": "PREPARATION_COMPLETE"
+        }
+      ],
+      "cleanup_behavior": "RELEASE_LOCKS",
+      "transaction_effect": "BLOCK",
+      "lifecycle_effect": "REMAIN_CURRENT",
+      "escalation_required": false,
+      "recovery_operation": "NONE",
+      "terminal": false
+    },
+    {
+      "code": "REGISTRY_PATH_UNOWNED",
+      "schema_version": "1.0.0",
+      "severity": "P1",
+      "response_contract_status": "TASK PREPARATION BLOCKED",
+      "blocker_category": "VALIDATION",
+      "retryable": false,
+      "resume_condition": "resolve REGISTRY_PATH_UNOWNED",
+      "human_message_template": "REGISTRY_PATH_UNOWNED: resolve REGISTRY_PATH_UNOWNED",
+      "machine_metadata_schema_ref": "docs/ai-engineering-framework/fcr/errors/schemas/error-scope.schema.json",
+      "evidence_requirements": [
+        {
+          "evidence_id": "ERROR_REGISTRY_PATH_UNOWNED",
+          "canonical_path": "implementation/workflow-state/evidence/registry/errors/REGISTRY_PATH_UNOWNED.json",
+          "required": true,
+          "predicate_id": "PREPARATION_COMPLETE"
+        }
+      ],
+      "cleanup_behavior": "RELEASE_LOCKS",
+      "transaction_effect": "BLOCK",
+      "lifecycle_effect": "REMAIN_CURRENT",
+      "escalation_required": false,
+      "recovery_operation": "NONE",
+      "terminal": false
+    },
+    {
+      "code": "REGISTRY_PATH_NORMALIZATION_FAILED",
+      "schema_version": "1.0.0",
+      "severity": "P1",
+      "response_contract_status": "TASK PREPARATION BLOCKED",
+      "blocker_category": "VALIDATION",
+      "retryable": false,
+      "resume_condition": "resolve REGISTRY_PATH_NORMALIZATION_FAILED",
+      "human_message_template": "REGISTRY_PATH_NORMALIZATION_FAILED: resolve REGISTRY_PATH_NORMALIZATION_FAILED",
+      "machine_metadata_schema_ref": "docs/ai-engineering-framework/fcr/errors/schemas/error-scope.schema.json",
+      "evidence_requirements": [
+        {
+          "evidence_id": "ERROR_REGISTRY_PATH_NORMALIZATION_FAILED",
+          "canonical_path": "implementation/workflow-state/evidence/registry/errors/REGISTRY_PATH_NORMALIZATION_FAILED.json",
+          "required": true,
+          "predicate_id": "PREPARATION_COMPLETE"
+        }
+      ],
+      "cleanup_behavior": "RELEASE_LOCKS",
+      "transaction_effect": "BLOCK",
+      "lifecycle_effect": "REMAIN_CURRENT",
+      "escalation_required": false,
+      "recovery_operation": "NONE",
+      "terminal": false
+    },
+    {
+      "code": "REGISTRY_EVIDENCE_MISSING",
+      "schema_version": "1.0.0",
+      "severity": "P1",
+      "response_contract_status": "TASK PREPARATION BLOCKED",
+      "blocker_category": "VALIDATION",
+      "retryable": false,
+      "resume_condition": "resolve REGISTRY_EVIDENCE_MISSING",
+      "human_message_template": "REGISTRY_EVIDENCE_MISSING: resolve REGISTRY_EVIDENCE_MISSING",
+      "machine_metadata_schema_ref": "docs/ai-engineering-framework/fcr/errors/schemas/error-evidence.schema.json",
+      "evidence_requirements": [
+        {
+          "evidence_id": "ERROR_REGISTRY_EVIDENCE_MISSING",
+          "canonical_path": "implementation/workflow-state/evidence/registry/errors/REGISTRY_EVIDENCE_MISSING.json",
+          "required": true,
+          "predicate_id": "PREPARATION_COMPLETE"
+        }
+      ],
+      "cleanup_behavior": "RELEASE_LOCKS",
+      "transaction_effect": "BLOCK",
+      "lifecycle_effect": "REMAIN_CURRENT",
+      "escalation_required": false,
+      "recovery_operation": "NONE",
+      "terminal": false
+    },
+    {
+      "code": "REGISTRY_EVIDENCE_STALE",
+      "schema_version": "1.0.0",
+      "severity": "P1",
+      "response_contract_status": "TASK PREPARATION BLOCKED",
+      "blocker_category": "VALIDATION",
+      "retryable": false,
+      "resume_condition": "resolve REGISTRY_EVIDENCE_STALE",
+      "human_message_template": "REGISTRY_EVIDENCE_STALE: resolve REGISTRY_EVIDENCE_STALE",
+      "machine_metadata_schema_ref": "docs/ai-engineering-framework/fcr/errors/schemas/error-evidence.schema.json",
+      "evidence_requirements": [
+        {
+          "evidence_id": "ERROR_REGISTRY_EVIDENCE_STALE",
+          "canonical_path": "implementation/workflow-state/evidence/registry/errors/REGISTRY_EVIDENCE_STALE.json",
+          "required": true,
+          "predicate_id": "PREPARATION_COMPLETE"
+        }
+      ],
+      "cleanup_behavior": "RELEASE_LOCKS",
+      "transaction_effect": "BLOCK",
+      "lifecycle_effect": "REMAIN_CURRENT",
+      "escalation_required": false,
+      "recovery_operation": "NONE",
+      "terminal": false
+    },
+    {
+      "code": "REGISTRY_EVIDENCE_CONTRADICTORY",
+      "schema_version": "1.0.0",
+      "severity": "P1",
+      "response_contract_status": "TASK PREPARATION BLOCKED",
+      "blocker_category": "VALIDATION",
+      "retryable": false,
+      "resume_condition": "resolve REGISTRY_EVIDENCE_CONTRADICTORY",
+      "human_message_template": "REGISTRY_EVIDENCE_CONTRADICTORY: resolve REGISTRY_EVIDENCE_CONTRADICTORY",
+      "machine_metadata_schema_ref": "docs/ai-engineering-framework/fcr/errors/schemas/error-evidence.schema.json",
+      "evidence_requirements": [
+        {
+          "evidence_id": "ERROR_REGISTRY_EVIDENCE_CONTRADICTORY",
+          "canonical_path": "implementation/workflow-state/evidence/registry/errors/REGISTRY_EVIDENCE_CONTRADICTORY.json",
+          "required": true,
+          "predicate_id": "PREPARATION_COMPLETE"
+        }
+      ],
+      "cleanup_behavior": "RELEASE_LOCKS",
+      "transaction_effect": "BLOCK",
+      "lifecycle_effect": "REMAIN_CURRENT",
+      "escalation_required": false,
+      "recovery_operation": "NONE",
+      "terminal": false
+    },
+    {
+      "code": "REGISTRY_EVIDENCE_INVALID",
+      "schema_version": "1.0.0",
+      "severity": "P1",
+      "response_contract_status": "TASK PREPARATION BLOCKED",
+      "blocker_category": "VALIDATION",
+      "retryable": false,
+      "resume_condition": "resolve REGISTRY_EVIDENCE_INVALID",
+      "human_message_template": "REGISTRY_EVIDENCE_INVALID: resolve REGISTRY_EVIDENCE_INVALID",
+      "machine_metadata_schema_ref": "docs/ai-engineering-framework/fcr/errors/schemas/error-evidence.schema.json",
+      "evidence_requirements": [
+        {
+          "evidence_id": "ERROR_REGISTRY_EVIDENCE_INVALID",
+          "canonical_path": "implementation/workflow-state/evidence/registry/errors/REGISTRY_EVIDENCE_INVALID.json",
+          "required": true,
+          "predicate_id": "PREPARATION_COMPLETE"
+        }
+      ],
+      "cleanup_behavior": "RELEASE_LOCKS",
+      "transaction_effect": "BLOCK",
+      "lifecycle_effect": "REMAIN_CURRENT",
+      "escalation_required": false,
+      "recovery_operation": "NONE",
+      "terminal": false
+    },
+    {
+      "code": "REGISTRY_LOCK_STALE",
+      "schema_version": "1.0.0",
+      "severity": "P1",
+      "response_contract_status": "TASK PREPARATION BLOCKED",
+      "blocker_category": "VALIDATION",
+      "retryable": false,
+      "resume_condition": "resolve REGISTRY_LOCK_STALE",
+      "human_message_template": "REGISTRY_LOCK_STALE: resolve REGISTRY_LOCK_STALE",
+      "machine_metadata_schema_ref": "docs/ai-engineering-framework/fcr/errors/schemas/error-repository.schema.json",
+      "evidence_requirements": [
+        {
+          "evidence_id": "ERROR_REGISTRY_LOCK_STALE",
+          "canonical_path": "implementation/workflow-state/evidence/registry/errors/REGISTRY_LOCK_STALE.json",
+          "required": true,
+          "predicate_id": "PREPARATION_COMPLETE"
+        }
+      ],
+      "cleanup_behavior": "RELEASE_LOCKS",
+      "transaction_effect": "BLOCK",
+      "lifecycle_effect": "REMAIN_CURRENT",
+      "escalation_required": false,
+      "recovery_operation": "NONE",
+      "terminal": false
+    },
+    {
+      "code": "REGISTRY_LOCK_TAKEOVER_FAILED",
+      "schema_version": "1.0.0",
+      "severity": "P1",
+      "response_contract_status": "TASK PREPARATION BLOCKED",
+      "blocker_category": "VALIDATION",
+      "retryable": false,
+      "resume_condition": "resolve REGISTRY_LOCK_TAKEOVER_FAILED",
+      "human_message_template": "REGISTRY_LOCK_TAKEOVER_FAILED: resolve REGISTRY_LOCK_TAKEOVER_FAILED",
+      "machine_metadata_schema_ref": "docs/ai-engineering-framework/fcr/errors/schemas/error-repository.schema.json",
+      "evidence_requirements": [
+        {
+          "evidence_id": "ERROR_REGISTRY_LOCK_TAKEOVER_FAILED",
+          "canonical_path": "implementation/workflow-state/evidence/registry/errors/REGISTRY_LOCK_TAKEOVER_FAILED.json",
+          "required": true,
+          "predicate_id": "PREPARATION_COMPLETE"
+        }
+      ],
+      "cleanup_behavior": "RELEASE_LOCKS",
+      "transaction_effect": "BLOCK",
+      "lifecycle_effect": "REMAIN_CURRENT",
+      "escalation_required": false,
+      "recovery_operation": "NONE",
+      "terminal": false
+    },
+    {
+      "code": "REGISTRY_STAGING_FAILED",
+      "schema_version": "1.0.0",
+      "severity": "P1",
+      "response_contract_status": "TASK PREPARATION BLOCKED",
+      "blocker_category": "VALIDATION",
+      "retryable": false,
+      "resume_condition": "resolve REGISTRY_STAGING_FAILED",
+      "human_message_template": "REGISTRY_STAGING_FAILED: resolve REGISTRY_STAGING_FAILED",
+      "machine_metadata_schema_ref": "docs/ai-engineering-framework/fcr/errors/schemas/error-persistence.schema.json",
+      "evidence_requirements": [
+        {
+          "evidence_id": "ERROR_REGISTRY_STAGING_FAILED",
+          "canonical_path": "implementation/workflow-state/evidence/registry/errors/REGISTRY_STAGING_FAILED.json",
+          "required": true,
+          "predicate_id": "PREPARATION_COMPLETE"
+        }
+      ],
+      "cleanup_behavior": "RELEASE_LOCKS",
+      "transaction_effect": "BLOCK",
+      "lifecycle_effect": "REMAIN_CURRENT",
+      "escalation_required": false,
+      "recovery_operation": "NONE",
+      "terminal": false
+    },
+    {
+      "code": "REGISTRY_V2_001_VALIDATION_FAILED",
+      "schema_version": "1.0.0",
+      "severity": "P1",
+      "response_contract_status": "TASK PREPARATION BLOCKED",
+      "blocker_category": "VALIDATION",
+      "retryable": false,
+      "resume_condition": "resolve REGISTRY_V2_001_VALIDATION_FAILED",
+      "human_message_template": "REGISTRY_V2_001_VALIDATION_FAILED: resolve REGISTRY_V2_001_VALIDATION_FAILED",
+      "machine_metadata_schema_ref": "docs/ai-engineering-framework/fcr/errors/schemas/error-validator.schema.json",
+      "evidence_requirements": [
+        {
+          "evidence_id": "ERROR_REGISTRY_V2_001_VALIDATION_FAILED",
+          "canonical_path": "implementation/workflow-state/evidence/registry/errors/REGISTRY_V2_001_VALIDATION_FAILED.json",
+          "required": true,
+          "predicate_id": "PREPARATION_COMPLETE"
+        }
+      ],
+      "cleanup_behavior": "RELEASE_LOCKS",
+      "transaction_effect": "BLOCK",
+      "lifecycle_effect": "REMAIN_CURRENT",
+      "escalation_required": false,
+      "recovery_operation": "NONE",
+      "terminal": false
+    },
+    {
+      "code": "REGISTRY_V2_002_VALIDATION_FAILED",
+      "schema_version": "1.0.0",
+      "severity": "P1",
+      "response_contract_status": "TASK PREPARATION BLOCKED",
+      "blocker_category": "VALIDATION",
+      "retryable": false,
+      "resume_condition": "resolve REGISTRY_V2_002_VALIDATION_FAILED",
+      "human_message_template": "REGISTRY_V2_002_VALIDATION_FAILED: resolve REGISTRY_V2_002_VALIDATION_FAILED",
+      "machine_metadata_schema_ref": "docs/ai-engineering-framework/fcr/errors/schemas/error-validator.schema.json",
+      "evidence_requirements": [
+        {
+          "evidence_id": "ERROR_REGISTRY_V2_002_VALIDATION_FAILED",
+          "canonical_path": "implementation/workflow-state/evidence/registry/errors/REGISTRY_V2_002_VALIDATION_FAILED.json",
+          "required": true,
+          "predicate_id": "PREPARATION_COMPLETE"
+        }
+      ],
+      "cleanup_behavior": "RELEASE_LOCKS",
+      "transaction_effect": "BLOCK",
+      "lifecycle_effect": "REMAIN_CURRENT",
+      "escalation_required": false,
+      "recovery_operation": "NONE",
+      "terminal": false
+    },
+    {
+      "code": "REGISTRY_V2_003_VALIDATION_FAILED",
+      "schema_version": "1.0.0",
+      "severity": "P1",
+      "response_contract_status": "TASK PREPARATION BLOCKED",
+      "blocker_category": "VALIDATION",
+      "retryable": false,
+      "resume_condition": "resolve REGISTRY_V2_003_VALIDATION_FAILED",
+      "human_message_template": "REGISTRY_V2_003_VALIDATION_FAILED: resolve REGISTRY_V2_003_VALIDATION_FAILED",
+      "machine_metadata_schema_ref": "docs/ai-engineering-framework/fcr/errors/schemas/error-validator.schema.json",
+      "evidence_requirements": [
+        {
+          "evidence_id": "ERROR_REGISTRY_V2_003_VALIDATION_FAILED",
+          "canonical_path": "implementation/workflow-state/evidence/registry/errors/REGISTRY_V2_003_VALIDATION_FAILED.json",
+          "required": true,
+          "predicate_id": "PREPARATION_COMPLETE"
+        }
+      ],
+      "cleanup_behavior": "RELEASE_LOCKS",
+      "transaction_effect": "BLOCK",
+      "lifecycle_effect": "REMAIN_CURRENT",
+      "escalation_required": false,
+      "recovery_operation": "NONE",
+      "terminal": false
+    },
+    {
+      "code": "REGISTRY_COMMIT_FAILED",
+      "schema_version": "1.0.0",
+      "severity": "P1",
+      "response_contract_status": "TASK PREPARATION BLOCKED",
+      "blocker_category": "VALIDATION",
+      "retryable": false,
+      "resume_condition": "resolve REGISTRY_COMMIT_FAILED",
+      "human_message_template": "REGISTRY_COMMIT_FAILED: resolve REGISTRY_COMMIT_FAILED",
+      "machine_metadata_schema_ref": "docs/ai-engineering-framework/fcr/errors/schemas/error-persistence.schema.json",
+      "evidence_requirements": [
+        {
+          "evidence_id": "ERROR_REGISTRY_COMMIT_FAILED",
+          "canonical_path": "implementation/workflow-state/evidence/registry/errors/REGISTRY_COMMIT_FAILED.json",
+          "required": true,
+          "predicate_id": "PREPARATION_COMPLETE"
+        }
+      ],
+      "cleanup_behavior": "RELEASE_LOCKS",
+      "transaction_effect": "BLOCK",
+      "lifecycle_effect": "REMAIN_CURRENT",
+      "escalation_required": false,
+      "recovery_operation": "NONE",
+      "terminal": false
+    },
+    {
+      "code": "REGISTRY_ARTIFACT_PERSISTENCE_FAILED",
+      "schema_version": "1.0.0",
+      "severity": "P1",
+      "response_contract_status": "TASK PREPARATION BLOCKED",
+      "blocker_category": "VALIDATION",
+      "retryable": false,
+      "resume_condition": "resolve REGISTRY_ARTIFACT_PERSISTENCE_FAILED",
+      "human_message_template": "REGISTRY_ARTIFACT_PERSISTENCE_FAILED: resolve REGISTRY_ARTIFACT_PERSISTENCE_FAILED",
+      "machine_metadata_schema_ref": "docs/ai-engineering-framework/fcr/errors/schemas/error-persistence.schema.json",
+      "evidence_requirements": [
+        {
+          "evidence_id": "ERROR_REGISTRY_ARTIFACT_PERSISTENCE_FAILED",
+          "canonical_path": "implementation/workflow-state/evidence/registry/errors/REGISTRY_ARTIFACT_PERSISTENCE_FAILED.json",
+          "required": true,
+          "predicate_id": "PREPARATION_COMPLETE"
+        }
+      ],
+      "cleanup_behavior": "RELEASE_LOCKS",
+      "transaction_effect": "BLOCK",
+      "lifecycle_effect": "REMAIN_CURRENT",
+      "escalation_required": false,
+      "recovery_operation": "NONE",
+      "terminal": false
+    },
+    {
+      "code": "REGISTRY_PROJECTION_FAILED",
+      "schema_version": "1.0.0",
+      "severity": "P1",
+      "response_contract_status": "TASK PREPARATION BLOCKED",
+      "blocker_category": "VALIDATION",
+      "retryable": false,
+      "resume_condition": "resolve REGISTRY_PROJECTION_FAILED",
+      "human_message_template": "REGISTRY_PROJECTION_FAILED: resolve REGISTRY_PROJECTION_FAILED",
+      "machine_metadata_schema_ref": "docs/ai-engineering-framework/fcr/errors/schemas/error-persistence.schema.json",
+      "evidence_requirements": [
+        {
+          "evidence_id": "ERROR_REGISTRY_PROJECTION_FAILED",
+          "canonical_path": "implementation/workflow-state/evidence/registry/errors/REGISTRY_PROJECTION_FAILED.json",
+          "required": true,
+          "predicate_id": "PREPARATION_COMPLETE"
+        }
+      ],
+      "cleanup_behavior": "RELEASE_LOCKS",
+      "transaction_effect": "BLOCK",
+      "lifecycle_effect": "REMAIN_CURRENT",
+      "escalation_required": false,
+      "recovery_operation": "NONE",
+      "terminal": false
+    },
+    {
+      "code": "REGISTRY_PARTIAL_WRITE",
+      "schema_version": "1.0.0",
+      "severity": "P1",
+      "response_contract_status": "TASK PREPARATION BLOCKED",
+      "blocker_category": "VALIDATION",
+      "retryable": false,
+      "resume_condition": "resolve REGISTRY_PARTIAL_WRITE",
+      "human_message_template": "REGISTRY_PARTIAL_WRITE: resolve REGISTRY_PARTIAL_WRITE",
+      "machine_metadata_schema_ref": "docs/ai-engineering-framework/fcr/errors/schemas/error-persistence.schema.json",
+      "evidence_requirements": [
+        {
+          "evidence_id": "ERROR_REGISTRY_PARTIAL_WRITE",
+          "canonical_path": "implementation/workflow-state/evidence/registry/errors/REGISTRY_PARTIAL_WRITE.json",
+          "required": true,
+          "predicate_id": "PREPARATION_COMPLETE"
+        }
+      ],
+      "cleanup_behavior": "RELEASE_LOCKS",
+      "transaction_effect": "BLOCK",
+      "lifecycle_effect": "REMAIN_CURRENT",
+      "escalation_required": false,
+      "recovery_operation": "NONE",
+      "terminal": false
+    },
+    {
+      "code": "REGISTRY_ROLLBACK_FAILED",
+      "schema_version": "1.0.0",
+      "severity": "P0",
+      "response_contract_status": "BLOCKED",
+      "blocker_category": "VALIDATION",
+      "retryable": false,
+      "resume_condition": "resolve REGISTRY_ROLLBACK_FAILED",
+      "human_message_template": "REGISTRY_ROLLBACK_FAILED: resolve REGISTRY_ROLLBACK_FAILED",
+      "machine_metadata_schema_ref": "docs/ai-engineering-framework/fcr/errors/schemas/error-persistence.schema.json",
+      "evidence_requirements": [
+        {
+          "evidence_id": "ERROR_REGISTRY_ROLLBACK_FAILED",
+          "canonical_path": "implementation/workflow-state/evidence/registry/errors/REGISTRY_ROLLBACK_FAILED.json",
+          "required": true,
+          "predicate_id": "PREPARATION_COMPLETE"
+        }
+      ],
+      "cleanup_behavior": "RELEASE_LOCKS",
+      "transaction_effect": "BLOCK",
+      "lifecycle_effect": "REMAIN_CURRENT",
+      "escalation_required": true,
+      "recovery_operation": "NONE",
+      "terminal": false
+    },
+    {
+      "code": "REGISTRY_RECOVERY_FAILED",
+      "schema_version": "1.0.0",
+      "severity": "P0",
+      "response_contract_status": "BLOCKED",
+      "blocker_category": "VALIDATION",
+      "retryable": false,
+      "resume_condition": "resolve REGISTRY_RECOVERY_FAILED",
+      "human_message_template": "REGISTRY_RECOVERY_FAILED: resolve REGISTRY_RECOVERY_FAILED",
+      "machine_metadata_schema_ref": "docs/ai-engineering-framework/fcr/errors/schemas/error-persistence.schema.json",
+      "evidence_requirements": [
+        {
+          "evidence_id": "ERROR_REGISTRY_RECOVERY_FAILED",
+          "canonical_path": "implementation/workflow-state/evidence/registry/errors/REGISTRY_RECOVERY_FAILED.json",
+          "required": true,
+          "predicate_id": "PREPARATION_COMPLETE"
+        }
+      ],
+      "cleanup_behavior": "RELEASE_LOCKS",
+      "transaction_effect": "BLOCK",
+      "lifecycle_effect": "REMAIN_CURRENT",
+      "escalation_required": true,
+      "recovery_operation": "NONE",
+      "terminal": false
+    },
+    {
+      "code": "REGISTRY_LIFECYCLE_TRANSITION_FAILED",
+      "schema_version": "1.0.0",
+      "severity": "P0",
+      "response_contract_status": "BLOCKED",
+      "blocker_category": "VALIDATION",
+      "retryable": false,
+      "resume_condition": "resolve REGISTRY_LIFECYCLE_TRANSITION_FAILED",
+      "human_message_template": "REGISTRY_LIFECYCLE_TRANSITION_FAILED: resolve REGISTRY_LIFECYCLE_TRANSITION_FAILED",
+      "machine_metadata_schema_ref": "docs/ai-engineering-framework/fcr/errors/schemas/error-lifecycle.schema.json",
+      "evidence_requirements": [
+        {
+          "evidence_id": "ERROR_REGISTRY_LIFECYCLE_TRANSITION_FAILED",
+          "canonical_path": "implementation/workflow-state/evidence/registry/errors/REGISTRY_LIFECYCLE_TRANSITION_FAILED.json",
+          "required": true,
+          "predicate_id": "PREPARATION_COMPLETE"
+        }
+      ],
+      "cleanup_behavior": "RELEASE_LOCKS",
+      "transaction_effect": "BLOCK",
+      "lifecycle_effect": "REMAIN_CURRENT",
+      "escalation_required": false,
+      "recovery_operation": "NONE",
+      "terminal": false
+    },
+    {
+      "code": "REGISTRY_LIFECYCLE_STATE_DRIFT",
+      "schema_version": "1.0.0",
+      "severity": "P0",
+      "response_contract_status": "BLOCKED",
+      "blocker_category": "VALIDATION",
+      "retryable": false,
+      "resume_condition": "resolve REGISTRY_LIFECYCLE_STATE_DRIFT",
+      "human_message_template": "REGISTRY_LIFECYCLE_STATE_DRIFT: resolve REGISTRY_LIFECYCLE_STATE_DRIFT",
+      "machine_metadata_schema_ref": "docs/ai-engineering-framework/fcr/errors/schemas/error-lifecycle.schema.json",
+      "evidence_requirements": [
+        {
+          "evidence_id": "ERROR_REGISTRY_LIFECYCLE_STATE_DRIFT",
+          "canonical_path": "implementation/workflow-state/evidence/registry/errors/REGISTRY_LIFECYCLE_STATE_DRIFT.json",
+          "required": true,
+          "predicate_id": "PREPARATION_COMPLETE"
+        }
+      ],
+      "cleanup_behavior": "RELEASE_LOCKS",
+      "transaction_effect": "BLOCK",
+      "lifecycle_effect": "REMAIN_CURRENT",
+      "escalation_required": false,
+      "recovery_operation": "NONE",
+      "terminal": false
+    },
+    {
+      "code": "REGISTRY_LIFECYCLE_CONFLICT",
+      "schema_version": "1.0.0",
+      "severity": "P0",
+      "response_contract_status": "BLOCKED",
+      "blocker_category": "VALIDATION",
+      "retryable": false,
+      "resume_condition": "resolve REGISTRY_LIFECYCLE_CONFLICT",
+      "human_message_template": "REGISTRY_LIFECYCLE_CONFLICT: resolve REGISTRY_LIFECYCLE_CONFLICT",
+      "machine_metadata_schema_ref": "docs/ai-engineering-framework/fcr/errors/schemas/error-lifecycle.schema.json",
+      "evidence_requirements": [
+        {
+          "evidence_id": "ERROR_REGISTRY_LIFECYCLE_CONFLICT",
+          "canonical_path": "implementation/workflow-state/evidence/registry/errors/REGISTRY_LIFECYCLE_CONFLICT.json",
+          "required": true,
+          "predicate_id": "PREPARATION_COMPLETE"
+        }
+      ],
+      "cleanup_behavior": "RELEASE_LOCKS",
+      "transaction_effect": "BLOCK",
+      "lifecycle_effect": "REMAIN_CURRENT",
+      "escalation_required": false,
+      "recovery_operation": "NONE",
+      "terminal": false
+    },
+    {
+      "code": "REGISTRY_POST_COMMIT_CONSISTENCY_FAILED",
+      "schema_version": "1.0.0",
+      "severity": "P1",
+      "response_contract_status": "TASK PREPARATION BLOCKED",
+      "blocker_category": "VALIDATION",
+      "retryable": false,
+      "resume_condition": "resolve REGISTRY_POST_COMMIT_CONSISTENCY_FAILED",
+      "human_message_template": "REGISTRY_POST_COMMIT_CONSISTENCY_FAILED: resolve REGISTRY_POST_COMMIT_CONSISTENCY_FAILED",
+      "machine_metadata_schema_ref": "docs/ai-engineering-framework/fcr/errors/schemas/error-persistence.schema.json",
+      "evidence_requirements": [
+        {
+          "evidence_id": "ERROR_REGISTRY_POST_COMMIT_CONSISTENCY_FAILED",
+          "canonical_path": "implementation/workflow-state/evidence/registry/errors/REGISTRY_POST_COMMIT_CONSISTENCY_FAILED.json",
+          "required": true,
+          "predicate_id": "PREPARATION_COMPLETE"
+        }
+      ],
+      "cleanup_behavior": "RELEASE_LOCKS",
+      "transaction_effect": "BLOCK",
+      "lifecycle_effect": "REMAIN_CURRENT",
+      "escalation_required": false,
+      "recovery_operation": "NONE",
+      "terminal": false
+    },
+    {
+      "code": "REGISTRY_VERSION_UNSUPPORTED",
+      "schema_version": "1.0.0",
+      "severity": "P0",
+      "response_contract_status": "BLOCKED",
+      "blocker_category": "VALIDATION",
+      "retryable": false,
+      "resume_condition": "resolve REGISTRY_VERSION_UNSUPPORTED",
+      "human_message_template": "REGISTRY_VERSION_UNSUPPORTED: resolve REGISTRY_VERSION_UNSUPPORTED",
+      "machine_metadata_schema_ref": "docs/ai-engineering-framework/fcr/errors/schemas/error-validation.schema.json",
+      "evidence_requirements": [
+        {
+          "evidence_id": "ERROR_REGISTRY_VERSION_UNSUPPORTED",
+          "canonical_path": "implementation/workflow-state/evidence/registry/errors/REGISTRY_VERSION_UNSUPPORTED.json",
+          "required": true,
+          "predicate_id": "PREPARATION_COMPLETE"
+        }
+      ],
+      "cleanup_behavior": "RELEASE_LOCKS",
+      "transaction_effect": "BLOCK",
+      "lifecycle_effect": "REMAIN_CURRENT",
+      "escalation_required": false,
+      "recovery_operation": "NONE",
+      "terminal": false
+    },
+    {
+      "code": "REGISTRY_CONTEXT_CONFLICT",
+      "schema_version": "1.0.0",
+      "severity": "P1",
+      "response_contract_status": "TASK PREPARATION BLOCKED",
+      "blocker_category": "VALIDATION",
+      "retryable": false,
+      "resume_condition": "resolve REGISTRY_CONTEXT_CONFLICT",
+      "human_message_template": "REGISTRY_CONTEXT_CONFLICT: resolve REGISTRY_CONTEXT_CONFLICT",
+      "machine_metadata_schema_ref": "docs/ai-engineering-framework/fcr/errors/schemas/error-context.schema.json",
+      "evidence_requirements": [
+        {
+          "evidence_id": "ERROR_REGISTRY_CONTEXT_CONFLICT",
+          "canonical_path": "implementation/workflow-state/evidence/registry/errors/REGISTRY_CONTEXT_CONFLICT.json",
+          "required": true,
+          "predicate_id": "PREPARATION_COMPLETE"
+        }
+      ],
+      "cleanup_behavior": "RELEASE_LOCKS",
+      "transaction_effect": "BLOCK",
+      "lifecycle_effect": "REMAIN_CURRENT",
+      "escalation_required": false,
+      "recovery_operation": "NONE",
+      "terminal": false
+    },
+    {
+      "code": "REGISTRY_CONTEXT_TOO_LARGE",
+      "schema_version": "1.0.0",
+      "severity": "P1",
+      "response_contract_status": "TASK PREPARATION BLOCKED",
+      "blocker_category": "VALIDATION",
+      "retryable": false,
+      "resume_condition": "resolve REGISTRY_CONTEXT_TOO_LARGE",
+      "human_message_template": "REGISTRY_CONTEXT_TOO_LARGE: resolve REGISTRY_CONTEXT_TOO_LARGE",
+      "machine_metadata_schema_ref": "docs/ai-engineering-framework/fcr/errors/schemas/error-context.schema.json",
+      "evidence_requirements": [
+        {
+          "evidence_id": "ERROR_REGISTRY_CONTEXT_TOO_LARGE",
+          "canonical_path": "implementation/workflow-state/evidence/registry/errors/REGISTRY_CONTEXT_TOO_LARGE.json",
+          "required": true,
+          "predicate_id": "PREPARATION_COMPLETE"
+        }
+      ],
+      "cleanup_behavior": "RELEASE_LOCKS",
+      "transaction_effect": "BLOCK",
+      "lifecycle_effect": "REMAIN_CURRENT",
+      "escalation_required": false,
+      "recovery_operation": "NONE",
+      "terminal": false
+    },
+    {
+      "code": "REGISTRY_ARCHITECTURE_CONFLICT",
+      "schema_version": "1.0.0",
+      "severity": "P0",
+      "response_contract_status": "TASK PREPARATION BLOCKED",
+      "blocker_category": "VALIDATION",
+      "retryable": false,
+      "resume_condition": "reconcile prose and machine-readable architecture",
+      "human_message_template": "REGISTRY_ARCHITECTURE_CONFLICT: reconcile prose and machine-readable architecture",
+      "machine_metadata_schema_ref": "docs/ai-engineering-framework/fcr/errors/schemas/error-validation.schema.json",
+      "evidence_requirements": [{"evidence_id":"ERROR_REGISTRY_ARCHITECTURE_CONFLICT","canonical_path":"implementation/workflow-state/evidence/registry/errors/REGISTRY_ARCHITECTURE_CONFLICT.json","required":true,"predicate_id":"PREPARATION_COMPLETE"}],
+      "cleanup_behavior": "DELETE_STAGING",
+      "transaction_effect": "FAIL",
+      "lifecycle_effect": "REMAIN_CURRENT",
+      "escalation_required": true,
+      "recovery_operation": "HUMAN_ESCALATION",
+      "terminal": false
+    },
+    {
+      "code": "REGISTRY_VALIDATOR_DIVERGENCE",
+      "schema_version": "1.0.0",
+      "severity": "P0",
+      "response_contract_status": "TASK PREPARATION BLOCKED",
+      "blocker_category": "VALIDATION",
+      "retryable": false,
+      "resume_condition": "reconcile standalone and nested V2-002 results",
+      "human_message_template": "REGISTRY_VALIDATOR_DIVERGENCE: reconcile standalone and nested V2-002 results",
+      "machine_metadata_schema_ref": "docs/ai-engineering-framework/fcr/errors/schemas/error-validator.schema.json",
+      "evidence_requirements": [{"evidence_id":"ERROR_REGISTRY_VALIDATOR_DIVERGENCE","canonical_path":"implementation/workflow-state/evidence/registry/errors/REGISTRY_VALIDATOR_DIVERGENCE.json","required":true,"predicate_id":"V2_003_PREFLIGHT_VALID"}],
+      "cleanup_behavior": "DELETE_STAGING",
+      "transaction_effect": "BLOCK",
+      "lifecycle_effect": "REMAIN_CURRENT",
+      "escalation_required": true,
+      "recovery_operation": "HUMAN_ESCALATION",
+      "terminal": false
+    },
+    {
+      "code": "REGISTRY_BOOTSTRAP_CONFLICT",
+      "schema_version": "1.0.0",
+      "severity": "P0",
+      "response_contract_status": "TASK PREPARATION BLOCKED",
+      "blocker_category": "VALIDATION",
+      "retryable": false,
+      "resume_condition": "reconcile bootstrap source conflict",
+      "human_message_template": "REGISTRY_BOOTSTRAP_CONFLICT: reconcile bootstrap source conflict",
+      "machine_metadata_schema_ref": "docs/ai-engineering-framework/fcr/errors/schemas/error-authority.schema.json",
+      "evidence_requirements": [{"evidence_id":"ERROR_REGISTRY_BOOTSTRAP_CONFLICT","canonical_path":"implementation/workflow-state/evidence/registry/errors/REGISTRY_BOOTSTRAP_CONFLICT.json","required":true,"predicate_id":"PREPARATION_COMPLETE"}],
+      "cleanup_behavior": "DELETE_STAGING",
+      "transaction_effect": "FAIL",
+      "lifecycle_effect": "REMAIN_CURRENT",
+      "escalation_required": true,
+      "recovery_operation": "HUMAN_ESCALATION",
+      "terminal": false
+    },
+    {
+      "code": "REGISTRY_BOOTSTRAP_ROLLBACK_REQUIRED",
+      "schema_version": "1.0.0",
+      "severity": "P0",
+      "response_contract_status": "BLOCKED",
+      "blocker_category": "PERSISTENCE",
+      "retryable": false,
+      "resume_condition": "complete authorized bootstrap rollback",
+      "human_message_template": "REGISTRY_BOOTSTRAP_ROLLBACK_REQUIRED: complete authorized bootstrap rollback",
+      "machine_metadata_schema_ref": "docs/ai-engineering-framework/fcr/errors/schemas/error-persistence.schema.json",
+      "evidence_requirements": [{"evidence_id":"ERROR_REGISTRY_BOOTSTRAP_ROLLBACK_REQUIRED","canonical_path":"implementation/workflow-state/evidence/registry/errors/REGISTRY_BOOTSTRAP_ROLLBACK_REQUIRED.json","required":true,"predicate_id":"PREPARATION_COMPLETE"}],
+      "cleanup_behavior": "JOURNAL_RECOVERY",
+      "transaction_effect": "RECOVER",
+      "lifecycle_effect": "REMAIN_CURRENT",
+      "escalation_required": true,
+      "recovery_operation": "ROLLBACK",
+      "terminal": true
+    },
+    {
+      "code": "REGISTRY_INVALID_TRANSITION",
+      "schema_version": "1.0.0",
+      "severity": "P1",
+      "response_contract_status": "TASK PREPARATION BLOCKED",
+      "blocker_category": "LIFECYCLE",
+      "retryable": false,
+      "resume_condition": "request an allowed transition",
+      "human_message_template": "REGISTRY_INVALID_TRANSITION: request an allowed transition",
+      "machine_metadata_schema_ref": "docs/ai-engineering-framework/fcr/errors/schemas/error-lifecycle.schema.json",
+      "evidence_requirements": [{"evidence_id":"ERROR_REGISTRY_INVALID_TRANSITION","canonical_path":"implementation/workflow-state/evidence/registry/errors/REGISTRY_INVALID_TRANSITION.json","required":true,"predicate_id":"PREPARATION_COMPLETE"}],
+      "cleanup_behavior": "RELEASE_LOCKS",
+      "transaction_effect": "BLOCK",
+      "lifecycle_effect": "REMAIN_CURRENT",
+      "escalation_required": false,
+      "recovery_operation": "NONE",
+      "terminal": false
+    },
+    {
+      "code": "REGISTRY_PERSISTENCE_FAILED",
+      "schema_version": "1.0.0",
+      "severity": "P1",
+      "response_contract_status": "TASK PREPARATION BLOCKED",
+      "blocker_category": "PERSISTENCE",
+      "retryable": true,
+      "resume_condition": "complete persistence recovery",
+      "human_message_template": "REGISTRY_PERSISTENCE_FAILED: complete persistence recovery",
+      "machine_metadata_schema_ref": "docs/ai-engineering-framework/fcr/errors/schemas/error-persistence.schema.json",
+      "evidence_requirements": [{"evidence_id":"ERROR_REGISTRY_PERSISTENCE_FAILED","canonical_path":"implementation/workflow-state/evidence/registry/errors/REGISTRY_PERSISTENCE_FAILED.json","required":true,"predicate_id":"PREPARATION_COMPLETE"}],
+      "cleanup_behavior": "JOURNAL_RECOVERY",
+      "transaction_effect": "RECOVER",
+      "lifecycle_effect": "REMAIN_CURRENT",
+      "escalation_required": false,
+      "recovery_operation": "FORWARD_COMPLETE",
+      "terminal": false
+    },
+    {
+      "code": "REGISTRY_TRANSACTION_MISSING",
+      "schema_version": "1.0.0",
+      "severity": "P1",
+      "response_contract_status": "TASK PREPARATION BLOCKED",
+      "blocker_category": "VALIDATION",
+      "retryable": false,
+      "resume_condition": "create the required transaction record",
+      "human_message_template": "REGISTRY_TRANSACTION_MISSING: required transaction record was not found",
+      "machine_metadata_schema_ref": "docs/ai-engineering-framework/fcr/errors/schemas/error-repository.schema.json",
+      "evidence_requirements": [
+        {
+          "evidence_id": "ERROR_REGISTRY_TRANSACTION_MISSING",
+          "canonical_path": "implementation/workflow-state/evidence/registry/errors/REGISTRY_TRANSACTION_MISSING.json",
+          "required": true,
+          "predicate_id": "PREPARATION_COMPLETE"
+        }
+      ],
+      "cleanup_behavior": "RELEASE_LOCKS",
+      "transaction_effect": "BLOCK",
+      "lifecycle_effect": "REMAIN_CURRENT",
+      "escalation_required": false,
+      "recovery_operation": "NONE",
+      "terminal": false
+    },
+    {
+      "code": "REGISTRY_LOCK_MISSING",
+      "schema_version": "1.0.0",
+      "severity": "P1",
+      "response_contract_status": "TASK PREPARATION BLOCKED",
+      "blocker_category": "VALIDATION",
+      "retryable": false,
+      "resume_condition": "acquire the required registry-write lock",
+      "human_message_template": "REGISTRY_LOCK_MISSING: active REGISTRY_WRITE lock was not found",
+      "machine_metadata_schema_ref": "docs/ai-engineering-framework/fcr/errors/schemas/error-repository.schema.json",
+      "evidence_requirements": [
+        {
+          "evidence_id": "ERROR_REGISTRY_LOCK_MISSING",
+          "canonical_path": "implementation/workflow-state/evidence/registry/errors/REGISTRY_LOCK_MISSING.json",
+          "required": true,
+          "predicate_id": "PREPARATION_COMPLETE"
+        }
+      ],
+      "cleanup_behavior": "NONE",
+      "transaction_effect": "BLOCK",
+      "lifecycle_effect": "REMAIN_CURRENT",
+      "escalation_required": false,
+      "recovery_operation": "NONE",
+      "terminal": false
+    },
+    {
+      "code": "REGISTRY_TRANSITION_CONFLICT",
+      "schema_version": "1.0.0",
+      "severity": "P1",
+      "response_contract_status": "TASK PREPARATION BLOCKED",
+      "blocker_category": "PERSISTENCE",
+      "retryable": false,
+      "resume_condition": "resolve the immutable transition target conflict",
+      "human_message_template": "REGISTRY_TRANSITION_CONFLICT: immutable transition target conflicts with the expected lock transition",
+      "machine_metadata_schema_ref": "docs/ai-engineering-framework/fcr/errors/schemas/error-repository.schema.json",
+      "evidence_requirements": [
+        {
+          "evidence_id": "ERROR_REGISTRY_TRANSITION_CONFLICT",
+          "canonical_path": "implementation/workflow-state/evidence/registry/errors/REGISTRY_TRANSITION_CONFLICT.json",
+          "required": true,
+          "predicate_id": "PREPARATION_COMPLETE"
+        }
+      ],
+      "cleanup_behavior": "NONE",
+      "transaction_effect": "BLOCK",
+      "lifecycle_effect": "REMAIN_CURRENT",
+      "escalation_required": false,
+      "recovery_operation": "NONE",
+      "terminal": false
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "schema_version": "1.0.0",
+  "state_domain": "implementation-status",
+  "transitions": [
+    {
+      "schema_version": "1.0.0",
+      "transition_id": "IMPL_NOT_STARTED_IN_PROGRESS",
+      "source_state": "NOT_STARTED",
+      "target_state": "IN_PROGRESS",
+      "authorized_actor": "DEVOPS_AGENT",
+      "required_preconditions": [
+        "docs/ai-engineering-framework/fcr/transitions/precondition-record-current.json"
+      ],
+      "required_evidence_predicates": [],
+      "allowed_error_codes": [
+        "REGISTRY_VALIDATION_FAILED"
+      ],
+      "invalid_transition_error": "REGISTRY_INVALID_TRANSITION",
+      "retryable": false,
+      "recovery_transition": null,
+      "terminal": false,
+      "side_effects": [
+        "append immutable state transition record"
+      ],
+      "emitted_evidence": [
+        "transition/IMPL_NOT_STARTED_IN_PROGRESS.json"
+      ]
+    },
+    {
+      "schema_version": "1.0.0",
+      "transition_id": "IMPL_IN_PROGRESS_COMPLETE",
+      "source_state": "IN_PROGRESS",
+      "target_state": "COMPLETE",
+      "authorized_actor": "DEVOPS_AGENT",
+      "required_preconditions": [
+        "docs/ai-engineering-framework/fcr/transitions/precondition-record-current.json"
+      ],
+      "required_evidence_predicates": [],
+      "allowed_error_codes": [
+        "REGISTRY_VALIDATION_FAILED"
+      ],
+      "invalid_transition_error": "REGISTRY_INVALID_TRANSITION",
+      "retryable": false,
+      "recovery_transition": null,
+      "terminal": true,
+      "side_effects": [
+        "append immutable state transition record"
+      ],
+      "emitted_evidence": [
+        "transition/IMPL_IN_PROGRESS_COMPLETE.json"
+      ]
+    },
+    {
+      "schema_version": "1.0.0",
+      "transition_id": "IMPL_IN_PROGRESS_BLOCKED",
+      "source_state": "IN_PROGRESS",
+      "target_state": "BLOCKED",
+      "authorized_actor": "DEVOPS_AGENT",
+      "required_preconditions": [
+        "docs/ai-engineering-framework/fcr/transitions/precondition-record-current.json"
+      ],
+      "required_evidence_predicates": [],
+      "allowed_error_codes": [
+        "REGISTRY_VALIDATION_FAILED"
+      ],
+      "invalid_transition_error": "REGISTRY_INVALID_TRANSITION",
+      "retryable": false,
+      "recovery_transition": null,
+      "terminal": false,
+      "side_effects": [
+        "append immutable state transition record"
+      ],
+      "emitted_evidence": [
+        "transition/IMPL_IN_PROGRESS_BLOCKED.json"
+      ]
+    },
+    {
+      "schema_version": "1.0.0",
+      "transition_id": "IMPL_BLOCKED_IN_PROGRESS",
+      "source_state": "BLOCKED",
+      "target_state": "IN_PROGRESS",
+      "authorized_actor": "DEVOPS_AGENT",
+      "required_preconditions": [
+        "docs/ai-engineering-framework/fcr/transitions/precondition-record-current.json"
+      ],
+      "required_evidence_predicates": [],
+      "allowed_error_codes": [
+        "REGISTRY_VALIDATION_FAILED"
+      ],
+      "invalid_transition_error": "REGISTRY_INVALID_TRANSITION",
+      "retryable": false,
+      "recovery_transition": null,
+      "terminal": false,
+      "side_effects": [
+        "append immutable state transition record"
+      ],
+      "emitted_evidence": [
+        "transition/IMPL_BLOCKED_IN_PROGRESS.json"
+      ]
+    },
+    {
+      "schema_version": "1.0.0",
+      "transition_id": "IMPL_IN_PROGRESS_CANCELLED",
+      "source_state": "IN_PROGRESS",
+      "target_state": "CANCELLED",
+      "authorized_actor": "AUTHORIZED_ADMINISTRATOR",
+      "required_preconditions": [
+        "docs/ai-engineering-framework/fcr/transitions/precondition-record-current.json"
+      ],
+      "required_evidence_predicates": [],
+      "allowed_error_codes": [
+        "REGISTRY_VALIDATION_FAILED"
+      ],
+      "invalid_transition_error": "REGISTRY_INVALID_TRANSITION",
+      "retryable": false,
+      "recovery_transition": null,
+      "terminal": true,
+      "side_effects": [
+        "append immutable state transition record"
+      ],
+      "emitted_evidence": [
+        "transition/IMPL_IN_PROGRESS_CANCELLED.json"
+      ]
+    }
+  ]
+}

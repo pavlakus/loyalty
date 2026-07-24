@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0.0",
+  "predicate_id": "PREPARATION_COMPLETE",
+  "evidence_phase": "PREPARE",
+  "evidence_type": "PREPARATION",
+  "canonical_path_pattern": "implementation/workflow-state/evidence/<TASK-ID>/prepare.md",
+  "required_agent_role": "task-preparation-agent",
+  "allowed_response_contract_statuses": [
+    "READY FOR IMPLEMENTATION"
+  ],
+  "required_lifecycle_states": [
+    "READY"
+  ],
+  "required_implementation_statuses": [
+    "NOT_STARTED"
+  ],
+  "required_release_statuses": [
+    "NOT_RELEASED"
+  ],
+  "required_validation_result": "PASS",
+  "repository_relationship": "SAME",
+  "revision_relationship": "EXACT",
+  "commit_relationship": "NONE",
+  "required_validator": "FCR_PREPARATION",
+  "validator_version_constraint": "EXACT:1.0.0",
+  "input_revision_relationship": "EXACT",
+  "content_hash_requirement": "REQUIRED",
+  "maximum_age_seconds": 0,
+  "supersession_rule": "CURRENT_ONLY",
+  "stale_rule": "revision or age exceeds maximum",
+  "contradiction_rule": "contradictory or superseded evidence",
+  "invalidation_rule": "source/revision/hash mismatch",
+  "missing_behavior": "BLOCK",
+  "failure_error_code": "REGISTRY_EVIDENCE_MISSING"
+}

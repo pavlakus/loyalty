@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://loyalty.example/fcr/schema/dependency-registry/1.0.0",
+  "title": "dependency-registry",
+  "type": "object",
+  "$comment": "Independently persisted; schema_version required.",
+  "required": [
+    "schema_version",
+    "edges",
+    "overrides"
+  ],
+  "properties": {
+    "schema_version": {
+      "$ref": "./common-types.schema.json#/$defs/SchemaVersion"
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "$ref": "./dependency-record.schema.json"
+      },
+      "uniqueItems": true
+    },
+    "overrides": {
+      "type": "array",
+      "items": {
+        "$ref": "./dependency-override.schema.json"
+      },
+      "uniqueItems": true
+    }
+  },
+  "additionalProperties": false
+}

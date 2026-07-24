@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://loyalty.example/fcr/schema/transition-rule/1.0.0",
+  "title": "transition-rule",
+  "type": "object",
+  "$comment": "Independently persisted; schema_version required.",
+  "required": [
+    "schema_version",
+    "transition_id",
+    "source_state",
+    "target_state",
+    "authorized_actor",
+    "required_preconditions",
+    "required_evidence_predicates",
+    "allowed_error_codes",
+    "invalid_transition_error",
+    "retryable",
+    "terminal",
+    "side_effects",
+    "emitted_evidence"
+  ],
+  "properties": {
+    "schema_version": {
+      "$ref": "./common-types.schema.json#/$defs/SchemaVersion"
+    },
+    "transition_id": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "source_state": {
+      "$ref": "./common-types.schema.json#/$defs/NonEmpty"
+    },
+    "target_state": {
+      "$ref": "./common-types.schema.json#/$defs/NonEmpty"
+    },
+    "authorized_actor": {
+      "$ref": "./common-types.schema.json#/$defs/Actor"
+    },
+    "required_preconditions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "required_evidence_predicates": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "allowed_error_codes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "invalid_transition_error": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "retryable": {
+      "type": "boolean"
+    },
+    "recovery_transition": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "terminal": {
+      "type": "boolean"
+    },
+    "side_effects": {
+      "type": "array",
+      "items": {
+        "$ref": "./common-types.schema.json#/$defs/NonEmpty"
+      },
+      "uniqueItems": true
+    },
+    "emitted_evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "states": {
+    "TASK": [
+      "READY",
+      "IMPLEMENTATION_COMPLETE",
+      "READY_FOR_REVIEW",
+      "READY_FOR_MERGE",
+      "DONE"
+    ],
+    "MODULE": [
+      "ACTIVE"
+    ],
+    "CONTRACT": [
+      "AVAILABLE"
+    ],
+    "DOCUMENT": [
+      "EXISTS_CURRENT"
+    ],
+    "EVIDENCE": [
+      "VALID_CURRENT"
+    ],
+    "ADR": [
+      "ACCEPTED"
+    ],
+    "EXTERNAL_PREREQUISITE": [
+      "VERIFIED"
+    ]
+  }
+}

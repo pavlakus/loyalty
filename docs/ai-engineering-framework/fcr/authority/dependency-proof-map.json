@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0.0",
+  "mappings": [
+    {
+      "dependency_type": "TASK",
+      "required_state": "READY",
+      "predicate_id": "DEPENDENCY_TASK_COMPLETE",
+      "verification_operation": null,
+      "blocking_error_code": "REGISTRY_DEPENDENCY_INCOMPLETE"
+    },
+    {
+      "dependency_type": "MODULE",
+      "required_state": "ACTIVE",
+      "predicate_id": "DEPENDENCY_MODULE_READY",
+      "verification_operation": null,
+      "blocking_error_code": "REGISTRY_DEPENDENCY_INCOMPLETE"
+    },
+    {
+      "dependency_type": "CONTRACT",
+      "required_state": "AVAILABLE",
+      "predicate_id": "DEPENDENCY_CONTRACT_AVAILABLE",
+      "verification_operation": null,
+      "blocking_error_code": "REGISTRY_DEPENDENCY_INCOMPLETE"
+    },
+    {
+      "dependency_type": "DOCUMENT",
+      "required_state": "EXISTS_CURRENT",
+      "predicate_id": "DEPENDENCY_DOCUMENT_AVAILABLE",
+      "verification_operation": null,
+      "blocking_error_code": "REGISTRY_DEPENDENCY_INCOMPLETE"
+    },
+    {
+      "dependency_type": "EVIDENCE",
+      "required_state": "VALID_CURRENT",
+      "predicate_id": "DEPENDENCY_EVIDENCE_VALID",
+      "verification_operation": null,
+      "blocking_error_code": "REGISTRY_DEPENDENCY_INCOMPLETE"
+    },
+    {
+      "dependency_type": "ADR",
+      "required_state": "ACCEPTED",
+      "predicate_id": "ADR_ACCEPTED",
+      "verification_operation": null,
+      "blocking_error_code": "REGISTRY_DEPENDENCY_INCOMPLETE"
+    },
+    {
+      "dependency_type": "EXTERNAL_PREREQUISITE",
+      "required_state": "VERIFIED",
+      "predicate_id": null,
+      "verification_operation": "verify-external-prerequisite",
+      "blocking_error_code": "REGISTRY_DEPENDENCY_INCOMPLETE"
+    }
+  ]
+}

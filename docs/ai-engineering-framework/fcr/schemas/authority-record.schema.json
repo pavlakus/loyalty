@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://loyalty.example/fcr/schema/authority-record/1.0.0",
+  "title": "FCR authority record",
+  "type": "object",
+  "$comment": "Independently persisted; schema_version is required. The oneOf branches identify the six canonical authority record kinds.",
+  "required": ["schema_version"],
+  "properties": {
+    "schema_version": { "$ref": "./common-types.schema.json#/$defs/SchemaVersion" },
+    "rank_direction": { "type": "string", "const": "higher_is_stronger" },
+    "classes": { "type": "array", "items": { "$ref": "./common-types.schema.json#/$defs/AuthorityClass" }, "uniqueItems": true, "minItems": 1 },
+    "ranks": { "type": "object", "patternProperties": { "^[A-Z][A-Z0-9_]*$": { "type": "integer", "minimum": 1 } }, "minProperties": 1, "additionalProperties": false },
+    "allowed_sources": { "$ref": "#/$defs/StringList" },
+    "authorized_actors": { "$ref": "#/$defs/StringList" },
+    "required_evidence": { "$ref": "./common-types.schema.json#/$defs/NonEmpty" },
+    "operations": { "$ref": "#/$defs/StringList" },
+    "protected_dependency_removal": { "$ref": "./common-types.schema.json#/$defs/NonEmpty" },
+    "transitive_removal": { "$ref": "./common-types.schema.json#/$defs/NonEmpty" },
+    "expiry": { "$ref": "./common-types.schema.json#/$defs/NonEmpty" },
+    "mappings": { "type": "array", "items": { "$ref": "#/$defs/ProofMapping" }, "minItems": 1 },
+    "ordered_sources": { "type": "array", "items": { "$ref": "./common-types.schema.json#/$defs/AuthorityClass" }, "minItems": 1 },
+    "unapproved_human_request": { "$ref": "./common-types.schema.json#/$defs/NonEmpty" },
+    "approved_human_request_authorization": { "$ref": "./common-types.schema.json#/$defs/NonEmpty" },
+    "states": { "type": "object", "patternProperties": { "^[A-Z][A-Z0-9_]*$": { "type": "array", "items": { "$ref": "./common-types.schema.json#/$defs/NonEmpty" }, "uniqueItems": true, "minItems": 1 } }, "minProperties": 1, "additionalProperties": false },
+    "fields": { "type": "object", "patternProperties": { "^[a-z][a-z0-9_]*$": { "$ref": "#/$defs/FieldPrecedence" } }, "minProperties": 1, "additionalProperties": false }
+  },
+  "oneOf": [
+    { "required": ["rank_direction", "classes", "ranks"] },
+    { "required": ["allowed_sources", "authorized_actors", "operations"] },
+    { "required": ["mappings"] },
+    { "required": ["ordered_sources", "unapproved_human_request", "approved_human_request_authorization"] },
+    { "required": ["states"] },
+    { "required": ["fields"] }
+  ],
+  "$defs": {
+    "StringList": { "type": "array", "items": { "$ref": "./common-types.schema.json#/$defs/NonEmpty" }, "uniqueItems": true, "minItems": 1 },
+    "ProofMapping": {
+      "type": "object",
+      "required": ["dependency_type", "required_state", "predicate_id", "verification_operation", "blocking_error_code"],
+      "properties": {
+        "dependency_type": { "$ref": "./common-types.schema.json#/$defs/DependencyType" },
+        "required_state": { "type": "string" },
+        "predicate_id": { "type": ["string", "null"] },
+        "verification_operation": { "type": ["string", "null"] },
+        "blocking_error_code": { "$ref": "./common-types.schema.json#/$defs/Id" }
+      },
+      "oneOf": [
+        { "properties": { "dependency_type": { "const": "TASK" }, "required_state": { "enum": ["READY", "IMPLEMENTATION_COMPLETE", "READY_FOR_REVIEW", "READY_FOR_MERGE", "DONE"] } } },
+        { "properties": { "dependency_type": { "const": "MODULE" }, "required_state": { "const": "ACTIVE" } } },
+        { "properties": { "dependency_type": { "const": "CONTRACT" }, "required_state": { "const": "AVAILABLE" } } },
+        { "properties": { "dependency_type": { "const": "DOCUMENT" }, "required_state": { "const": "EXISTS_CURRENT" } } },
+        { "properties": { "dependency_type": { "const": "EVIDENCE" }, "required_state": { "const": "VALID_CURRENT" } } },
+        { "properties": { "dependency_type": { "const": "ADR" }, "required_state": { "const": "ACCEPTED" } } },
+        { "properties": { "dependency_type": { "const": "EXTERNAL_PREREQUISITE" }, "required_state": { "const": "VERIFIED" } } }
+      ],
+      "additionalProperties": false
+    },
+    "FieldPrecedence": { "type": "object", "required": ["field_id", "ordered_sources", "missing_value_behavior", "same_rank_conflict_behavior", "cross_rank_conflict_behavior", "stale_source_behavior", "reconciliation_action", "blocking_error_code", "provenance_requirement"], "properties": { "field_id": { "$ref": "./common-types.schema.json#/$defs/NonEmpty" }, "ordered_sources": { "type": "array", "items": { "$ref": "./common-types.schema.json#/$defs/AuthorityClass" }, "minItems": 1 }, "missing_value_behavior": { "$ref": "./common-types.schema.json#/$defs/NonEmpty" }, "same_rank_conflict_behavior": { "$ref": "./common-types.schema.json#/$defs/NonEmpty" }, "cross_rank_conflict_behavior": { "$ref": "./common-types.schema.json#/$defs/NonEmpty" }, "stale_source_behavior": { "$ref": "./common-types.schema.json#/$defs/NonEmpty" }, "reconciliation_action": { "$ref": "./common-types.schema.json#/$defs/NonEmpty" }, "blocking_error_code": { "$ref": "./common-types.schema.json#/$defs/Id" }, "provenance_requirement": { "$ref": "./common-types.schema.json#/$defs/NonEmpty" } }, "additionalProperties": false }
+  },
+  "additionalProperties": false
+}

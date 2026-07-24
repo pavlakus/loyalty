@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0.0",
+  "predicate_id": "SECURITY_APPROVED",
+  "evidence_phase": "SECURITY",
+  "evidence_type": "SECURITY",
+  "canonical_path_pattern": "implementation/workflow-state/evidence/<TASK-ID>/security.md",
+  "required_agent_role": "security-agent",
+  "allowed_response_contract_statuses": [
+    "APPROVED",
+    "APPROVED WITH FOLLOW-UP"
+  ],
+  "required_lifecycle_states": [
+    "READY_FOR_MERGE"
+  ],
+  "required_implementation_statuses": [
+    "COMPLETE"
+  ],
+  "required_release_statuses": [
+    "NOT_RELEASED"
+  ],
+  "required_validation_result": "PASS",
+  "repository_relationship": "SAME",
+  "revision_relationship": "EXACT",
+  "commit_relationship": "EXACT",
+  "required_validator": "FCR_RESPONSE",
+  "validator_version_constraint": "MAJOR:1",
+  "input_revision_relationship": "EXACT",
+  "content_hash_requirement": "REQUIRED",
+  "maximum_age_seconds": 0,
+  "supersession_rule": "CURRENT_ONLY",
+  "stale_rule": "contradictory or superseded evidence",
+  "contradiction_rule": "contradictory or superseded evidence",
+  "invalidation_rule": "security commit mismatch",
+  "missing_behavior": "BLOCK",
+  "failure_error_code": "REGISTRY_EVIDENCE_MISSING"
+}

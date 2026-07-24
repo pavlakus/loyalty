@@ -1,0 +1,169 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://loyalty.example/fcr/schema/dependency-record/1.0.0",
+  "title": "dependency-record",
+  "type": "object",
+  "$comment": "Independently persisted; schema_version required.",
+  "required": [
+    "schema_version",
+    "edge_id",
+    "owner_task_id",
+    "dependency_type",
+    "dependency_id",
+    "required_state",
+    "source",
+    "relation",
+    "proof_predicate_id"
+  ],
+  "properties": {
+    "schema_version": {
+      "$ref": "./common-types.schema.json#/$defs/SchemaVersion"
+    },
+    "edge_id": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "owner_task_id": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "dependency_type": {
+      "$ref": "./common-types.schema.json#/$defs/DependencyType"
+    },
+    "dependency_id": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "required_state": {
+      "type": "string"
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "relation": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "proof_predicate_id": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    }
+  },
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "dependency_type": {
+            "const": "TASK"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "required_state": {
+            "enum": [
+              "READY",
+              "IMPLEMENTATION_COMPLETE",
+              "READY_FOR_REVIEW",
+              "READY_FOR_MERGE",
+              "DONE"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "dependency_type": {
+            "const": "MODULE"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "required_state": {
+            "const": "ACTIVE"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "dependency_type": {
+            "const": "CONTRACT"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "required_state": {
+            "const": "AVAILABLE"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "dependency_type": {
+            "const": "DOCUMENT"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "required_state": {
+            "const": "EXISTS_CURRENT"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "dependency_type": {
+            "const": "EVIDENCE"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "required_state": {
+            "const": "VALID_CURRENT"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "dependency_type": {
+            "const": "ADR"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "required_state": {
+            "const": "ACCEPTED"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "dependency_type": {
+            "const": "EXTERNAL_PREREQUISITE"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "required_state": {
+            "const": "VERIFIED"
+          }
+        }
+      }
+    }
+  ]
+}

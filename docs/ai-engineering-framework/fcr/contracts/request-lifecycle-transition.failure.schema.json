@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://loyalty.example/fcr/contract-schema/request-lifecycle-transition-failure/1.0.0",
+  "title": "request-lifecycle-transition failure",
+  "type": "object",
+  "$comment": "Standalone Draft 2020-12 operation schema.",
+  "required": [
+    "schema_version",
+    "request_id",
+    "operation_id",
+    "correlation_id",
+    "result",
+    "error_code",
+    "response_contract_status",
+    "retryable",
+    "cleanup_behavior",
+    "evidence_path",
+    "completed_at",
+    "failure_context"
+  ],
+  "properties": {
+    "schema_version": {
+      "$ref": "../schemas/common-types.schema.json#/$defs/SchemaVersion"
+    },
+    "request_id": {
+      "$ref": "../schemas/common-types.schema.json#/$defs/Id"
+    },
+    "operation_id": {
+      "$ref": "../schemas/common-types.schema.json#/$defs/Id"
+    },
+    "correlation_id": {
+      "$ref": "../schemas/common-types.schema.json#/$defs/Id"
+    },
+    "result": {
+      "const": "FAIL"
+    },
+    "error_code": {
+      "$ref": "../schemas/common-types.schema.json#/$defs/Id"
+    },
+    "response_contract_status": {
+      "$ref": "../schemas/common-types.schema.json#/$defs/ResponseContractStatus"
+    },
+    "retryable": {
+      "type": "boolean"
+    },
+    "cleanup_behavior": {
+      "type": "string",
+      "enum": [
+        "RELEASE_LOCKS",
+        "DELETE_STAGING",
+        "RETAIN_STAGING",
+        "JOURNAL_RECOVERY",
+        "ESCALATE"
+      ]
+    },
+    "evidence_path": {
+      "$ref": "../schemas/common-types.schema.json#/$defs/Path"
+    },
+    "completed_at": {
+      "$ref": "../schemas/common-types.schema.json#/$defs/Timestamp"
+    },
+    "failure_context": {
+      "type": "object",
+      "required": [
+        "failed_operation"
+      ],
+      "properties": {
+        "failed_operation": {
+          "const": "request-lifecycle-transition"
+        },
+        "failed_phase": {
+          "type": "string",
+          "minLength": 1
+        },
+        "task_id": {
+          "$ref": "../schemas/common-types.schema.json#/$defs/Id"
+        },
+        "source_state": {
+          "$ref": "../schemas/common-types.schema.json#/$defs/NonEmpty"
+        },
+        "target_state": {
+          "$ref": "../schemas/common-types.schema.json#/$defs/NonEmpty"
+        },
+        "transition_evidence": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

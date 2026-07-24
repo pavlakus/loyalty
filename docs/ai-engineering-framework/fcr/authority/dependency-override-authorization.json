@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0.0",
+  "allowed_sources": [
+    "AUTHORIZED_WORKFLOW",
+    "LIFECYCLE_AUTHORITY"
+  ],
+  "authorized_actors": [
+    "TASK_PREPARATION_AGENT",
+    "LIFECYCLE_ACTOR"
+  ],
+  "required_evidence": "DEPENDENCY_OVERRIDE_APPROVED",
+  "operations": [
+    "ADD",
+    "REMOVE"
+  ],
+  "protected_dependency_removal": "FORBIDDEN",
+  "transitive_removal": "FORBIDDEN",
+  "expiry": "expires_at <= now produces REGISTRY_OVERRIDE_EXPIRED"
+}

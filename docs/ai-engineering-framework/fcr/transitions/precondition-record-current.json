@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0.0",
+  "precondition_id": "PRECONDITION_RECORD_CURRENT",
+  "applicable_state_domains": ["REGISTRY_RECORD", "TRANSACTION", "EVIDENCE", "LOCK", "PROJECTION", "IMPLEMENTATION_STATUS", "RELEASE_STATUS"],
+  "registry_revision_relationship": "EXACT_REGISTRY_REVISION",
+  "record_revision_relationship": "EXACT_RECORD_REVISION",
+  "source_repository_relationship": "EXACT_REPOSITORY",
+  "stale_detection": "COMPARE_SOURCE_AND_RECORD_REVISIONS",
+  "comparison_algorithm": "RFC8785_CANONICAL_JSON_SHA256",
+  "success_result": "CURRENT",
+  "failure_result": "STALE",
+  "blocking_error": "REGISTRY_STALE_RECORD",
+  "retryable": true,
+  "recovery_operation": "RELOAD_CANONICAL_RECORD"
+}

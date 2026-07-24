@@ -9,7 +9,11 @@ test('loads all canonical error definitions and rejects unknown codes', async ()
   const catalogArtifact = catalog.artifacts.find((artifact) => artifact.repositoryRelativePath.endsWith('framework-error-catalog.json'));
   assert.ok(catalogArtifact);
   const errors = (catalogArtifact.raw as { errors: unknown[] }).errors;
-  assert.equal(errors.length, 58);
+  const codes = errors.map((error) => (error as { code?: unknown }).code);
+  assert.equal(new Set(codes).size, errors.length);
+  for (const code of ['REGISTRY_TRANSACTION_MISSING', 'REGISTRY_LOCK_MISSING', 'REGISTRY_TRANSITION_CONFLICT']) {
+    assert.equal(runtime.errors.has(code), true);
+  }
   assert.equal(runtime.errors.has('REGISTRY_DOCUMENT_MISSING'), true);
   assert.throws(() => runtime.errors.get('NOT_A_CANONICAL_ERROR'));
 });

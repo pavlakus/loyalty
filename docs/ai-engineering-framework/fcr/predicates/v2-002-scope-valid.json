@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0.0",
+  "predicate_id": "V2_002_SCOPE_VALID",
+  "evidence_phase": "SCOPE_VALIDATION",
+  "evidence_type": "SCOPE",
+  "canonical_path_pattern": "implementation/workflow-state/evidence/<TASK-ID>/scope-validation.md",
+  "required_agent_role": "fcr-adapter",
+  "allowed_response_contract_statuses": [
+    "READY FOR IMPLEMENTATION"
+  ],
+  "required_lifecycle_states": [
+    "TASK_PREPARATION",
+    "READY"
+  ],
+  "required_implementation_statuses": [],
+  "required_release_statuses": [
+    "NOT_RELEASED"
+  ],
+  "required_validation_result": "PASS",
+  "repository_relationship": "SAME",
+  "revision_relationship": "EXACT",
+  "commit_relationship": "EXACT",
+  "required_validator": "V2-002",
+  "validator_version_constraint": "EXACT:1.0.0",
+  "input_revision_relationship": "EXACT",
+  "content_hash_requirement": "REQUIRED",
+  "maximum_age_seconds": 0,
+  "supersession_rule": "CURRENT_ONLY",
+  "stale_rule": "snapshot expired",
+  "contradiction_rule": "contradictory validator result",
+  "invalidation_rule": "scope result mismatch",
+  "missing_behavior": "BLOCK",
+  "failure_error_code": "REGISTRY_V2_002_VALIDATION_FAILED"
+}

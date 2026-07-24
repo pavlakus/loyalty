@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0.0",
+  "predicate_id": "DEPENDENCY_EVIDENCE_VALID",
+  "evidence_phase": "PREPARE",
+  "evidence_type": "DEPENDENCY",
+  "canonical_path_pattern": "implementation/workflow-state/evidence/<TASK-ID>/<PHASE>.md",
+  "required_agent_role": "registry-agent",
+  "allowed_response_contract_statuses": [
+    "APPROVED",
+    "QA APPROVED",
+    "READY FOR MERGE",
+    "DONE"
+  ],
+  "required_lifecycle_states": [],
+  "required_implementation_statuses": [],
+  "required_release_statuses": [],
+  "required_validation_result": "PASS",
+  "repository_relationship": "SAME",
+  "revision_relationship": "EXACT",
+  "commit_relationship": "EXACT",
+  "required_validator": "FCR_EVIDENCE",
+  "validator_version_constraint": "EXACT:1.0.0",
+  "input_revision_relationship": "EXACT",
+  "content_hash_requirement": "REQUIRED",
+  "maximum_age_seconds": 0,
+  "supersession_rule": "CURRENT_ONLY",
+  "stale_rule": "evidence stale",
+  "contradiction_rule": "contradictory evidence",
+  "invalidation_rule": "evidence hash mismatch",
+  "missing_behavior": "BLOCK",
+  "failure_error_code": "REGISTRY_DEPENDENCY_INCOMPLETE"
+}

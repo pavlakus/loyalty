@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0.0",
+  "maximum_age_seconds": {
+    "AGENTS": null,
+    "TASK_RECORD": 0,
+    "MIP": 0,
+    "ADR": 0,
+    "DOMAIN_MODEL": 0,
+    "MODULE_DEFINITION": 0,
+    "ENGINEERING_STANDARD": 2592000,
+    "CONTRACT": 0,
+    "MANIFEST": 0,
+    "EVIDENCE": 0,
+    "PROJECTION": 0
+  }
+}

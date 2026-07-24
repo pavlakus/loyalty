@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://loyalty.example/fcr/schema/path-rule/1.0.0",
+  "title": "path-rule",
+  "type": "object",
+  "$comment": "Embedded; schema_version is inherited or forbidden as defined by the consuming record.",
+  "required": [
+    "rule_id",
+    "owner_module_id",
+    "access_class",
+    "match_type",
+    "normalized_pattern",
+    "priority",
+    "recursive",
+    "generated",
+    "shared",
+    "protected",
+    "source",
+    "override_policy",
+    "created_at",
+    "updated_at"
+  ],
+  "properties": {
+    "rule_id": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "owner_module_id": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "access_class": {
+      "$ref": "./common-types.schema.json#/$defs/AccessClass"
+    },
+    "match_type": {
+      "type": "string",
+      "enum": [
+        "exact_path",
+        "directory",
+        "recursive_directory",
+        "single_segment_glob",
+        "recursive_glob"
+      ]
+    },
+    "normalized_pattern": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "priority": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "recursive": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "generated": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "shared": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "protected": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "override_policy": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "created_at": {
+      "$ref": "./common-types.schema.json#/$defs/Timestamp"
+    },
+    "updated_at": {
+      "$ref": "./common-types.schema.json#/$defs/Timestamp"
+    }
+  },
+  "additionalProperties": false
+}

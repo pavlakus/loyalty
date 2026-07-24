@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0.0",
+  "predicate_id": "QA_APPROVED",
+  "evidence_phase": "QA",
+  "evidence_type": "QA",
+  "canonical_path_pattern": "implementation/workflow-state/evidence/<TASK-ID>/qa.md",
+  "required_agent_role": "qa-agent",
+  "allowed_response_contract_statuses": [
+    "QA APPROVED",
+    "QA APPROVED WITH FOLLOW-UP"
+  ],
+  "required_lifecycle_states": [
+    "QA",
+    "READY_FOR_MERGE"
+  ],
+  "required_implementation_statuses": [
+    "COMPLETE"
+  ],
+  "required_release_statuses": [
+    "NOT_RELEASED"
+  ],
+  "required_validation_result": "PASS",
+  "repository_relationship": "SAME",
+  "revision_relationship": "EXACT",
+  "commit_relationship": "EXACT",
+  "required_validator": "FCR_RESPONSE",
+  "validator_version_constraint": "MAJOR:1",
+  "input_revision_relationship": "EXACT",
+  "content_hash_requirement": "REQUIRED",
+  "maximum_age_seconds": 0,
+  "supersession_rule": "CURRENT_ONLY",
+  "stale_rule": "revision or age exceeds maximum",
+  "contradiction_rule": "contradictory or superseded evidence",
+  "invalidation_rule": "QA commit mismatch",
+  "missing_behavior": "BLOCK",
+  "failure_error_code": "REGISTRY_EVIDENCE_MISSING"
+}

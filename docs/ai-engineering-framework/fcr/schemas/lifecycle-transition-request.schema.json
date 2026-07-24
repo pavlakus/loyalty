@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://loyalty.example/fcr/schema/lifecycle-transition-request/1.0.0",
+  "title": "lifecycle-transition-request",
+  "type": "object",
+  "$comment": "Independently persisted; schema_version required.",
+  "required": [
+    "schema_version",
+    "request_id",
+    "task_id",
+    "expected_state",
+    "target_state",
+    "expected_lifecycle_revision",
+    "registry_revision",
+    "required_predicates",
+    "authorized_actor",
+    "idempotency_key"
+  ],
+  "properties": {
+    "schema_version": {
+      "$ref": "./common-types.schema.json#/$defs/SchemaVersion"
+    },
+    "request_id": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "task_id": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "expected_state": {
+      "$ref": "./common-types.schema.json#/$defs/LifecycleState"
+    },
+    "target_state": {
+      "$ref": "./common-types.schema.json#/$defs/LifecycleState"
+    },
+    "expected_lifecycle_revision": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "registry_revision": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "required_predicates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false
+      }
+    },
+    "authorized_actor": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "idempotency_key": {
+      "$ref": "./common-types.schema.json#/$defs/Sha256"
+    }
+  },
+  "additionalProperties": false
+}

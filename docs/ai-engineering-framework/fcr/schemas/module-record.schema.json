@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://loyalty.example/fcr/schema/module-record/1.0.0",
+  "title": "module-record",
+  "type": "object",
+  "$comment": "Independently persisted; schema_version required.",
+  "required": [
+    "schema_version",
+    "module_id",
+    "canonical_name",
+    "slug",
+    "aliases",
+    "status",
+    "registry_path",
+    "owning_role",
+    "implementation_roots",
+    "documentation_roots",
+    "scope_template_refs",
+    "global_deny_rule_refs",
+    "module_deny_rule_refs",
+    "dependency_refs",
+    "contract_refs",
+    "created_at",
+    "updated_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "$ref": "./common-types.schema.json#/$defs/SchemaVersion"
+    },
+    "module_id": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "canonical_name": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "slug": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "aliases": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "status": {
+      "$ref": "./common-types.schema.json#/$defs/LifecycleState"
+    },
+    "registry_path": {
+      "$ref": "./common-types.schema.json#/$defs/Path"
+    },
+    "owning_role": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "implementation_roots": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "documentation_roots": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "scope_template_refs": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "global_deny_rule_refs": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "module_deny_rule_refs": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "dependency_refs": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "contract_refs": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "created_at": {
+      "$ref": "./common-types.schema.json#/$defs/Timestamp"
+    },
+    "updated_at": {
+      "$ref": "./common-types.schema.json#/$defs/Timestamp"
+    },
+    "deprecated_at": {
+      "$ref": "./common-types.schema.json#/$defs/Timestamp"
+    },
+    "replacement_module_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

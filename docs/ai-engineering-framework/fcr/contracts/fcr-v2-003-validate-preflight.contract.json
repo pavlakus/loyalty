@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0.0",
+  "contract_id": "FCR-FCR_V2_003_VALIDATE_PREFLIGHT",
+  "contract_version": "1.0.0",
+  "operation_id": "fcr-v2-003-validate-preflight",
+  "caller": "FCR",
+  "callee": "V2-003",
+  "request_schema": "docs/ai-engineering-framework/fcr/contracts/fcr-v2-003-validate-preflight.request.schema.json",
+  "success_schema": "docs/ai-engineering-framework/fcr/contracts/fcr-v2-003-validate-preflight.success.schema.json",
+  "failure_schema": "docs/ai-engineering-framework/fcr/contracts/fcr-v2-003-validate-preflight.failure.schema.json",
+  "allowed_reads": [
+    "committed registry snapshot"
+  ],
+  "allowed_writes": [],
+  "forbidden_writes": [
+    "task identity",
+    "scope",
+    "dependencies",
+    "lifecycle"
+  ],
+  "timeout_seconds": 120,
+  "retry_policy": {
+    "type": "same-idempotency-key",
+    "max_attempts": 3
+  },
+  "idempotency_policy": "same key and same request returns stored result; same key with different request fails",
+  "evidence_path": "implementation/workflow-state/evidence/registry/fcr-v2-003-validate-preflight.json",
+  "error_mapping": [
+    "REGISTRY_VALIDATION_FAILED",
+    "REGISTRY_PERSISTENCE_FAILED"
+  ],
+  "compatibility_policy": "major mismatch blocks; minor optional additions only",
+  "executable": "python3",
+  "script_path": "scripts/validate-environment-preflight.py",
+  "argument_type": "task_id",
+  "argument_source": "request.payload.task_id",
+  "success_exit_codes": [
+    0
+  ],
+  "failure_exit_codes": [
+    1,
+    2
+  ],
+  "current_working_directory": "snapshot_root",
+  "environment_allowlist": [
+    "PATH",
+    "PYTHONPATH"
+  ],
+  "stdout_handling": "CAPTURE_UTF8_AND_SHA256",
+  "stderr_handling": "CAPTURE_UTF8_AND_SHA256",
+  "candidate_path_requirements": "required canonical files in snapshot",
+  "cleanup_behavior": "delete_success_retain_diagnostic_failure"
+}

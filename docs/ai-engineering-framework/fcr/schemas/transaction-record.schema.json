@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://loyalty.example/fcr/schema/transaction-record/1.0.0",
+  "title": "transaction-record",
+  "type": "object",
+  "$comment": "Independently persisted; schema_version required.",
+  "required": [
+    "schema_version",
+    "transaction_id",
+    "request_id",
+    "idempotency_key",
+    "repository_id",
+    "repository_revision",
+    "state",
+    "owner",
+    "lock_ids",
+    "staging_root",
+    "candidate_hashes",
+    "recovery_operation",
+    "created_at",
+    "updated_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "$ref": "./common-types.schema.json#/$defs/SchemaVersion"
+    },
+    "transaction_id": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "request_id": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "idempotency_key": {
+      "$ref": "./common-types.schema.json#/$defs/Sha256"
+    },
+    "repository_id": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "repository_revision": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "parent_revision": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "state": {
+      "$ref": "./common-types.schema.json#/$defs/TransactionState"
+    },
+    "owner": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "lock_ids": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false
+      }
+    },
+    "staging_root": {
+      "$ref": "./common-types.schema.json#/$defs/Path"
+    },
+    "candidate_hashes": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "failure_phase": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "recovery_operation": {
+      "$ref": "./common-types.schema.json#/$defs/Id"
+    },
+    "created_at": {
+      "$ref": "./common-types.schema.json#/$defs/Timestamp"
+    },
+    "updated_at": {
+      "$ref": "./common-types.schema.json#/$defs/Timestamp"
+    }
+  },
+  "additionalProperties": false
+}

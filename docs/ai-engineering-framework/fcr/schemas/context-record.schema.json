@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://loyalty.example/fcr/schema/context-record/1.0.0",
+  "title": "FCR context record",
+  "type": "object",
+  "$comment": "Independently persisted; schema_version is required. Branches identify each context policy record.",
+  "required": ["schema_version"],
+  "properties": {
+    "schema_version": { "$ref": "./common-types.schema.json#/$defs/SchemaVersion" },
+    "precedence": { "type": "array", "items": { "type": "string", "enum": ["REQUIRED_EDITABLE", "REQUIRED_READ_ONLY", "OPTIONAL_EDITABLE", "OPTIONAL_READ_ONLY", "EXCLUDED", "FORBIDDEN", "EXACT_PATH", "MOST_SPECIFIC_DIRECTORY", "MOST_SPECIFIC_GLOB", "MODULE_DEFAULT", "GLOBAL_DEFAULT"] }, "minItems": 1 },
+    "disjoint": { "type": "boolean", "const": true },
+    "maximum_age_seconds": { "type": "object", "properties": { "AGENTS": { "type": ["integer", "null"], "minimum": 0 }, "TASK_RECORD": { "type": ["integer", "null"], "minimum": 0 }, "MIP": { "type": ["integer", "null"], "minimum": 0 }, "ADR": { "type": ["integer", "null"], "minimum": 0 }, "DOMAIN_MODEL": { "type": ["integer", "null"], "minimum": 0 }, "MODULE_DEFINITION": { "type": ["integer", "null"], "minimum": 0 }, "ENGINEERING_STANDARD": { "type": ["integer", "null"], "minimum": 0 }, "CONTRACT": { "type": ["integer", "null"], "minimum": 0 }, "MANIFEST": { "type": ["integer", "null"], "minimum": 0 }, "EVIDENCE": { "type": ["integer", "null"], "minimum": 0 }, "PROJECTION": { "type": ["integer", "null"], "minimum": 0 } }, "required": ["AGENTS", "TASK_RECORD", "MIP", "ADR", "DOMAIN_MODEL", "MODULE_DEFINITION", "ENGINEERING_STANDARD", "CONTRACT", "MANIFEST", "EVIDENCE", "PROJECTION"], "additionalProperties": false },
+    "order": { "type": "array", "items": { "$ref": "./common-types.schema.json#/$defs/DocumentType" }, "uniqueItems": true, "minItems": 1 },
+    "operation_id": { "type": "string", "const": "verify-external-prerequisite" },
+    "schema": { "$ref": "./common-types.schema.json#/$defs/Path" },
+    "tie_breakers": { "$ref": "#/$defs/StringList" },
+    "unowned": { "$ref": "./common-types.schema.json#/$defs/AccessClass" },
+    "protected": { "$ref": "./common-types.schema.json#/$defs/AccessClass" },
+    "features": { "type": "object", "properties": { "*": { "$ref": "#/$defs/Feature" }, "?": { "$ref": "#/$defs/Feature" }, "character_classes": { "$ref": "#/$defs/Feature" }, "escaped_literals": { "$ref": "#/$defs/Feature" }, "**": { "$ref": "#/$defs/Feature" } }, "required": ["*", "?", "character_classes", "escaped_literals", "**"], "additionalProperties": false },
+    "case_sensitive": { "type": "boolean" },
+    "separator": { "type": "string", "const": "/" },
+    "unicode_normalization": { "type": "string", "const": "NFC" },
+    "symlinks": { "type": "string", "const": "RESOLVE_AND_REJECT_ESCAPE" },
+    "parent_traversal": { "type": "string", "const": "REJECT" },
+    "allowed_operations": { "$ref": "#/$defs/StringList" },
+    "authorized_actor": { "$ref": "./common-types.schema.json#/$defs/NonEmpty" },
+    "authorization_evidence": { "$ref": "./common-types.schema.json#/$defs/Id" },
+    "non_overridable": { "$ref": "#/$defs/StringList" }
+  },
+  "oneOf": [
+    { "required": ["precedence", "disjoint"], "properties": { "precedence": { "items": { "$ref": "./common-types.schema.json#/$defs/Classification" } } } },
+    { "required": ["maximum_age_seconds"] },
+    { "required": ["order"] },
+    { "required": ["operation_id", "schema"] },
+    { "required": ["precedence", "tie_breakers", "unowned", "protected"], "properties": { "precedence": { "items": { "type": "string", "enum": ["EXACT_PATH", "MOST_SPECIFIC_DIRECTORY", "MOST_SPECIFIC_GLOB", "MODULE_DEFAULT", "GLOBAL_DEFAULT"] } } } },
+    { "required": ["features", "case_sensitive", "separator", "unicode_normalization", "symlinks", "parent_traversal"] },
+    { "required": ["allowed_operations", "authorized_actor", "authorization_evidence", "non_overridable"] }
+  ],
+  "$defs": {
+    "StringList": { "type": "array", "items": { "$ref": "./common-types.schema.json#/$defs/NonEmpty" }, "uniqueItems": true, "minItems": 1 },
+    "Feature": { "type": "string", "enum": ["SUPPORTED_DIRECTLY", "REJECTED", "EXPANDED_TO_EXACT_PATHS"] }
+  },
+  "additionalProperties": false
+}
