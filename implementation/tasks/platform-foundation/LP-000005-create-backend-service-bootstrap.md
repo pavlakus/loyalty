@@ -2,7 +2,7 @@
 
 ## Status
 
-`READY`
+`IMPLEMENTATION_COMPLETE`
 
 ## Category
 
@@ -67,6 +67,7 @@ Create a framework-isolated backend bootstrap and server entry point with explic
 - `services/api/src/bootstrap/**`
 - `services/api/src/server.ts`
 - `services/api/package.json` scripts only
+- `services/api/package.json` module metadata and development dependency required for the TypeScript Node runtime
 - `services/api/tsconfig.json` source/test inclusion only
 - `services/api/test/**`
 - `implementation/evidence/LP-000005/**`
@@ -77,7 +78,8 @@ Create a framework-isolated backend bootstrap and server entry point with explic
 - `packages/**`
 - `apps/**`
 - `database/**`
-- root `package.json`, `pnpm-lock.yaml`, workspace and CI configuration
+- root `package.json`, workspace and CI configuration
+- unrelated lockfile entries; the `services/api` lockfile importer may change only for its approved development dependency
 - API contracts, event contracts, schemas, migrations, product documents and accepted ADRs
 
 ## Required Documents
