@@ -10,8 +10,11 @@
   },
   "scripts": {
     "build": "turbo run build",
-    "lint": "turbo run lint",
-    "test": "turbo run test",
+    "lint": "eslint . --max-warnings=0 && node scripts/check-module-boundaries.mjs && turbo run lint",
+    "format:check": "prettier --check eslint.config.js prettier.config.js scripts/check-module-boundaries.mjs tests/boundaries/*.test.mjs",
+    "boundary:check": "node scripts/check-module-boundaries.mjs",
+    "test": "turbo run test && pnpm run test:boundaries",
+    "test:boundaries": "node --test tests/boundaries/*.test.mjs",
     "typecheck": "turbo run typecheck",
     "typecheck:negative": "node tests/typecheck/verify-negative-strictness.mjs",
     "workspace:list": "pnpm -r list --depth -1",
@@ -23,9 +26,13 @@
     "fcr": "pnpm --filter @loyalty-platform/fcr exec node dist/cli.js"
   },
   "devDependencies": {
+    "@eslint/js": "^9.39.5",
     "ajv": "^8.20.0",
     "ajv-formats": "3.0.1",
+    "eslint": "^9.39.5",
+    "prettier": "^3.9.6",
     "turbo": "2.5.4",
-    "typescript": "5.8.3"
+    "typescript": "5.8.3",
+    "typescript-eslint": "^8.65.0"
   }
 }
