@@ -19,6 +19,7 @@
 | LP-000006 | Implement Environment Configuration Validation | DONE | `agent/security/LP-000006-environment-config` | APPROVED; QA APPROVED; SECURITY APPROVED | Merged into `development` at `2de52f9`; post-merge validation passed; release and post-merge evidence recorded. |
 | LP-000007 | Create Standard API Response and Error Contracts | DONE | `agent/qa/LP-000007-api-contracts` | APPROVED; QA APPROVED | Merged into `development` at `5c9a1fd`; post-merge validation passed; release and post-merge evidence recorded. |
 | LP-000008 | Create Event Contract Foundation | DONE | `agent/qa/LP-000008-event-contracts` | APPROVED; QA APPROVED | Merged into `development` at `73c4b6b`; post-merge validation passed; release and post-merge evidence recorded. |
+| LP-000009 | Create Database Migration Framework | BLOCKED | `agent/task-preparation/LP-000009-database-migrations` | Pending architecture decision | Preparation found no approved migration runner, SQL execution/connection contract, or database environment contract; see `implementation/evidence/LP-000009/prepare.md`. |
 
 ## AI Engineering Framework
 
