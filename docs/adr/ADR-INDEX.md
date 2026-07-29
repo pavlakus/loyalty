@@ -21,6 +21,7 @@ This index lists accepted Architecture Decision Records for the Loyalty Platform
 | [ADR-007](ADR-007-environment-and-secret-management.md) | Environment and Secret Management | Accepted | 2026-07-15 |
 | [ADR-008](ADR-008-cross-platform-mobile-architecture.md) | Cross-Platform Mobile Architecture | Accepted | 2026-07-15 |
 | [ADR-009](ADR-009-initial-environment-variable-contract.md) | Initial Environment Variable Contract | Accepted | 2026-07-29 |
+| [ADR-010](ADR-010-database-migration-and-runtime-architecture.md) | Database Migration and Runtime Architecture | Accepted | 2026-07-29 |
 
 ## Governance
 
