@@ -38,6 +38,8 @@ Define generic success/error envelopes, framework error categories and centraliz
 - `packages/api-contracts/tsconfig.json`
 - `services/api/src/shared/errors/**`
 - `services/api/test/**` (contract and error-mapping tests only)
+- `services/api/package.json` (workspace dependency wiring only)
+- `pnpm-lock.yaml` (API workspace importer only)
 
 ## Out of Scope
 
@@ -87,6 +89,8 @@ Define generic success/error envelopes, framework error categories and centraliz
 - `packages/api-contracts/tsconfig.json`
 - `services/api/src/shared/errors/**`
 - `services/api/test/**` (focused contract/error tests only)
+- `services/api/package.json` (workspace dependency wiring only)
+- `pnpm-lock.yaml` (API workspace importer only)
 - `implementation/evidence/LP-000007/**`
 - LP-000007 task/status/index records and generated prompts required by lifecycle
 

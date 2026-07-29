@@ -37,6 +37,7 @@
 - Architecture: PASS; ADR-002 defines public contract boundaries and modular-monolith placement.
 - Scope and tests: PASS; explicit and implementation-ready.
 - Security blocker: none; task must not add credentials, authorization behavior or personal data.
+- Dependency wiring clarification: the API service package manifest and its lockfile importer are allowed only to consume `@loyalty-platform/api-contracts` through its public entry point; no unrelated dependency changes are permitted.
 
 ## Commands Executed
 
