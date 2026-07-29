@@ -195,6 +195,34 @@ def add_task(root: Path, task_id: str, status: str, mip: str | None = "implement
     write(root / f"implementation/tasks/ai-engineering-framework/{task_id}-fixture.md", task(task_id, status, mip))
 
 
+def add_platform_backlog(root: Path, rows: list[tuple[str, str, str, str]], branches: dict[str, str] | None = None) -> None:
+    branches = branches or {}
+    index_lines = [
+        "# Platform Foundation Task Index",
+        "",
+        "| Task | Title | Role | Dependencies | Status |",
+        "|---|---|---|---|---|",
+    ]
+    status_lines = [
+        "# Implementation Task Status",
+        "",
+        "| Task | Title | Status | Branch | Review | Notes |",
+        "|---|---|---|---|---|---|",
+    ]
+    for task_id, task_status, deps, priority in rows:
+        title = f"{task_id} Fixture"
+        dependency_text = deps or "None"
+        write(
+            root / f"implementation/tasks/platform-foundation/{task_id}-fixture.md",
+            f"""# {title}\n\n## Status\n`{task_status}`\n\n## Priority\n`{priority}`\n\n## Module Implementation Package\n`implementation/mip/MIP-AI-001-ai-engineering-framework-stabilization.md`\n""",
+        )
+        branch = branches.get(task_id, "")
+        index_lines.append(f"| {task_id} | {title} | DevOps Agent | {dependency_text} | {task_status} |")
+        status_lines.append(f"| {task_id} | {title} | {task_status} | `{branch}` | Pending | fixture |")
+    write(root / "implementation/tasks/platform-foundation/TASK-INDEX.md", "\n".join(index_lines) + "\n")
+    write(root / "implementation/TASK-STATUS.md", "\n".join(status_lines) + "\n")
+
+
 def add_evidence(root: Path, task_id: str, *files: str) -> None:
     for name in files:
         if name == "review.md":
@@ -283,6 +311,77 @@ def main() -> int:
         add_prompt(root, "LP-CHANGES", "implementation", "dispatcher")
         assert_blocked(lambda: DISPATCHER.route(root, "execute", "LP-CHANGES"), "authorized CHANGES_REQUIRED")
         assert DISPATCHER.route(root, "execute", "LP-CHANGES", allow_correction=True).command == "execute"
+
+        add_platform_backlog(
+            root,
+            [
+                ("LP-BACKLOG-ACTIVE", "IN_PROGRESS", "", "P2"),
+                ("LP-BACKLOG-READY", "READY", "", "P2"),
+                ("LP-BACKLOG-DRAFT", "DRAFT", "", "P0"),
+            ],
+            branches={"LP-BACKLOG-ACTIVE": "agent/other/LP-BACKLOG-ACTIVE"},
+        )
+        selected = DISPATCHER.select_next_task(root, current_branch="agent/current")
+        assert selected and selected.task_id == "LP-BACKLOG-READY"
+
+        add_platform_backlog(
+            root,
+            [
+                ("LP-BACKLOG-ACTIVE", "IN_PROGRESS", "", "P2"),
+                ("LP-BACKLOG-READY", "READY", "", "P2"),
+                ("LP-BACKLOG-DRAFT", "DRAFT", "", "P0"),
+            ],
+            branches={"LP-BACKLOG-ACTIVE": "agent/current"},
+        )
+        selected = DISPATCHER.select_next_task(root, current_branch="agent/current")
+        assert selected and selected.task_id == "LP-BACKLOG-ACTIVE"
+
+        add_platform_backlog(
+            root,
+            [
+                ("LP-BACKLOG-BLOCKED", "DRAFT", "", "P1"),
+            ],
+        )
+        index_text = (root / "implementation/tasks/platform-foundation/TASK-INDEX.md").read_text()
+        (root / "implementation/tasks/platform-foundation/TASK-INDEX.md").write_text(index_text.replace("| DRAFT |", "| BLOCKED |"))
+        selected = DISPATCHER.select_next_task(root, current_branch="agent/current")
+        assert selected and selected.task_id == "LP-BACKLOG-BLOCKED"
+
+        add_platform_backlog(
+            root,
+            [
+                ("LP-BACKLOG-DEPENDENCY", "DRAFT", "LP-BACKLOG-READY", "P0"),
+                ("LP-BACKLOG-READY", "READY", "", "P1"),
+            ],
+        )
+        selected = DISPATCHER.select_next_task(root, current_branch="agent/current")
+        assert selected and selected.task_id == "LP-BACKLOG-READY"
+
+        add_platform_backlog(
+            root,
+            [
+                ("LP-BACKLOG-FIRST", "DRAFT", "", "P1"),
+                ("LP-BACKLOG-SECOND", "DRAFT", "", "P1"),
+            ],
+        )
+        selected = DISPATCHER.select_next_task(root, current_branch="agent/current")
+        assert selected and selected.task_id == "LP-BACKLOG-FIRST"
+
+        add_platform_backlog(
+            root,
+            [
+                ("LP-BACKLOG-DONE", "DONE", "", "P1"),
+                ("LP-BACKLOG-NEXT", "READY", "", "P1"),
+            ],
+        )
+        selected = DISPATCHER.select_next_task(root, current_branch="agent/current")
+        assert selected and selected.task_id == "LP-BACKLOG-NEXT"
+
+        add_platform_backlog(root, [("LP-BACKLOG-OTHER", "DONE", "", "P1")])
+        assert DISPATCHER.select_next_task(root, current_branch="agent/current") is None
+
+        add_platform_backlog(root, [("LP-BACKLOG-DUPLICATE", "IN_PROGRESS", "", "P1")], branches={"LP-BACKLOG-DUPLICATE": "agent/other/LP-BACKLOG-DUPLICATE"})
+        assert DISPATCHER.select_next_task(root, current_branch="agent/current") is None
 
     print("dispatcher fixture tests passed")
     return 0
