@@ -1,97 +1,138 @@
-# LP-000008. Create event contract foundation
+# LP-000008 — Create Event Contract Foundation
 
-## 1. File Name
+## Task Metadata
 
-`LP-000008-create-event-contract-foundation.md`
+- Task ID: `LP-000008`
+- Category: `FOUNDATION`
+- Priority: `P1`
+- Owning module: Platform Foundation / Event Contracts
+- Assigned role: Backend Developer Agent
+- MIP: `implementation/mip/MIP-000-platform-foundation.md`
+- Knowledge Package: Platform Foundation Knowledge Package from the MIP
 
-## 2. Status
+## Module Implementation Package
 
-`DRAFT`
+`implementation/mip/MIP-000-platform-foundation.md`
 
-## 3. Category
+## Status
 
-`FEATURE`
+`READY`
 
-## 4. Assigned Role
+## Objective
 
-`Backend Developer Agent`
+Provide the versioned, validated event-envelope foundation required by later platform and Loyalty modules without introducing domain-specific business events.
 
-## 5. Owning Package
+## Business Objective
 
-`MIP-000-platform-foundation.md`
+Ensure later modules can exchange durable, traceable facts through one compatible event contract.
 
-## 6. Business Objective
+## Technical Objective
 
-Create a reliable implementation foundation for all later Loyalty Platform modules without introducing premature business behavior.
+Define and test a generic event envelope carrying version, correlation, causation and tenant context while preserving the event-catalog and transactional-outbox boundaries.
 
-## 7. Exact Scope
+## Exact Scope
 
-- `packages/event-contracts/**`
+- `packages/event-contracts/src/**`
+- `packages/event-contracts/test/**`
+- `packages/event-contracts/package.json`
+- `packages/event-contracts/tsconfig.json`
 - `services/api/src/shared/events/**`
+- `services/api/test/**` (focused event-contract tests only)
+- `services/api/package.json` (workspace dependency wiring only)
+- `pnpm-lock.yaml` (API workspace importer only)
 
-## 8. Out of Scope
+## Out of Scope
 
-- `domain-specific Events`
+- domain-specific business events;
+- event transport or workers;
+- transactional outbox schema or persistence;
+- database migrations;
+- authentication, authorization or tenant enforcement;
+- event handlers and projections;
+- production deployment or external integrations;
+- changes to the canonical event catalog.
 
-## 9. Required Documents
+## Dependencies
 
-- `MIP-000-platform-foundation.md`
-- `51-engineering-implementation-guide.md`
-- `52-repository-structure.md`
-- `54-agent-development-plan.md`
-- `55-module-definition-of-done.md`
-- `57-agent-prompts.md`
-- `58-project-knowledge-map.md`
-- `59-coding-standards.md`
-- `60-release-strategy.md`
-- relevant accepted ADRs
+- LP-000002 — Initialize Monorepo and Workspace (`DONE`)
+- `implementation/mip/MIP-000-platform-foundation.md`
+- accepted `docs/adr/ADR-004-transactional-outbox.md`
+- `docs/blueprint/37-event-catalog.md`
 
-## 10. Knowledge Package
+## Required Documents
 
-Platform Foundation Knowledge Package from `MIP-000-platform-foundation.md`.
+- `AGENTS.md`
+- `implementation/TASK-LIFECYCLE.md`
+- `implementation/mip/MIP-000-platform-foundation.md`
+- `docs/blueprint/37-event-catalog.md`
+- `docs/adr/ADR-004-transactional-outbox.md`
+- `docs/engineering/51-engineering-implementation-guide.md`
+- `docs/engineering/52-repository-structure.md`
+- `docs/engineering/54-agent-development-plan.md`
+- `docs/engineering/55-module-definition-of-done.md`
+- `docs/engineering/57-agent-prompts.md`
+- `docs/engineering/58-project-knowledge-map.md`
+- `docs/engineering/59-coding-standards.md`
+- `docs/engineering/60-release-strategy.md`
+- `docs/engineering/68-definition-of-task-ready.md`
+- `docs/ai-engineering-framework/90-agent-response-contract.md`
 
-## 11. Dependencies
+## Acceptance Criteria
 
-Dependencies must be identified before this task moves to `READY`.
+1. A versioned generic event envelope exists with event type, event version, event ID, occurred-at timestamp and payload.
+2. Correlation ID, causation ID and tenant context are represented according to the MIP and event-catalog conventions.
+3. Runtime validation rejects malformed envelopes and unsupported versions without mutating input.
+4. The contract package is consumed only through its public entry point.
+5. No undocumented domain event or business behavior is introduced.
 
-## 12. Acceptance Criteria
+## Mandatory Tests
 
-- Versioned event envelope exists.
-- Correlation, causation and tenant context are represented.
-- Runtime validation exists.
-- No undocumented domain Event is introduced.
+- event envelope contract tests;
+- version validation tests;
+- malformed payload and required-context tests;
+- package/API build, lint, typecheck and repository regression tests.
 
-## 13. Mandatory Tests
+## Allowed Files
 
-- event schema tests
-- version validation tests
+- `packages/event-contracts/src/**`
+- `packages/event-contracts/test/**`
+- `packages/event-contracts/package.json`
+- `packages/event-contracts/tsconfig.json`
+- `services/api/src/shared/events/**`
+- `services/api/test/**` (focused event-contract tests only)
+- `services/api/package.json` (workspace dependency wiring only)
+- `pnpm-lock.yaml` (API workspace importer only)
+- `implementation/evidence/LP-000008/**`
+- LP-000008 task, status and index records and generated lifecycle prompts
 
-## 14. Required Reviewers
+## Forbidden Files
 
-- Solution Architect where architecture is affected
-- QA
-- Security where security or credentials are affected
-- DevOps where CI, environments or infrastructure are affected
-- Documentation reviewer where documentation changes
+- business domain modules and event implementations;
+- controllers and routes;
+- authentication, authorization and tenant enforcement;
+- database migrations, outbox schema and workers;
+- Blueprint, MIP and accepted ADR content;
+- secrets, credentials and personal data;
+- unrelated package exports or configuration.
 
-## 15. Expected Deliverables
+## Required Reviewers and Approvals
 
-- implementation or review summary;
-- changed or reviewed files;
-- tests added;
-- tests executed;
-- test results;
-- risks;
-- known limitations;
-- rollback or recovery instructions;
-- documentation updates;
-- Definition of Done evidence;
-- readiness recommendation.
+- Independent Review Agent
+- QA Agent
+- Solution Architect only if the implementation changes accepted architecture
+- Security Agent only if the implementation adds security-sensitive behavior, credentials, personal data or authorization behavior
 
-## 16. Rollback Expectation
+## Expected Deliverables
 
-The change must be reversible through configuration rollback, code rollback, migration recovery or forward fix as appropriate. Immutable migration history must not be rewritten.
+- public event contract types and runtime validation;
+- focused tests and exact validation evidence;
+- implementation, review, QA and release/post-merge evidence;
+- rollback/recovery instructions and synchronized lifecycle records.
 
-## 17. Completion Rule
+## Rollback and Recovery
 
-The task may be marked complete only when all acceptance criteria and mandatory tests pass and required review evidence exists.
+Revert the isolated LP-000008 implementation/merge commit. No database or persistent data recovery is required because this task creates no migrations or stored event data.
+
+## Definition of Done
+
+Implementation is committed on a dedicated branch, contract and validation tests pass, independent Review and QA approve, required release/post-merge evidence is present, no P0/P1 findings remain, and status/index/specification records are synchronized.
