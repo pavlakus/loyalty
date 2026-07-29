@@ -13,7 +13,7 @@
 | LP-000003 | Configure TypeScript Strict Mode and Shared Compiler Settings | DevOps Agent | LP-000002 | DONE |
 | LP-000004 | Configure Linting, Formatting and Module Boundaries | DevOps Agent | LP-000002; LP-000003 | DONE |
 | LP-000005 | Create Backend Service Bootstrap | Backend Developer Agent | LP-000002; LP-000003; LP-000004 | DONE |
-| LP-000006 | Implement Environment Configuration Validation | Backend Developer Agent | LP-000005; ADR-007; approved environment variable contract | TASK_PREPARATION |
+| LP-000006 | Implement Environment Configuration Validation | Backend Developer Agent | LP-000005; ADR-007; ADR-009 | READY |
 | LP-000007 | Create Standard API Response and Error Contracts | Backend Developer Agent | LP-000005 | BLOCKED |
 | LP-000008 | Create Event Contract Foundation | Backend Developer Agent | LP-000002; ADR-004 | BLOCKED |
 | LP-000009 | Create Database Migration Framework | Database Agent | LP-000002; ADR-003 | BLOCKED |

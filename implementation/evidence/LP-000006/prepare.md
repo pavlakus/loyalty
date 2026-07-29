@@ -80,4 +80,25 @@ Results:
 
 ## Recommendation
 
-`TASK_PREPARATION` remains the authoritative state. Do not transition to `READY` or begin implementation until the P1 environment contract gap is resolved by an authorized Product/Architecture decision. Next responsible action: obtain and record the approved environment-variable contract, then rerun Task Preparation.
+`TASK_PREPARATION` remains the current state while this revalidation is recorded. ADR-009 now supplies the previously missing contract. After task metadata and generated prompts are synchronized, transition `TASK_PREPARATION -> READY` and hand off to the Backend Developer Agent.
+
+## Preparation Revalidation After ADR-009 Acceptance
+
+- Date: 2026-07-29
+- Accepted ADR reviewed: `docs/adr/ADR-009-initial-environment-variable-contract.md`
+- Acceptance evidence reviewed: `implementation/evidence/ADR-009/acceptance.md`
+- Contract verified: `NODE_ENV`, `PORT` and `HOST` only; all server-only; no public/client or secret variables.
+- Dependency verified: LP-000005 is `DONE` on `development`.
+- Scope verified: allowed and forbidden files are explicit and unchanged in intent.
+- Remaining blocker: none for Task Preparation.
+
+The earlier P1 preparation finding is resolved by the authorized ADR-009 acceptance. No Product Decision, additional architecture decision, schema change, database change or business behavior is required.
+
+## Final Readiness Decision
+
+- Task status: `READY`
+- Task index: `READY`
+- Task status record: `READY`
+- Generated prompts: prepare, implementation, review and QA prompts exist under `implementation/codex-prompts/platform-foundation/`.
+- Required contract: accepted ADR-009.
+- Recommendation: transition `TASK_PREPARATION -> READY`; next responsible role is Backend Developer Agent.

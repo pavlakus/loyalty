@@ -16,7 +16,7 @@
 
 ## Status
 
-`TASK_PREPARATION`
+`READY`
 
 ## Objective
 
@@ -61,6 +61,7 @@ Validate the explicitly approved runtime configuration at API startup, keep publ
 - `implementation/mip/MIP-000-platform-foundation.md`
 - `docs/adr/ADR-001-monorepo-and-workspace-strategy.md`
 - `docs/adr/ADR-007-environment-and-secret-management.md`
+- `docs/adr/ADR-009-initial-environment-variable-contract.md`
 - `docs/engineering/51-engineering-implementation-guide.md`
 - `docs/engineering/52-repository-structure.md`
 - `docs/engineering/53-development-roadmap.md`
@@ -114,6 +115,14 @@ Validate the explicitly approved runtime configuration at API startup, keep publ
 6. No secret values are committed.
 7. No business behavior or architecture outside this task is introduced.
 
+## Approved Initial Environment Contract
+
+- `NODE_ENV`: server-only; required in production and optional elsewhere; default `development` outside production; exact enum `development | test | production`.
+- `PORT`: server-only; optional; default `3000`; base-10 integer from `0` through `65535`.
+- `HOST`: server-only; optional; default `127.0.0.1`; non-empty hostname or IP-literal without control characters or whitespace.
+- No client/public or secret variables are approved in this task.
+- Future database, Supabase, authentication, provider and deployment credentials require separate repository-authorized contracts.
+
 ## Required Reviewers and Approvals
 
 - Independent Review Agent
@@ -147,4 +156,4 @@ Validate the explicitly approved runtime configuration at API startup, keep publ
 
 ## Preparation Gate
 
-This task cannot transition to `READY` until the approved environment contract identifies the required variable names, value formats, optional/default behavior, and public/server classification. The current MIP and ADR-007 state the policy but do not define that contract. Task Preparation must not invent it.
+ADR-009 is accepted and defines the initial environment contract. Task Preparation must verify that implementation remains within this contract before transitioning to `READY`.
