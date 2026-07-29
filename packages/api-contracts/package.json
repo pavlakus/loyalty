@@ -2,11 +2,20 @@
   "name": "@loyalty-platform/api-contracts",
   "version": "0.0.0",
   "private": true,
-  "description": "API contracts package placeholder.",
+  "description": "Shared API response and error contracts.",
+  "type": "module",
   "scripts": {
-    "build": "node -e \"console.log('api-contracts placeholder build')\"",
+    "build": "tsc -p tsconfig.json",
     "lint": "node -e \"console.log('api-contracts placeholder lint')\"",
-    "test": "node -e \"console.log('api-contracts placeholder test')\"",
+    "test": "pnpm run build && node --test test/*.test.mjs",
     "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
   }
 }

@@ -13,5 +13,8 @@
   "devDependencies": {
     "@types/node": "26.1.0"
   },
+  "dependencies": {
+    "@loyalty-platform/api-contracts": "workspace:*"
+  },
   "type": "module"
 }

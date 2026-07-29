@@ -1,97 +1,144 @@
-# LP-000007. Create standard API response and error contracts
+# LP-000007 — Create Standard API Response and Error Contracts
 
-## 1. File Name
+## Task Metadata
 
-`LP-000007-create-standard-api-response-and-error-contracts.md`
+- Task ID: `LP-000007`
+- Category: `FOUNDATION`
+- Priority: `P1`
+- Owning module: Platform Foundation / API Contracts
+- Assigned role: Backend Developer Agent
+- MIP: `implementation/mip/MIP-000-platform-foundation.md`
+- Knowledge Package: Platform Foundation Knowledge Package from the MIP
 
-## 2. Status
+## Module Implementation Package
 
-`DRAFT`
+`implementation/mip/MIP-000-platform-foundation.md`
 
-## 3. Category
+## Status
 
-`FEATURE`
+`READY_FOR_MERGE`
 
-## 4. Assigned Role
+## Objective
 
-`Backend Developer Agent`
+Provide the canonical transport response and typed framework error contract required by later modules, without introducing module-specific business behavior.
 
-## 5. Owning Package
+## Business Objective
 
-`MIP-000-platform-foundation.md`
+Create stable, safe API communication foundations for later Loyalty Platform modules.
 
-## 6. Business Objective
+## Technical Objective
 
-Create a reliable implementation foundation for all later Loyalty Platform modules without introducing premature business behavior.
+Define generic success/error envelopes, framework error categories and centralized HTTP mapping while preserving the public API contract and hiding infrastructure details.
 
-## 7. Exact Scope
+## Exact Scope
 
-- `packages/api-contracts/**`
+- `packages/api-contracts/src/**`
+- `packages/api-contracts/test/**`
+- `packages/api-contracts/package.json`
+- `packages/api-contracts/tsconfig.json`
 - `services/api/src/shared/errors/**`
+- `services/api/test/**` (contract and error-mapping tests only)
+- `services/api/package.json` (workspace dependency wiring only)
+- `pnpm-lock.yaml` (API workspace importer only)
 
-## 8. Out of Scope
+## Out of Scope
 
-- `module-specific business errors`
+- module-specific business errors;
+- controllers, routes, authentication, authorization, tenant behavior or database behavior;
+- domain response payloads;
+- event contracts;
+- error catalog changes outside the API contract package;
+- production deployment or external integrations;
+- Loyalty business behavior.
 
-## 9. Required Documents
+## Dependencies
 
-- `MIP-000-platform-foundation.md`
-- `51-engineering-implementation-guide.md`
-- `52-repository-structure.md`
-- `54-agent-development-plan.md`
-- `55-module-definition-of-done.md`
-- `57-agent-prompts.md`
-- `58-project-knowledge-map.md`
-- `59-coding-standards.md`
-- `60-release-strategy.md`
-- relevant accepted ADRs
+- LP-000005 — Create Backend Service Bootstrap (`DONE`)
+- `implementation/mip/MIP-000-platform-foundation.md`
+- accepted ADR-002 — Modular Monolith Backend
+- approved `docs/blueprint/43-api-contract.md`
 
-## 10. Knowledge Package
+## Required Documents
 
-Platform Foundation Knowledge Package from `MIP-000-platform-foundation.md`.
+- `AGENTS.md`
+- `implementation/TASK-LIFECYCLE.md`
+- `implementation/mip/MIP-000-platform-foundation.md`
+- `docs/blueprint/43-api-contract.md`
+- `docs/adr/ADR-002-modular-monolith-backend.md`
+- `docs/engineering/51-engineering-implementation-guide.md`
+- `docs/engineering/52-repository-structure.md`
+- `docs/engineering/54-agent-development-plan.md`
+- `docs/engineering/55-module-definition-of-done.md`
+- `docs/engineering/57-agent-prompts.md`
+- `docs/engineering/58-project-knowledge-map.md`
+- `docs/engineering/59-coding-standards.md`
+- `docs/engineering/60-release-strategy.md`
+- `docs/engineering/68-definition-of-task-ready.md`
+- `docs/ai-engineering-framework/90-agent-response-contract.md`
 
-## 11. Dependencies
+## Contract and UAT References
 
-Dependencies must be identified before this task moves to `READY`.
+- API success and error examples in MIP sections 11 and 12 and `docs/blueprint/43-api-contract.md`.
+- UAT references: safe error mapping and stable success/error envelopes.
 
-## 12. Acceptance Criteria
+## Allowed Files
 
-- Success and error envelopes match MIP-000.
-- Typed error categories exist.
-- HTTP mapping is centralized.
-- Raw infrastructure errors are not exposed.
+- `packages/api-contracts/src/**`
+- `packages/api-contracts/test/**`
+- `packages/api-contracts/package.json`
+- `packages/api-contracts/tsconfig.json`
+- `services/api/src/shared/errors/**`
+- `services/api/test/**` (focused contract/error tests only)
+- `services/api/package.json` (workspace dependency wiring only)
+- `pnpm-lock.yaml` (API workspace importer only)
+- `implementation/evidence/LP-000007/**`
+- LP-000007 task/status/index records and generated prompts required by lifecycle
 
-## 13. Mandatory Tests
+## Forbidden Files
 
-- contract tests
-- safe error mapping tests
+- domain modules, controllers and routes;
+- authentication, authorization, tenant, database and event implementations;
+- Blueprint, MIP and accepted ADR content;
+- root package exports unrelated to this contract;
+- module-specific error codes or business rules;
+- secrets, credentials and personal data.
 
-## 14. Required Reviewers
+## Acceptance Criteria
 
-- Solution Architect where architecture is affected
-- QA
-- Security where security or credentials are affected
-- DevOps where CI, environments or infrastructure are affected
-- Documentation reviewer where documentation changes
+1. Success and error envelopes match MIP-000 and the approved API contract exactly.
+2. Typed categories exist for Validation, Authentication, Authorization, NotFound, BusinessRule, Conflict, Concurrency, RateLimit, TemporaryInfrastructure, PermanentProvider and Unexpected errors.
+3. Each framework error carries stable code, safe client message, HTTP status mapping, correlation/request ID, retry classification, log severity and safe optional details.
+4. HTTP mapping is centralized in `services/api/src/shared/errors/**`.
+5. Raw infrastructure errors and causes are never exposed in public responses.
+6. API contract package builds and is consumed only through its public entry point.
+7. No module-specific business behavior is introduced.
 
-## 15. Expected Deliverables
+## Mandatory Tests
 
-- implementation or review summary;
-- changed or reviewed files;
-- tests added;
-- tests executed;
-- test results;
-- risks;
-- known limitations;
-- rollback or recovery instructions;
-- documentation updates;
-- Definition of Done evidence;
-- readiness recommendation.
+- success envelope contract tests;
+- error envelope contract tests;
+- every typed category and HTTP mapping test;
+- safe mapping test proving raw infrastructure messages/details are excluded;
+- package/API build, lint, typecheck and repository regression tests.
 
-## 16. Rollback Expectation
+## Required Reviewers and Approvals
 
-The change must be reversible through configuration rollback, code rollback, migration recovery or forward fix as appropriate. Immutable migration history must not be rewritten.
+- Independent Review Agent
+- QA Agent
+- Solution Architect only if implementation changes the accepted architecture
+- Security Agent only if the implementation adds security-sensitive behavior, credentials, personal data or authorization behavior
 
-## 17. Completion Rule
+## Expected Deliverables
 
-The task may be marked complete only when all acceptance criteria and mandatory tests pass and required review evidence exists.
+- public API contract types and runtime-safe mapping;
+- focused tests and exact validation evidence;
+- implementation, review, QA and release/post-merge evidence;
+- rollback/recovery instructions and synchronized lifecycle records.
+
+## Rollback and Recovery
+
+Revert the isolated LP-000007 implementation/merge commit. No database or persistent data recovery is required.
+
+## Definition of Done
+
+Implementation is committed on a dedicated branch, contract and error tests pass, independent Review and QA approve, required release/post-merge evidence is present, no P0/P1 findings remain, and status/index/specification records are synchronized.
