@@ -32,7 +32,7 @@
 | LP-AI-000008 | Implement Repository Hygiene Controls | DRAFT |  | Pending | Depends on LP-AI-000001 |
 | LP-AI-000009 | Implement Environment Validation | DRAFT |  | Pending | Depends on LP-AI-000001 |
 | LP-AI-000010 | Implement One Command Workflow | DRAFT |  | Pending | Depends on LP-AI-000001 |
-| LP-AI-000011 | Continuous Backlog Dispatcher | READY_FOR_MERGE | `agent/devops/LP-AI-000011-continuous-backlog-dispatcher` | APPROVED; QA APPROVED | QA passed at `f66c48b`; security review not required; maintainer merge is next. |
+| LP-AI-000011 | Continuous Backlog Dispatcher | DONE | `agent/devops/LP-AI-000011-continuous-backlog-dispatcher` | APPROVED; QA APPROVED | Merged into `development` at `a4365fe`; post-merge validation passed. |
 | V2-001 | Scope Manifest Standard | DONE | `development` | APPROVED; QA APPROVED | Merged into `development` at `a7cf285`; scope manifest schema, example, invalid fixtures, validator, tests and documentation added; release evidence in `implementation/evidence/V2-001/release.md` |
 | V2-002 | Scope Isolation Enforcement | DONE | `development` | APPROVED; QA APPROVED | Merged into `development` at `1b53525`; scope validator, fixtures, tests and documentation added; implementation, review, QA and release evidence in `implementation/evidence/V2-002/` |
 | V2-003 | Environment & Repository Preflight Gate | DONE | `development` | APPROVED; QA APPROVED | Implemented directly on `development` at `c5e0f8a`; implementation, review, QA and release evidence recorded in `implementation/evidence/V2-003/`; direct-to-development commit workflow used instead of a feature-branch merge |
