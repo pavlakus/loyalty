@@ -1,0 +1,3 @@
+# Repository-wide review ownership. Protected branch settings require this
+# owner together with the independent review, QA, and security gates.
+* @pavlakus

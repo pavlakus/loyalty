@@ -20,7 +20,7 @@
 | LP-000007 | Create Standard API Response and Error Contracts | DONE | `agent/qa/LP-000007-api-contracts` | APPROVED; QA APPROVED | Merged into `development` at `5c9a1fd`; post-merge validation passed; release and post-merge evidence recorded. |
 | LP-000008 | Create Event Contract Foundation | DONE | `agent/qa/LP-000008-event-contracts` | APPROVED; QA APPROVED | Merged into `development` at `73c4b6b`; post-merge validation passed; release and post-merge evidence recorded. |
 | LP-000009 | Create Database Migration Framework | READY | `agent/task-preparation/LP-000009-database-migrations-revalidation` | Pending implementation | ADR-010 accepted; Task Preparation revalidation passed; implementation branch and evidence required. |
-| LP-000016 | Create CI Pull Request Pipeline | READY | `agent/task-preparation/LP-000016-ci-pipeline` | Pending implementation | GitHub Actions provider established; preparation passed; owns ephemeral PostgreSQL CI foundation for LP-000009. |
+| LP-000016 | Create CI Pull Request Pipeline | IN_PROGRESS | `agent/devops/LP-000016-ci-pipeline` | Implementation in progress | GitHub Actions workflow and ephemeral PostgreSQL validation are implemented; live provider validation remains required. |
 
 ## AI Engineering Framework
 

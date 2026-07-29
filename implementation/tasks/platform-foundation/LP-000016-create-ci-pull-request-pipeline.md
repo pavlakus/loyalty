@@ -6,7 +6,7 @@
 
 ## 2. Status
 
-`READY`
+`IN_PROGRESS`
 
 ## 3. Category
 
