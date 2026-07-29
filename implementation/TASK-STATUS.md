@@ -16,7 +16,7 @@
 | LP-000003 | Configure TypeScript Strict Mode | DONE | `development` | APPROVED; QA APPROVED; Security APPROVED | Historical merge `cb48ceb9c872eeb0b71074dbcf137e443b2c8fb1`; post-merge validation passed after FCR baseline restoration at `bb7a916d9b490d7ef920203295b2f5ccf5cb529e`. |
 | LP-000004 | Configure Linting, Formatting and Module Boundaries | DONE | `agent/devops/LP-000004-lint-format-boundaries` | REVIEW APPROVED; QA APPROVED; Security APPROVED | Merged into `development` at `9710b9e85d856c3bdf1b3774e01a0a0caf003d56`; post-merge validation passed. |
 | LP-000005 | Create Backend Service Bootstrap | DONE | `agent/backend/LP-000005-backend-bootstrap` | APPROVED; QA APPROVED | Merged into `development` at `fcaf558`; post-merge validation passed; closure evidence is recorded under `implementation/evidence/LP-000005/`. |
-| LP-000006 | Implement Environment Configuration Validation | READY_FOR_REVIEW | `agent/backend/LP-000006-environment-config` | Pending | Implementation complete and committed at `78e40de`; validation passed; ready for independent review. |
+| LP-000006 | Implement Environment Configuration Validation | QA | `agent/review/LP-000006-environment-config` | APPROVED | Independent review approved; see `implementation/evidence/LP-000006/review.md`; QA is next. |
 
 ## AI Engineering Framework
 
