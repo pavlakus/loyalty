@@ -1,6 +1,7 @@
 import { createServer, type Server } from "node:http";
 
 import { createApplication } from "./create-application.js";
+import { loadServerEnvironment, type ServerEnvironment } from "../config/environment.js";
 
 export interface ServerOptions {
   readonly host?: string;
@@ -12,8 +13,8 @@ export interface RunningServer {
   readonly close: () => Promise<void>;
 }
 
-function resolvePort(port: number | undefined): number {
-  const selectedPort = port ?? Number(process.env.PORT ?? "3000");
+function resolvePort(port: number | undefined, environment: ServerEnvironment): number {
+  const selectedPort = port ?? environment.port;
 
   if (!Number.isInteger(selectedPort) || selectedPort < 0 || selectedPort > 65535) {
     throw new Error(`API startup failed: invalid PORT value "${selectedPort}"`);
@@ -22,13 +23,14 @@ function resolvePort(port: number | undefined): number {
   return selectedPort;
 }
 
-function resolveHost(host: string | undefined): string {
-  return host ?? process.env.HOST ?? "127.0.0.1";
+function resolveHost(host: string | undefined, environment: ServerEnvironment): string {
+  return host ?? environment.host;
 }
 
 export function startServer(options: ServerOptions = {}): Promise<RunningServer> {
-  const port = resolvePort(options.port);
-  const host = resolveHost(options.host);
+  const environment = loadServerEnvironment();
+  const port = resolvePort(options.port, environment);
+  const host = resolveHost(options.host, environment);
   const server = createServer(createApplication());
 
   return new Promise((resolve, reject) => {
