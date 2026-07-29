@@ -1,0 +1,40 @@
+export interface ApiResponseMetadata {
+  readonly request_id: string;
+  readonly timestamp: string;
+}
+
+export interface ApiErrorItem {
+  readonly code: string;
+  readonly message: string;
+  readonly field: string | null;
+}
+
+export interface ApiSuccessResponse<TData> {
+  readonly success: true;
+  readonly data: TData;
+  readonly metadata: ApiResponseMetadata;
+  readonly errors: readonly [];
+}
+
+export interface ApiErrorResponse {
+  readonly success: false;
+  readonly data: null;
+  readonly metadata: ApiResponseMetadata;
+  readonly errors: readonly ApiErrorItem[];
+}
+
+export type ApiResponse<TData> = ApiSuccessResponse<TData> | ApiErrorResponse;
+
+export function createSuccessResponse<TData>(
+  data: TData,
+  metadata: ApiResponseMetadata,
+): ApiSuccessResponse<TData> {
+  return { success: true, data, metadata, errors: [] };
+}
+
+export function createErrorResponse(
+  errors: readonly ApiErrorItem[],
+  metadata: ApiResponseMetadata,
+): ApiErrorResponse {
+  return { success: false, data: null, metadata, errors };
+}

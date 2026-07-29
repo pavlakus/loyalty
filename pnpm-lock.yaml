@@ -182,6 +182,10 @@ importers:
   packages/validation: {}
 
   services/api:
+    dependencies:
+      '@loyalty-platform/api-contracts':
+        specifier: workspace:*
+        version: link:../../packages/api-contracts
     devDependencies:
       '@types/node':
         specifier: 26.1.0
