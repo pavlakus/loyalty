@@ -14,7 +14,8 @@
     "@types/node": "26.1.0"
   },
   "dependencies": {
-    "@loyalty-platform/api-contracts": "workspace:*"
+    "@loyalty-platform/api-contracts": "workspace:*",
+    "@loyalty-platform/event-contracts": "workspace:*"
   },
   "type": "module"
 }

@@ -186,6 +186,9 @@ importers:
       '@loyalty-platform/api-contracts':
         specifier: workspace:*
         version: link:../../packages/api-contracts
+      '@loyalty-platform/event-contracts':
+        specifier: workspace:*
+        version: link:../../packages/event-contracts
     devDependencies:
       '@types/node':
         specifier: 26.1.0
