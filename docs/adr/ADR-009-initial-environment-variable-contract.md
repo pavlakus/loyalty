@@ -2,7 +2,7 @@
 
 ## Status
 
-Proposed
+Accepted
 
 ## Date
 
@@ -108,6 +108,6 @@ The implementation must test:
 
 LP-000006 should reference this ADR and implement only this initial contract after the ADR is accepted. Rollback is a code/configuration revert; no migration or persistent data recovery is required.
 
-## Approval Requirement
+## Approval Record
 
-This ADR is `Proposed`. Per the repository ADR lifecycle, only an authorized architecture approval may move it to `Accepted`. Until then, LP-000006 must not transition to implementation.
+The authorized Product/Architecture decision owner approved this contract on 2026-07-29. LP-000006 may use this ADR as its accepted environment-variable contract.
