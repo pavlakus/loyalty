@@ -18,7 +18,7 @@
 | LP-000005 | Create Backend Service Bootstrap | DONE | `agent/backend/LP-000005-backend-bootstrap` | APPROVED; QA APPROVED | Merged into `development` at `fcaf558`; post-merge validation passed; closure evidence is recorded under `implementation/evidence/LP-000005/`. |
 | LP-000006 | Implement Environment Configuration Validation | DONE | `agent/security/LP-000006-environment-config` | APPROVED; QA APPROVED; SECURITY APPROVED | Merged into `development` at `2de52f9`; post-merge validation passed; release and post-merge evidence recorded. |
 | LP-000007 | Create Standard API Response and Error Contracts | DONE | `agent/qa/LP-000007-api-contracts` | APPROVED; QA APPROVED | Merged into `development` at `5c9a1fd`; post-merge validation passed; release and post-merge evidence recorded. |
-| LP-000008 | Create Event Contract Foundation | READY_FOR_MERGE | `agent/qa/LP-000008-event-contracts` | APPROVED; QA APPROVED | Implementation `5f9e942`; review `b365567`; QA passed; ready for maintainer merge. |
+| LP-000008 | Create Event Contract Foundation | DONE | `agent/qa/LP-000008-event-contracts` | APPROVED; QA APPROVED | Merged into `development` at `73c4b6b`; post-merge validation passed; release and post-merge evidence recorded. |
 
 ## AI Engineering Framework
 

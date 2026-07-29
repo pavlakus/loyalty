@@ -16,7 +16,7 @@
 
 ## Status
 
-`READY_FOR_MERGE`
+`DONE`
 
 ## Objective
 
