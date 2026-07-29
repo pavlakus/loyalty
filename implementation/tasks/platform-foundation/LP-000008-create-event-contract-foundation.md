@@ -16,7 +16,7 @@
 
 ## Status
 
-`READY`
+`READY_FOR_REVIEW`
 
 ## Objective
 
