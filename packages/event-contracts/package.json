@@ -2,11 +2,20 @@
   "name": "@loyalty-platform/event-contracts",
   "version": "0.0.0",
   "private": true,
-  "description": "Event contracts package placeholder.",
+  "description": "Shared versioned event envelope contracts.",
+  "type": "module",
   "scripts": {
-    "build": "node -e \"console.log('event-contracts placeholder build')\"",
+    "build": "tsc -p tsconfig.json",
     "lint": "node -e \"console.log('event-contracts placeholder lint')\"",
-    "test": "node -e \"console.log('event-contracts placeholder test')\"",
+    "test": "pnpm run build && node --test test/*.test.mjs",
     "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
   }
 }
