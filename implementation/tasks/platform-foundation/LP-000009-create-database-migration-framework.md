@@ -1,4 +1,4 @@
-# LP-000009. Create database migration framework
+# LP-000009 — Create Database Migration Framework
 
 ## 1. File Name
 
@@ -6,7 +6,7 @@
 
 ## 2. Status
 
-`DRAFT`
+`BLOCKED`
 
 ## 3. Category
 
@@ -19,6 +19,10 @@
 ## 5. Owning Package
 
 `MIP-000-platform-foundation.md`
+
+## Module Implementation Package
+
+`implementation/mip/MIP-000-platform-foundation.md`
 
 ## 6. Business Objective
 
@@ -53,7 +57,11 @@ Platform Foundation Knowledge Package from `MIP-000-platform-foundation.md`.
 
 ## 11. Dependencies
 
-Dependencies must be identified before this task moves to `READY`.
+- `LP-000002` — DONE
+- `ADR-003` — Accepted
+- An additional accepted architecture decision is required before implementation: migration runner/tooling, SQL execution and connection-management contract, and database environment contract are not selected by the current repository documents.
+
+The task cannot move to `READY` until that architecture decision is recorded and accepted. Preparation must not select a tool or invent database environment variables.
 
 ## 12. Acceptance Criteria
 
@@ -97,3 +105,7 @@ The change must be reversible through configuration rollback, code rollback, mig
 ## 17. Completion Rule
 
 The task may be marked complete only when all acceptance criteria and mandatory tests pass and required review evidence exists.
+
+## Preparation Blocker
+
+The current repository specifies PostgreSQL with a Supabase-compatible approach and immutable migrations, but it does not select a migration runner or define the connection/runtime contract required to implement this task. Candidate choices would materially affect dependencies, scripts, local development, CI, rollback and operational behavior. An accepted ADR is therefore required before implementation.
