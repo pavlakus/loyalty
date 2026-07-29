@@ -1,4 +1,4 @@
-# LP-000016. Create CI pull request pipeline
+# LP-000016 — Create CI Pull Request Pipeline
 
 ## 1. File Name
 
@@ -6,7 +6,7 @@
 
 ## 2. Status
 
-`DRAFT`
+`READY`
 
 ## 3. Category
 
@@ -16,9 +16,13 @@
 
 `DevOps Agent`
 
-## 5. Owning Package
+## 5. Owning Module
 
-`MIP-000-platform-foundation.md`
+Platform Foundation / CI
+
+## MIP
+
+`implementation/mip/MIP-000-platform-foundation.md`
 
 ## 6. Business Objective
 
@@ -32,7 +36,12 @@ Create a reliable implementation foundation for all later Loyalty Platform modul
 
 ## 8. Out of Scope
 
-- `production deployment`
+- production, UAT, preview, or deployment workflows;
+- shared or persistent databases;
+- database, migration, application, or product implementation;
+- credentials and production environment contracts;
+- unrelated CI matrices or services;
+- modifying LP-000009 implementation or migrations.
 
 ## 9. Required Documents
 
@@ -53,19 +62,28 @@ Platform Foundation Knowledge Package from `MIP-000-platform-foundation.md`.
 
 ## 11. Dependencies
 
-Dependencies must be identified before this task moves to `READY`.
+- LP-000002, LP-000003, and LP-000004 (all `DONE`);
+- accepted ADR-003, ADR-007, and ADR-010;
+- LP-000009's existing migration-validation contract;
+- GitHub Actions provider established by repository origin `https://github.com/pavlakus/loyalty.git`.
 
 ## 12. Acceptance Criteria
 
-- PR pipeline runs required checks.
-- Protected branch requirements are documented.
-- Migration, secret and dependency scans run.
-- Failed checks block merge.
+- Pull requests targeting `development` run frozen installation and required repository validation.
+- An isolated job provisions a pinned PostgreSQL service, waits for readiness, and cleans up automatically.
+- `DATABASE_URL` is job-scoped and redacted; no shared, UAT, or production database is used.
+- Clean, status, rerun, upgrade, ordering/hash, failure, and redaction migration checks run without weakening LP-000009.
+- Secret, dependency, migration, and configuration checks run and fail the workflow on failure.
+- Protected-branch and required-review expectations are documented.
+- LP-000009 runtime and migration files remain unchanged.
 
 ## 13. Mandatory Tests
 
-- CI dry run
-- intentional failure verification
+- workflow syntax/static validation;
+- frozen install, build, lint, typecheck, test, and FCR validation;
+- ephemeral PostgreSQL readiness and automatic cleanup;
+- clean migration, status, rerun, upgrade, ordering/hash, unavailable database, and redaction validation;
+- intentional failure verification.
 
 ## 14. Required Reviewers
 
