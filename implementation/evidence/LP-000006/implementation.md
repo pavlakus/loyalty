@@ -109,4 +109,6 @@ Implementation scope is complete, mandatory validation passed, the source branch
 
 ## Lifecycle Recommendation
 
-Transition `IN_PROGRESS -> IMPLEMENTATION_COMPLETE -> READY_FOR_REVIEW` after this evidence is committed. Next responsible role: independent Review Agent.
+Implementation commit: `78e40de0a11920afa071781e987c4a5c654cb8bc`.
+
+Transition `IN_PROGRESS -> IMPLEMENTATION_COMPLETE -> READY_FOR_REVIEW` is recorded in the task, status and index records after this evidence was committed. Next responsible role: independent Review Agent.
