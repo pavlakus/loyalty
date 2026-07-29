@@ -56,3 +56,45 @@ The Solution Architect must create and obtain acceptance for an ADR that selects
 ## Recommendation
 
 Keep LP-000009 `BLOCKED`. Do not implement database scripts, migrations, environment variables or package dependencies until the architecture decision is accepted.
+
+## Preparation Revalidation After ADR-010 Acceptance
+
+### Metadata
+
+- Task ID: `LP-000009`
+- Phase: Task Preparation
+- Agent role: Task Preparation Agent
+- Date: `2026-07-29`
+- Branch: `agent/task-preparation/LP-000009-database-migrations-revalidation`
+
+### Documents Reviewed
+
+- `docs/adr/ADR-010-database-migration-and-runtime-architecture.md` — Accepted
+- `implementation/evidence/ADR-010/acceptance.md`
+- `docs/adr/ADR-003-postgresql-and-supabase-compatible-data-platform.md` — Accepted
+- `implementation/mip/MIP-000-platform-foundation.md`
+- `implementation/TASK-LIFECYCLE.md`
+- LP-000009 task specification
+- `implementation/TASK-STATUS.md`
+- `implementation/tasks/platform-foundation/TASK-INDEX.md`
+
+### Resolution
+
+The architecture blocker is resolved by accepted ADR-010. The task was normalized with explicit priority, technical objective, dependencies, allowed/forbidden files, validation, redaction requirements, reviewers, rollback and Definition of Done. The local database URL fallback is restricted to `NODE_ENV=development`; no pool-tuning variables are allowed; credentials must be redacted; migration output may identify names but not connection strings.
+
+Verified dependencies:
+
+- `LP-000002 = DONE`;
+- `ADR-003 = Accepted`;
+- `ADR-010 = Accepted`.
+
+### Exact Commands and Results
+
+```text
+python3 scripts/dispatch-agent-workflow.py status LP-000009 — PASS; task status READY, MIP resolves, evidence directory resolves.
+git diff --check — PASS.
+```
+
+### Recommendation
+
+`TASK_PREPARATION → READY`. Next authorized role: Database Agent. The implementation must use the dedicated branch convention and preserve unrelated working-tree changes.
