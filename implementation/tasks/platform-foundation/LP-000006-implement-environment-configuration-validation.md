@@ -1,99 +1,150 @@
-# LP-000006. Implement environment configuration validation
+# LP-000006 — Implement Environment Configuration Validation
 
-## 1. File Name
+## Task Metadata
 
-`LP-000006-implement-environment-configuration-validation.md`
+- Task ID: `LP-000006`
+- Category: `SECURITY`
+- Priority: `P1`
+- Owning module: Platform Foundation / Environment Configuration
+- Assigned role: Backend Developer Agent
+- MIP: `implementation/mip/MIP-000-platform-foundation.md`
+- Knowledge Package: Platform Foundation Knowledge Package from the MIP
 
-## 2. Status
+## Module Implementation Package
 
-`DRAFT`
+`implementation/mip/MIP-000-platform-foundation.md`
 
-## 3. Category
+## Status
 
-`SECURITY`
+`TASK_PREPARATION`
 
-## 4. Assigned Role
+## Objective
 
-`Backend Developer Agent`
+Provide the reusable environment-validation foundation required by the Platform Foundation without introducing business behavior or real credentials.
 
-## 5. Owning Package
+## Business Objective
 
-`MIP-000-platform-foundation.md`
+Create a reliable implementation foundation for later Loyalty Platform modules without introducing premature business behavior.
 
-## 6. Business Objective
+## Technical Objective
 
-Create a reliable implementation foundation for all later Loyalty Platform modules without introducing premature business behavior.
+Validate the explicitly approved runtime configuration at API startup, keep public configuration separate from server-only values, and fail safely without exposing secret values.
 
-## 7. Exact Scope
+## Exact Scope
 
+- `packages/config/src/**`
+- `packages/config/test/**`
 - `services/api/src/config/**`
-- `packages/config/**`
+- `services/api/src/bootstrap/start-server.ts` (startup integration only)
+- `services/api/test/**` (focused startup-validation tests only)
 - `.env.example`
 
-## 8. Out of Scope
+## Out of Scope
 
-- `real secret values`
+- real secret values;
+- production, UAT or shared-environment configuration;
+- database, Supabase, authentication, authorization, tenant, API, event or Loyalty behavior;
+- arbitrary new environment variables not defined by an accepted contract;
+- CI or deployment changes;
+- root package exports outside the existing package boundary.
 
-## 9. Required Documents
+## Dependencies
 
-- `MIP-000-platform-foundation.md`
-- `51-engineering-implementation-guide.md`
-- `52-repository-structure.md`
-- `54-agent-development-plan.md`
-- `55-module-definition-of-done.md`
-- `57-agent-prompts.md`
-- `58-project-knowledge-map.md`
-- `59-coding-standards.md`
-- `60-release-strategy.md`
-- relevant accepted ADRs
+- LP-000005 — Create Backend Service Bootstrap (`DONE`)
+- Accepted ADR-007 — Environment and Secret Management
+- Required prerequisite module: existing API startup path from LP-000005
 
-## 10. Knowledge Package
+## Required Documents
 
-Platform Foundation Knowledge Package from `MIP-000-platform-foundation.md`.
+- `AGENTS.md`
+- `implementation/TASK-LIFECYCLE.md`
+- `implementation/mip/MIP-000-platform-foundation.md`
+- `docs/adr/ADR-001-monorepo-and-workspace-strategy.md`
+- `docs/adr/ADR-007-environment-and-secret-management.md`
+- `docs/engineering/51-engineering-implementation-guide.md`
+- `docs/engineering/52-repository-structure.md`
+- `docs/engineering/53-development-roadmap.md`
+- `docs/engineering/54-agent-development-plan.md`
+- `docs/engineering/55-module-definition-of-done.md`
+- `docs/engineering/57-agent-prompts.md`
+- `docs/engineering/58-project-knowledge-map.md`
+- `docs/engineering/59-coding-standards.md`
+- `docs/engineering/60-release-strategy.md`
+- `docs/engineering/68-definition-of-task-ready.md`
+- `docs/ai-engineering-framework/90-agent-response-contract.md`
 
-## 11. Dependencies
+## UAT and Required Tests
 
-Dependencies must be identified before this task moves to `READY`.
+- UAT reference: Platform Foundation environment-validation and secret-isolation requirements in `implementation/mip/MIP-000-platform-foundation.md` and `docs/adr/ADR-007-environment-and-secret-management.md`.
+- missing required configuration fails before server startup;
+- invalid configuration fails before server startup;
+- public configuration cannot expose server-only values;
+- repository secret scan passes;
+- package and API typecheck, lint, build and focused tests pass.
 
-## 12. Acceptance Criteria
+## Allowed Files
 
-- Required environment values are validated at startup.
-- Missing values produce safe actionable errors.
-- Client-public and server-secret values are separated.
-- No secrets are committed.
+- `packages/config/src/**`
+- `packages/config/test/**`
+- `services/api/src/config/**`
+- `services/api/src/bootstrap/start-server.ts`
+- `services/api/test/**`
+- `.env.example`
+- `implementation/evidence/LP-000006/**`
+- LP-000006 task/status/index records required by lifecycle transitions
 
-## 13. Mandatory Tests
+## Forbidden Files
 
-- missing env test
-- invalid env test
-- secret scan
+- all business-domain modules;
+- database migrations and schemas;
+- authentication, authorization and tenant modules;
+- LP-000003, LP-000004 and later task specifications;
+- production or UAT environment files;
+- root package exports unless an existing package convention requires a local export only;
+- canonical product, Blueprint or accepted ADR decisions;
+- real secrets, tokens, credentials and private keys.
 
-## 14. Required Reviewers
+## Acceptance Criteria
 
-- Solution Architect where architecture is affected
-- QA
-- Security where security or credentials are affected
-- DevOps where CI, environments or infrastructure are affected
-- Documentation reviewer where documentation changes
+1. Every required environment value from the approved configuration contract is validated at API startup.
+2. Missing values produce safe actionable errors without printing values.
+3. Invalid values produce safe actionable errors without printing values.
+4. Public configuration is explicitly allowlisted and cannot contain server-only values.
+5. `.env.example` contains names and safe examples only.
+6. No secret values are committed.
+7. No business behavior or architecture outside this task is introduced.
 
-## 15. Expected Deliverables
+## Required Reviewers and Approvals
 
-- implementation or review summary;
-- changed or reviewed files;
-- tests added;
-- tests executed;
-- test results;
-- risks;
-- known limitations;
-- rollback or recovery instructions;
-- documentation updates;
-- Definition of Done evidence;
-- readiness recommendation.
+- Independent Review Agent
+- QA Agent
+- Security Agent (required: secrets and public/server configuration boundary)
+- Solution Architect only if the implementation requires an architecture change
+- Documentation reviewer only if task-scoped documentation changes beyond `.env.example`
 
-## 16. Rollback Expectation
+## Expected Deliverables
 
-The change must be reversible through configuration rollback, code rollback, migration recovery or forward fix as appropriate. Immutable migration history must not be rewritten.
+- implementation, review, QA and security evidence under `implementation/evidence/LP-000006/`;
+- source branch and isolated commit;
+- environment validation implementation and focused tests;
+- safe `.env.example`;
+- exact validation results and rollback instructions.
 
-## 17. Completion Rule
+## Rollback and Recovery
 
-The task may be marked complete only when all acceptance criteria and mandatory tests pass and required review evidence exists.
+- Revert the isolated LP-000006 implementation commit.
+- No migrations or persistent data are introduced.
+- Never revert or edit unrelated task work.
+
+## Definition of Done
+
+- implementation is committed on a dedicated LP-000006 branch;
+- required tests and repository validation pass;
+- independent Review, QA and Security evidence approve the change;
+- merge and post-merge evidence are recorded;
+- no P0/P1 findings remain;
+- status and task index are synchronized.
+
+## Preparation Gate
+
+This task cannot transition to `READY` until the approved environment contract identifies the required variable names, value formats, optional/default behavior, and public/server classification. The current MIP and ADR-007 state the policy but do not define that contract. Task Preparation must not invent it.
