@@ -16,7 +16,7 @@
 
 ## Status
 
-`QA`
+`READY_FOR_MERGE`
 
 ## Objective
 
