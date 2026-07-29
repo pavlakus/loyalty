@@ -2,7 +2,7 @@
 
 ## Status
 
-`QA`
+`READY_FOR_MERGE`
 
 ## Category
 
