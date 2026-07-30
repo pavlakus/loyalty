@@ -27,6 +27,7 @@
 | Task | Title | Status | Branch | Review | Notes |
 |---|---|---|---|---|---|
 | LP-002001 | Define Customer aggregate and identity-link architecture | DONE | `agent/security/LP-002001-customer-architecture` | APPROVED; QA APPROVED; SECURITY APPROVED | Merged into development at `ce279ee`; post-merge validation passed; architecture-only scope, no runtime or database integration claimed. |
+| LP-002002 | Define Customer API and Event contracts | TASK_PREPARATION | `agent/task-preparation/LP-002002-customer-api-events` | Pending preparation | Depends on LP-002001 and completed platform contract foundations; architecture-only contract scope does not depend on deferred LP-000009 or LP-000016. |
 
 ## AI Engineering Framework
 
