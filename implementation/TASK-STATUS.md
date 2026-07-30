@@ -22,6 +22,12 @@
 | LP-000009 | Create Database Migration Framework | READY | `agent/task-preparation/LP-000009-database-migrations-revalidation` | Pending implementation | ADR-010 accepted; Task Preparation revalidation passed; implementation branch and evidence required. |
 | LP-000016 | Create CI Pull Request Pipeline | READY | `agent/task-preparation/LP-000016-ci-pipeline` | Pending implementation | GitHub Actions provider established; preparation passed; owns ephemeral PostgreSQL CI foundation for LP-000009. |
 
+## Customer Product Module
+
+| Task | Title | Status | Branch | Review | Notes |
+|---|---|---|---|---|---|
+| LP-002001 | Define Customer aggregate and identity-link architecture | READY | `agent/task-preparation/LP-002001-customer-architecture` | Pending implementation | Customer MIP decisions are locked; architecture-only scope has no LP-000009 or LP-000016 dependency. |
+
 ## AI Engineering Framework
 
 | Task | Title | Status | Branch | Review | Notes |
