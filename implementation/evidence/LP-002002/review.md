@@ -40,3 +40,13 @@ No P0, P1, or P2 findings. No product or architecture decision is required for t
 ## Decision
 
 `APPROVED`. LP-002002 may proceed to QA. QA must verify the exported contracts, privacy-minimized payloads, error shape, event envelope compatibility, and absence of runtime behavior.
+
+## Correction Re-review
+
+The first candidate exposed a circular import through the event-contracts barrel. The implementation correction at `d439be6` extracted `EventContractValidationError` to a leaf module and removed the cycle. Re-review of the corrected diff and focused tests found no changed public contract semantics and no new findings.
+
+- `pnpm --filter @loyalty-platform/api-contracts test` — PASS; 3 tests.
+- `pnpm --filter @loyalty-platform/event-contracts test` — PASS; 5 tests.
+- `pnpm run lint` — PASS on the implementation branch; the isolated review worktree could not resolve the full ESLint dependency tree from the offline registry, while no lint issue was found in the corrected files.
+
+`APPROVED` remains valid for the corrected implementation.
