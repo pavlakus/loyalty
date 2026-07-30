@@ -26,7 +26,7 @@
 
 | Task | Title | Status | Branch | Review | Notes |
 |---|---|---|---|---|---|
-| LP-002001 | Define Customer aggregate and identity-link architecture | READY | `agent/task-preparation/LP-002001-customer-architecture` | Pending implementation | Customer MIP decisions are locked; architecture-only scope has no LP-000009 or LP-000016 dependency. |
+| LP-002001 | Define Customer aggregate and identity-link architecture | READY_FOR_MERGE | `agent/security/LP-002001-customer-architecture` | APPROVED; QA APPROVED; SECURITY APPROVED | Documentation-only architecture validated; no runtime or database integration claimed. |
 
 ## AI Engineering Framework
 
