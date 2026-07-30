@@ -26,7 +26,7 @@
 
 | Task | Title | Status | Branch | Review | Notes |
 |---|---|---|---|---|---|
-| LP-002001 | Define Customer aggregate and identity-link architecture | READY_FOR_MERGE | `agent/security/LP-002001-customer-architecture` | APPROVED; QA APPROVED; SECURITY APPROVED | Documentation-only architecture validated; no runtime or database integration claimed. |
+| LP-002001 | Define Customer aggregate and identity-link architecture | DONE | `agent/security/LP-002001-customer-architecture` | APPROVED; QA APPROVED; SECURITY APPROVED | Merged into development at `ce279ee`; post-merge validation passed; architecture-only scope, no runtime or database integration claimed. |
 
 ## AI Engineering Framework
 
