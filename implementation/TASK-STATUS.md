@@ -26,7 +26,7 @@
 
 | Task | Title | Status | Branch | Review | Notes |
 |---|---|---|---|---|---|
-| LP-002001 | Define Customer aggregate and identity-link architecture | REVIEW | `agent/review/LP-002001-customer-architecture` | APPROVED | Independent review approved; no P0/P1/P2 findings. |
+| LP-002001 | Define Customer aggregate and identity-link architecture | QA | `agent/qa/LP-002001-customer-architecture` | APPROVED; QA APPROVED | Documentation-only architecture validated; no runtime or database integration claimed. |
 
 ## AI Engineering Framework
 
