@@ -38,3 +38,14 @@ export function createErrorResponse(
 ): ApiErrorResponse {
   return { success: false, data: null, metadata, errors };
 }
+
+export {
+  CustomerContractValidationError,
+  validateCustomerProfileUpdateRequest,
+  type CustomerApiError,
+  type CustomerMembershipSummary,
+  type CustomerPrivacyState,
+  type CustomerProfile,
+  type CustomerProfileUpdateRequest,
+  type CustomerStatus,
+} from "./customers.js";

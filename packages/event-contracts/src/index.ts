@@ -89,3 +89,13 @@ export function validateEventEnvelope<TPayload = unknown>(value: unknown): Event
 
   return value as unknown as EventEnvelope<TPayload>;
 }
+
+export {
+  CUSTOMER_EVENT_TYPES,
+  validateCustomerEventPayload,
+  type CustomerAnonymizedPayload,
+  type CustomerEventPayload,
+  type CustomerEventType,
+  type CustomerProfileUpdatedPayload,
+  type CustomerRegisteredPayload,
+} from "./customer.js";
