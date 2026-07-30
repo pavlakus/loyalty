@@ -1,4 +1,4 @@
-# LP-002001. Define Customer aggregate and identity-link architecture
+# LP-002001 — Define Customer Aggregate and Identity-Link Architecture
 
 ## 1. File Name
 
@@ -6,11 +6,15 @@
 
 ## 2. Status
 
-`DRAFT`
+`READY`
 
 ## 3. Category
 
 `ARCHITECTURE`
+
+## 4. Priority
+
+`P1`
 
 ## 4. Assigned Role
 
@@ -22,11 +26,19 @@
 
 ## 6. Module Implementation Package
 
-`MIP-002-customer.md`
+`implementation/mip/MIP-002-customer.md`
+
+## MIP
+
+`implementation/mip/MIP-002-customer.md`
 
 ## 7. Business Objective
 
 Maintain one secure global Customer identity while preventing cross-Business personal-data exposure and preserving immutable business history.
+
+## Technical Objective
+
+Document the Customer aggregate boundary and verified-identity linkage model using the already locked Customer product decisions, including ownership, lifecycle, privacy boundary, and integration contracts. This task does not implement persistence, authentication, API endpoints, or database integration.
 
 ## 8. Exact Scope
 
@@ -41,6 +53,16 @@ Implement only the capability described by this task title and the applicable se
 - phone-number self-service change;
 - unrelated modules;
 - UAT or production changes unless explicitly authorized.
+
+## Dependencies
+
+- LP-000005, LP-000006, LP-000007, and LP-000008 — `DONE`;
+- accepted ADR-002, ADR-003, and ADR-007;
+- no dependency on LP-000009 or LP-000016 for this architecture-only scope.
+
+## Knowledge Package
+
+Customer Knowledge Package from `implementation/mip/MIP-002-customer.md` and the required Blueprint, security, API, event, UAT, and engineering references below.
 
 ## 10. Required Documents
 
@@ -73,6 +95,8 @@ docs/modules/customer/**
 ```
 
 Any additional file requires explicit scope approval.
+
+For this architecture-only task, the expected implementation artifact is under `docs/modules/customer/**`; runtime and database paths remain unchanged unless a later implementation task explicitly authorizes them.
 
 ## 12. Forbidden Files
 
