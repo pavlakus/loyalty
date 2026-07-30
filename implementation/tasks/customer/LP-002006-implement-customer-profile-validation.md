@@ -6,7 +6,7 @@
 
 ## 2. Status
 
-`DRAFT`
+`TASK_PREPARATION`
 
 ## 3. Category
 
@@ -15,6 +15,10 @@
 ## 4. Assigned Role
 
 `Backend Developer Agent`
+
+## 4a. Priority
+
+`P1`
 
 ## 5. Owning Module
 
@@ -28,9 +32,24 @@
 
 Maintain one secure global Customer identity while preventing cross-Business personal-data exposure and preserving immutable business history.
 
+## 7a. Technical Objective
+
+Provide reusable Customer profile input validation for the approved API contract, including optional email, preferred-language and date-of-birth validation, without persistence, authentication, tenant authorization or benefit evaluation.
+
 ## 8. Exact Scope
 
 Implement only the capability described by this task title and the applicable section of `MIP-002-customer.md`.
+
+## Dependencies
+
+- LP-002001 — `DONE`; Customer ownership, lifecycle, privacy and identity-link architecture.
+- LP-002002 — `DONE`; Customer API and Event contract foundation.
+- LP-000006, LP-000007 and LP-000008 — `DONE`; environment, API response/error and event envelope foundations.
+- LP-000009 and LP-000016 are not required for pure in-memory profile validation; no database or CI behavior is in scope.
+
+## Knowledge Package
+
+Customer Knowledge Package from `implementation/mip/MIP-002-customer.md` and the required Blueprint, security, API, event, UAT and engineering references below.
 
 ## 9. Out of Scope
 
@@ -73,6 +92,8 @@ docs/modules/customer/**
 ```
 
 Any additional file requires explicit scope approval.
+
+For this validation-only scope, implementation should use `packages/api-contracts/src/customers.ts`, its focused tests, and `docs/modules/customer/**`; service, database and event runtime paths remain unchanged unless a documented acceptance criterion requires them.
 
 ## 12. Forbidden Files
 
