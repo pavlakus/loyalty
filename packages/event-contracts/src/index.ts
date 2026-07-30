@@ -16,15 +16,8 @@ export interface EventEnvelope<TPayload = unknown> {
   readonly payload: TPayload;
 }
 
-export class EventContractValidationError extends Error {
-  readonly field: string;
-
-  constructor(field: string, message: string) {
-    super(`${field}: ${message}`);
-    this.name = "EventContractValidationError";
-    this.field = field;
-  }
-}
+export { EventContractValidationError } from "./event-errors.js";
+import { EventContractValidationError } from "./event-errors.js";
 
 const REQUIRED_STRING_FIELDS = [
   "event_id",

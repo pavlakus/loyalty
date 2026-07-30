@@ -1,4 +1,4 @@
-import { EventContractValidationError } from "./index.js";
+import { EventContractValidationError } from "./event-errors.js";
 
 export const CUSTOMER_EVENT_TYPES = [
   "CustomerRegistered",

@@ -50,3 +50,13 @@ Revert the LP-002002 implementation commit before merge. The change is additive 
 ## Readiness Recommendation
 
 Implementation scope is complete and ready for independent review. Review must verify the API Blueprint/MIP field mapping, event catalog alignment, privacy minimization, and absence of runtime behavior.
+
+## Correction Revalidation
+
+QA identified a circular package-barrel import in the first review candidate. The shared event validation error was extracted to `packages/event-contracts/src/event-errors.ts`, and Customer event validation now imports that leaf module. This is an internal contract-package correction only; no public contract behavior changed.
+
+- `pnpm --filter @loyalty-platform/event-contracts test` — PASS; 5 tests.
+- `pnpm run lint` — PASS; 15 package lint tasks and module-boundary validation.
+- `git diff --check` — PASS.
+
+The prior review and QA approvals must be rebuilt against the corrected commit.
