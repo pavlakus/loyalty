@@ -6,7 +6,7 @@
 
 ## 2. Status
 
-`DRAFT`
+`TASK_PREPARATION`
 
 ## 3. Category
 
@@ -28,6 +28,25 @@
 
 Maintain one secure global Customer identity while preventing cross-Business personal-data exposure and preserving immutable business history.
 
+## 7a. Priority
+
+`P1`
+
+## 7b. Technical Objective
+
+Define the Customer module's public API and Event contracts from the locked Customer architecture and MIP-002 decisions, without implementing runtime handlers, persistence, authentication, or database behavior.
+
+## Dependencies
+
+- LP-002001 — `DONE`; Customer aggregate and identity-link architecture is accepted and merged.
+- LP-000007 — `DONE`; standard API response and error contract foundation.
+- LP-000008 — `DONE`; event contract foundation.
+- LP-000009 and LP-000016 are not required for this documentation-only contract scope; their infrastructure validation remains deferred under the approved backlog exception.
+
+## Knowledge Package
+
+Customer API and Event contract Knowledge Package from `implementation/mip/MIP-002-customer.md` and the required Blueprint, security, API, event, UAT and engineering references listed below.
+
 ## 8. Exact Scope
 
 Implement only the capability described by this task title and the applicable section of `MIP-002-customer.md`.
@@ -44,7 +63,7 @@ Implement only the capability described by this task title and the applicable se
 
 ## 10. Required Documents
 
-- `MIP-002-customer.md`
+- `implementation/mip/MIP-002-customer.md`
 - `17-security.md`
 - `33-domain-model-v2.md`
 - `34-event-storming-customer-registration.md`
