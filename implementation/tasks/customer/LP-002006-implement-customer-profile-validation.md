@@ -6,7 +6,7 @@
 
 ## 2. Status
 
-`REVIEW`
+`QA`
 
 ## 3. Category
 
