@@ -58,6 +58,28 @@
 | LP-003002 | Define Business API contracts | DONE | `development` | APPROVED; QA APPROVED; Security APPROVED | Merged at `9ba454f`; post-merge scoped validation passed; routes/persistence/RLS deferred. |
 | LP-004001 | Define Brand aggregate | DONE | `development` | APPROVED; QA APPROVED; Security APPROVED | Merged at `f24b7df`; post-merge scoped validation passed; persistence/RLS deferred. |
 
+## Loyalty Program Product Module
+
+| Task | Title | Status | Branch | Review | Notes |
+|---|---|---|---|---|---|
+| LP-005001 | Define Loyalty Program aggregate and lifecycle | READY_FOR_MERGE | `agent/backend/LP-005001-loyalty-program-aggregate` | APPROVED; QA APPROVED; Security APPROVED | Commit `4498668`; focused validation passes; two unrelated API server bind failures remain documented as sandbox limitations. |
+| LP-005002 | Define Loyalty Program API and event contracts | DRAFT |  | Pending | Depends on LP-005001. |
+| LP-005003 | Define Loyalty Program configuration model | DRAFT |  | Pending | Depends on LP-005001. |
+| LP-005004 | Implement configuration versioning and effective history | DRAFT |  | Pending | Depends on LP-005003; non-persistence contract until database foundation. |
+| LP-005005 | Define reward rule configuration | DRAFT |  | Pending | Depends on LP-005003 and LP-005004. |
+| LP-005006 | Define reward experience configuration | DRAFT |  | Pending | Depends on LP-005003 and LP-005004. |
+| LP-005007 | Define pending period and point expiration configuration | DRAFT |  | Pending | Depends on LP-005003 and LP-005004. |
+| LP-005008 | Define XP rule configuration | DRAFT |  | Pending | Depends on LP-005003 and LP-005004. |
+| LP-005009 | Define Status Level configuration | DRAFT |  | Pending | Depends on LP-005003, LP-005004, LP-005008. |
+| LP-005010 | Define Benefit definitions and configuration | DRAFT |  | Pending | Depends on LP-005003 and LP-005004. |
+| LP-005011 | Define strategy selection and recommendation integration | DRAFT |  | Pending | Depends on contract and configuration tasks. |
+| LP-005012 | Implement Loyalty Program validation and invariants | DRAFT |  | Pending | Depends on configuration and strategy tasks. |
+| LP-005013 | Implement Loyalty Program audit and event requirements | DRAFT |  | Pending | Depends on LP-005002, LP-005004, LP-005012. |
+| LP-005014 | Implement Loyalty Program persistence and RLS | BLOCKED |  | Pending | Explicitly blocked by LP-000009 and LP-000016 plus Program domain prerequisites. |
+| LP-005015 | Add Loyalty Program domain, API, and security contract tests | DRAFT |  | Pending | Depends on executable domain and contract tasks; no persistence claim. |
+| LP-005016 | Perform Loyalty Program architecture review | DRAFT |  | Pending | Depends on LP-005015. |
+| LP-005017 | Perform Loyalty Program QA and security gate | DRAFT |  | Pending | Depends on LP-005016. |
+
 ## AI Engineering Framework
 
 | Task | Title | Status | Branch | Review | Notes |
