@@ -29,3 +29,7 @@ No database, migration, authentication credential, RLS, CI, infrastructure, LP-0
 ## Concurrency, security and rollback
 
 Expected version is the application-side concurrency precondition; the repository must enforce it atomically and return a version conflict without partial mutation. The command accepts no tenant, role, ownership, or client Customer selector. Event publication is post-commit by contract. Revert the implementation commit; no persisted data changes are introduced.
+
+## Review handoff
+
+Implementation commit: `ee6727d`. The task branch is clean and contains only the Customer profile-update boundary, focused tests, lifecycle metadata, and evidence. It is ready for independent review.
