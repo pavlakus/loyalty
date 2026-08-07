@@ -6,7 +6,7 @@
 
 ## 2. Status
 
-`DRAFT`
+`READY`
 
 ## 3. Category
 
@@ -23,6 +23,13 @@
 ## 6. Module Implementation Package
 
 `MIP-001-authentication.md`
+
+## Dependencies
+
+- LP-001001 — `DONE`; Authentication API/Event contracts.
+- LP-001002 — `DONE`; canonical phone identity normalization.
+- LP-001004 — `DONE`; secure OTP generation and hashing.
+- No SMS, Viber, WhatsApp, email, credential, or external-provider dependency is required for this provider-port-only scope.
 
 ## 7. Business Objective
 
