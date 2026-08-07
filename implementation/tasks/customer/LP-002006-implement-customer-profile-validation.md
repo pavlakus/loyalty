@@ -6,7 +6,7 @@
 
 ## 2. Status
 
-`TASK_PREPARATION`
+`READY`
 
 ## 3. Category
 

@@ -39,4 +39,4 @@ No new Product Decision or ADR is required. The MIP explicitly requires email no
 
 ## Recommendation
 
-Preparation is complete. After this branch is merged by the maintainer, transition LP-002006 to `READY` and assign implementation on a dedicated branch.
+Preparation was merged into `development` at `70f05bd`. Dependencies remain satisfied and LP-002006 is transitioned to `READY` for implementation on `agent/backend/LP-002006-customer-profile-validation`.
