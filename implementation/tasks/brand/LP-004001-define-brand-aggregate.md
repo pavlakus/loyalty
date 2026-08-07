@@ -1,7 +1,7 @@
 # LP-004001 — Define Brand Aggregate
 
 ## Status
-`READY_FOR_MERGE`
+`DONE`
 
 ## Scope and Ownership
 - Category: DOMAIN

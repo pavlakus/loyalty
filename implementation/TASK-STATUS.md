@@ -56,7 +56,7 @@
 | LP-001011 | Integrate global Customer resolution contract | DONE | `development` | APPROVED; QA APPROVED; Security APPROVED | Merged at `f7842f9`; post-merge scoped validation passed; database persistence remains deferred. |
 | LP-003001 | Define Business aggregate | DONE | `development` | APPROVED; QA APPROVED; Security APPROVED | Merged at `37edf5f`; post-merge scoped validation passed; persistence/RLS deferred. |
 | LP-003002 | Define Business API contracts | DONE | `development` | APPROVED; QA APPROVED; Security APPROVED | Merged at `9ba454f`; post-merge scoped validation passed; routes/persistence/RLS deferred. |
-| LP-004001 | Define Brand aggregate | READY_FOR_MERGE | `agent/security/LP-004001-brand-aggregate` | Review APPROVED; QA APPROVED; Security APPROVED | Brand domain-only scope approved; 3 focused tests pass; persistence/RLS deferred. |
+| LP-004001 | Define Brand aggregate | DONE | `development` | APPROVED; QA APPROVED; Security APPROVED | Merged at `f24b7df`; post-merge scoped validation passed; persistence/RLS deferred. |
 
 ## AI Engineering Framework
 
