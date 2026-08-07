@@ -31,4 +31,4 @@ Implementation must preserve Customer ownership, avoid Authentication creating C
 
 ## Preparation result
 
-Preparation is complete pending the authorized automatic transition to `READY`. No runtime implementation was performed.
+Preparation is complete. The preparation commit `9a8f2cf` was merged into `development` by the authorized maintainer. LP-002004 is now `READY` on `agent/backend/LP-002004-customer-registration`. No runtime implementation was performed in preparation.
