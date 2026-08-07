@@ -5,7 +5,7 @@
 - **Role:** Release / QA Agent
 - **Date:** 2026-08-07
 - **Target branch:** `development`
-- **Merge commit:** `edb12db`
+- **Merge commit:** `175d22b`
 
 ## Commands and exact results
 
