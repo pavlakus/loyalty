@@ -6,7 +6,7 @@
 
 ## 2. Status
 
-`QA`
+`READY_FOR_MERGE`
 
 ## 3. Category
 

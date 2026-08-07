@@ -43,7 +43,7 @@
 | LP-002018 | Add Customer API and contract tests | DONE | `agent/security/LP-002018-customer-api-contract-tests` | REVIEW APPROVED; QA APPROVED; SECURITY APPROVED | Merged into `development` at `d7fa058`; API/Event contract suites and FCR validation pass; global API baseline limitation remains unrelated and documented. |
 | LP-002019 | Add Customer concurrency tests | DONE | `development` | Release / QA Agent | Merged as 78aa673; post-merge scoped validation recorded; API baseline limitation remains separately documented. |
 | LP-002020 | Add Customer privacy and anonymization tests | DONE | `development` | Release / QA Agent | Merged as 362b979; post-merge scoped validation recorded; API baseline limitation remains separately documented. |
-| LP-002022 | Document Customer module and privacy runbook | QA | `agent/qa/LP-002022-customer-runbook` | QA Agent | QA approved; documentation coverage and deferred-boundary statements verified. |
+| LP-002022 | Document Customer module and privacy runbook | READY_FOR_MERGE | `agent/security/LP-002022-customer-runbook` | Security Agent | Review, QA, and Security approved; documentation-only scope validated. |
 
 ## AI Engineering Framework
 
