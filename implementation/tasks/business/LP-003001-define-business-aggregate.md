@@ -2,7 +2,7 @@
 
 ## Status
 
-`READY`
+`QA`
 
 ## Category and Role
 
