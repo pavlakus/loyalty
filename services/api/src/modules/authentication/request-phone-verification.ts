@@ -68,6 +68,7 @@ export class NonProductionInMemoryOtpChallengeStore implements OtpChallengeStore
       if (challenge.state === "verified") return "already_used" as const;
       if (challenge.state === "expired") return "expired" as const;
       if (challenge.state === "locked") return "locked" as const;
+      if (challenge.state !== "sent") return "not_found" as const;
       if (input.now >= challenge.expiresAt) {
         challenge.state = "expired";
         return "expired" as const;

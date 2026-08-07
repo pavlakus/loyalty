@@ -6,7 +6,7 @@
 
 ## 2. Status
 
-`CHANGES_REQUIRED`
+`IMPLEMENTATION_COMPLETE`
 
 ## 3. Category
 

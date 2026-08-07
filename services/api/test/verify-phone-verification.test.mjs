@@ -22,6 +22,15 @@ test("verifies a valid code once and rejects reuse", async () => {
   );
 });
 
+test("does not verify a challenge before delivery is marked sent", async () => {
+  const store = new NonProductionInMemoryOtpChallengeStore("test");
+  await store.create({ id: "challenge-1", phoneE164: "+381601234567", hash: await hashOtp("123456"), expiresAt: 10_000 });
+  await assert.rejects(
+    () => verifyPhoneVerification({ challengeId: "challenge-1", otpCode: "123456" }, { maximumAttempts: 3, now: () => 1_000 }, store),
+    (error) => error instanceof PhoneVerificationError && error.code === "OTP_CHALLENGE_NOT_FOUND",
+  );
+});
+
 test("expires challenges and locks after the bounded failed-attempt limit", async () => {
   const expired = await seededStore("123456", 100);
   await assert.rejects(() => verifyPhoneVerification({ challengeId: "challenge-1", otpCode: "123456" }, { maximumAttempts: 3, now: () => 100 }, expired), /OTP_CODE_EXPIRED/);
