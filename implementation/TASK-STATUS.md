@@ -45,7 +45,7 @@
 | LP-002020 | Add Customer privacy and anonymization tests | DONE | `development` | Release / QA Agent | Merged as 362b979; post-merge scoped validation recorded; API baseline limitation remains separately documented. |
 | LP-002022 | Document Customer module and privacy runbook | DONE | `development` | Release / QA Agent | Merged as 8b8f289; post-merge documentation/FCR validation recorded. |
 | LP-002023 | Perform Customer architecture review | DONE | `development` | Release / QA Agent | Merged as 3214ebc; post-merge evidence recorded. |
-| LP-002024 | Perform Customer QA security and privacy gate | IMPLEMENTATION_COMPLETE | `agent/qa/LP-002024-customer-closure` | QA Agent | Executable Customer baseline assessed; deferred foundations explicitly excluded. |
+| LP-002024 | Perform Customer QA security and privacy gate | REVIEW | `agent/review/LP-002024-customer-closure` | Review Agent | Independent review approved; deferred foundations preserved. |
 
 ## AI Engineering Framework
 
