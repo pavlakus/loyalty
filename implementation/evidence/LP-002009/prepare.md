@@ -23,4 +23,4 @@ MIP-002 defines email as optional, non-primary identity data. The existing API c
 
 ## Preparation result
 
-Preparation is complete pending authorized automatic transition to `READY`. No runtime implementation was performed.
+Preparation is complete. Preparation commit `74d6d24` was merged into `development`; LP-002009 is now `READY` on `agent/backend/LP-002009-customer-email-management`. No runtime implementation was performed in preparation.
