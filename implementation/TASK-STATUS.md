@@ -41,7 +41,7 @@
 | LP-002015 | Implement Customer audit records | DONE | `agent/security/LP-002015-customer-audit-records` | REVIEW APPROVED; QA APPROVED; SECURITY APPROVED | Merged into `development` at `74302f3`; scoped post-merge validation recorded; API build/focused audit test remain blocked by the known dependency baseline. |
 | LP-002016 | Implement Customer observability and privacy-safe logging | DONE | `agent/security/LP-002016-customer-observability-privacy-logging` | REVIEW APPROVED; QA APPROVED; SECURITY APPROVED | Merged into `development` at `e62d417`; scoped post-merge validation recorded; API build/focused observability test remain blocked by the known dependency baseline. |
 | LP-002018 | Add Customer API and contract tests | DONE | `agent/security/LP-002018-customer-api-contract-tests` | REVIEW APPROVED; QA APPROVED; SECURITY APPROVED | Merged into `development` at `d7fa058`; API/Event contract suites and FCR validation pass; global API baseline limitation remains unrelated and documented. |
-| LP-002019 | Add Customer concurrency tests | READY_FOR_MERGE | `agent/security/LP-002019-customer-concurrency-tests` | Security Agent | Review, QA, and Security approved; scoped validations pass; API baseline limitation documented. |
+| LP-002019 | Add Customer concurrency tests | DONE | `development` | Release / QA Agent | Merged as 78aa673; post-merge scoped validation recorded; API baseline limitation remains separately documented. |
 
 ## AI Engineering Framework
 
