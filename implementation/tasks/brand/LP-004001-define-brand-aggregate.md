@@ -1,7 +1,7 @@
 # LP-004001 — Define Brand Aggregate
 
 ## Status
-`TASK_PREPARATION`
+`READY`
 
 ## Scope and Ownership
 - Category: DOMAIN
