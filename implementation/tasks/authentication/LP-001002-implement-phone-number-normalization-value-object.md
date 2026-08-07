@@ -6,7 +6,7 @@
 
 ## 2. Status
 
-`DRAFT`
+`READY`
 
 ## 3. Category
 
@@ -23,6 +23,12 @@
 ## 6. Module Implementation Package
 
 `MIP-001-authentication.md`
+
+## Dependencies
+
+- LP-001001 — `DONE`; Authentication API/Event contract foundation.
+- LP-000006 and LP-000007 — `DONE`; environment and standard API error foundations.
+- No database, provider, credential, session, token, or Customer runtime dependency is required for this pure value-object scope.
 
 ## 7. Business Objective
 

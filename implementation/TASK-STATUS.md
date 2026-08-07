@@ -47,6 +47,7 @@
 | LP-002023 | Perform Customer architecture review | DONE | `development` | Release / QA Agent | Merged as 3214ebc; post-merge evidence recorded. |
 | LP-002024 | Perform Customer QA security and privacy gate | DONE | `development` | Release / QA Agent | Merged as 73ddfd3; executable Customer milestone closed; deferred foundations preserved. |
 | LP-001001 | Define Authentication API and Event contracts | DONE | `development` | Release / QA Agent | Merged; contract-only scope closed; runtime Authentication tasks remain next. |
+| LP-001002 | Implement phone-number normalization value object | READY | `agent/task-preparation/LP-001002-phone-normalization` | Task Preparation Agent | Pure normalization scope prepared; credential/provider behavior excluded. |
 
 ## AI Engineering Framework
 
