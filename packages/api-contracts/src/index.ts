@@ -41,11 +41,15 @@ export function createErrorResponse(
 
 export {
   CustomerContractValidationError,
+  normalizeCustomerEmail,
+  validateAndNormalizeCustomerProfileUpdateRequest,
   validateCustomerProfileUpdateRequest,
+  validateCustomerPreferredLanguage,
   type CustomerApiError,
   type CustomerMembershipSummary,
   type CustomerPrivacyState,
   type CustomerProfile,
   type CustomerProfileUpdateRequest,
+  type ValidatedCustomerProfileUpdateRequest,
   type CustomerStatus,
 } from "./customers.js";
