@@ -62,7 +62,7 @@
 
 | Task | Title | Status | Branch | Review | Notes |
 |---|---|---|---|---|---|
-| LP-005001 | Define Loyalty Program aggregate and lifecycle | READY_FOR_MERGE | `agent/backend/LP-005001-loyalty-program-aggregate` | APPROVED; QA APPROVED; Security APPROVED | Commit `4498668`; focused validation passes; two unrelated API server bind failures remain documented as sandbox limitations. |
+| LP-005001 | Define Loyalty Program aggregate and lifecycle | DONE | `agent/backend/LP-005001-loyalty-program-aggregate` | APPROVED; QA APPROVED; Security APPROVED | Merged into `development` at `76704ea`; post-merge scoped validation passed; persistence and cross-aggregate behavior deferred. |
 | LP-005002 | Define Loyalty Program API and event contracts | DRAFT |  | Pending | Depends on LP-005001. |
 | LP-005003 | Define Loyalty Program configuration model | DRAFT |  | Pending | Depends on LP-005001. |
 | LP-005004 | Implement configuration versioning and effective history | DRAFT |  | Pending | Depends on LP-005003; non-persistence contract until database foundation. |
