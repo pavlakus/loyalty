@@ -44,7 +44,7 @@
 | LP-002019 | Add Customer concurrency tests | DONE | `development` | Release / QA Agent | Merged as 78aa673; post-merge scoped validation recorded; API baseline limitation remains separately documented. |
 | LP-002020 | Add Customer privacy and anonymization tests | DONE | `development` | Release / QA Agent | Merged as 362b979; post-merge scoped validation recorded; API baseline limitation remains separately documented. |
 | LP-002022 | Document Customer module and privacy runbook | DONE | `development` | Release / QA Agent | Merged as 8b8f289; post-merge documentation/FCR validation recorded. |
-| LP-002023 | Perform Customer architecture review | QA | `agent/qa/LP-002023-customer-architecture-review` | QA Agent | QA approved; architecture scope and deferred foundations verified. |
+| LP-002023 | Perform Customer architecture review | READY_FOR_MERGE | `agent/security/LP-002023-customer-architecture-review` | Security Agent | Review, QA, Security approved; no findings. |
 
 ## AI Engineering Framework
 
