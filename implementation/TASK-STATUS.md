@@ -55,7 +55,7 @@
 | LP-001010 | Implement OTP verification and attempt lockout | DONE | `development` | APPROVED; QA APPROVED; Security APPROVED | Merged at `8489b45`; post-merge scoped validation passed; production challenge persistence remains deferred. |
 | LP-001011 | Integrate global Customer resolution contract | DONE | `development` | APPROVED; QA APPROVED; Security APPROVED | Merged at `f7842f9`; post-merge scoped validation passed; database persistence remains deferred. |
 | LP-003001 | Define Business aggregate | DONE | `development` | APPROVED; QA APPROVED; Security APPROVED | Merged at `37edf5f`; post-merge scoped validation passed; persistence/RLS deferred. |
-| LP-003002 | Define Business API contracts | QA | `agent/qa/LP-003002-business-contracts` | Review APPROVED; QA APPROVED | 2 focused tests pass; Security review required before merge readiness. |
+| LP-003002 | Define Business API contracts | READY_FOR_MERGE | `agent/security/LP-003002-business-contracts` | Review APPROVED; QA APPROVED; Security APPROVED | Contract-only scope approved; 2 focused tests pass; routes/persistence/RLS deferred. |
 
 ## AI Engineering Framework
 
