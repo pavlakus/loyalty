@@ -54,7 +54,7 @@
 | LP-001009 | Implement request phone verification command | DONE | `development` | Release / QA Agent | Merged as c1976d1; focused request tests passed; production persistence deferred. |
 | LP-001010 | Implement OTP verification and attempt lockout | DONE | `development` | APPROVED; QA APPROVED; Security APPROVED | Merged at `8489b45`; post-merge scoped validation passed; production challenge persistence remains deferred. |
 | LP-001011 | Integrate global Customer resolution contract | DONE | `development` | APPROVED; QA APPROVED; Security APPROVED | Merged at `f7842f9`; post-merge scoped validation passed; database persistence remains deferred. |
-| LP-003001 | Define Business aggregate | QA | `agent/review/LP-003001-business-aggregate` | Review Agent | Review approved; 3 focused tests pass; QA and Security required. |
+| LP-003001 | Define Business aggregate | QA | `agent/qa/LP-003001-business-aggregate` | Review APPROVED; QA APPROVED | 3 focused tests pass; Security review required before merge readiness. |
 
 ## AI Engineering Framework
 
