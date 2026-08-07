@@ -1,7 +1,7 @@
 # LP-003002 — Define Business API Contracts
 
 ## Status
-`IMPLEMENTATION_COMPLETE`
+`QA`
 
 ## Role and Scope
 - Category: CONTRACT
