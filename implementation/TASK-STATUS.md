@@ -30,6 +30,7 @@
 | LP-002002 | Define Customer API and Event contracts | DONE | `agent/security/LP-002002-customer-api-events` | APPROVED; QA APPROVED; SECURITY APPROVED | Merged into development at `c035695`; post-merge contract/build/typecheck/FCR validation passed. Root API server test is sandbox-blocked by localhost `EPERM`; no LP-002002 failure. |
 | LP-002006 | Implement Customer profile validation | DONE | `agent/security/LP-002006-customer-profile-validation` | APPROVED; QA APPROVED; SECURITY APPROVED | Merged into development at `a923f9c`; post-merge profile/build/lint/typecheck/FCR validation passed. Root test remains affected only by unrelated FCR runner baseline behavior. |
 | LP-002012 | Design Customer anonymization strategy | DONE | `agent/security/LP-002012-customer-anonymization` | APPROVED; QA APPROVED; SECURITY APPROVED | Merged into `development` at `1ae7cf5`; post-merge scoped validation passed; full repository build/typecheck/FCR test baseline remains dependency-install blocked as documented. |
+| LP-002010 | Implement Customer preferred language | TASK_PREPARATION | `agent/task-preparation/LP-002010-customer-preferred-language` | Pending preparation | Product feature follows the approved Customer locale contract; no LP-000009 or LP-000016 dependency is declared. |
 
 ## AI Engineering Framework
 
