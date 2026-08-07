@@ -6,7 +6,7 @@
 
 ## 2. Status
 
-`DRAFT`
+`READY`
 
 ## 3. Category
 
@@ -23,6 +23,14 @@
 ## 6. Module Implementation Package
 
 `MIP-002-customer.md`
+
+## Dependencies
+
+- LP-002001 and LP-002002 — `DONE`; Customer architecture and public contracts.
+- LP-002004 through LP-002016 where implemented — `DONE`; current Customer capability, privacy, audit, and observability behavior.
+- LP-002018 through LP-002020 — `DONE`; contract, concurrency, and privacy test evidence.
+- LP-002014 and LP-002017 remain deferred/blocked by database/RLS and Authentication foundations; this documentation records those limitations and does not claim them complete.
+- LP-000009 and LP-000016 remain deferred infrastructure-validation tasks and are not required to author the current documentation baseline.
 
 ## 7. Business Objective
 
