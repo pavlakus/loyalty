@@ -6,7 +6,7 @@
 
 ## 2. Status
 
-`DRAFT`
+`READY`
 
 ## 3. Category
 
@@ -23,6 +23,12 @@
 ## 6. Module Implementation Package
 
 `MIP-001-authentication.md`
+
+## Dependencies
+
+- LP-001001 — `DONE`; Authentication API/Event contracts.
+- LP-001002 — `DONE`; canonical E.164 phone identity normalization.
+- No provider, database, session, token, or Customer integration is required for generation/hashing only.
 
 ## 7. Business Objective
 
