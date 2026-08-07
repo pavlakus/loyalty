@@ -6,7 +6,7 @@
 
 ## 2. Status
 
-`DRAFT`
+`TASK_PREPARATION`
 
 ## 3. Category
 
@@ -56,6 +56,13 @@ Implement only the capability described by this task title and the applicable se
 - `57-agent-prompts.md`
 - `58-project-knowledge-map.md`
 - `59-coding-standards.md`
+
+## 10A. Dependencies
+
+- LP-002002 — Customer API and Event contracts
+- LP-002004 — atomic Customer registration
+- LP-002005 — verified identity Customer resolution
+- LP-001010 — OTP verification and attempt lockout
 
 ## 11. Allowed Files
 
