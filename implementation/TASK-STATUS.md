@@ -46,7 +46,7 @@
 | LP-002022 | Document Customer module and privacy runbook | DONE | `development` | Release / QA Agent | Merged as 8b8f289; post-merge documentation/FCR validation recorded. |
 | LP-002023 | Perform Customer architecture review | DONE | `development` | Release / QA Agent | Merged as 3214ebc; post-merge evidence recorded. |
 | LP-002024 | Perform Customer QA security and privacy gate | DONE | `development` | Release / QA Agent | Merged as 73ddfd3; executable Customer milestone closed; deferred foundations preserved. |
-| LP-001001 | Define Authentication API and Event contracts | READY | `agent/task-preparation/LP-001001-auth-contracts` | Task Preparation Agent | Contract-only scope prepared from MIP-001; runtime authentication excluded. |
+| LP-001001 | Define Authentication API and Event contracts | READY_FOR_MERGE | `agent/security/LP-001001-auth-contracts` | Security Agent | Review, QA, and Security approved; runtime authentication deferred. |
 
 ## AI Engineering Framework
 
