@@ -23,4 +23,4 @@ The Customer module owns the current Customer profile query. The approved contra
 
 ## Preparation result
 
-Preparation is complete pending authorized automatic transition to `READY`. No runtime implementation was performed.
+Preparation is complete. Preparation commit `6a97504` was merged into `development`; LP-002007 is now `READY` on `agent/backend/LP-002007-customer-profile-query`. No runtime implementation was performed in preparation.
