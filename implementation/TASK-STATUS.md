@@ -28,7 +28,7 @@
 |---|---|---|---|---|---|
 | LP-002001 | Define Customer aggregate and identity-link architecture | DONE | `agent/security/LP-002001-customer-architecture` | APPROVED; QA APPROVED; SECURITY APPROVED | Merged into development at `ce279ee`; post-merge validation passed; architecture-only scope, no runtime or database integration claimed. |
 | LP-002002 | Define Customer API and Event contracts | DONE | `agent/security/LP-002002-customer-api-events` | APPROVED; QA APPROVED; SECURITY APPROVED | Merged into development at `c035695`; post-merge contract/build/typecheck/FCR validation passed. Root API server test is sandbox-blocked by localhost `EPERM`; no LP-002002 failure. |
-| LP-002006 | Implement Customer profile validation | QA | `agent/qa/LP-002006-customer-profile-validation` | APPROVED; QA APPROVED | Focused profile tests, build, lint, typecheck and FCR validation passed; unrelated parallel FCR root-test baseline issue documented. |
+| LP-002006 | Implement Customer profile validation | READY_FOR_MERGE | `agent/security/LP-002006-customer-profile-validation` | APPROVED; QA APPROVED; SECURITY APPROVED | Pure Customer profile validation validated; no persistence, auth, tenant, benefit or infrastructure behavior. Unrelated FCR parallel test baseline issue documented. |
 
 ## AI Engineering Framework
 
