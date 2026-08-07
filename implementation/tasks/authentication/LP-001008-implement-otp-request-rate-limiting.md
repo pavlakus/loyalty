@@ -6,7 +6,7 @@
 
 ## 2. Status
 
-`DRAFT`
+`READY`
 
 ## 3. Category
 
@@ -23,6 +23,13 @@
 ## 6. Module Implementation Package
 
 `MIP-001-authentication.md`
+
+## Dependencies
+
+- LP-001002 — `DONE`; canonical normalized phone identity.
+- LP-001004 — `DONE`; secure OTP generation and hashing.
+- LP-001005 — `DONE`; provider-neutral delivery port.
+- LP-001008 uses only an Authentication-owned port and NON_PRODUCTION in-memory adapter; production distributed storage remains deferred.
 
 ## 7. Business Objective
 
