@@ -49,7 +49,7 @@
 | LP-001001 | Define Authentication API and Event contracts | DONE | `development` | Release / QA Agent | Merged; contract-only scope closed; runtime Authentication tasks remain next. |
 | LP-001002 | Implement phone-number normalization value object | DONE | `development` | Release / QA Agent | Merged as 179a7a8; phone normalization policy and scoped validation recorded. |
 | LP-001004 | Implement secure OTP generation and hashing | DONE | `development` | Release / QA Agent | Merged as 1402404; 58 API tests passed; OTP secrets protected. |
-| LP-001005 | Create OTP delivery provider port | REVIEW | `agent/review/LP-001005-otp-provider-port` | Review Agent | Independent review approved; no provider selected. |
+| LP-001005 | Create OTP delivery provider port | READY_FOR_MERGE | `agent/security/LP-001005-otp-provider-port` | Security Agent | Review, QA, and Security approved; provider-neutral scope preserved. |
 
 ## AI Engineering Framework
 
