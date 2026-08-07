@@ -2,7 +2,7 @@
 
 ## Status
 
-`TASK_PREPARATION`
+`READY`
 
 ## Category and Role
 
