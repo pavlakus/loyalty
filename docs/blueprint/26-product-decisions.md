@@ -348,6 +348,22 @@ Implementation should explain deviations from existing decisions.
 
 The Product Decisions document represents the architectural memory of the platform.
 
+## Loyalty Program Lifecycle Decision — 2026-08-07
+
+The canonical Loyalty Program lifecycle is `DRAFT`, `ACTIVE`, `SUSPENDED`, and `CLOSED`.
+
+- A new Program starts in `DRAFT`.
+- Allowed transitions are `DRAFT → ACTIVE`, `DRAFT → CLOSED`, `ACTIVE → SUSPENDED`, `ACTIVE → CLOSED`, `SUSPENDED → ACTIVE`, and `SUSPENDED → CLOSED`.
+- `CLOSED` is terminal.
+- `DRAFT` permits configuration but is not operational or available for Customer participation.
+- `ACTIVE` is the only normal operational state.
+- `SUSPENDED` is reversible and preserves configuration, Memberships, balances, ledgers, rewards, audit records, and historical transactions.
+- `CLOSED` preserves historical state and does not decide financial settlement or redemption behavior for outstanding value.
+- Lifecycle changes are explicit domain operations and produce the existing lifecycle events according to event-contract conventions.
+- LP-005001 does not implement Membership, earning, ledger, balance, reward, redemption, persistence, RLS, or settlement behavior.
+
+This decision resolves the LP-005001 preparation finding and does not define behavior owned by Membership, Reward, Redemption, Database, or RLS tasks.
+
 When a Product Decision supersedes an earlier architectural assumption, the corresponding Blueprint documents should be updated to preserve a single authoritative interpretation.
 
 PD-017
