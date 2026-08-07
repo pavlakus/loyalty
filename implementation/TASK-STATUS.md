@@ -48,7 +48,7 @@
 | LP-002024 | Perform Customer QA security and privacy gate | DONE | `development` | Release / QA Agent | Merged as 73ddfd3; executable Customer milestone closed; deferred foundations preserved. |
 | LP-001001 | Define Authentication API and Event contracts | DONE | `development` | Release / QA Agent | Merged; contract-only scope closed; runtime Authentication tasks remain next. |
 | LP-001002 | Implement phone-number normalization value object | DONE | `development` | Release / QA Agent | Merged as 179a7a8; phone normalization policy and scoped validation recorded. |
-| LP-001004 | Implement secure OTP generation and hashing | READY | `agent/task-preparation/LP-001004-otp-security` | Task Preparation Agent | Provider-independent OTP security scope prepared; delivery/verification excluded. |
+| LP-001004 | Implement secure OTP generation and hashing | READY_FOR_MERGE | `agent/security/LP-001004-otp-security` | Security Agent | Review, QA, and Security approved; OTP secrets protected. |
 
 ## AI Engineering Framework
 
