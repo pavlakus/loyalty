@@ -6,7 +6,7 @@
 
 ## 2. Status
 
-`READY`
+`CHANGES_REQUIRED`
 
 ## 3. Category
 
