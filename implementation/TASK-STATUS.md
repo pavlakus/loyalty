@@ -35,6 +35,7 @@
 | LP-002005 | Implement verified identity Customer resolution | DONE | `agent/security/LP-002005-identity-resolution` | APPROVED; QA APPROVED; SECURITY APPROVED | Merged into `development` at `3465286`; scoped post-merge validation passed; API build/focused identity test remain blocked by the known dependency baseline, as evidenced. |
 | LP-002007 | Implement current Customer profile query | DONE | `agent/security/LP-002007-customer-profile-query` | APPROVED; QA APPROVED; SECURITY APPROVED | Merged into `development` at `ebdf5ba`; scoped post-merge validation passed; API build/focused query test remain blocked by the known dependency baseline, as evidenced. |
 | LP-002008 | Implement Customer profile update command | DONE | `agent/security/LP-002008-customer-profile-update` | APPROVED; QA APPROVED; SECURITY APPROVED | Merged into `development` at `f223fdc`; scoped post-merge validation passed; API build/focused update test remain blocked by the known dependency baseline, as evidenced. |
+| LP-002009 | Implement optional Customer email management | TASK_PREPARATION | `agent/task-preparation/LP-002009-customer-email-management` | Pending preparation | Customer-owned optional email management follows approved normalization, validation, privacy and non-identity rules; deferred infrastructure tasks remain outside this product scope. |
 
 ## AI Engineering Framework
 
