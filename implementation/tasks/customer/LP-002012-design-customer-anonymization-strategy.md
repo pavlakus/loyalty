@@ -6,7 +6,7 @@
 
 ## 2. Status
 
-`DRAFT`
+`TASK_PREPARATION`
 
 ## 3. Category
 
@@ -15,6 +15,10 @@
 ## 4. Assigned Role
 
 `Solution Architect Agent`
+
+## 4a. Priority
+
+`P1`
 
 ## 5. Owning Module
 
@@ -28,9 +32,24 @@
 
 Maintain one secure global Customer identity while preventing cross-Business personal-data exposure and preserving immutable business history.
 
+## 7a. Technical Objective
+
+Define the Customer anonymization strategy, irreversible identity handling, immutable-history preservation, authorization boundary and recovery expectations without implementing persistence, deletion, runtime commands or production operations.
+
 ## 8. Exact Scope
 
 Implement only the capability described by this task title and the applicable section of `MIP-002-customer.md`.
+
+## Dependencies
+
+- LP-002001 — `DONE`; Customer aggregate, identity and lifecycle architecture.
+- LP-002002 — `DONE`; Customer API and Event contract foundation.
+- LP-002006 — `DONE`; Customer profile validation boundary.
+- LP-000009 and LP-000016 are not required for this architecture-only strategy task; their infrastructure validation remains deferred.
+
+## Knowledge Package
+
+Customer Knowledge Package from `implementation/mip/MIP-002-customer.md` and the required Blueprint, security, API, event, UAT and engineering references below.
 
 ## 9. Out of Scope
 
@@ -73,6 +92,8 @@ docs/modules/customer/**
 ```
 
 Any additional file requires explicit scope approval.
+
+For this architecture-only task, the expected artifact is under `docs/modules/customer/**`; runtime, database and infrastructure paths remain unchanged.
 
 ## 12. Forbidden Files
 
