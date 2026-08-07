@@ -33,3 +33,7 @@ Authentication owns verification; Customer owns lookup and lifecycle interpretat
 ## Rollback
 
 Revert the implementation commit. No database migration or persisted data change is introduced.
+
+## Review handoff
+
+Implementation commit: `c4878ac`. The task branch is clean and contains only the Customer identity-resolution boundary, focused tests, lifecycle metadata, and evidence. It is ready for independent review.
