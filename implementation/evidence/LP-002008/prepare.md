@@ -23,4 +23,4 @@ The Customer module owns profile updates through the approved `PATCH /api/v1/cus
 
 ## Preparation result
 
-Preparation is complete pending authorized automatic transition to `READY`. No runtime implementation was performed.
+Preparation is complete. Preparation commit `87fa1ec` was merged into `development`; LP-002008 is now `READY` on `agent/backend/LP-002008-customer-profile-update`. No runtime implementation was performed in preparation.
