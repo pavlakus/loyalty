@@ -6,7 +6,7 @@
 
 ## 2. Status
 
-`DRAFT`
+`READY`
 
 ## 3. Category
 
@@ -23,6 +23,18 @@
 ## 6. Module Implementation Package
 
 `MIP-002-customer.md`
+
+## Dependencies
+
+- LP-002001 — `DONE`; Customer aggregate and identity-link architecture.
+- LP-002002 — `DONE`; Customer API and Event contract foundation.
+- LP-002012 — `DONE`; Customer anonymization strategy.
+- LP-002013 — `DONE`; Customer anonymization command.
+- LP-002015 — `DONE`; Customer audit records.
+- LP-002016 — `DONE`; privacy-safe Customer observability.
+- LP-002019 — `DONE`; Customer concurrency test foundation.
+- LP-000006, LP-000007 and LP-000008 — `DONE`; environment, API and Event foundations.
+- LP-000009 and LP-000016 are not required for this in-memory/privacy-contract test scope; their infrastructure validation remains deferred.
 
 ## 7. Business Objective
 
