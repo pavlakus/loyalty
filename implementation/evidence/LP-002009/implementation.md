@@ -29,3 +29,7 @@ No database, migration, authentication credential, RLS, CI, infrastructure, LP-0
 ## Privacy, concurrency and rollback
 
 The command never treats email as Customer identity and does not perform merge/search behavior. The repository must enforce expected-version concurrency atomically. Revert the implementation commit for rollback; no persisted data changes are introduced.
+
+## Review handoff
+
+Implementation commit: `9fe2fa8`. The task branch is clean and contains only the Customer email-management boundary, focused tests, lifecycle metadata, and evidence. It is ready for independent review.
