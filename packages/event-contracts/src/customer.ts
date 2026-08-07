@@ -56,6 +56,18 @@ function requireOccurredAt(value: unknown): string {
   return occurredAt;
 }
 
+function rejectUnknownPayloadFields(
+  value: Record<string, unknown>,
+  allowedFields: readonly string[],
+): void {
+  const allowed = new Set(allowedFields);
+  for (const field of Object.keys(value)) {
+    if (!allowed.has(field)) {
+      throw new EventContractValidationError(field, "is not an allowed Customer event field");
+    }
+  }
+}
+
 export function validateCustomerEventPayload(
   eventType: CustomerEventType,
   value: unknown,
@@ -67,14 +79,17 @@ export function validateCustomerEventPayload(
   const version = requireVersion(value.version);
 
   if (eventType === "CustomerRegistered") {
+    rejectUnknownPayloadFields(value, ["customer_id", "version"]);
     return value as unknown as CustomerRegisteredPayload;
   }
   if (eventType === "CustomerProfileUpdated") {
+    rejectUnknownPayloadFields(value, ["customer_id", "version", "changed_fields"]);
     if (!Array.isArray(value.changed_fields) || value.changed_fields.some((field) => typeof field !== "string" || field.trim() === "")) {
       throw new EventContractValidationError("changed_fields", "must contain only non-empty strings");
     }
     return { ...value, version } as CustomerProfileUpdatedPayload;
   }
+  rejectUnknownPayloadFields(value, ["customer_id", "version", "anonymized_at"]);
   requireOccurredAt(value.anonymized_at);
   return value as unknown as CustomerAnonymizedPayload;
 }
