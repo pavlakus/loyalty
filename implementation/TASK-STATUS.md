@@ -39,7 +39,7 @@
 | LP-002011 | Implement Customer suspension and reactivation | DONE | `agent/security/LP-002011-customer-suspension-reactivation` | REVIEW APPROVED; QA APPROVED; SECURITY APPROVED | Merged into `development` at `175d22b`; scoped post-merge validation recorded; API build/focused lifecycle test remain blocked by the known dependency baseline. |
 | LP-002013 | Implement Customer anonymization command | DONE | `agent/security/LP-002013-customer-anonymization-command` | REVIEW APPROVED; QA APPROVED; SECURITY APPROVED | Merged into `development` at `7412f3f`; scoped post-merge validation recorded; API build/focused anonymization test remain blocked by the known dependency baseline. |
 | LP-002015 | Implement Customer audit records | DONE | `agent/security/LP-002015-customer-audit-records` | REVIEW APPROVED; QA APPROVED; SECURITY APPROVED | Merged into `development` at `74302f3`; scoped post-merge validation recorded; API build/focused audit test remain blocked by the known dependency baseline. |
-| LP-002016 | Implement Customer observability and privacy-safe logging | REVIEW | `agent/review/LP-002016-customer-observability-privacy-logging` | REVIEW APPROVED; QA pending; Security pending | Independent review completed with no findings; contract/FCR validation passed and baseline API limitation is preserved. |
+| LP-002016 | Implement Customer observability and privacy-safe logging | QA | `agent/qa/LP-002016-customer-observability-privacy-logging` | REVIEW APPROVED; QA APPROVED; Security pending | QA completed; contract/FCR validation passed and baseline API limitation is preserved. |
 
 ## AI Engineering Framework
 
