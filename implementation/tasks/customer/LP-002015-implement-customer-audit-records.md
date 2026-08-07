@@ -6,7 +6,7 @@
 
 ## 2. Status
 
-`READY`
+`READY_FOR_MERGE`
 
 ## 3. Category
 
