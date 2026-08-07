@@ -1,0 +1,7 @@
+import assert from "node:assert/strict";
+import test from "node:test";
+import { BrandAggregate, BrandValidationError } from "../dist/modules/brand/brand-aggregate.js";
+const base = { id: "brand-1", businessId: "business-1", name: "  Café   Nova ", defaultLocale: "sr-Latn-RS", createdAt: "2026-08-07T10:00:00.000Z" };
+test("creates a draft Brand with immutable business ownership and safe name normalization", () => { const { brand } = BrandAggregate.create(base); assert.equal(brand.snapshot.name, "Café Nova"); assert.equal(brand.snapshot.businessId, "business-1"); assert.equal(brand.snapshot.status, "DRAFT"); });
+test("enforces Brand lifecycle and terminal closure", () => { const { brand } = BrandAggregate.create(base); brand.activate("2026-08-07T11:00:00.000Z"); brand.suspend("2026-08-07T12:00:00.000Z"); brand.activate("2026-08-07T13:00:00.000Z"); brand.close("2026-08-07T14:00:00.000Z"); assert.throws(() => brand.activate("2026-08-07T15:00:00.000Z"), (e) => e instanceof BrandValidationError && e.code === "BRAND_LIFECYCLE_CONFLICT"); });
+test("rejects invalid locale, identity, and timestamps", () => { assert.throws(() => BrandAggregate.create({ ...base, defaultLocale: "not a locale" }), /BCP 47/); assert.throws(() => BrandAggregate.create({ ...base, businessId: " " }), /identifier/); assert.throws(() => BrandAggregate.create({ ...base, createdAt: "2026-08-07T10:00:00Z" }), /canonical UTC/); });
