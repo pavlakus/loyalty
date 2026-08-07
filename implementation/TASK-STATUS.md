@@ -52,7 +52,7 @@
 | LP-001005 | Create OTP delivery provider port | DONE | `development` | Release / QA Agent | Merged as ba39479; focused port tests passed; no provider selected. |
 | LP-001008 | Implement OTP request rate limiting | DONE | `development` | Release / QA Agent | Merged as 6a29b93; focused tests passed; production backend deferred. |
 | LP-001009 | Implement request phone verification command | DONE | `development` | Release / QA Agent | Merged as c1976d1; focused request tests passed; production persistence deferred. |
-| LP-001010 | Implement OTP verification and attempt lockout | IMPLEMENTATION_COMPLETE | `agent/backend/LP-001010-otp-verification-correction` | Backend Developer Agent | Review correction complete; verification now requires `sent`; 6 focused tests pass; production challenge persistence remains deferred. |
+| LP-001010 | Implement OTP verification and attempt lockout | QA | `agent/backend/LP-001010-otp-verification-correction` | Review Agent | Follow-up review approved; 6 focused tests pass; QA and Security required. |
 
 ## AI Engineering Framework
 
