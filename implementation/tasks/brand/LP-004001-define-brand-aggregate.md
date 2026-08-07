@@ -1,7 +1,7 @@
 # LP-004001 — Define Brand Aggregate
 
 ## Status
-`IMPLEMENTATION_COMPLETE`
+`QA`
 
 ## Scope and Ownership
 - Category: DOMAIN
