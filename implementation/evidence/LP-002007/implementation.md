@@ -29,3 +29,7 @@ No database, migration, authentication credential, RLS, CI, infrastructure, LP-0
 ## Privacy and rollback
 
 The returned profile is the existing privacy-safe Customer contract. Authorization and tenant context are resolved outside this pure boundary by the approved application guards. Revert the implementation commit for rollback; no persisted data changes are introduced.
+
+## Review handoff
+
+Implementation commit: `1182387`. The task branch is clean and contains only the Customer profile query boundary, focused tests, lifecycle metadata, and evidence. It is ready for independent review.

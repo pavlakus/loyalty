@@ -33,7 +33,7 @@
 | LP-002010 | Implement Customer preferred language | DONE | `agent/security/LP-002010-customer-preferred-language` | APPROVED; QA APPROVED; SECURITY APPROVED | Merged into `development` at `3a9bdc`; scoped post-merge validation passed; API build/focused resolver test remain blocked by the known dependency baseline, as evidenced. |
 | LP-002004 | Implement atomic Customer registration | DONE | `agent/security/LP-002004-customer-registration` | APPROVED; QA APPROVED; SECURITY APPROVED | Merged into `development` at `9f8aa69`; scoped post-merge validation passed; API build/focused registration test remain blocked by the known dependency baseline, as evidenced. |
 | LP-002005 | Implement verified identity Customer resolution | DONE | `agent/security/LP-002005-identity-resolution` | APPROVED; QA APPROVED; SECURITY APPROVED | Merged into `development` at `3465286`; scoped post-merge validation passed; API build/focused identity test remain blocked by the known dependency baseline, as evidenced. |
-| LP-002007 | Implement current Customer profile query | IMPLEMENTATION_COMPLETE | `agent/backend/LP-002007-customer-profile-query` | Pending independent review | Current-user Customer profile query boundary implemented and tested; no client identity or tenant selector is accepted; deferred infrastructure tasks remain outside this product scope. |
+| LP-002007 | Implement current Customer profile query | READY_FOR_REVIEW | `agent/backend/LP-002007-customer-profile-query` | Pending independent review | Current-user profile query boundary committed at `1182387`; API contract tests and FCR validation passed; full API build/focused query test remain blocked by the known dependency baseline. |
 
 ## AI Engineering Framework
 
