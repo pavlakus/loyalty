@@ -80,6 +80,8 @@ Customer-owned commands are:
 - `ReactivateCustomer`;
 - `AnonymizeCustomer`.
 
+Preferred-language resolution is owned by Customer. The effective locale is selected in this order: explicit Customer preference, application or device locale, Brand fallback where configured, then platform fallback. Every selected value uses the stable locale identifier contract, and changing the preference does not alter historical business records.
+
 Customer-owned queries are:
 
 - `GetCurrentCustomer`;
