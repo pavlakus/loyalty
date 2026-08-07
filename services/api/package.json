@@ -15,7 +15,8 @@
   },
   "dependencies": {
     "@loyalty-platform/api-contracts": "workspace:*",
-    "@loyalty-platform/event-contracts": "workspace:*"
+    "@loyalty-platform/event-contracts": "workspace:*",
+    "libphonenumber-js": "^1.13.10"
   },
   "type": "module"
 }
