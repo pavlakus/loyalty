@@ -41,7 +41,7 @@
 | LP-002015 | Implement Customer audit records | DONE | `agent/security/LP-002015-customer-audit-records` | REVIEW APPROVED; QA APPROVED; SECURITY APPROVED | Merged into `development` at `74302f3`; scoped post-merge validation recorded; API build/focused audit test remain blocked by the known dependency baseline. |
 | LP-002016 | Implement Customer observability and privacy-safe logging | DONE | `agent/security/LP-002016-customer-observability-privacy-logging` | REVIEW APPROVED; QA APPROVED; SECURITY APPROVED | Merged into `development` at `e62d417`; scoped post-merge validation recorded; API build/focused observability test remain blocked by the known dependency baseline. |
 | LP-002018 | Add Customer API and contract tests | DONE | `agent/security/LP-002018-customer-api-contract-tests` | REVIEW APPROVED; QA APPROVED; SECURITY APPROVED | Merged into `development` at `d7fa058`; API/Event contract suites and FCR validation pass; global API baseline limitation remains unrelated and documented. |
-| LP-002019 | Add Customer concurrency tests | TASK_PREPARATION | `agent/task-preparation/LP-002019-customer-concurrency-tests` | Pending | Task preparation in progress; implementation is not authorized until preparation completes. |
+| LP-002019 | Add Customer concurrency tests | READY | `agent/qa/LP-002019-customer-concurrency-tests` | Pending | Task Preparation merged; concurrency tests may begin on the isolated QA branch. |
 
 ## AI Engineering Framework
 
