@@ -36,7 +36,7 @@
 | LP-002007 | Implement current Customer profile query | DONE | `agent/security/LP-002007-customer-profile-query` | APPROVED; QA APPROVED; SECURITY APPROVED | Merged into `development` at `ebdf5ba`; scoped post-merge validation passed; API build/focused query test remain blocked by the known dependency baseline, as evidenced. |
 | LP-002008 | Implement Customer profile update command | DONE | `agent/security/LP-002008-customer-profile-update` | APPROVED; QA APPROVED; SECURITY APPROVED | Merged into `development` at `f223fdc`; scoped post-merge validation passed; API build/focused update test remain blocked by the known dependency baseline, as evidenced. |
 | LP-002009 | Implement optional Customer email management | DONE | `agent/security/LP-002009-customer-email-management` | APPROVED; QA APPROVED; SECURITY APPROVED | Merged into `development` at `0e33894`; scoped post-merge validation recorded; API build/focused email test remain blocked by the known dependency baseline. |
-| LP-002011 | Implement Customer suspension and reactivation | IMPLEMENTATION_COMPLETE | `agent/backend/LP-002011-customer-suspension-reactivation` | Pending | Implementation committed; contract/FCR validation passed; API build and focused lifecycle test remain blocked by the known dependency baseline. |
+| LP-002011 | Implement Customer suspension and reactivation | REVIEW | `agent/review/LP-002011-customer-suspension-reactivation` | REVIEW APPROVED; QA pending; Security pending | Independent review completed with no findings; API contract/FCR validation remains passing and known API baseline limitation is preserved. |
 
 ## AI Engineering Framework
 
