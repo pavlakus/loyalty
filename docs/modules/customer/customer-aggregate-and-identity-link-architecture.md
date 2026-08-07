@@ -38,6 +38,8 @@ Raw phone formatting is not identity. Full phone values are not public Membershi
 
 The permitted Customer states are `active`, `suspended`, `anonymized`, and `closed`.
 
+Lifecycle suspension and reactivation use an authenticated Customer context and an expected version. The repository boundary is responsible for the atomic version guard and current-state transition; repeated requests that produce no change do not emit duplicate audit or lifecycle notifications. `anonymized` and `closed` are terminal or disallowed for these operations.
+
 - A new Customer is created only after successful Authentication phone verification.
 - `active` Customers may use approved profile operations.
 - `suspended` Customers cannot perform operations prohibited by the suspension policy; recovery is an approved transition back to `active`.
