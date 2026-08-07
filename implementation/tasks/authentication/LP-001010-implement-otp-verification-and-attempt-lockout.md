@@ -6,7 +6,7 @@
 
 ## 2. Status
 
-`DRAFT`
+`TASK_PREPARATION`
 
 ## 3. Category
 
@@ -56,6 +56,14 @@ Implement only the capability described by this task title and the applicable se
 - `57-agent-prompts.md`
 - `58-project-knowledge-map.md`
 - `59-coding-standards.md`
+
+## 10A. Dependencies
+
+- LP-001002 — phone-number normalization value object
+- LP-001004 — secure OTP generation and hashing
+- LP-001005 — OTP delivery provider port
+- LP-001008 — OTP request rate limiting
+- LP-001009 — request phone verification command and Authentication-owned challenge store port
 
 ## 11. Allowed Files
 
