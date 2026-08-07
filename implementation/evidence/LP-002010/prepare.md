@@ -32,4 +32,4 @@ The feature may use the existing Customer contract and validation boundaries. Da
 
 ## Preparation result
 
-Preparation is complete pending the authorized transition to `READY`. No runtime or product implementation was performed in this phase.
+Preparation is complete. The preparation commit `3b991de` was merged into `development` by the authorized maintainer. LP-002010 is now `READY` on `agent/backend/LP-002010-customer-preferred-language`. No runtime or product implementation was performed in preparation.
