@@ -52,6 +52,8 @@ export class CustomerContractValidationError extends Error {
   }
 }
 
+export type ValidatedCustomerProfileUpdateRequest = CustomerProfileUpdateRequest;
+
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
 }
@@ -72,9 +74,49 @@ function validateNullableString(record: Record<string, unknown>, field: string):
 }
 
 function validateCanonicalDate(value: string, field: string): void {
-  if (!/^\d{4}-\d{2}-\d{2}$/.test(value) || Number.isNaN(Date.parse(`${value}T00:00:00.000Z`))) {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) {
     throw new CustomerContractValidationError(field, "must be a canonical calendar date");
   }
+  const [year, month, day] = value.split("-").map(Number);
+  const parsed = new Date(Date.UTC(year, month - 1, day));
+  if (
+    Number.isNaN(parsed.getTime())
+    || parsed.getUTCFullYear() !== year
+    || parsed.getUTCMonth() !== month - 1
+    || parsed.getUTCDate() !== day
+  ) {
+    throw new CustomerContractValidationError(field, "must be a real calendar date");
+  }
+  if (parsed.getTime() > Date.now()) {
+    throw new CustomerContractValidationError(field, "must not be in the future");
+  }
+}
+
+function validateProfileText(value: string, field: string): void {
+  if (value.length > 200 || /[\u0000-\u001f\u007f]/u.test(value)) {
+    throw new CustomerContractValidationError(field, "contains unsupported text");
+  }
+}
+
+export function normalizeCustomerEmail(value: string | null): string | null {
+  if (value === null) return null;
+  const normalized = value.trim().toLowerCase();
+  if (normalized.length > 254 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/u.test(normalized)) {
+    throw new CustomerContractValidationError("email", "must be a valid email address");
+  }
+  return normalized;
+}
+
+export function validateCustomerPreferredLanguage(value: string | null): string | null {
+  if (value === null) return null;
+  const normalized = value.trim();
+  if (!/^[A-Za-z]{2,3}(?:-[A-Za-z0-9]{2,8})*$/u.test(normalized)) {
+    throw new CustomerContractValidationError(
+      "preferred_language",
+      "must be a stable locale identifier",
+    );
+  }
+  return normalized;
 }
 
 export function validateCustomerProfileUpdateRequest(
@@ -94,5 +136,24 @@ export function validateCustomerProfileUpdateRequest(
   if (typeof value.birth_date === "string") {
     validateCanonicalDate(value.birth_date, "birth_date");
   }
+  for (const field of ["first_name", "last_name"] as const) {
+    if (typeof value[field] === "string") validateProfileText(value[field], field);
+  }
+  if (typeof value.preferred_language === "string") {
+    validateCustomerPreferredLanguage(value.preferred_language);
+  }
   return value as CustomerProfileUpdateRequest;
+}
+
+export function validateAndNormalizeCustomerProfileUpdateRequest(
+  value: unknown,
+): ValidatedCustomerProfileUpdateRequest {
+  const request = validateCustomerProfileUpdateRequest(value);
+  return {
+    ...request,
+    ...(Object.hasOwn(request, "email") ? { email: normalizeCustomerEmail(request.email ?? null) } : {}),
+    ...(Object.hasOwn(request, "preferred_language")
+      ? { preferred_language: validateCustomerPreferredLanguage(request.preferred_language ?? null) }
+      : {}),
+  };
 }

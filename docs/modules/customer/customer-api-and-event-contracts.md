@@ -40,4 +40,4 @@ Each payload is placed inside the existing versioned `EventEnvelope`. Payloads c
 
 ## Validation and Compatibility
 
-The shared packages export TypeScript contracts and narrow runtime validators. Validators reject unknown profile update fields, phone changes, malformed dates, invalid Customer event identity/version values, and malformed anonymization timestamps. They do not authorize callers, perform tenant checks, or persist data.
+The shared packages export TypeScript contracts and narrow runtime validators. Profile validation rejects unknown fields, phone changes, blank or unsupported text, malformed or future dates, invalid email syntax, and invalid locale syntax; the explicit normalization helper trims/lowercases email without changing the allowed field boundary. Event validators reject invalid Customer identity/version values and malformed anonymization timestamps. These validators do not authorize callers, perform tenant checks, evaluate benefits, or persist data.
