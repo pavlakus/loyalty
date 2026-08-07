@@ -54,3 +54,7 @@ Production anonymization requires the separately required legal/privacy, securit
 ## Explicit non-goals
 
 This strategy does not define OTP delivery, authentication/session behavior, a public API shape, persistence schema or migration, RLS policy SQL, event transport, background jobs, deletion semantics, support tooling, legal retention policy, or production rollout commands. Those require their owning task and approvals.
+
+## Command boundary (LP-002013)
+
+The Customer anonymization command accepts only an authenticated actor/Customer context, a reason classification, and an expected aggregate version. It delegates the serialized state transition and direct-data removal to an atomic repository contract, records privacy-safe audit metadata, and publishes the existing `CustomerAnonymized` fact only after commit. Repeated terminal requests return the existing anonymized result without duplicate effects. This boundary does not provide persistence, session invalidation, outbox delivery, retention policy, or production release approval.

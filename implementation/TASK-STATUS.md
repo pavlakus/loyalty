@@ -37,7 +37,7 @@
 | LP-002008 | Implement Customer profile update command | DONE | `agent/security/LP-002008-customer-profile-update` | APPROVED; QA APPROVED; SECURITY APPROVED | Merged into `development` at `f223fdc`; scoped post-merge validation passed; API build/focused update test remain blocked by the known dependency baseline, as evidenced. |
 | LP-002009 | Implement optional Customer email management | DONE | `agent/security/LP-002009-customer-email-management` | APPROVED; QA APPROVED; SECURITY APPROVED | Merged into `development` at `0e33894`; scoped post-merge validation recorded; API build/focused email test remain blocked by the known dependency baseline. |
 | LP-002011 | Implement Customer suspension and reactivation | DONE | `agent/security/LP-002011-customer-suspension-reactivation` | REVIEW APPROVED; QA APPROVED; SECURITY APPROVED | Merged into `development` at `175d22b`; scoped post-merge validation recorded; API build/focused lifecycle test remain blocked by the known dependency baseline. |
-| LP-002013 | Implement Customer anonymization command | READY | `agent/backend/LP-002013-customer-anonymization-command` | Pending | Task Preparation merged; implementation may begin on the isolated backend branch. |
+| LP-002013 | Implement Customer anonymization command | READY_FOR_MERGE | `agent/security/LP-002013-customer-anonymization-command` | REVIEW APPROVED; QA APPROVED; SECURITY APPROVED | Security review completed; contract/FCR validation passed; API build/focused anonymization test remain blocked by the known dependency baseline. |
 
 ## AI Engineering Framework
 
