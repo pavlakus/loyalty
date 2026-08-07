@@ -51,7 +51,7 @@
 | LP-001004 | Implement secure OTP generation and hashing | DONE | `development` | Release / QA Agent | Merged as 1402404; 58 API tests passed; OTP secrets protected. |
 | LP-001005 | Create OTP delivery provider port | DONE | `development` | Release / QA Agent | Merged as ba39479; focused port tests passed; no provider selected. |
 | LP-001008 | Implement OTP request rate limiting | DONE | `development` | Release / QA Agent | Merged as 6a29b93; focused tests passed; production backend deferred. |
-| LP-001009 | Implement request phone verification command | IMPLEMENTATION_COMPLETE | `agent/backend/LP-001009-otp-request` | Backend Developer Agent | Request orchestration implemented over approved secure ports; persistence remains non-production abstraction. |
+| LP-001009 | Implement request phone verification command | REVIEW | `agent/review/LP-001009-otp-request` | Review Agent | Independent review approved; persistence remains non-production abstraction. |
 
 ## AI Engineering Framework
 
