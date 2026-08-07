@@ -53,7 +53,7 @@
 | LP-001008 | Implement OTP request rate limiting | DONE | `development` | Release / QA Agent | Merged as 6a29b93; focused tests passed; production backend deferred. |
 | LP-001009 | Implement request phone verification command | DONE | `development` | Release / QA Agent | Merged as c1976d1; focused request tests passed; production persistence deferred. |
 | LP-001010 | Implement OTP verification and attempt lockout | DONE | `development` | APPROVED; QA APPROVED; Security APPROVED | Merged at `8489b45`; post-merge scoped validation passed; production challenge persistence remains deferred. |
-| LP-001011 | Integrate global Customer resolution contract | READY |  | Task Preparation | Preparation passed; Customer resolution/registration contracts and OTP verification are complete; database-backed persistence remains deferred. |
+| LP-001011 | Integrate global Customer resolution contract | QA | `agent/review/LP-001011-customer-resolution` | Review Agent | Review approved; 3 focused tests pass; QA and Security required. |
 
 ## AI Engineering Framework
 

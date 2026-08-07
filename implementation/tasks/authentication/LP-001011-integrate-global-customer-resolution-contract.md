@@ -6,7 +6,7 @@
 
 ## 2. Status
 
-`READY`
+`QA`
 
 ## 3. Category
 
