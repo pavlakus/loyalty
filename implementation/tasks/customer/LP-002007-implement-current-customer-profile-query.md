@@ -6,7 +6,7 @@
 
 ## 2. Status
 
-`READY_FOR_REVIEW`
+`REVIEW`
 
 ## 3. Category
 
