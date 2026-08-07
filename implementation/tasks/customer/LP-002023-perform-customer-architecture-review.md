@@ -6,7 +6,7 @@
 
 ## 2. Status
 
-`DRAFT`
+`READY`
 
 ## 3. Category
 
@@ -23,6 +23,13 @@
 ## 6. Module Implementation Package
 
 `MIP-002-customer.md`
+
+## Dependencies
+
+- LP-002001 through LP-002002 — `DONE`; Customer architecture and public contracts.
+- LP-002004 through LP-002022 where implemented — `DONE`; current Customer capability and documentation evidence.
+- LP-002014 and LP-002017 remain deferred; this review must identify their architectural impact without implementing them.
+- LP-000009 and LP-000016 remain deferred infrastructure-validation tasks and do not block this architecture review.
 
 ## 7. Business Objective
 
