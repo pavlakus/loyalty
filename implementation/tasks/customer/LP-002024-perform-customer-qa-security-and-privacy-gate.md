@@ -6,7 +6,7 @@
 
 ## 2. Status
 
-`DRAFT`
+`READY`
 
 ## 3. Category
 
@@ -23,6 +23,14 @@
 ## 6. Module Implementation Package
 
 `MIP-002-customer.md`
+
+## Dependencies
+
+- LP-002001 through LP-002002 — `DONE`; Customer architecture and contracts.
+- LP-002004 through LP-002013, LP-002015 through LP-002016, and LP-002018 through LP-002023 — `DONE`; executable Customer baseline and evidence.
+- LP-002003, LP-002014, and LP-002021 remain deferred on the Database/RLS foundation.
+- LP-002017 remains deferred on the Authentication foundation.
+- LP-000009 and LP-000016 remain deferred infrastructure-validation tasks and are not required to assess this executable baseline.
 
 ## 7. Business Objective
 
