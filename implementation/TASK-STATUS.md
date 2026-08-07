@@ -32,7 +32,7 @@
 | LP-002012 | Design Customer anonymization strategy | DONE | `agent/security/LP-002012-customer-anonymization` | APPROVED; QA APPROVED; SECURITY APPROVED | Merged into `development` at `1ae7cf5`; post-merge scoped validation passed; full repository build/typecheck/FCR test baseline remains dependency-install blocked as documented. |
 | LP-002010 | Implement Customer preferred language | DONE | `agent/security/LP-002010-customer-preferred-language` | APPROVED; QA APPROVED; SECURITY APPROVED | Merged into `development` at `3a9bdc`; scoped post-merge validation passed; API build/focused resolver test remain blocked by the known dependency baseline, as evidenced. |
 | LP-002004 | Implement atomic Customer registration | DONE | `agent/security/LP-002004-customer-registration` | APPROVED; QA APPROVED; SECURITY APPROVED | Merged into `development` at `9f8aa69`; scoped post-merge validation passed; API build/focused registration test remain blocked by the known dependency baseline, as evidenced. |
-| LP-002005 | Implement verified identity Customer resolution | READY_FOR_REVIEW | `agent/backend/LP-002005-identity-resolution` | Pending independent review | Identity-resolution boundary committed at `c4878ac`; API contract tests and FCR validation passed; full API build/focused identity test remain blocked by the known dependency baseline. |
+| LP-002005 | Implement verified identity Customer resolution | REVIEW | `agent/review/LP-002005-identity-resolution` | APPROVED; QA pending | Independent review approved; identity-resolution boundary committed at `c4878ac`; API contract tests and FCR validation passed; full API build/focused identity test remain blocked by the known dependency baseline. |
 
 ## AI Engineering Framework
 
