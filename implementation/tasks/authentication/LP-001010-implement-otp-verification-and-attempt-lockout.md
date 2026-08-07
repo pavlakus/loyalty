@@ -6,7 +6,7 @@
 
 ## 2. Status
 
-`CHANGES_REQUIRED`
+`QA`
 
 ## 3. Category
 

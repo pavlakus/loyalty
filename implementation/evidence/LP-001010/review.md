@@ -34,3 +34,17 @@ All other reviewed behavior was within scope: protected OTP storage, bounded att
 ## Recommendation
 
 CHANGES_REQUIRED for the single state-machine correction. No architecture or product decision is required.
+
+## Follow-up review after correction
+
+- Reviewer role: Review Agent
+- Date: 2026-08-07
+- Corrected commit reviewed: `d51487b`
+- Commands: frozen install, API contracts/event contracts/API builds, focused request and verification tests, API typecheck, `git diff --check`
+- Results: all passed; focused suite 6/6.
+
+The verifier now rejects `created` challenges before comparing the OTP and accepts only `sent` challenges. The required regression test is present. No new findings were identified. The original P1 is resolved; no P0/P1/P2 findings remain.
+
+## Recommendation
+
+REVIEW APPROVED for QA and Security.

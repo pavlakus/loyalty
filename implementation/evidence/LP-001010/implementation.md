@@ -54,3 +54,14 @@ The command rejects malformed OTP input without invoking the store, maps challen
 ## Readiness
 
 Implementation scope is complete and ready for independent review and required QA/Security review.
+
+## Correction pass
+
+- Task: LP-001010
+- Phase: Correction
+- Role: Backend Developer Agent
+- Source finding: Independent Review P1 in `review.md`; a `created` challenge could be verified before delivery was marked successful.
+
+The challenge store now accepts verification only for `sent` challenges. A regression test confirms that a created-but-undelivered challenge returns the existing privacy-safe not-found outcome. No other behavior or scope changed.
+
+Validation for the correction is recorded by the follow-up review, QA, and Security evidence.
