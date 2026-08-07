@@ -25,4 +25,4 @@ This task can be implemented as a pure Customer repository boundary. It does not
 
 ## Preparation result
 
-Preparation is complete pending authorized automatic transition to `READY`. No runtime implementation was performed.
+Preparation is complete. The preparation commit `8e16a9b` was merged into `development` by the authorized maintainer. LP-002005 is now `READY` on `agent/backend/LP-002005-identity-resolution`. No runtime implementation was performed in preparation.
