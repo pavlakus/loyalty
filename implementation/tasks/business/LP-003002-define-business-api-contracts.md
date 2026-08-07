@@ -1,7 +1,7 @@
 # LP-003002 — Define Business API Contracts
 
 ## Status
-`TASK_PREPARATION`
+`READY`
 
 ## Role and Scope
 - Category: CONTRACT
