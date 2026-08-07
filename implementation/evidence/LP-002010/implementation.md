@@ -34,3 +34,7 @@ The implementation preserves the Customer module as owner, does not alter histor
 ## Rollback
 
 Revert the implementation commit; this removes one pure resolver and its tests without data migration or persisted-state impact.
+
+## Review handoff
+
+Implementation commit: `117bd9c`. The task branch is clean and contains only the preferred-language resolver, focused test, synchronized Customer documentation, lifecycle metadata, and evidence. It is ready for independent review.
