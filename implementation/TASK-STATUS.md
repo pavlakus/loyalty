@@ -50,7 +50,7 @@
 | LP-001002 | Implement phone-number normalization value object | DONE | `development` | Release / QA Agent | Merged as 179a7a8; phone normalization policy and scoped validation recorded. |
 | LP-001004 | Implement secure OTP generation and hashing | DONE | `development` | Release / QA Agent | Merged as 1402404; 58 API tests passed; OTP secrets protected. |
 | LP-001005 | Create OTP delivery provider port | DONE | `development` | Release / QA Agent | Merged as ba39479; focused port tests passed; no provider selected. |
-| LP-001008 | Implement OTP request rate limiting | IMPLEMENTATION_COMPLETE | `agent/backend/LP-001008-rate-limiting` | Backend Developer Agent | Atomic rate-limit port/policy and NON_PRODUCTION adapter implemented. |
+| LP-001008 | Implement OTP request rate limiting | REVIEW | `agent/review/LP-001008-rate-limiting` | Review Agent | Independent review approved; production backend remains deferred. |
 
 ## AI Engineering Framework
 
