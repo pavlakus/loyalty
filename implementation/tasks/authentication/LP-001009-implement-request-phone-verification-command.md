@@ -6,7 +6,7 @@
 
 ## 2. Status
 
-`DRAFT`
+`READY`
 
 ## 3. Category
 
@@ -23,6 +23,11 @@
 ## 6. Module Implementation Package
 
 `MIP-001-authentication.md`
+
+## Dependencies
+
+- LP-001002, LP-001004, LP-001005, and LP-001008 — `DONE`; normalization, OTP security, delivery port, and rate-limit policy.
+- Challenge persistence is represented by an Authentication-owned port with a NON_PRODUCTION adapter only; production Database/Migration remains deferred.
 
 ## 7. Business Objective
 
