@@ -1,7 +1,7 @@
 # LP-003002 — Define Business API Contracts
 
 ## Status
-`READY_FOR_MERGE`
+`DONE`
 
 ## Role and Scope
 - Category: CONTRACT
