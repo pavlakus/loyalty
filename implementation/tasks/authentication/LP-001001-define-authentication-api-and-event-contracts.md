@@ -6,7 +6,7 @@
 
 ## 2. Status
 
-`DRAFT`
+`READY`
 
 ## 3. Category
 
@@ -23,6 +23,12 @@
 ## 6. Module Implementation Package
 
 `MIP-001-authentication.md`
+
+## Dependencies
+
+- LP-000006, LP-000007, and LP-000008 — `DONE`; environment, API response/error, and Event foundations.
+- LP-002001 and LP-002002 — `DONE`; Customer identity ownership and Customer API/Event boundaries.
+- LP-000009 and LP-000016 are not required for this contract-only scope; their infrastructure validation remains deferred.
 
 ## 7. Business Objective
 
