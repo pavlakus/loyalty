@@ -40,7 +40,7 @@
 | LP-002013 | Implement Customer anonymization command | DONE | `agent/security/LP-002013-customer-anonymization-command` | REVIEW APPROVED; QA APPROVED; SECURITY APPROVED | Merged into `development` at `7412f3f`; scoped post-merge validation recorded; API build/focused anonymization test remain blocked by the known dependency baseline. |
 | LP-002015 | Implement Customer audit records | DONE | `agent/security/LP-002015-customer-audit-records` | REVIEW APPROVED; QA APPROVED; SECURITY APPROVED | Merged into `development` at `74302f3`; scoped post-merge validation recorded; API build/focused audit test remain blocked by the known dependency baseline. |
 | LP-002016 | Implement Customer observability and privacy-safe logging | DONE | `agent/security/LP-002016-customer-observability-privacy-logging` | REVIEW APPROVED; QA APPROVED; SECURITY APPROVED | Merged into `development` at `e62d417`; scoped post-merge validation recorded; API build/focused observability test remain blocked by the known dependency baseline. |
-| LP-002018 | Add Customer API and contract tests | READY_FOR_MERGE | `agent/security/LP-002018-customer-api-contract-tests` | REVIEW APPROVED; QA APPROVED; SECURITY APPROVED | Security reviewed contract boundary; API and Event contract suites plus FCR validation pass. |
+| LP-002018 | Add Customer API and contract tests | DONE | `agent/security/LP-002018-customer-api-contract-tests` | REVIEW APPROVED; QA APPROVED; SECURITY APPROVED | Merged into `development` at `d7fa058`; API/Event contract suites and FCR validation pass; global API baseline limitation remains unrelated and documented. |
 
 ## AI Engineering Framework
 
