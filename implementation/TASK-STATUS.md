@@ -31,6 +31,7 @@
 | LP-002006 | Implement Customer profile validation | DONE | `agent/security/LP-002006-customer-profile-validation` | APPROVED; QA APPROVED; SECURITY APPROVED | Merged into development at `a923f9c`; post-merge profile/build/lint/typecheck/FCR validation passed. Root test remains affected only by unrelated FCR runner baseline behavior. |
 | LP-002012 | Design Customer anonymization strategy | DONE | `agent/security/LP-002012-customer-anonymization` | APPROVED; QA APPROVED; SECURITY APPROVED | Merged into `development` at `1ae7cf5`; post-merge scoped validation passed; full repository build/typecheck/FCR test baseline remains dependency-install blocked as documented. |
 | LP-002010 | Implement Customer preferred language | DONE | `agent/security/LP-002010-customer-preferred-language` | APPROVED; QA APPROVED; SECURITY APPROVED | Merged into `development` at `3a9bdc`; scoped post-merge validation passed; API build/focused resolver test remain blocked by the known dependency baseline, as evidenced. |
+| LP-002004 | Implement atomic Customer registration | TASK_PREPARATION | `agent/task-preparation/LP-002004-customer-registration` | Pending preparation | Customer registration follows the approved verified-identity, unique-key, atomic and idempotent rules in MIP-002; deferred infrastructure tasks remain outside this product scope. |
 
 ## AI Engineering Framework
 
