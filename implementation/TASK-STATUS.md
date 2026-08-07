@@ -62,7 +62,7 @@
 
 | Task | Title | Status | Branch | Review | Notes |
 |---|---|---|---|---|---|
-| LP-005001 | Define Loyalty Program aggregate and lifecycle | READY |  | Pending | Product Owner lifecycle decision recorded in `docs/blueprint/26-product-decisions.md`; domain-only implementation may begin. |
+| LP-005001 | Define Loyalty Program aggregate and lifecycle | IMPLEMENTATION_COMPLETE | `agent/backend/LP-005001-loyalty-program-aggregate` | Pending | Aggregate/lifecycle implementation and focused tests complete; package server tests have two unrelated sandbox bind failures documented in evidence. |
 | LP-005002 | Define Loyalty Program API and event contracts | DRAFT |  | Pending | Depends on LP-005001. |
 | LP-005003 | Define Loyalty Program configuration model | DRAFT |  | Pending | Depends on LP-005001. |
 | LP-005004 | Implement configuration versioning and effective history | DRAFT |  | Pending | Depends on LP-005003; non-persistence contract until database foundation. |
