@@ -33,6 +33,7 @@
 | LP-002010 | Implement Customer preferred language | DONE | `agent/security/LP-002010-customer-preferred-language` | APPROVED; QA APPROVED; SECURITY APPROVED | Merged into `development` at `3a9bdc`; scoped post-merge validation passed; API build/focused resolver test remain blocked by the known dependency baseline, as evidenced. |
 | LP-002004 | Implement atomic Customer registration | DONE | `agent/security/LP-002004-customer-registration` | APPROVED; QA APPROVED; SECURITY APPROVED | Merged into `development` at `9f8aa69`; scoped post-merge validation passed; API build/focused registration test remain blocked by the known dependency baseline, as evidenced. |
 | LP-002005 | Implement verified identity Customer resolution | DONE | `agent/security/LP-002005-identity-resolution` | APPROVED; QA APPROVED; SECURITY APPROVED | Merged into `development` at `3465286`; scoped post-merge validation passed; API build/focused identity test remain blocked by the known dependency baseline, as evidenced. |
+| LP-002007 | Implement current Customer profile query | TASK_PREPARATION | `agent/task-preparation/LP-002007-customer-profile-query` | Pending preparation | Customer-owned current-user query follows approved privacy-safe profile and permission contracts; deferred infrastructure tasks remain outside this product scope. |
 
 ## AI Engineering Framework
 
