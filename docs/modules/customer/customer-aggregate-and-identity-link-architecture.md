@@ -42,6 +42,8 @@ Lifecycle suspension and reactivation use an authenticated Customer context and 
 
 Customer audit records use the Blueprint fields actor, role, nullable Business context, action, target entity, reason, canonical UTC timestamp, and request identifier. They are append-only and privacy-safe; raw profile values, credentials, and secrets are not accepted by the Customer audit boundary.
 
+Customer observability uses provider-neutral structured logging and the exact MIP metric names. Logs allow only event, outcome, correlation ID, Customer ID, duration, and error code; metric labels reject personal or secret identifiers. Provider binding belongs to platform infrastructure and is not selected by the Customer module.
+
 - A new Customer is created only after successful Authentication phone verification.
 - `active` Customers may use approved profile operations.
 - `suspended` Customers cannot perform operations prohibited by the suspension policy; recovery is an approved transition back to `active`.
