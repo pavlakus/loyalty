@@ -42,3 +42,7 @@ Mandatory runtime, database, RLS, privacy execution, concurrency, and contract t
 ## Rollback and readiness
 
 Rollback is deletion/reversion of the two LP-002012 documentation/evidence files before merge; no runtime or data state is affected. Implementation is complete and ready for independent review.
+
+## Review handoff
+
+The isolated implementation commit is `7512256`. The working tree is clean, the diff is limited to the approved Customer documentation and LP-002012 evidence, and the task is ready for an independent Solution Architect review.
