@@ -92,3 +92,11 @@ export {
   type CustomerProfileUpdatedPayload,
   type CustomerRegisteredPayload,
 } from "./customer.js";
+
+export {
+  LOYALTY_PROGRAM_EVENT_TYPES,
+  validateLoyaltyProgramEventPayload,
+  type LoyaltyProgramEventPayload,
+  type LoyaltyProgramEventStatus,
+  type LoyaltyProgramEventType,
+} from "./loyalty-program.js";

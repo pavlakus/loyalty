@@ -364,6 +364,19 @@ The canonical Loyalty Program lifecycle is `DRAFT`, `ACTIVE`, `SUSPENDED`, and `
 
 This decision resolves the LP-005001 preparation finding and does not define behavior owned by Membership, Reward, Redemption, Database, or RLS tasks.
 
+## Loyalty Program API Contract Decision — 2026-08-08
+
+LP-005002 exposes only the approved LP-005001 aggregate through the base Program contract.
+
+- Create requests contain only `brandId`; the server creates the Program in `DRAFT` and supplies `id`, `createdAt`, and `updatedAt`.
+- Program responses contain `id`, `brandId`, `status`, `createdAt`, and `updatedAt`.
+- These aggregate fields are not mutable through generic update payloads; LP-005001 defines no additional mutable metadata, so no generic update operation is introduced.
+- Lifecycle changes use explicit operations: activate, suspend, reactivate, and close. Arbitrary status mutation is rejected.
+- Base Program contracts do not contain configuration, Membership, Customer, account, ledger, balance, reward, or infrastructure fields.
+- Program lifecycle events use the existing event envelope and approved event names. `LoyaltyProgramDeactivated` carries the resulting `SUSPENDED` or `CLOSED` status so consumers can distinguish transitions without inventing a competing event name.
+
+This decision defines transport contracts only and does not change aggregate ownership or configuration responsibilities.
+
 When a Product Decision supersedes an earlier architectural assumption, the corresponding Blueprint documents should be updated to preserve a single authoritative interpretation.
 
 PD-017

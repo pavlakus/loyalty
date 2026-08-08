@@ -63,3 +63,14 @@ export {
   type CreateBusinessRequest,
   type UpdateBusinessRequest,
 } from "./business.js";
+
+export {
+  LoyaltyProgramContractValidationError,
+  validateCreateLoyaltyProgramRequest,
+  validateLoyaltyProgramLifecycleCommand,
+  validateLoyaltyProgramResponse,
+  type CreateLoyaltyProgramRequest,
+  type LoyaltyProgramLifecycleCommand,
+  type LoyaltyProgramResponse,
+  type LoyaltyProgramStatus,
+} from "./loyalty-program.js";
