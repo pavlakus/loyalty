@@ -109,3 +109,4 @@ export {
 } from "./membership.js";
 
 export { RECEIPT_EVENT_TYPES, validateReceiptEventPayload, type ReceiptEventPayload, type ReceiptEventType } from "./receipt.js";
+export { REDEMPTION_EVENT_TYPES, validateRedemptionEventPayload, type RedemptionEventPayload, type RedemptionEventType } from "./redemption.js";
