@@ -86,7 +86,7 @@
 |---|---|---|---|---|---|
 | LP-006001 | Define Membership aggregate, identity, and lifecycle | DONE | `agent/backend/LP-006001-membership-aggregate` | Review, QA, and Security approved | Merged into development; post-merge validation passed; accounts, Authentication, persistence/RLS, and downstream behavior remain deferred. |
 | LP-006002 | Define Membership API and event contracts | DONE | `agent/contracts/LP-006002-membership-contracts` | Review, QA, and Security approved | Merged into development; contract and aggregate validation passed; Authentication and persistence/RLS remain deferred. |
-| LP-006003 | Implement Join Loyalty Program command contract | DRAFT |  | Pending | Depends on aggregate/API, Authentication session integration, and lifecycle/rejoin semantics. |
+| LP-006003 | Implement Join Loyalty Program command contract | READY_FOR_MERGE | `agent/backend/LP-006003-join-command` | Review, QA, and Security approved | Join boundary validation passed; session runtime, persistence/RLS, accounts, and downstream automation remain deferred. |
 | LP-006004 | Implement enrollment idempotency and duplicate prevention contract | DRAFT |  | Pending | Provider-neutral contract can use test adapters; production atomicity depends on persistence/RLS. |
 | LP-006005 | Define Reward Account and XP Account relationship contracts | DONE | `agent/backend/LP-006005-account-relationships` | Review, QA, and Security approved | Merged into development; relationship validation passed; balances, ledgers, and persistence/RLS remain deferred. |
 | LP-006006 | Define initial Status assignment contract | DONE | `agent/backend/LP-006006-initial-status` | Review, QA, and Security approved | Merged into development; assignment validation passed; progression, Benefits, accounts, and persistence/RLS remain deferred. |
@@ -94,7 +94,7 @@
 | LP-006008 | Define Membership Year boundary contracts | DONE | `agent/backend/LP-006008-membership-year-contracts` | Review, QA, and Security approved | Merged into development; Membership Year boundary validation passed; calendar derivation and renewal execution remain deferred. |
 | LP-006009 | Define public Membership token and QR contracts | DONE | `agent/backend/LP-006009-membership-public-token` | Review, QA, and Security approved | Merged into development; opaque token validation passed; generation, persistence, encoding, and resolution remain deferred. |
 | LP-006010 | Define Membership read and list contracts | DONE | `agent/contracts/LP-006010-membership-read-list` | Review, QA, and Security approved | Merged into development; read/list contract validation passed; repositories, authorization, and persistence/RLS remain deferred. |
-| LP-006011 | Add Membership domain, API, privacy, and security tests | DRAFT |  | Pending | Depends on executable Membership contracts. |
+| LP-006011 | Add Membership domain, API, privacy, and security tests | DRAFT |  | Pending | Depends on executable Membership command/idempotency contracts and other Membership boundaries. |
 | LP-006012 | Perform Membership architecture review | DRAFT |  | Pending | Depends on LP-006011. |
 | LP-006013 | Perform Membership QA, privacy, and security gate | DRAFT |  | Pending | Depends on LP-006012. |
 | LP-006014 | Implement Membership persistence and RLS | BLOCKED |  | Pending infrastructure | Depends on LP-000009 and LP-000016 plus executable Membership contracts. |
