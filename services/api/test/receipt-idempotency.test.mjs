@@ -1,0 +1,6 @@
+import assert from "node:assert/strict";
+import test from "node:test";
+import { InMemoryReceiptIdempotencyStore, ReceiptIdempotencyError } from "../dist/modules/receipt/receipt-idempotency.js";
+const input = { businessId: "business-1", sourceId: "source-1", idempotencyKey: "key-1", membershipId: "membership-1", amountMinor: 1000, currency: "EUR", occurredAt: "2026-08-08T10:00:00.000Z" };
+test("replays one Receipt result for the same scoped source and request", () => { const store = new InMemoryReceiptIdempotencyStore(); let calls = 0; const first = store.executeOnce(input, "receipt-1", () => { calls += 1; return { accepted: true }; }); const replay = store.executeOnce(input, "receipt-1", () => { calls += 1; return { accepted: true }; }); assert.equal(first.replayed, false); assert.equal(replay.replayed, true); assert.equal(calls, 1); assert.equal(store.environment, "NON_PRODUCTION"); });
+test("rejects same-key different-request reuse without exposing raw inputs", () => { const store = new InMemoryReceiptIdempotencyStore(); store.executeOnce(input, "receipt-1", () => null); assert.throws(() => store.executeOnce({ ...input, amountMinor: 1001 }, "receipt-2", () => null), (error) => error instanceof ReceiptIdempotencyError && error.code === "IDEMPOTENCY_CONFLICT" && !error.message.includes(input.sourceId)); });
