@@ -389,6 +389,19 @@ LP-005005 uses integer minor-unit monetary amounts and integer Reward Points. Re
 
 LP-005005 does not implement receipt ingestion, ledger persistence, balance mutation, redemption, Membership behavior, or FX conversion.
 
+## XP Rule Configuration Decision — 2026-08-08
+
+LP-005008 treats XP as separate non-monetary progression experience. XP amounts are non-negative whole integers and are never redeemable, transferred, converted to Reward Points, or mixed with Reward Point balances.
+
+- Initial rule types are `VISIT`, `PURCHASE`, `PURCHASE_AMOUNT_THRESHOLD`, and `VISIT_FREQUENCY`.
+- Visit-frequency windows use rolling calendar-day durations with inclusive start and end boundaries.
+- Enabled rules are evaluated independently and all qualifying awards are additive; there is no precedence or first-match behavior.
+- Purchase thresholds use integer minor-unit amounts and the effective Program currency context without FX conversion.
+- Every result carries the source-activity identity, rule identity, and immutable Program configuration-version identity so later XP ledger processing can enforce idempotency and history binding.
+- Disabled rules affect only evaluations using effective versions where they are disabled; historical decisions are not recalculated.
+
+LP-005008 does not implement activity ingestion, XP Account/Ledger persistence, Status promotion, Receipt processing, database queries, or RLS.
+
 When a Product Decision supersedes an earlier architectural assumption, the corresponding Blueprint documents should be updated to preserve a single authoritative interpretation.
 
 PD-017
