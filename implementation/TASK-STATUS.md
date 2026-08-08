@@ -115,7 +115,7 @@
 | Task | Title | Status | Branch | Review | Notes |
 |---|---|---|---|---|---|
 | LP-008001 | Define deterministic Reward Points earning decision | DONE | `agent/backend/LP-008001-reward-earning-decision` | Review, QA, and Security approved | Merged as `d3db64c255e0af97f656ec2fed32dae3fc6d1633`; post-merge earning validation passed 2/2; no ledger mutation or production persistence claim. |
-| LP-008002 | Define Reward Ledger transaction and Reward Account projection contracts | READY_FOR_MERGE | `agent/backend/LP-008002-reward-ledger-contracts` | Review, QA, and Security approved | Ledger/projection validation passed 2/2; persistence/RLS/distributed enforcement remains deferred. |
+| LP-008002 | Define Reward Ledger transaction and Reward Account projection contracts | DONE | `agent/backend/LP-008002-reward-ledger-contracts` | Review, QA, and Security approved | Merged as `b778f8c4dd0fe8f497f304e77435713c1709e28a`; post-merge ledger/projection validation passed 2/2; persistence/RLS/distributed enforcement remains deferred. |
 | LP-008003 | Implement pending and expiration decision contracts | DRAFT |  | Pending | Depends on LP-008001, LP-008002, LP-005007. |
 | LP-008004 | Add Reward earning, ledger, idempotency, and security tests | DRAFT |  | Pending | Depends on LP-008001–LP-008003. |
 | LP-008005 | Implement Reward Ledger persistence, RLS, and concurrency enforcement | BLOCKED |  | Pending infrastructure | Depends on LP-000009 and LP-000016. |
