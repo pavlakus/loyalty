@@ -402,6 +402,14 @@ LP-005008 treats XP as separate non-monetary progression experience. XP amounts 
 
 LP-005008 does not implement activity ingestion, XP Account/Ledger persistence, Status promotion, Receipt processing, database queries, or RLS.
 
+## MVP Benefit Definition Decision — 2026-08-08
+
+LP-005010 defines a constrained typed Status Benefit catalog, not a universal Benefit Engine. Benefit Definitions are immutable Program configuration owned by a configuration version; Customer-specific assignment belongs to Membership/Status capabilities.
+
+The initial Benefit types are `REWARD_POINT_MULTIPLIER`, `POINT_EXPIRATION_EXTENSION`, `REDEMPTION_LIMIT_OVERRIDE`, and `PROMOTION_ACCESS`, each with type-specific validated configuration. Multipliers and percentages use deterministic decimal-safe representations; expiration extensions use positive calendar days; promotion access uses stable non-empty keys.
+
+LP-005010 does not define stacking/conflict behavior, arbitrary expressions, scripts, reward grants, notification, automation, assignment, persistence, or RLS behavior. Those remain owned by their respective domains or future Product Decisions.
+
 When a Product Decision supersedes an earlier architectural assumption, the corresponding Blueprint documents should be updated to preserve a single authoritative interpretation.
 
 PD-017
