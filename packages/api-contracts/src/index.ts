@@ -74,3 +74,14 @@ export {
   type LoyaltyProgramResponse,
   type LoyaltyProgramStatus,
 } from "./loyalty-program.js";
+
+export {
+  MembershipContractValidationError,
+  validateCreateMembershipRequest,
+  validateMembershipLifecycleCommand,
+  validateMembershipResponse,
+  type CreateMembershipRequest,
+  type MembershipLifecycleCommand,
+  type MembershipResponse,
+  type MembershipStatus,
+} from "./membership.js";
