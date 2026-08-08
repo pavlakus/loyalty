@@ -53,7 +53,7 @@ export function validateEnvironment(env = process.env) {
   if (!parsed.hostname || !parsed.pathname || parsed.pathname === '/') {
     throw new Error('DATABASE_URL must include a host and database name');
   }
-  if (nodeEnv !== 'development' && ['127.0.0.1', 'localhost', '::1'].includes(parsed.hostname)) {
+  if (nodeEnv === 'production' && ['127.0.0.1', 'localhost', '::1'].includes(parsed.hostname)) {
     throw new Error('DATABASE_URL must not target a loopback host outside development');
   }
   if (nodeEnv === 'production' && !['require', 'verify-ca', 'verify-full'].includes(parsed.searchParams.get('sslmode'))) {

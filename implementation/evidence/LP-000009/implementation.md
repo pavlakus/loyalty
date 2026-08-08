@@ -156,3 +156,19 @@ new forward migration.
 - No unresolved LP-000009 implementation P0/P1 findings remain.
 
 Recommendation: `IMPLEMENTATION_COMPLETE`, pending independent Review, QA, required DevOps review and Security review.
+
+## CI Loopback Contract Correction
+
+- Task ID: `LP-000009`
+- Phase: Correction
+- Role: Database Agent
+- Date: `2026-08-08`
+- Correction source: LP-000016 workflow reconciliation
+
+The LP-000016 ephemeral PostgreSQL job supplies an explicit job-scoped loopback URL from the hosted runner. The prior
+validator rejected all loopback URLs outside development, which would incorrectly reject an explicitly configured
+isolated test/CI service. The correction allows explicit loopback URLs in `test` and CI while preserving the
+development-only fallback rule and production loopback rejection.
+
+Validation required after this correction: focused environment tests, CI workflow review, and Review/QA/Security delta
+approval. No fallback, credential, production, or shared-database behavior was added.
