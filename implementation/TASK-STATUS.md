@@ -114,7 +114,7 @@
 
 | Task | Title | Status | Branch | Review | Notes |
 |---|---|---|---|---|---|
-| LP-008001 | Define deterministic Reward Points earning decision | READY | `agent/backend/LP-008001-reward-earning-decision` | Independent review, QA, Security required | Depends on approved Program rules/versioning and Receipt baseline; no ledger mutation. |
+| LP-008001 | Define deterministic Reward Points earning decision | READY_FOR_MERGE | `agent/backend/LP-008001-reward-earning-decision` | Review, QA, and Security approved | Earning decision validation passed 2/2; no ledger mutation or production persistence claim. |
 | LP-008002 | Define Reward Ledger transaction and Reward Account projection contracts | DRAFT |  | Pending | Depends on LP-008001. |
 | LP-008003 | Implement pending and expiration decision contracts | DRAFT |  | Pending | Depends on LP-008001, LP-008002, LP-005007. |
 | LP-008004 | Add Reward earning, ledger, idempotency, and security tests | DRAFT |  | Pending | Depends on LP-008001–LP-008003. |

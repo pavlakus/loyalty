@@ -1,0 +1,6 @@
+import assert from "node:assert/strict";
+import test from "node:test";
+import { evaluateRewardEarning, RewardEarningDecisionError } from "../dist/modules/reward/reward-earning-decision.js";
+const rules = { programConfigurationVersionId: "program-version-1", currency: "EUR", rules: [{ id: "rule-1", minimumAmountMinor: 1000n, maximumAmountMinor: undefined, amountIntervalMinor: 1000n, pointsGranted: 10n }] };
+test("binds deterministic Reward Points decision to activity, Membership, and Program version", () => { const result = evaluateRewardEarning(rules, { activityId: "receipt-1", membershipId: "membership-1", amountMinor: 2500n, currency: "EUR" }); assert.deepEqual(result, { activityId: "receipt-1", membershipId: "membership-1", programConfigurationVersionId: "program-version-1", ruleId: "rule-1", pointsAwarded: 20n, currency: "EUR" }); });
+test("returns zero below threshold and rejects missing source identity", () => { const threshold = { ...rules, rules: [{ ...rules.rules[0], minimumAmountMinor: 5000n }] }; assert.equal(evaluateRewardEarning(threshold, { activityId: "receipt-1", membershipId: "membership-1", amountMinor: 1000n, currency: "EUR" }).pointsAwarded, 0n); assert.throws(() => evaluateRewardEarning(rules, { activityId: "", membershipId: "membership-1", amountMinor: 1000n, currency: "EUR" }), RewardEarningDecisionError); });
