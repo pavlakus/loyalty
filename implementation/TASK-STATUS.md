@@ -19,7 +19,7 @@
 | LP-000006 | Implement Environment Configuration Validation | DONE | `agent/security/LP-000006-environment-config` | APPROVED; QA APPROVED; SECURITY APPROVED | Merged into `development` at `2de52f9`; post-merge validation passed; release and post-merge evidence recorded. |
 | LP-000007 | Create Standard API Response and Error Contracts | DONE | `agent/qa/LP-000007-api-contracts` | APPROVED; QA APPROVED | Merged into `development` at `5c9a1fd`; post-merge validation passed; release and post-merge evidence recorded. |
 | LP-000008 | Create Event Contract Foundation | DONE | `agent/qa/LP-000008-event-contracts` | APPROVED; QA APPROVED | Merged into `development` at `73c4b6b`; post-merge validation passed; release and post-merge evidence recorded. |
-| LP-000009 | Create Database Migration Framework | READY_FOR_MERGE | `agent/security/LP-000009-database-migrations-recovery` | REVIEW APPROVED; QA APPROVED; SECURITY APPROVED | ADR-010 accepted; implementation `a9d5682`; PostgreSQL validation passed; no unresolved P0/P1 or Critical/High findings. |
+| LP-000009 | Create Database Migration Framework | DONE | `agent/security/LP-000009-database-migrations-recovery` | REVIEW APPROVED; QA APPROVED; SECURITY APPROVED | Merged into `development` at `02a039b`; clean/upgrade/status/immutability validation passed against isolated PostgreSQL; post-merge evidence recorded. Inherited lint P2 remains documented outside task scope. |
 | LP-000016 | Create CI Pull Request Pipeline | READY | `agent/task-preparation/LP-000016-ci-pipeline` | Pending implementation | GitHub Actions provider established; preparation passed; owns ephemeral PostgreSQL CI foundation for LP-000009. |
 
 ## Customer Product Module
