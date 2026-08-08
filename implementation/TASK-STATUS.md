@@ -78,7 +78,7 @@
 | LP-005014 | Implement Loyalty Program persistence and RLS | BLOCKED |  | Pending | Explicitly blocked by LP-000009 and LP-000016 plus Program domain prerequisites. |
 | LP-005015 | Add Loyalty Program domain, API, and security contract tests | DONE | `agent/qa/LP-005015-program-contract-tests` | Completed | Merged into development; 29 focused Program tests and post-merge validation passed; DB/RLS remains deferred. |
 | LP-005016 | Perform Loyalty Program architecture review | DONE | `agent/architecture/LP-005016-program-review` | Completed | Independent architecture review approved; no unresolved P0/P1 findings. |
-| LP-005017 | Perform Loyalty Program QA and security gate | READY_FOR_MERGE | `agent/qa/LP-005017-program-qa-security-gate` | Pending | QA and Security approved; 29 focused Program tests passed; LP-005014 remains deferred. |
+| LP-005017 | Perform Loyalty Program QA and security gate | DONE | `agent/qa/LP-005017-program-qa-security-gate` | Completed | Merged into development; 29 focused Program tests and post-merge validation passed; LP-005014 remains deferred. |
 
 ## AI Engineering Framework
 
