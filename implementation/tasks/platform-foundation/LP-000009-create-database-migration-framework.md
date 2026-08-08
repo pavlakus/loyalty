@@ -16,7 +16,7 @@
 
 ## Status
 
-`BLOCKED`
+`QA`
 
 ## Objective
 
