@@ -100,3 +100,10 @@ export {
   type LoyaltyProgramEventStatus,
   type LoyaltyProgramEventType,
 } from "./loyalty-program.js";
+
+export {
+  MEMBERSHIP_EVENT_TYPES,
+  validateMembershipEventPayload,
+  type MembershipEventPayload,
+  type MembershipEventType,
+} from "./membership.js";
