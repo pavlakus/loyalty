@@ -126,7 +126,7 @@
 |---|---|---|---|---|---|
 | LP-009001 | Define immutable XP transaction and XP Account projection contracts | DONE | `agent/backend/LP-009001-xp-ledger-contracts` | Review, QA, and Security approved | Merged as `cb890383ba5334215aaaf16f615c2037c0c33c9c`; post-merge XP ledger/projection validation passed 2/2; persistence/RLS remains deferred. |
 | LP-009002 | Implement deterministic XP earning and idempotency contract | DONE | `agent/backend/LP-009002-xp-earning` | Review, QA, and Security approved | Merged as `66af212f481c4b3d604458041ea8675416ae0f7b`; post-merge XP earning tests passed 2/2; persistent/distributed enforcement remains deferred. |
-| LP-009003 | Implement Status evaluation and progression contract | DRAFT |  | Pending | Depends on LP-009001, LP-009002, LP-005009, LP-006008, LP-005010. |
+| LP-009003 | Implement Status evaluation and progression contract | READY_FOR_MERGE | `agent/backend/LP-009003-status-progression` | Review, QA, and Security approved | Status progression validation passed 2/2; no Customer mutation or Benefit execution. |
 | LP-009004 | Add XP, Status, Benefit-reference, privacy, and security tests | DRAFT |  | Pending | Depends on LP-009001–LP-009003. |
 | LP-009005 | Implement XP/Status persistence, RLS, and distributed concurrency | BLOCKED |  | Pending infrastructure | Depends on LP-000009 and LP-000016. |
 
