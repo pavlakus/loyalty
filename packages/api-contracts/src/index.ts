@@ -79,9 +79,12 @@ export {
   MembershipContractValidationError,
   validateCreateMembershipRequest,
   validateMembershipLifecycleCommand,
+  validateMembershipListResponse,
   validateMembershipResponse,
   type CreateMembershipRequest,
   type MembershipLifecycleCommand,
   type MembershipResponse,
+  type MembershipListItem,
+  type MembershipListResponse,
   type MembershipStatus,
 } from "./membership.js";

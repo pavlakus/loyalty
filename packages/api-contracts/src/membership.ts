@@ -22,6 +22,18 @@ export interface MembershipResponse {
   readonly welcomeActionsPending: boolean;
 }
 
+export interface MembershipListItem {
+  readonly membershipId: string;
+  readonly brandId: string;
+  readonly loyaltyProgramId: string;
+  readonly status: MembershipStatus;
+}
+
+export interface MembershipListResponse {
+  readonly memberships: readonly MembershipListItem[];
+  readonly nextCursor: string | null;
+}
+
 export class MembershipContractValidationError extends Error {
   constructor(readonly field: string, message: string) {
     super(`${field}: ${message}`);
@@ -79,4 +91,19 @@ export function validateMembershipResponse(value: unknown): MembershipResponse {
 export function validateMembershipLifecycleCommand(value: unknown): MembershipLifecycleCommand {
   if (value !== "suspend" && value !== "reactivate" && value !== "close") throw new MembershipContractValidationError("command", "must be an explicit Membership lifecycle command");
   return value;
+}
+
+export function validateMembershipListResponse(value: unknown): MembershipListResponse {
+  const input = record(value, "response");
+  exactFields(input, ["memberships", "nextCursor"]);
+  if (!Array.isArray(input.memberships)) throw new MembershipContractValidationError("memberships", "must be an array");
+  if (input.nextCursor !== null && (typeof input.nextCursor !== "string" || input.nextCursor.trim() === "")) throw new MembershipContractValidationError("nextCursor", "must be null or a non-empty cursor");
+  const memberships = input.memberships.map((raw, index) => {
+    const item = record(raw, `memberships[${index}]`);
+    exactFields(item, ["membershipId", "brandId", "loyaltyProgramId", "status"]);
+    if (item.status !== "ACTIVE" && item.status !== "SUSPENDED" && item.status !== "CLOSED") throw new MembershipContractValidationError(`memberships[${index}].status`, "must be an approved Membership status");
+    const status = item.status as MembershipStatus;
+    return { membershipId: identifier(item.membershipId, `memberships[${index}].membershipId`), brandId: identifier(item.brandId, `memberships[${index}].brandId`), loyaltyProgramId: identifier(item.loyaltyProgramId, `memberships[${index}].loyaltyProgramId`), status };
+  });
+  return { memberships, nextCursor: input.nextCursor === null ? null : (input.nextCursor as string).trim() };
 }
