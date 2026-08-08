@@ -77,7 +77,7 @@
 | LP-005013 | Implement Loyalty Program audit and event requirements | DONE | `agent/backend/LP-005013-program-audit-events` | Completed | Merged into development; post-merge validation passed. |
 | LP-005014 | Implement Loyalty Program persistence and RLS | BLOCKED |  | Pending | Explicitly blocked by LP-000009 and LP-000016 plus Program domain prerequisites. |
 | LP-005015 | Add Loyalty Program domain, API, and security contract tests | DONE | `agent/qa/LP-005015-program-contract-tests` | Completed | Merged into development; 29 focused Program tests and post-merge validation passed; DB/RLS remains deferred. |
-| LP-005016 | Perform Loyalty Program architecture review | DRAFT |  | Pending | Depends on LP-005015. |
+| LP-005016 | Perform Loyalty Program architecture review | DONE | `agent/architecture/LP-005016-program-review` | Completed | Independent architecture review approved; no unresolved P0/P1 findings. |
 | LP-005017 | Perform Loyalty Program QA and security gate | DRAFT |  | Pending | Depends on LP-005016. |
 
 ## AI Engineering Framework
