@@ -377,6 +377,20 @@ LP-005002 exposes only the approved LP-005001 aggregate through the base Program
 
 This decision defines transport contracts only and does not change aggregate ownership or configuration responsibilities.
 
+## Membership Lifecycle and Rejoin Decision — 2026-08-08
+
+Membership is the durable relationship identified by the `customerId + loyaltyProgramId` pair. A Customer may have at most one Membership record for a Program; a closed Membership cannot be replaced by a new join in the initial product model.
+
+- A newly created Membership starts `ACTIVE`.
+- Canonical states are `ACTIVE`, `SUSPENDED`, and `CLOSED`; generic Blueprint `INACTIVE` wording is reconciled to the applicable non-active semantics and is not a fourth initial state.
+- Allowed transitions are `ACTIVE → SUSPENDED`, `ACTIVE → CLOSED`, `SUSPENDED → ACTIVE`, and `SUSPENDED → CLOSED`. `CLOSED` is terminal.
+- Suspension and reactivation preserve Membership ID, join date, Reward/XP/Status/history references, and historical records. They do not reset balances or progression.
+- Closed Memberships preserve history and cannot rejoin or be replaced in the initial MVP. Future rejoin requires a separate Product Decision covering balances, XP, Status, Benefits, join date, account reuse, and history.
+- Creation requires valid Customer, active Loyalty Program, operational/active Brand where applicable, and no existing Customer/Program Membership. Authentication session enforcement belongs to the application/API integration layer.
+- Membership lifecycle events use approved repository names: `MembershipCreated`, `MembershipActivated` for activation/reactivation, `MembershipSuspended`, and `MembershipClosed`; events carry stable identifiers and no unnecessary Customer PII.
+
+LP-006001 implements only these aggregate and identity/lifecycle rules. Account balances, Status progression, earning, redemption, persistence, RLS, Authentication sessions, and transaction processing remain separate capabilities.
+
 ## Reward Rule Configuration Decision — 2026-08-08
 
 LP-005005 uses integer minor-unit monetary amounts and integer Reward Points. Reward Rules use the effective Business-derived currency context of the Loyalty Program; individual rules do not carry independent currencies and no FX conversion is introduced.

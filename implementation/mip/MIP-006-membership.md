@@ -25,9 +25,9 @@ Represent a Customer’s participation in a Loyalty Program while preserving ten
 - Events use approved names: `LoyaltyProgramJoinRequested`, `MembershipCreated`, `MembershipActivated`, `MembershipBecameInactive`, `MembershipSuspended`, `MembershipClosed`, `CustomerJoinedLoyaltyProgram`, `MembershipYearStarted`, and `MembershipYearCompleted`.
 - Public Membership tokens/QR representations must not contain phone numbers or internal database identifiers.
 
-## Known Blueprint Gap
+## Reconciled Lifecycle Decision
 
-The Blueprint names Membership states `Created`, `Active`, `Inactive`, `Suspended`, and `Closed`, and describes a sequence, but does not define the complete transition matrix, reactivation rules, or whether a prior inactive/closed Membership permits a new join. These are required before lifecycle and rejoin behavior can be implemented safely. No task may infer them.
+The approved Membership Product Decision resolves the Blueprint wording: initial states are `ACTIVE`, `SUSPENDED`, and `CLOSED`; `ACTIVE ↔ SUSPENDED` is reversible, `CLOSED` is terminal, and the Customer/Program identity may occur only once. No replacement Membership is allowed after closure. Authentication, accounts, persistence, and RLS remain separate.
 
 ## Deferred Capability Areas
 
