@@ -27,6 +27,10 @@ test('production requires TLS and a non-loopback database', () => {
   assert.equal(validateEnvironment({ NODE_ENV: 'production', DATABASE_URL: 'postgresql://u:p@db.example/db?sslmode=verify-full' }).nodeEnv, 'production');
 });
 
+test('explicit test and CI URLs may target an isolated loopback service', () => {
+  assert.equal(validateEnvironment({ NODE_ENV: 'test', DATABASE_URL: 'postgresql://u:p@127.0.0.1/db' }).nodeEnv, 'test');
+});
+
 test('redaction removes credentials from URLs and configuration output', () => {
   assert.equal(redactSecrets('postgresql://user:secret@db.example/app'), 'postgresql://***:***@db.example/app');
   assert.equal(redactSecrets('DATABASE_URL=postgresql://user:secret@db.example/app'), 'DATABASE_URL=[REDACTED]');
