@@ -95,7 +95,7 @@
 | LP-006009 | Define public Membership token and QR contracts | DONE | `agent/backend/LP-006009-membership-public-token` | Review, QA, and Security approved | Merged into development; opaque token validation passed; generation, persistence, encoding, and resolution remain deferred. |
 | LP-006010 | Define Membership read and list contracts | DONE | `agent/contracts/LP-006010-membership-read-list` | Review, QA, and Security approved | Merged into development; read/list contract validation passed; repositories, authorization, and persistence/RLS remain deferred. |
 | LP-006011 | Add Membership domain, API, privacy, and security tests | DONE | `agent/qa/LP-006011-membership-tests` | Review, QA, and Security approved | Merged as `0bb118b`; post-merge focused validation passed 17/17; persistence/RLS, session runtime, and distributed production atomicity remain explicitly out of scope. |
-| LP-006012 | Perform Membership architecture review | READY_FOR_MERGE | `agent/architecture/LP-006012-membership-review` | Review, QA, and Security approved | Read-only Membership architecture review passed; no P0/P1 or Critical/High findings. |
+| LP-006012 | Perform Membership architecture review | DONE | `agent/architecture/LP-006012-membership-review` | Review, QA, and Security approved | Merged as `e32217e4f37f26dd74d45cc40ab8d76e584ee8e3`; post-merge evidence passed; no P0/P1 or Critical/High findings. |
 | LP-006013 | Perform Membership QA, privacy, and security gate | DRAFT |  | Pending | Depends on LP-006012. |
 | LP-006014 | Implement Membership persistence and RLS | BLOCKED |  | Pending infrastructure | Depends on LP-000009 and LP-000016 plus executable Membership contracts. |
 
