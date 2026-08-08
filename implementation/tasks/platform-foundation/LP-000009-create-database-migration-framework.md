@@ -16,7 +16,7 @@
 
 ## Status
 
-`READY`
+`BLOCKED`
 
 ## Objective
 
@@ -145,3 +145,11 @@ Revert the isolated LP-000009 code/configuration commit before applying its migr
 ## Definition of Done
 
 The task is complete only when the dedicated branch contains only LP-000009 changes, clean/upgrade/immutability and redaction tests pass, independent Review, QA, Security and required DevOps/Database approvals are recorded, merge and post-merge evidence exists, no P0/P1 findings remain, and status/index/specification records are synchronized.
+
+## Implementation Revalidation
+
+The preserved implementation was recovered onto the current development baseline on the isolated branch
+`agent/database/LP-000009-database-migrations-recovery`. Docker remains unavailable, but an isolated temporary
+PostgreSQL 14 cluster was provisioned locally for the mandatory migration validation. The migration hash recording
+path was corrected to account for `node-pg-migrate` reporting migration names without the `.sql` suffix. No
+business tables or runtime domain behavior were added.
