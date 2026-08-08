@@ -1,0 +1,7 @@
+import assert from "node:assert/strict";
+import test from "node:test";
+import { RedemptionContractValidationError, validateRedemptionLifecycleRequest, validateReserveRewardPointsRequest, validateRewardDefinitionContract } from "../dist/index.js";
+
+const definition = { rewardDefinitionId: "reward-1", type: "FIXED_DISCOUNT", name: "Coffee", pointsCost: 400, enabled: true, eligibleStatusLevelIds: [], requiredBenefitDefinitionIds: [], programConfigurationVersionId: "version-1" };
+test("validates fixed-point Reward Definition contracts and strict redemption requests", () => { assert.equal(validateRewardDefinitionContract(definition).pointsCost, 400); assert.deepEqual(validateReserveRewardPointsRequest({ membershipToken: "membership-token", rewardDefinitionId: "reward-1", receiptContextId: "receipt-1", idempotencyKey: "request-1" }).rewardDefinitionId, "reward-1"); assert.equal(validateRedemptionLifecycleRequest({ idempotencyKey: "confirm-1" }).idempotencyKey, "confirm-1"); });
+test("rejects commercial calculation, client ownership injection, and invalid costs", () => { assert.throws(() => validateRewardDefinitionContract({ ...definition, pointsCost: 0 }), RedemptionContractValidationError); assert.throws(() => validateReserveRewardPointsRequest({ membershipToken: "token", rewardDefinitionId: "reward-1", receiptContextId: "receipt-1", idempotencyKey: "key", membershipId: "other" }), RedemptionContractValidationError); assert.throws(() => validateRewardDefinitionContract({ ...definition, discountPercent: 10 }), RedemptionContractValidationError); });

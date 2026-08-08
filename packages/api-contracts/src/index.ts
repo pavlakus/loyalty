@@ -90,3 +90,4 @@ export {
 } from "./membership.js";
 
 export { ReceiptContractValidationError, validateRecordReceiptRequest, validateCancelReceiptRequest, type RecordReceiptRequest, type CancelReceiptRequest, type ReceiptStatus } from "./receipt.js";
+export { REWARD_DEFINITION_TYPES, RedemptionContractValidationError, validateRewardDefinitionContract, validateReserveRewardPointsRequest, validateRedemptionLifecycleRequest, validateRedemptionReservationResponse, type RewardDefinitionContract, type RewardDefinitionType, type ReserveRewardPointsRequest, type RedemptionLifecycleRequest, type RedemptionReservationResponse } from "./redemption.js";
