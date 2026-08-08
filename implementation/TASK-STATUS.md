@@ -74,7 +74,7 @@
 | LP-005010 | Define Benefit definitions and configuration | DONE | `agent/backend/LP-005010-benefit-definitions` | APPROVED; QA APPROVED; Security APPROVED | Merged into `development` at `7bdc8c9`; Benefit Definition validation passed. |
 | LP-005011 | Define strategy selection and recommendation integration | DONE | `agent/backend/LP-005011-strategy-recommendation` | APPROVED; QA APPROVED; Security APPROVED | Merged into `development` at `ca6448d`; strategy contract validation passed. |
 | LP-005012 | Implement Loyalty Program validation and invariants | DONE | `agent/backend/LP-005012-program-validation` | Completed | Merged into development; post-merge validation passed. |
-| LP-005013 | Implement Loyalty Program audit and event requirements | READY_FOR_MERGE | `agent/backend/LP-005013-program-audit-events` | Pending | Review, QA, and Security evidence recorded; focused validation passed. |
+| LP-005013 | Implement Loyalty Program audit and event requirements | DONE | `agent/backend/LP-005013-program-audit-events` | Completed | Merged into development; post-merge validation passed. |
 | LP-005014 | Implement Loyalty Program persistence and RLS | BLOCKED |  | Pending | Explicitly blocked by LP-000009 and LP-000016 plus Program domain prerequisites. |
 | LP-005015 | Add Loyalty Program domain, API, and security contract tests | DRAFT |  | Pending | Depends on executable domain and contract tasks; no persistence claim. |
 | LP-005016 | Perform Loyalty Program architecture review | DRAFT |  | Pending | Depends on LP-005015. |
