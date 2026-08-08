@@ -90,7 +90,7 @@
 | LP-006004 | Implement enrollment idempotency and duplicate prevention contract | DRAFT |  | Pending | Provider-neutral contract can use test adapters; production atomicity depends on persistence/RLS. |
 | LP-006005 | Define Reward Account and XP Account relationship contracts | DONE | `agent/backend/LP-006005-account-relationships` | Review, QA, and Security approved | Merged into development; relationship validation passed; balances, ledgers, and persistence/RLS remain deferred. |
 | LP-006006 | Define initial Status assignment contract | DONE | `agent/backend/LP-006006-initial-status` | Review, QA, and Security approved | Merged into development; assignment validation passed; progression, Benefits, accounts, and persistence/RLS remain deferred. |
-| LP-006007 | Implement Membership suspension and closure operations | READY_FOR_MERGE | `agent/backend/LP-006007-membership-lifecycle-commands` | Review, QA, and Security approved | Lifecycle command validation passed; downstream behavior remains deferred. |
+| LP-006007 | Implement Membership suspension and closure operations | DONE | `agent/backend/LP-006007-membership-lifecycle-commands` | Review, QA, and Security approved | Merged into development; lifecycle command validation passed; downstream behavior remains deferred. |
 | LP-006008 | Define Membership Year boundary contracts | DRAFT |  | Pending | Depends on Membership aggregate and approved Membership Year semantics. |
 | LP-006009 | Define public Membership token and QR contracts | DRAFT |  | Pending | Provider-neutral privacy/security contract. |
 | LP-006010 | Define Membership read and list contracts | DRAFT |  | Pending | Depends on API and account/status boundaries. |
