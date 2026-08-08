@@ -99,6 +99,17 @@
 | LP-006013 | Perform Membership QA, privacy, and security gate | DONE | `agent/qa/LP-006013-membership-final-gate` | QA and Security approved | Merged as `f4e168f1d9e558032fed9c0a061610c46ac34245`; post-merge validation passed 19/19; deferred foundations remain explicit. |
 | LP-006014 | Implement Membership persistence and RLS | BLOCKED |  | Pending infrastructure | Depends on LP-000009 and LP-000016 plus executable Membership contracts. |
 
+## Receipt Processing Product Module
+
+| Task | Title | Status | Branch | Review | Notes |
+|---|---|---|---|---|---|
+| LP-007001 | Define Receipt aggregate and immutable lifecycle | READY_FOR_MERGE | `agent/backend/LP-007001-receipt-aggregate` | Review, QA, and Security approved | Aggregate validation passed 3/3; persistence/RLS, ledger, cancellation, and provider behavior remain out of scope. |
+| LP-007002 | Define Receipt API and event contracts | DRAFT |  | Pending | Depends on LP-007001. |
+| LP-007003 | Implement receipt validation and idempotency contract | DRAFT |  | Pending | Depends on LP-007001 and LP-007002; production distributed atomicity deferred. |
+| LP-007004 | Implement receipt cancellation compensating-record contract | DRAFT |  | Pending | Depends on LP-007001–LP-007003; original Receipt remains immutable. |
+| LP-007005 | Add Receipt domain, privacy, concurrency, and security tests | DRAFT |  | Pending | Depends on LP-007001–LP-007004. |
+| LP-007006 | Implement Receipt persistence, RLS, and transactional outbox | BLOCKED |  | Pending infrastructure | Depends on LP-000009 and LP-000016; no production persistence claim before foundations. |
+
 ## AI Engineering Framework
 
 | Task | Title | Status | Branch | Review | Notes |
