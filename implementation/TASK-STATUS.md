@@ -92,7 +92,7 @@
 | LP-006006 | Define initial Status assignment contract | DONE | `agent/backend/LP-006006-initial-status` | Review, QA, and Security approved | Merged into development; assignment validation passed; progression, Benefits, accounts, and persistence/RLS remain deferred. |
 | LP-006007 | Implement Membership suspension and closure operations | DONE | `agent/backend/LP-006007-membership-lifecycle-commands` | Review, QA, and Security approved | Merged into development; lifecycle command validation passed; downstream behavior remains deferred. |
 | LP-006008 | Define Membership Year boundary contracts | DONE | `agent/backend/LP-006008-membership-year-contracts` | Review, QA, and Security approved | Merged into development; Membership Year boundary validation passed; calendar derivation and renewal execution remain deferred. |
-| LP-006009 | Define public Membership token and QR contracts | DRAFT |  | Pending | Provider-neutral privacy/security contract. |
+| LP-006009 | Define public Membership token and QR contracts | READY_FOR_MERGE | `agent/backend/LP-006009-membership-public-token` | Review, QA, and Security approved | Opaque token contract validation passed; generation, persistence, encoding, and resolution remain deferred. |
 | LP-006010 | Define Membership read and list contracts | DRAFT |  | Pending | Depends on API and account/status boundaries. |
 | LP-006011 | Add Membership domain, API, privacy, and security tests | DRAFT |  | Pending | Depends on executable Membership contracts. |
 | LP-006012 | Perform Membership architecture review | DRAFT |  | Pending | Depends on LP-006011. |
