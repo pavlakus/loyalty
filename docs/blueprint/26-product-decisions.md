@@ -501,3 +501,8 @@ Businesses may switch between Reward Experiences at any time without affecting h
 Different businesses require different customer engagement models.
 
 The platform should support both predictable and surprise-based loyalty experiences while preserving the same underlying Reward Engine.
+## MVP Reward Definition, Eligibility, and Redemption Decision — 2026-08-08
+
+Reward Definitions are immutable configuration owned by a Loyalty Program configuration version. They use positive integer `pointsCost`, an enabled flag, descriptive types, optional Status Level references, and optional ALL-required Benefit Definition references. Redemption uses fixed pointsCost only; no inventory, fulfillment, monetary discount calculation, partial redemption, or multi-reward baskets are included.
+
+The initial flow is eligibility → reservation → confirmation or cancellation/expiration. Only ACTIVE Membership, operational Program, enabled Reward, satisfied Status/Benefit restrictions, and AVAILABLE points qualify. Reservations default to 15 minutes, preserve their original configuration version and price, and transition points through immutable ledger descriptors. Duplicate logical requests are idempotent and concurrent attempts must not overspend in the domain contract; distributed enforcement remains deferred.
