@@ -377,6 +377,18 @@ LP-005002 exposes only the approved LP-005001 aggregate through the base Program
 
 This decision defines transport contracts only and does not change aggregate ownership or configuration responsibilities.
 
+## Reward Rule Configuration Decision — 2026-08-08
+
+LP-005005 uses integer minor-unit monetary amounts and integer Reward Points. Reward Rules use the effective Business-derived currency context of the Loyalty Program; individual rules do not carry independent currencies and no FX conversion is introduced.
+
+- Range lower bounds are inclusive and upper bounds are exclusive; overlapping or contradictory ranges are rejected.
+- Earning uses deterministic integer-safe arithmetic and floors fractional points.
+- A valid amount below an applicable minimum awards zero points without a business error.
+- Every earning decision references the immutable effective Program configuration version used for evaluation; historical decisions are never recalculated or rewritten.
+- Identical input, currency context, rule set, and configuration version produce the same result.
+
+LP-005005 does not implement receipt ingestion, ledger persistence, balance mutation, redemption, Membership behavior, or FX conversion.
+
 When a Product Decision supersedes an earlier architectural assumption, the corresponding Blueprint documents should be updated to preserve a single authoritative interpretation.
 
 PD-017
