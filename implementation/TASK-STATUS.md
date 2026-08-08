@@ -66,7 +66,7 @@
 | LP-005002 | Define Loyalty Program API and event contracts | DONE | `agent/contracts/LP-005002-loyalty-program-contracts` | APPROVED; QA APPROVED; Security APPROVED | Merged into `development` at `ba9d1a0`; API/event scoped validation passed. |
 | LP-005003 | Define Loyalty Program configuration model | DONE | `agent/backend/LP-005003-program-configuration-model` | APPROVED; QA APPROVED; Security APPROVED | Merged into `development` at `e36921c`; configuration-boundary validation passed. |
 | LP-005004 | Implement configuration versioning and effective history | DONE | `agent/backend/LP-005004-configuration-versioning` | APPROVED; QA APPROVED; Security APPROVED | Merged into `development` at `fb6e5b8`; versioning scoped validation passed; persistence remains deferred. |
-| LP-005005 | Define reward rule configuration | READY_FOR_MERGE | `agent/backend/LP-005005-reward-rule-configuration` | APPROVED; QA APPROVED; Security APPROVED | Deterministic minor-unit rule evaluation; focused validation passed. |
+| LP-005005 | Define reward rule configuration | DONE | `agent/backend/LP-005005-reward-rule-configuration` | APPROVED; QA APPROVED; Security APPROVED | Merged into `development` at `d042753`; deterministic Reward Rule validation passed. |
 | LP-005006 | Define reward experience configuration | DRAFT |  | Pending | Depends on LP-005003 and LP-005004. |
 | LP-005007 | Define pending period and point expiration configuration | DRAFT |  | Pending | Depends on LP-005003 and LP-005004. |
 | LP-005008 | Define XP rule configuration | DRAFT |  | Pending | Depends on LP-005003 and LP-005004. |
