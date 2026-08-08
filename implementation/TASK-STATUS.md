@@ -135,7 +135,7 @@
 | Task | Title | Status | Branch | Review | Notes |
 |---|---|---|---|---|---|
 | LP-010001 | Implement Reward Definition eligibility and redemption MVP | DONE | `agent/backend/LP-010001-reward-redemption-mvp` | Review APPROVED; QA APPROVED; Security APPROVED | Merged as `8d4ab084ebd4418e3dab3c790fd7b168ff36fb20`; fixed pointsCost domain/application vertical complete; persistence/RLS/distributed enforcement deferred to LP-010003. |
-| LP-010002 | Add Reward redemption API/event and security tests | DRAFT |  | Pending | Depends on LP-010001. |
+| LP-010002 | Add Reward redemption API/event and security tests | READY |  | Prepared; implementation authorized | Depends on LP-010001 DONE. |
 | LP-010003 | Implement Reward redemption persistence, RLS, and distributed concurrency | BLOCKED |  | Pending infrastructure | Depends on LP-000009 and LP-000016. |
 
 ## AI Engineering Framework
