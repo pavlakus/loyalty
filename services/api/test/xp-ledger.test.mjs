@@ -1,0 +1,6 @@
+import assert from "node:assert/strict";
+import test from "node:test";
+import { createXPTransaction, projectXPAccount, XPLedgerValidationError } from "../dist/modules/xp/xp-ledger.js";
+const base = { id: "xp-1", membershipId: "membership-1", xpAccountId: "xp-account-1", activityId: "receipt-1", ruleId: "rule-1", loyaltyProgramId: "program-1", programConfigurationVersionId: "version-1", membershipYearId: "year-1", type: "EARNED", xpAmount: 10n, occurredAt: "2026-08-08T10:00:00.000Z", idempotencyKey: "xp-earning-1" };
+test("creates immutable version-bound XP history and derives projection", () => { const earned = createXPTransaction(base); const reversed = createXPTransaction({ ...base, id: "xp-2", type: "REVERSED", idempotencyKey: "xp-reverse-1" }); assert.equal(Object.isFrozen(earned), true); assert.equal(earned.programConfigurationVersionId, "version-1"); assert.deepEqual(projectXPAccount([earned, reversed]), { currentXp: 0n, lifetimeXp: 10n, membershipYearXp: 10n }); });
+test("rejects invalid XP transactions", () => { assert.throws(() => createXPTransaction({ ...base, xpAmount: 0n }), XPLedgerValidationError); assert.throws(() => createXPTransaction({ ...base, occurredAt: "2026-08-08" }), XPLedgerValidationError); });
