@@ -70,7 +70,7 @@
 | LP-005006 | Define reward experience configuration | DONE | `agent/backend/LP-005006-reward-experience-configuration` | APPROVED; QA APPROVED; Security APPROVED | Merged into `development` at `a6f53b0`; Reward Experience scoped validation passed. |
 | LP-005007 | Define pending period and point expiration configuration | DONE | `agent/backend/LP-005007-pending-expiration-configuration` | APPROVED; QA APPROVED; Security APPROVED | Merged into `development` at `3857d0c`; policy validation passed. |
 | LP-005008 | Define XP rule configuration | DONE | `agent/backend/LP-005008-xp-rule-configuration` | APPROVED; QA APPROVED; Security APPROVED | Merged into `development` at `21ea1a1`; additive XP validation passed. |
-| LP-005009 | Define Status Level configuration | DRAFT |  | Pending | Depends on LP-005003, LP-005004, LP-005008. |
+| LP-005009 | Define Status Level configuration | READY_FOR_MERGE | `agent/backend/LP-005009-status-level-configuration` | APPROVED; QA APPROVED; Security APPROVED | Status configuration only; focused validation passed. |
 | LP-005010 | Define Benefit definitions and configuration | DRAFT |  | Pending | Depends on LP-005003 and LP-005004. |
 | LP-005011 | Define strategy selection and recommendation integration | DRAFT |  | Pending | Depends on contract and configuration tasks. |
 | LP-005012 | Implement Loyalty Program validation and invariants | DRAFT |  | Pending | Depends on configuration and strategy tasks. |
