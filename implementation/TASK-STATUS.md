@@ -68,7 +68,7 @@
 | LP-005004 | Implement configuration versioning and effective history | DONE | `agent/backend/LP-005004-configuration-versioning` | APPROVED; QA APPROVED; Security APPROVED | Merged into `development` at `fb6e5b8`; versioning scoped validation passed; persistence remains deferred. |
 | LP-005005 | Define reward rule configuration | DONE | `agent/backend/LP-005005-reward-rule-configuration` | APPROVED; QA APPROVED; Security APPROVED | Merged into `development` at `d042753`; deterministic Reward Rule validation passed. |
 | LP-005006 | Define reward experience configuration | DONE | `agent/backend/LP-005006-reward-experience-configuration` | APPROVED; QA APPROVED; Security APPROVED | Merged into `development` at `a6f53b0`; Reward Experience scoped validation passed. |
-| LP-005007 | Define pending period and point expiration configuration | DRAFT |  | Pending | Depends on LP-005003 and LP-005004. |
+| LP-005007 | Define pending period and point expiration configuration | READY_FOR_MERGE | `agent/backend/LP-005007-pending-expiration-configuration` | APPROVED; QA APPROVED; Security APPROVED | Policy validation only; focused validation passed. |
 | LP-005008 | Define XP rule configuration | DRAFT |  | Pending | Depends on LP-005003 and LP-005004. |
 | LP-005009 | Define Status Level configuration | DRAFT |  | Pending | Depends on LP-005003, LP-005004, LP-005008. |
 | LP-005010 | Define Benefit definitions and configuration | DRAFT |  | Pending | Depends on LP-005003 and LP-005004. |
