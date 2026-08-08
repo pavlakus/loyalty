@@ -16,7 +16,7 @@
 
 ## Status
 
-`IN_PROGRESS`
+`QA`
 
 ## Objective
 
