@@ -73,7 +73,7 @@
 | LP-005009 | Define Status Level configuration | DONE | `agent/backend/LP-005009-status-level-configuration` | APPROVED; QA APPROVED; Security APPROVED | Merged into `development` at `fd89b7c`; Status Level validation passed. |
 | LP-005010 | Define Benefit definitions and configuration | DONE | `agent/backend/LP-005010-benefit-definitions` | APPROVED; QA APPROVED; Security APPROVED | Merged into `development` at `7bdc8c9`; Benefit Definition validation passed. |
 | LP-005011 | Define strategy selection and recommendation integration | DONE | `agent/backend/LP-005011-strategy-recommendation` | APPROVED; QA APPROVED; Security APPROVED | Merged into `development` at `ca6448d`; strategy contract validation passed. |
-| LP-005012 | Implement Loyalty Program validation and invariants | READY_FOR_MERGE | `agent/backend/LP-005012-program-validation` | Pending | Review, QA, and Security evidence recorded; scoped validation passed. |
+| LP-005012 | Implement Loyalty Program validation and invariants | DONE | `agent/backend/LP-005012-program-validation` | Completed | Merged into development; post-merge validation passed. |
 | LP-005013 | Implement Loyalty Program audit and event requirements | DRAFT |  | Pending | Depends on LP-005002, LP-005004, LP-005012. |
 | LP-005014 | Implement Loyalty Program persistence and RLS | BLOCKED |  | Pending | Explicitly blocked by LP-000009 and LP-000016 plus Program domain prerequisites. |
 | LP-005015 | Add Loyalty Program domain, API, and security contract tests | DRAFT |  | Pending | Depends on executable domain and contract tasks; no persistence claim. |
