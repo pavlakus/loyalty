@@ -80,6 +80,25 @@
 | LP-005016 | Perform Loyalty Program architecture review | DONE | `agent/architecture/LP-005016-program-review` | Completed | Independent architecture review approved; no unresolved P0/P1 findings. |
 | LP-005017 | Perform Loyalty Program QA and security gate | DONE | `agent/qa/LP-005017-program-qa-security-gate` | Completed | Merged into development; 29 focused Program tests and post-merge validation passed; LP-005014 remains deferred. |
 
+## Membership Product Module
+
+| Task | Title | Status | Branch | Review | Notes |
+|---|---|---|---|---|---|
+| LP-006001 | Define Membership aggregate, identity, and lifecycle | BLOCKED |  | Pending Product Decision | Blueprint does not define the complete lifecycle transition matrix, reactivation semantics, or rejoin behavior after non-active Membership state. |
+| LP-006002 | Define Membership API and event contracts | DRAFT |  | Pending | Depends on LP-006001 and the unresolved lifecycle decision. |
+| LP-006003 | Implement Join Loyalty Program command contract | DRAFT |  | Pending | Depends on aggregate/API, Authentication session integration, and lifecycle/rejoin semantics. |
+| LP-006004 | Implement enrollment idempotency and duplicate prevention contract | DRAFT |  | Pending | Provider-neutral contract can use test adapters; production atomicity depends on persistence/RLS. |
+| LP-006005 | Define Reward Account and XP Account relationship contracts | DRAFT |  | Pending | Membership-owned relationship boundaries; no ledger/persistence claim. |
+| LP-006006 | Define initial Status assignment contract | DRAFT |  | Pending | Depends on Status Level configuration and Membership aggregate. |
+| LP-006007 | Implement Membership suspension and closure operations | BLOCKED |  | Pending Product Decision | Depends on the unresolved lifecycle transition matrix/reactivation decision. |
+| LP-006008 | Define Membership Year boundary contracts | DRAFT |  | Pending | Depends on Membership aggregate and approved Membership Year semantics. |
+| LP-006009 | Define public Membership token and QR contracts | DRAFT |  | Pending | Provider-neutral privacy/security contract. |
+| LP-006010 | Define Membership read and list contracts | DRAFT |  | Pending | Depends on API and account/status boundaries. |
+| LP-006011 | Add Membership domain, API, privacy, and security tests | DRAFT |  | Pending | Depends on executable Membership contracts. |
+| LP-006012 | Perform Membership architecture review | DRAFT |  | Pending | Depends on LP-006011. |
+| LP-006013 | Perform Membership QA, privacy, and security gate | DRAFT |  | Pending | Depends on LP-006012. |
+| LP-006014 | Implement Membership persistence and RLS | BLOCKED |  | Pending infrastructure | Depends on LP-000009 and LP-000016 plus executable Membership contracts. |
+
 ## AI Engineering Framework
 
 | Task | Title | Status | Branch | Review | Notes |
