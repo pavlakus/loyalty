@@ -88,3 +88,5 @@ export {
   type MembershipListResponse,
   type MembershipStatus,
 } from "./membership.js";
+
+export { ReceiptContractValidationError, validateRecordReceiptRequest, validateCancelReceiptRequest, type RecordReceiptRequest, type CancelReceiptRequest, type ReceiptStatus } from "./receipt.js";

@@ -107,3 +107,5 @@ export {
   type MembershipEventPayload,
   type MembershipEventType,
 } from "./membership.js";
+
+export { RECEIPT_EVENT_TYPES, validateReceiptEventPayload, type ReceiptEventPayload, type ReceiptEventType } from "./receipt.js";
