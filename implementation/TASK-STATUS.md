@@ -130,6 +130,14 @@
 | LP-009004 | Add XP, Status, Benefit-reference, privacy, and security tests | DONE | `agent/qa/LP-009004-xp-status-final-gate` | Review, QA, and Security approved | Merged as `aae101984ccd6558912db823bda99e99a878a0f6`; post-merge XP/Status tests passed 6/6; persistence/RLS remains deferred. |
 | LP-009005 | Implement XP/Status persistence, RLS, and distributed concurrency | BLOCKED |  | Pending infrastructure | Depends on LP-000009 and LP-000016. |
 
+## Reward Eligibility and Redemption Product Module
+
+| Task | Title | Status | Branch | Review | Notes |
+|---|---|---|---|---|---|
+| LP-010001 | Implement Reward Definition eligibility and redemption MVP | READY_FOR_MERGE | `agent/backend/LP-010001-reward-redemption-mvp` | Review APPROVED; QA APPROVED; Security APPROVED | Fixed pointsCost domain/application vertical; infrastructure deferred. |
+| LP-010002 | Add Reward redemption API/event and security tests | DRAFT |  | Pending | Depends on LP-010001. |
+| LP-010003 | Implement Reward redemption persistence, RLS, and distributed concurrency | BLOCKED |  | Pending infrastructure | Depends on LP-000009 and LP-000016. |
+
 ## AI Engineering Framework
 
 | Task | Title | Status | Branch | Review | Notes |
