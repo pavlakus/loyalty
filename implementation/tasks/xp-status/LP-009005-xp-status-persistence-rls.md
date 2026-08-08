@@ -1,0 +1,13 @@
+# LP-009005 — Implement XP/Status Persistence, RLS, and Distributed Concurrency
+
+## Metadata
+
+- Category: DATABASE/INFRASTRUCTURE; Priority: P0; Role: Database Agent; Owner: XP and Status
+- Dependencies: LP-000009, LP-000016, LP-009001–LP-009004
+- State: BLOCKED
+- Allowed files: immutable XP migrations, RLS, repositories, concurrency/outbox tests
+- Forbidden: implementation before infrastructure dependencies are DONE
+
+## Scope and acceptance
+
+Implement production XP history/account persistence, tenant isolation, uniqueness, and atomic concurrency only after infrastructure foundations are available.
