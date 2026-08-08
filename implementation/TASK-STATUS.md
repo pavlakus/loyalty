@@ -93,7 +93,7 @@
 | LP-006007 | Implement Membership suspension and closure operations | DONE | `agent/backend/LP-006007-membership-lifecycle-commands` | Review, QA, and Security approved | Merged into development; lifecycle command validation passed; downstream behavior remains deferred. |
 | LP-006008 | Define Membership Year boundary contracts | DONE | `agent/backend/LP-006008-membership-year-contracts` | Review, QA, and Security approved | Merged into development; Membership Year boundary validation passed; calendar derivation and renewal execution remain deferred. |
 | LP-006009 | Define public Membership token and QR contracts | DONE | `agent/backend/LP-006009-membership-public-token` | Review, QA, and Security approved | Merged into development; opaque token validation passed; generation, persistence, encoding, and resolution remain deferred. |
-| LP-006010 | Define Membership read and list contracts | READY_FOR_MERGE | `agent/contracts/LP-006010-membership-read-list` | Review, QA, and Security approved | Read/list contract validation passed; repositories, authorization, and persistence/RLS remain deferred. |
+| LP-006010 | Define Membership read and list contracts | DONE | `agent/contracts/LP-006010-membership-read-list` | Review, QA, and Security approved | Merged into development; read/list contract validation passed; repositories, authorization, and persistence/RLS remain deferred. |
 | LP-006011 | Add Membership domain, API, privacy, and security tests | DRAFT |  | Pending | Depends on executable Membership contracts. |
 | LP-006012 | Perform Membership architecture review | DRAFT |  | Pending | Depends on LP-006011. |
 | LP-006013 | Perform Membership QA, privacy, and security gate | DRAFT |  | Pending | Depends on LP-006012. |
