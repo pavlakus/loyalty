@@ -143,7 +143,7 @@
 | Task | Title | Status | Branch | Review | Notes |
 |---|---|---|---|---|---|
 | LP-011001 | Implement deterministic Business Observation metrics | DONE | `agent/backend/LP-011001-business-observation-metrics` | Review APPROVED; QA APPROVED; Security APPROVED | Merged as `7e9713652ef57450df2965badba99e8173dbb989`; read-only in-memory metrics complete; production projection/persistence deferred to LP-011003. |
-| LP-011002 | Add Analytics API and projection contracts and privacy tests | READY |  | Prepared; implementation authorized | Depends on LP-011001 DONE. |
+| LP-011002 | Add Analytics API and projection contracts and privacy tests | READY_FOR_MERGE | `agent/contracts/LP-011002-analytics-contracts` | Review APPROVED; QA APPROVED; Security APPROVED | Read-only analytics contract gate; production projection/persistence deferred to LP-011003. |
 | LP-011003 | Implement production analytics projection, persistence, and RLS | BLOCKED |  | Pending infrastructure | Depends on LP-000009 and LP-000016. |
 
 ## AI Engineering Framework
