@@ -110,6 +110,16 @@
 | LP-007005 | Add Receipt domain, privacy, concurrency, and security tests | DONE | `agent/qa/LP-007005-receipt-final-gate` | Review, QA, and Security approved | Merged as `ad876daa6f27c7143faa7ec7a16143fa30289fb8`; post-merge Receipt coverage passed 10/10; persistence/RLS/outbox remain deferred. |
 | LP-007006 | Implement Receipt persistence, RLS, and transactional outbox | BLOCKED |  | Pending infrastructure | Depends on LP-000009 and LP-000016; no production persistence claim before foundations. |
 
+## Reward Points Product Module
+
+| Task | Title | Status | Branch | Review | Notes |
+|---|---|---|---|---|---|
+| LP-008001 | Define deterministic Reward Points earning decision | READY | `agent/backend/LP-008001-reward-earning-decision` | Independent review, QA, Security required | Depends on approved Program rules/versioning and Receipt baseline; no ledger mutation. |
+| LP-008002 | Define Reward Ledger transaction and Reward Account projection contracts | DRAFT |  | Pending | Depends on LP-008001. |
+| LP-008003 | Implement pending and expiration decision contracts | DRAFT |  | Pending | Depends on LP-008001, LP-008002, LP-005007. |
+| LP-008004 | Add Reward earning, ledger, idempotency, and security tests | DRAFT |  | Pending | Depends on LP-008001–LP-008003. |
+| LP-008005 | Implement Reward Ledger persistence, RLS, and concurrency enforcement | BLOCKED |  | Pending infrastructure | Depends on LP-000009 and LP-000016. |
+
 ## AI Engineering Framework
 
 | Task | Title | Status | Branch | Review | Notes |
