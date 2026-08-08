@@ -85,7 +85,7 @@
 | Task | Title | Status | Branch | Review | Notes |
 |---|---|---|---|---|---|
 | LP-006001 | Define Membership aggregate, identity, and lifecycle | DONE | `agent/backend/LP-006001-membership-aggregate` | Review, QA, and Security approved | Merged into development; post-merge validation passed; accounts, Authentication, persistence/RLS, and downstream behavior remain deferred. |
-| LP-006002 | Define Membership API and event contracts | READY_FOR_MERGE | `agent/contracts/LP-006002-membership-contracts` | Review, QA, and Security approved | Contract validation passed; Authentication and persistence/RLS remain deferred. |
+| LP-006002 | Define Membership API and event contracts | DONE | `agent/contracts/LP-006002-membership-contracts` | Review, QA, and Security approved | Merged into development; contract and aggregate validation passed; Authentication and persistence/RLS remain deferred. |
 | LP-006003 | Implement Join Loyalty Program command contract | DRAFT |  | Pending | Depends on aggregate/API, Authentication session integration, and lifecycle/rejoin semantics. |
 | LP-006004 | Implement enrollment idempotency and duplicate prevention contract | DRAFT |  | Pending | Provider-neutral contract can use test adapters; production atomicity depends on persistence/RLS. |
 | LP-006005 | Define Reward Account and XP Account relationship contracts | DRAFT |  | Pending | Membership-owned relationship boundaries; no ledger/persistence claim. |
