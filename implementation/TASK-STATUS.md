@@ -103,7 +103,7 @@
 
 | Task | Title | Status | Branch | Review | Notes |
 |---|---|---|---|---|---|
-| LP-007001 | Define Receipt aggregate and immutable lifecycle | READY_FOR_MERGE | `agent/backend/LP-007001-receipt-aggregate` | Review, QA, and Security approved | Aggregate validation passed 3/3; persistence/RLS, ledger, cancellation, and provider behavior remain out of scope. |
+| LP-007001 | Define Receipt aggregate and immutable lifecycle | DONE | `agent/backend/LP-007001-receipt-aggregate` | Review, QA, and Security approved | Merged as `d2db8abb709b0caa307023cbb31fa20798d3a18c`; post-merge validation passed 3/3; persistence/RLS, ledger, cancellation, and provider behavior remain out of scope. |
 | LP-007002 | Define Receipt API and event contracts | DRAFT |  | Pending | Depends on LP-007001. |
 | LP-007003 | Implement receipt validation and idempotency contract | DRAFT |  | Pending | Depends on LP-007001 and LP-007002; production distributed atomicity deferred. |
 | LP-007004 | Implement receipt cancellation compensating-record contract | DRAFT |  | Pending | Depends on LP-007001–LP-007003; original Receipt remains immutable. |
