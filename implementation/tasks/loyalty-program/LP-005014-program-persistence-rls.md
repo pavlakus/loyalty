@@ -1,7 +1,7 @@
 # LP-005014 — Implement Loyalty Program Persistence and RLS
 
 ## Status
-`READY`
+`READY_FOR_MERGE`
 
 ## Metadata
 - Category: DATABASE
