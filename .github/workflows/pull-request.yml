@@ -1,0 +1,172 @@
+name: Pull Request Validation
+
+on:
+  pull_request:
+    branches:
+      - development
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pull-request-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+env:
+  NODE_VERSION: '22.18.0'
+  PNPM_VERSION: '10.13.1'
+
+jobs:
+  repository-validation:
+    name: Repository validation
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4.2.2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4.4.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: pnpm
+
+      - name: Enable pnpm
+        run: corepack enable && corepack prepare pnpm@${PNPM_VERSION} --activate
+
+      - name: Install dependencies
+        run: CI=true pnpm install --frozen-lockfile
+
+      - name: List workspaces
+        run: pnpm run workspace:list
+
+      - name: Build
+        run: pnpm run build
+
+      - name: Lint
+        run: pnpm run lint
+
+      - name: Typecheck
+        run: pnpm run typecheck
+
+      - name: Test
+        run: pnpm run test
+
+      - name: Validate FCR artifacts
+        run: pnpm validate:fcr
+
+      - name: Audit dependencies
+        run: pnpm audit --audit-level high
+
+      - name: Scan for committed secrets
+        run: |
+          if git grep -nE 'BEGIN (RSA|OPENSSH|EC|DSA) PRIVATE KEY|aws_secret_access_key|service_role' -- ':!implementation/evidence/**'; then
+            echo 'Potential secret material detected.' >&2
+            exit 1
+          fi
+
+      - name: Check diff
+        run: git diff --check
+
+  database-validation:
+    name: PostgreSQL migration validation
+    runs-on: ubuntu-24.04
+    services:
+      postgres:
+        image: postgres:16.4-alpine
+        env:
+          POSTGRES_DB: loyalty_ci
+          POSTGRES_USER: postgres
+          POSTGRES_HOST_AUTH_METHOD: trust
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres -d loyalty_ci"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 12
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4.2.2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4.4.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: pnpm
+
+      - name: Enable pnpm
+        run: corepack enable && corepack prepare pnpm@${PNPM_VERSION} --activate
+
+      - name: Install dependencies
+        run: CI=true pnpm install --frozen-lockfile
+
+      - name: Wait for PostgreSQL
+        env:
+          PGHOST: 127.0.0.1
+          PGPORT: 5432
+          PGUSER: postgres
+          PGDATABASE: loyalty_ci
+        run: |
+          for attempt in $(seq 1 30); do
+            if pg_isready >/dev/null 2>&1; then exit 0; fi
+            sleep 2
+          done
+          echo 'PostgreSQL service did not become ready.' >&2
+          exit 1
+
+      - name: Inject job-scoped database URL
+        run: |
+          printf -v database_url 'postgresql://%s@%s:%s/%s' postgres 127.0.0.1 5432 loyalty_ci
+          printf 'DATABASE_URL=%s\n' "$database_url" >> "$GITHUB_ENV"
+          unset database_url
+
+      - name: Require canonical migration runner
+        run: |
+          test -f scripts/database/migrate.mjs
+          node -e "const p=require('./package.json'); for (const name of ['db:migrate','db:migrate:status','db:migrate:check']) if (!p.scripts[name]) throw new Error('Missing canonical script: '+name)"
+
+      - name: Validate migration filenames, ordering, and hashes
+        env:
+          NODE_ENV: test
+        run: pnpm db:migrate:check
+
+      - name: Apply clean database migrations
+        env:
+          NODE_ENV: test
+        run: pnpm db:migrate
+
+      - name: Verify migration status
+        env:
+          NODE_ENV: test
+        run: pnpm db:migrate:status
+
+      - name: Verify rerun has no pending migrations
+        env:
+          NODE_ENV: test
+        run: pnpm db:migrate
+
+      - name: Verify immediately-previous baseline upgrade
+        env:
+          NODE_ENV: test
+        run: |
+          # This repository currently has one migration; its immediately previous
+          # baseline is an empty database. The clean apply above is the upgrade.
+          pnpm db:migrate:status
+          pnpm db:migrate:check
+
+      - name: Verify unavailable database failure and redaction
+        env:
+          NODE_ENV: test
+        run: |
+          printf -v DATABASE_URL 'postgresql://%s@%s:%s/%s' postgres 127.0.0.1 59999 loyalty_ci
+          export DATABASE_URL
+          set +e
+          output="$(pnpm db:migrate:status 2>&1)"
+          result=$?
+          set -e
+          test "$result" -ne 0
+          if printf '%s' "$output" | grep -Fq 'postgresql://'; then
+            echo 'Database URL was exposed in failure output.' >&2
+            exit 1
+          fi
