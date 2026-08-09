@@ -100,7 +100,7 @@
 | LP-006011 | Add Membership domain, API, privacy, and security tests | DONE | `agent/qa/LP-006011-membership-tests` | Review, QA, and Security approved | Merged as `0bb118b`; post-merge focused validation passed 17/17; persistence/RLS, session runtime, and distributed production atomicity remain explicitly out of scope. |
 | LP-006012 | Perform Membership architecture review | DONE | `agent/architecture/LP-006012-membership-review` | Review, QA, and Security approved | Merged as `e32217e4f37f26dd74d45cc40ab8d76e584ee8e3`; post-merge evidence passed; no P0/P1 or Critical/High findings. |
 | LP-006013 | Perform Membership QA, privacy, and security gate | DONE | `agent/qa/LP-006013-membership-final-gate` | QA and Security approved | Merged as `f4e168f1d9e558032fed9c0a061610c46ac34245`; post-merge validation passed 19/19; deferred foundations remain explicit. |
-| LP-006014 | Implement Membership persistence and RLS | IN_PROGRESS | `agent/database/LP-006014-membership-persistence` | Task Preparation complete | Membership migration/RLS implementation in progress; local clean/upgrade PostgreSQL validation is passing. |
+| LP-006014 | Implement Membership persistence and RLS | READY_FOR_MERGE | `agent/database/LP-006014-membership-persistence` | REVIEW APPROVED; QA APPROVED; SECURITY APPROVED | Source commit `0465b63`; clean/upgrade PostgreSQL, RLS, lifecycle, build, lint, typecheck, test, and FCR validation passed. |
 
 ## Receipt Processing Product Module
 

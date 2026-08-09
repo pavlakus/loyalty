@@ -2,7 +2,7 @@
 
 ## Status
 
-`IN_PROGRESS`
+`READY_FOR_MERGE`
 
 ## Metadata
 

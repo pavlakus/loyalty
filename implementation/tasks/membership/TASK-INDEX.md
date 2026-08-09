@@ -19,7 +19,7 @@
 - LP-006011 — Add Membership domain, API, privacy, and security tests
 - LP-006012 — Perform Membership architecture review
 - LP-006013 — Perform Membership QA, privacy, and security gate
-- LP-006014 — Implement Membership persistence and RLS (READY)
+- LP-006014 — Implement Membership persistence and RLS (READY_FOR_MERGE)
 
 ## Dependency Order
 
