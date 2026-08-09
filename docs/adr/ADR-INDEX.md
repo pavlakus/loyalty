@@ -23,6 +23,7 @@ This index lists accepted Architecture Decision Records for the Loyalty Platform
 | [ADR-009](ADR-009-initial-environment-variable-contract.md) | Initial Environment Variable Contract | Accepted | 2026-07-29 |
 | [ADR-010](ADR-010-database-migration-and-runtime-architecture.md) | Database Migration and Runtime Architecture | Accepted | 2026-07-29 |
 | [ADR-011](ADR-011-phone-number-normalization-policy.md) | Phone-Number Normalization Policy | Accepted | 2026-08-07 |
+| [ADR-012](ADR-012-application-persistence-composition-boundary.md) | Application Persistence and Composition Boundary | Accepted | 2026-08-09 |
 
 ## Governance
 

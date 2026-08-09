@@ -22,7 +22,7 @@ importers:
         version: 9.39.5
       node-pg-migrate:
         specifier: ^8.0.4
-        version: 8.0.4(pg@8.22.0)
+        version: 8.0.4(@types/pg@8.15.5)(pg@8.22.0)
       pg:
         specifier: ^8.22.0
         version: 8.22.0
@@ -198,10 +198,16 @@ importers:
       libphonenumber-js:
         specifier: ^1.13.10
         version: 1.13.10
+      pg:
+        specifier: 8.22.0
+        version: 8.22.0
     devDependencies:
       '@types/node':
         specifier: 26.1.0
         version: 26.1.0
+      '@types/pg':
+        specifier: 8.15.5
+        version: 8.15.5
 
 packages:
 
@@ -1453,6 +1459,9 @@ packages:
 
   '@types/node@26.1.0':
     resolution: {integrity: sha512-O0A1G3xPGy4w7AgQdAQYUlQ+BKk2Oovw8eRpofyp5KdBZULnbe+WqaOVNrm705SHphCiG4XHsACrSmPu1f+Kgw==}
+
+  '@types/pg@8.15.5':
+    resolution: {integrity: sha512-LF7lF6zWEKxuT3/OR8wAZGzkg4ENGXFNyiV/JeOt9z5B+0ZVwbql9McqX5c/WStFq1GaGso7H1AzP/qSzmlCKQ==}
 
   '@types/react-dom@19.0.4':
     resolution: {integrity: sha512-4fSQ8vWFkg+TGhePfUzVmat3eC14TXYSsiiDSLI0dVLsrm9gZFABjPy/Qu6TKgl1tq1Bu1yDsuQgY3A3DOjCcg==}
@@ -5178,6 +5187,12 @@ snapshots:
     dependencies:
       undici-types: 8.3.0
 
+  '@types/pg@8.15.5':
+    dependencies:
+      '@types/node': 26.1.0
+      pg-protocol: 1.15.0
+      pg-types: 2.2.0
+
   '@types/react-dom@19.0.4(@types/react@19.0.12)':
     dependencies:
       '@types/react': 19.0.12
@@ -6733,11 +6748,13 @@ snapshots:
 
   node-int64@0.4.0: {}
 
-  node-pg-migrate@8.0.4(pg@8.22.0):
+  node-pg-migrate@8.0.4(@types/pg@8.15.5)(pg@8.22.0):
     dependencies:
       glob: 11.1.0
       pg: 8.22.0
       yargs: 17.7.3
+    optionalDependencies:
+      '@types/pg': 8.15.5
 
   node-releases@2.0.51: {}
 
