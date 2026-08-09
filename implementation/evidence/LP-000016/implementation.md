@@ -39,3 +39,18 @@ The repository and PostgreSQL-backed workflow jobs cannot be executed locally as
 ## Handoff
 
 The isolated implementation is ready for independent review after the required GitHub workflow validation is available. A complete LP-000016 approval must include the live CI database evidence and intentional-failure verification; those cannot be truthfully claimed from this local worktree.
+
+## Current-Baseline Revalidation
+
+- Task ID: `LP-000016`
+- Phase: Implementation revalidation
+- Agent role: DevOps Agent
+- Date: `2026-08-08`
+- Branch: `agent/devops/LP-000016-ci-pipeline-recovery`
+- Source implementation recovered from `140cab1` onto development baseline `cb04559`.
+
+The workflow’s PostgreSQL job consumes the corrected LP-000009 contract: explicit job-scoped test URLs may target the
+hosted runner’s loopback service, while development fallback and production safeguards remain unchanged. The
+dependency audit remains enabled, but its result is explicitly non-blocking for unrelated MVP work under the current
+repository exception; scan output remains visible for ownership follow-up. No dependency or lockfile changes are
+included.
