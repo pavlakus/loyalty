@@ -4,9 +4,9 @@
 
 - Category: DATABASE/INFRASTRUCTURE; Priority: P0; Role: Database Developer Agent; Owner: Reward Points
 - Dependencies: LP-000009, LP-000016, LP-008001, LP-008002, LP-008003, LP-008004
-- State: BLOCKED
+- State: READY
 - Allowed files: immutable migrations, RLS, repositories, outbox/concurrency tests
-- Forbidden: implementation before infrastructure foundations are DONE
+- Forbidden: implementation before declared dependencies are DONE; mutation of posted ledger history or direct mutable balance authority
 
 ## Scope and acceptance
 
