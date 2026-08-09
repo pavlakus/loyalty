@@ -18,6 +18,6 @@ export function createLocalMvpComposition(environment: NodeJS.ProcessEnv = proce
   const localMvp = new LocalMvpApplicationService(new PostgresLocalMvpPersistence(transactions));
   const delivery = new NonProductionCapturingOtpDelivery(environment.NODE_ENV ?? "development");
   const authentication = new LocalAuthenticationService(new PostgresAuthenticationPersistence(pool), delivery);
-  const uat = new UatApiService(transactions, new PostgresAuthenticationPersistence(pool), localMvp.createPort(), environment.NODE_ENV ?? "development");
+  const uat = new UatApiService(transactions, new PostgresAuthenticationPersistence(pool), environment.NODE_ENV ?? "development");
   return { pool, localMvp, authentication, delivery, uat };
 }
