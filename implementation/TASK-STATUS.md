@@ -100,7 +100,7 @@
 | LP-006011 | Add Membership domain, API, privacy, and security tests | DONE | `agent/qa/LP-006011-membership-tests` | Review, QA, and Security approved | Merged as `0bb118b`; post-merge focused validation passed 17/17; persistence/RLS, session runtime, and distributed production atomicity remain explicitly out of scope. |
 | LP-006012 | Perform Membership architecture review | DONE | `agent/architecture/LP-006012-membership-review` | Review, QA, and Security approved | Merged as `e32217e4f37f26dd74d45cc40ab8d76e584ee8e3`; post-merge evidence passed; no P0/P1 or Critical/High findings. |
 | LP-006013 | Perform Membership QA, privacy, and security gate | DONE | `agent/qa/LP-006013-membership-final-gate` | QA and Security approved | Merged as `f4e168f1d9e558032fed9c0a061610c46ac34245`; post-merge validation passed 19/19; deferred foundations remain explicit. |
-| LP-006014 | Implement Membership persistence and RLS | BLOCKED |  | Pending infrastructure | Depends on LP-000009 and LP-000016 plus executable Membership contracts. |
+| LP-006014 | Implement Membership persistence and RLS | READY | `agent/task-preparation/LP-006014-membership-persistence` | Task Preparation complete | Dependencies satisfied: LP-000009, LP-000016, LP-006001, LP-006003, LP-006004, LP-006005, and LP-006006. Ready for isolated database implementation. |
 
 ## Receipt Processing Product Module
 

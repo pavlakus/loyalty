@@ -19,11 +19,11 @@
 - LP-006011 — Add Membership domain, API, privacy, and security tests
 - LP-006012 — Perform Membership architecture review
 - LP-006013 — Perform Membership QA, privacy, and security gate
-- LP-006014 — Implement Membership persistence and RLS (deferred)
+- LP-006014 — Implement Membership persistence and RLS (READY)
 
 ## Dependency Order
 
-LP-006001 is the first domain task, but cannot become READY until the lifecycle transition matrix and rejoin semantics are resolved by Product Decision. LP-006002 follows the aggregate contract. LP-006003–LP-006006 establish provider-neutral enrollment boundaries and depend on the aggregate/API decisions. LP-006007 and LP-006008 depend on approved lifecycle and Status/Membership Year semantics. LP-006009 and LP-006010 are contract tasks. LP-006011–LP-006013 close the executable baseline. LP-006014 remains blocked by Database/RLS foundations.
+LP-006001 is the first domain task, but cannot become READY until the lifecycle transition matrix and rejoin semantics are resolved by Product Decision. LP-006002 follows the aggregate contract. LP-006003–LP-006006 establish provider-neutral enrollment boundaries and depend on the aggregate/API decisions. LP-006007 and LP-006008 depend on approved lifecycle and Status/Membership Year semantics. LP-006009 and LP-006010 are contract tasks. LP-006011–LP-006013 close the executable baseline. LP-006014 is READY because Database/Migration and CI foundations are DONE and all executable Membership contract dependencies are complete.
 
 ## Explicit Deferrals
 
