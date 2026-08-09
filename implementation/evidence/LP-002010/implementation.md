@@ -38,3 +38,30 @@ Revert the implementation commit; this removes one pure resolver and its tests w
 ## Review handoff
 
 Implementation commit: `117bd9c`. The task branch is clean and contains only the preferred-language resolver, focused test, synchronized Customer documentation, lifecycle metadata, and evidence. It is ready for independent review.
+
+## Correction: Node runtime global lint baseline
+
+- **Task ID:** LP-002010
+- **Phase:** Correction
+- **Role:** Implementation Agent
+- **Date:** 2026-08-09
+- **Owner commit:** `117bd9ce746d4644c7138d2d7054655d6ee0067a`
+- **Correction branch:** `agent/correction/LP-002010-structuredclone-lint`
+
+The live validation failure identified `structuredClone` in `services/api/test/customer-preferred-language.test.mjs` as an undefined ESLint global. Git history shows the usage was introduced by the owner commit above and predates LP-000016 recovery commit `f01bea7d6f0212923f09e0ddfffa9765dd738393`. `structuredClone` is a standard global in the repository-pinned Node 22 runtime, so the smallest standards-compliant correction is to declare it as a read-only ESLint global in the shared configuration. No runtime behavior or test assertion was changed.
+
+### Changed files
+
+- `eslint.config.js` — declare the supported Node runtime global `structuredClone`.
+- `implementation/evidence/LP-002010/implementation.md` — this correction record.
+
+### Validation
+
+- `node --version` — PASS; current local runtime is Node 25.2.1 and the repository requires Node `>=22.18.0 <26`.
+- `git merge-base --is-ancestor 117bd9ce746d4644c7138d2d7054655d6ee0067a f01bea7d6f0212923f09e0ddfffa9765dd738393` — PASS; usage predates LP-000016 recovery.
+- `git diff --check` — PASS.
+- Full CI validation remains pending the maintainer-integrated GitHub Actions rerun.
+
+### Recovery
+
+Revert the correction commit if the shared ESLint configuration must be restored; no database or persisted-state recovery is required.
