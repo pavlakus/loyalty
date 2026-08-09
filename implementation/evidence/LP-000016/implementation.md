@@ -125,4 +125,20 @@ The workflow now:
 - Ruby workflow YAML parse — PASS.
 - `git diff --check` — PASS.
 
-The correction does not modify Loyalty product code or weaken the secret patterns. Live GitHub Actions rerun remains required before LP-000016 can advance.
+The correction does not modify Loyalty product code or weaken the secret patterns.
+
+## Final live validation
+
+- **Task ID:** LP-000016
+- **Phase:** Implementation completion
+- **Role:** DevOps Agent
+- **Date:** 2026-08-09
+- **Live run:** `31298833087`
+- **Branch:** `agent/devops/LP-000016-ci-pipeline-recovery`
+
+Both required jobs passed:
+
+- PostgreSQL migration validation — PASS.
+- Repository validation — PASS: install, workspace listing, build, lint, typecheck, tests, FCR validation, dependency audit step, secret scan, and diff check.
+
+The dependency audit reported the already documented baseline advisories, but the authorized non-blocking audit exception was applied and the job completed successfully. No secret values were reported. This satisfies the live CI gate for LP-000016.
