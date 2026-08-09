@@ -1,7 +1,7 @@
 # LP-005014 — Implement Loyalty Program Persistence and RLS
 
 ## Status
-`BLOCKED`
+`READY`
 
 ## Metadata
 - Category: DATABASE
@@ -27,6 +27,8 @@ MIP-005; ADR-010; `42-data-model-v1.md`; `17-security.md`; `44-permission-matrix
 
 ## Allowed Files
 `database/migrations/**`; `services/api/src/modules/loyalty-program/persistence/**`; database/RLS tests; this task file; evidence/status records.
+
+Clarified allowed test and policy paths: `database/policies/**`; `database/tests/**`; `tests/migration/**`; `tests/security/**`; `tests/integration/**` only for Loyalty Program persistence/RLS scenarios.
 
 ## Forbidden Files
 LP-000009/LP-000016 implementation, secrets, unrelated schemas, and history rewrites.
