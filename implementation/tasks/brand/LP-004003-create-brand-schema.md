@@ -7,7 +7,7 @@ Create Brand schema
 MIP-004-brand.md
 
 ## Status
-READY
+READY_FOR_MERGE
 
 ## Assigned Role
 Database Agent

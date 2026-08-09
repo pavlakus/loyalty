@@ -59,7 +59,7 @@
 | LP-003003 | Create Business schema | DONE | `agent/database/LP-003003-business-schema` | REVIEW APPROVED; QA APPROVED; SECURITY APPROVED | Merged into `development` at `2c8405c`; post-merge migration/schema validation passed; RLS remains a separate follow-up. |
 | LP-003002 | Define Business API contracts | DONE | `development` | APPROVED; QA APPROVED; Security APPROVED | Merged at `9ba454f`; post-merge scoped validation passed; routes/persistence/RLS deferred. |
 | LP-004001 | Define Brand aggregate | DONE | `development` | APPROVED; QA APPROVED; Security APPROVED | Merged at `f24b7df`; post-merge scoped validation passed; persistence/RLS deferred. |
-| LP-004003 | Create Brand schema | READY | `agent/database/LP-004003-brand-schema` | Pending implementation | Preparation passed; Customer/Business roots and LP-000009 are complete; Brand RLS remains a separate follow-up. |
+| LP-004003 | Create Brand schema | READY_FOR_MERGE | `agent/database/LP-004003-brand-schema` | REVIEW APPROVED; QA APPROVED; SECURITY APPROVED | Implementation `0fce364`; review `ec4e2c9`; QA `5b801e7`; PostgreSQL migration/schema/API validation passed; RLS remains a separate follow-up. |
 
 ## Loyalty Program Product Module
 
