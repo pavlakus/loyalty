@@ -20,7 +20,7 @@
 
 ## Implementation summary
 
-- Added a central application-level UAT service and PostgreSQL adapter boundary for UAT fixtures, business actor resolution, Customer session resolution, Membership enrollment, receipt orchestration, Reward Account queries, and Analytics queries.
+- Added a central application-level UAT service and PostgreSQL adapter boundary for UAT fixtures, business actor resolution, Customer session resolution, Business/Brand/Program/Customer/Membership/XP/Status queries, Membership enrollment, receipt orchestration, Reward Account queries, eligibility, redemption reservation/confirmation/cancellation, and Analytics queries.
 - Added normal `/api/v1/uat/*` command/query routes. Routes parse requests and delegate; SQL remains in PostgreSQL adapters/functions.
 - Added explicit non-production UAT Business actor fixtures. Fixture tokens are hashed at rest and UAT fixtures are rejected in production.
 - Added bearer session resolution through a security-definer database function. Raw session tokens are not persisted or logged.
@@ -66,10 +66,10 @@ The API test covered fixture provisioning, OTP request/verification, persisted s
 
 ## Known limitations
 
-- The UAT receipt command currently composes the already-approved local MVP application orchestration; separate production command handlers for every sub-step remain follow-up work before production release.
+- The local-MVP route remains available only for legacy non-production tests; the UAT receipt command now performs its own transaction and does not call the local-MVP application port.
 - Business-user authentication is represented only by the explicitly non-production UAT actor fixture; no production Business identity provider was selected or introduced.
 - Production OTP delivery remains deferred behind the approved provider-neutral port.
 
 ## Readiness
 
-The validated slice is not yet the complete LP-012002 scope. Separate normal API commands/queries for Business, Brand, Program configuration/activation, Customer resolution, XP/Status, Reward eligibility, and reservation/confirmation/cancellation are still required; the current receipt endpoint delegates the existing local-MVP orchestration. The task remains `IN_PROGRESS` and must not enter independent review until those scoped capabilities are added.
+The implementation scope and task-scoped validation are complete. The UAT scenario uses dedicated normal API routes and does not call `/api/v1/local-mvp/scenario`. Transition: `IN_PROGRESS -> READY_FOR_REVIEW`. Independent Review, QA, Security, human merge, and post-merge validation remain required.

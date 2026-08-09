@@ -3,7 +3,7 @@
 - Task ID: LP-012002
 - Category: Application integration / UAT readiness
 - Priority: P0
-- State: IN_PROGRESS
+- State: READY_FOR_REVIEW
 - Owner: Backend Application Agent
 - Owning module: `services/api`
 - Dependencies: LP-012001, all completed persistence tasks, ADR-012

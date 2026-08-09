@@ -80,6 +80,47 @@ export function createApplication(dependencies: ApplicationDependencies = {}): (
           writeJson(response, 201, { data: { membershipId: input.membershipId, status: "ACTIVE" } });
           return;
         }
+        if (request.method === "GET" && requestUrl === "/api/v1/uat/customers/me") {
+          const identity = await dependencies.uat.resolveCustomerSession(bearer(request));
+          writeJson(response, 200, { data: await dependencies.uat.resolveCustomer(identity) });
+          return;
+        }
+        if (request.method === "GET" && requestUrl.startsWith("/api/v1/uat/businesses/me")) {
+          const identity = await dependencies.uat.resolveBusinessActor(String((request.headers["x-uat-business-token"] ?? "")));
+          const businessId = new URL(request.url ?? "", "http://localhost").searchParams.get("businessId") ?? "";
+          writeJson(response, 200, { data: await dependencies.uat.business(identity, businessId) });
+          return;
+        }
+        if (request.method === "GET" && requestUrl.startsWith("/api/v1/uat/brands")) {
+          const query = new URL(request.url ?? "", "http://localhost").searchParams;
+          const identity = await dependencies.uat.resolveBusinessActor(String((request.headers["x-uat-business-token"] ?? "")));
+          writeJson(response, 200, { data: await dependencies.uat.brand(identity, query.get("businessId") ?? "", query.get("brandId") ?? "") });
+          return;
+        }
+        if (request.method === "GET" && requestUrl.startsWith("/api/v1/uat/programs")) {
+          const query = new URL(request.url ?? "", "http://localhost").searchParams;
+          const identity = await dependencies.uat.resolveBusinessActor(String((request.headers["x-uat-business-token"] ?? "")));
+          writeJson(response, 200, { data: await dependencies.uat.program(identity, query.get("businessId") ?? "", query.get("programId") ?? "") });
+          return;
+        }
+        if (request.method === "GET" && requestUrl.startsWith("/api/v1/uat/memberships/")) {
+          const parsedUrl = new URL(request.url ?? "", "http://localhost");
+          const identity = await dependencies.uat.resolveBusinessActor(String((request.headers["x-uat-business-token"] ?? "")));
+          writeJson(response, 200, { data: await dependencies.uat.membership(identity, parsedUrl.searchParams.get("businessId") ?? "", parsedUrl.pathname.split("/").pop() ?? "") });
+          return;
+        }
+        if (request.method === "GET" && requestUrl.startsWith("/api/v1/uat/xp-status/")) {
+          const parsedUrl = new URL(request.url ?? "", "http://localhost");
+          const identity = await dependencies.uat.resolveBusinessActor(String((request.headers["x-uat-business-token"] ?? "")));
+          writeJson(response, 200, { data: await dependencies.uat.xpStatus(identity, parsedUrl.searchParams.get("businessId") ?? "", parsedUrl.pathname.split("/").pop() ?? "") });
+          return;
+        }
+        if (request.method === "GET" && requestUrl.startsWith("/api/v1/uat/rewards")) {
+          const parsedUrl = new URL(request.url ?? "", "http://localhost");
+          const identity = await dependencies.uat.resolveBusinessActor(String((request.headers["x-uat-business-token"] ?? "")));
+          writeJson(response, 200, { data: await dependencies.uat.eligibleRewards(identity, parsedUrl.searchParams.get("businessId") ?? "", parsedUrl.searchParams.get("programId") ?? "", parsedUrl.searchParams.get("membershipId") ?? "") });
+          return;
+        }
         if (request.method === "POST" && requestUrl === "/api/v1/uat/receipts") {
           const input = await readJson(request) as Parameters<UatApiService["submitReceipt"]>[0];
           const customer = await dependencies.uat.resolveCustomerSession(bearer(request));
@@ -87,6 +128,26 @@ export function createApplication(dependencies: ApplicationDependencies = {}): (
           if (business.businessId !== input.businessId) throw new Error("tenant context is not authorized");
           const result = await dependencies.uat.submitReceipt({ ...input, identity: customer });
           writeJson(response, 201, { data: result });
+          return;
+        }
+        if (request.method === "POST" && requestUrl === "/api/v1/uat/redemptions/reserve") {
+          const input = await readJson(request) as Parameters<UatApiService["reserve"]>[1];
+          const identity = await dependencies.uat.resolveBusinessActor(String((request.headers["x-uat-business-token"] ?? "")));
+          writeJson(response, 201, { data: await dependencies.uat.reserve(identity, input) });
+          return;
+        }
+        if (request.method === "POST" && requestUrl.startsWith("/api/v1/uat/redemptions/") && requestUrl.endsWith("/confirm")) {
+          const input = await readJson(request) as { businessId: string; transitionedAt: string };
+          const redemptionId = requestUrl.split("/").at(-2) ?? "";
+          const identity = await dependencies.uat.resolveBusinessActor(String((request.headers["x-uat-business-token"] ?? "")));
+          writeJson(response, 200, { data: await dependencies.uat.transition(identity, { ...input, redemptionId, targetState: "CONFIRMED" }) });
+          return;
+        }
+        if (request.method === "POST" && requestUrl.startsWith("/api/v1/uat/redemptions/") && requestUrl.endsWith("/cancel")) {
+          const input = await readJson(request) as { businessId: string; transitionedAt: string };
+          const redemptionId = requestUrl.split("/").at(-2) ?? "";
+          const identity = await dependencies.uat.resolveBusinessActor(String((request.headers["x-uat-business-token"] ?? "")));
+          writeJson(response, 200, { data: await dependencies.uat.transition(identity, { ...input, redemptionId, targetState: "CANCELLED" }) });
           return;
         }
         if (request.method === "GET" && requestUrl.startsWith("/api/v1/uat/reward-accounts/")) {
