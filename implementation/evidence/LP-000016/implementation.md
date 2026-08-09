@@ -62,3 +62,12 @@ included.
 - **Reason:** `setup-node` pnpm caching requires pnpm to be available before cache initialization. The failed run stopped before dependency installation for this reason.
 - **Node warning reconciliation:** `actions/checkout@v4.2.2` and `actions/setup-node@v4.4.0` are already supported action versions in the repository. No unrelated action upgrade was introduced.
 - **Scope:** Workflow/toolchain setup only; Repository validation and PostgreSQL migration validation jobs are preserved.
+
+## Live run 31296736591 lint finding and ownership reconciliation
+
+- **Date:** 2026-08-09
+- **Result:** PostgreSQL migration validation, repository setup/install/workspace/build passed. Repository lint failed on `services/api/test/membership-domain-security.test.mjs`, which directly imported `../../../packages/event-contracts/dist/index.js`.
+- **Owning commit:** `0bb118b test(membership): add domain privacy and security coverage` (LP-006011).
+- **History check:** `git log --all --oneline -S'../../../packages/event-contracts/dist/index.js' -- services/api/test/membership-domain-security.test.mjs` identifies `0bb118b`; `git merge-base --is-ancestor 0bb118b f01bea7` passed. The violation predates LP-000016 recovery and was not introduced by LP-000016.
+- **Correction:** LP-006011 owner branch `agent/correction/LP-006011-membership-boundary-import` committed `06b8585`, replacing the direct generated-artifact import with `@loyalty-platform/event-contracts`. No LP-000016 workflow or product runtime file was changed by that correction.
+- **Current CI status:** No new live run could be started in this environment because both configured GitHub CLI tokens are invalid. LP-000016 remains non-DONE pending integration of the separately-owned correction and a passing live workflow.
