@@ -1,0 +1,13 @@
+BEGIN;
+INSERT INTO businesses (id,legal_name,display_name,default_currency,timezone) VALUES ('00000000-0000-0000-0000-0000000000b1','Analytics A','Analytics A','RSD','Europe/Belgrade');
+INSERT INTO businesses (id,legal_name,display_name,default_currency,timezone) VALUES ('00000000-0000-0000-0000-0000000000b2','Analytics B','Analytics B','EUR','Europe/Belgrade');
+INSERT INTO brands (id,business_id,name,default_locale,status) VALUES ('00000000-0000-0000-0000-0000000000b3','00000000-0000-0000-0000-0000000000b1','Analytics Brand','en-US','ACTIVE');
+INSERT INTO loyalty_programs (id,business_id,brand_id,status) VALUES ('00000000-0000-0000-0000-0000000000b4','00000000-0000-0000-0000-0000000000b1','00000000-0000-0000-0000-0000000000b3','ACTIVE');
+SET ROLE loyalty_app; SELECT set_config('app.business_id','00000000-0000-0000-0000-0000000000b1',true);
+SELECT * FROM record_analytics_observation('00000000-0000-0000-0000-0000000000b5','00000000-0000-0000-0000-0000000000b1','00000000-0000-0000-0000-0000000000b3','00000000-0000-0000-0000-0000000000b4','qualifyingPurchaseAmount','RECEIPT','receipt-b1',NULL,NULL,'RSD',5000,'2026-08-09T10:00:00Z','analytics-receipt-b1','fp-b1');
+SELECT * FROM record_analytics_observation('00000000-0000-0000-0000-0000000000b6','00000000-0000-0000-0000-0000000000b1','00000000-0000-0000-0000-0000000000b3','00000000-0000-0000-0000-0000000000b4','qualifyingPurchaseAmount','RECEIPT','receipt-b2',NULL,NULL,'RSD',2500,'2026-08-09T11:00:00Z','analytics-receipt-b2','fp-b2');
+SELECT * FROM record_analytics_observation('00000000-0000-0000-0000-0000000000b5','00000000-0000-0000-0000-0000000000b1','00000000-0000-0000-0000-0000000000b3','00000000-0000-0000-0000-0000000000b4','qualifyingPurchaseAmount','RECEIPT','receipt-b1',NULL,NULL,'RSD',5000,'2026-08-09T10:00:00Z','analytics-receipt-b1','fp-b1');
+DO $$ BEGIN IF (SELECT metric_value FROM query_analytics_overview('00000000-0000-0000-0000-0000000000b1','00000000-0000-0000-0000-0000000000b4','2026-08-09T00:00:00Z','2026-08-10T00:00:00Z') WHERE metric_name='qualifyingPurchaseAmount' AND currency_code='RSD')<>7500 THEN RAISE EXCEPTION 'Analytics aggregation incorrect'; END IF; END; $$;
+DO $$ BEGIN IF EXISTS (SELECT 1 FROM query_analytics_overview('00000000-0000-0000-0000-0000000000b1','00000000-0000-0000-0000-0000000000b4','2026-08-10T00:00:00Z','2026-08-11T00:00:00Z')) THEN RAISE EXCEPTION 'Empty analytics period is not zero/empty'; END IF; END; $$;
+DO $$ BEGIN IF EXISTS (SELECT 1 FROM query_analytics_overview('00000000-0000-0000-0000-0000000000b2','00000000-0000-0000-0000-0000000000b4','2026-08-09T00:00:00Z','2026-08-10T00:00:00Z')) THEN RAISE EXCEPTION 'Cross-tenant analytics query returned data'; END IF; END; $$;
+RESET ROLE; ROLLBACK;
