@@ -4,9 +4,9 @@
 
 - Category: DATABASE/INFRASTRUCTURE; Priority: P0; Role: Database Agent; Owner: XP and Status
 - Dependencies: LP-000009, LP-000016, LP-009001–LP-009004
-- State: BLOCKED
+- State: READY
 - Allowed files: immutable XP migrations, RLS, repositories, concurrency/outbox tests
-- Forbidden: implementation before infrastructure dependencies are DONE
+- Forbidden: implementation before declared dependencies are DONE; mutation of XP history or completed Status history
 
 ## Scope and acceptance
 

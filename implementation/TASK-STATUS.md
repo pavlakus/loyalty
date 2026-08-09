@@ -132,7 +132,7 @@
 | LP-009002 | Implement deterministic XP earning and idempotency contract | DONE | `agent/backend/LP-009002-xp-earning` | Review, QA, and Security approved | Merged as `66af212f481c4b3d604458041ea8675416ae0f7b`; post-merge XP earning tests passed 2/2; persistent/distributed enforcement remains deferred. |
 | LP-009003 | Implement Status evaluation and progression contract | DONE | `agent/backend/LP-009003-status-progression` | Review, QA, and Security approved | Merged as `7a1d5da31880c795821f22be7b00a5d37e3f875d`; post-merge Status validation passed 2/2; no Customer mutation or Benefit execution. |
 | LP-009004 | Add XP, Status, Benefit-reference, privacy, and security tests | DONE | `agent/qa/LP-009004-xp-status-final-gate` | Review, QA, and Security approved | Merged as `aae101984ccd6558912db823bda99e99a878a0f6`; post-merge XP/Status tests passed 6/6; persistence/RLS remains deferred. |
-| LP-009005 | Implement XP/Status persistence, RLS, and distributed concurrency | BLOCKED |  | Pending infrastructure | Depends on LP-000009 and LP-000016. |
+| LP-009005 | Implement XP/Status persistence, RLS, and distributed concurrency | READY | `agent/task-preparation/LP-009005-xp-status-persistence` | Task Preparation complete | LP-000009, LP-000016, and LP-009001–LP-009004 are DONE; ready for isolated PostgreSQL implementation. |
 
 ## Reward Eligibility and Redemption Product Module
 
