@@ -3,7 +3,7 @@ import test from "node:test";
 import { MembershipAggregate } from "../dist/modules/membership/membership-aggregate.js";
 import { InMemoryEnrollmentIdempotencyStore, EnrollmentIdempotencyError } from "../dist/modules/membership/enrollment-idempotency.js";
 import { createMembershipQrPayload, createPublicMembershipToken, PublicMembershipTokenError } from "../dist/modules/membership/public-membership-token.js";
-import { validateMembershipEventPayload, EventContractValidationError } from "../../../packages/event-contracts/dist/index.js";
+import { validateMembershipEventPayload, EventContractValidationError } from "@loyalty-platform/event-contracts";
 
 const input = { id: "membership-test", customerId: "customer-test", loyaltyProgramId: "program-test", brandId: "brand-test", loyaltyProgramStatus: "ACTIVE", brandStatus: "ACTIVE", createdAt: "2026-08-08T10:00:00.000Z" };
 
