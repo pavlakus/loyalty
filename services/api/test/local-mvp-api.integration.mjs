@@ -22,6 +22,7 @@ const ids = {
 test("local MVP API persists the complete loyalty vertical and is idempotent", async () => {
   assert.ok(process.env.DATABASE_URL, "DATABASE_URL is required for this integration test");
   const composition = createLocalMvpComposition();
+  await composition.pool.query("INSERT INTO customers (id,normalized_phone_reference) VALUES ($1,$2) ON CONFLICT (id) DO NOTHING", ["aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa", "+381601234567"]);
   const server = createServer(createApplication({ localMvp: composition.localMvp.createPort(), authentication: composition.authentication }));
   await new Promise((resolve) => server.listen(0, "127.0.0.1", resolve));
   const address = server.address();
@@ -47,6 +48,7 @@ test("local MVP API persists the complete loyalty vertical and is idempotent", a
 test("local provider-neutral OTP flow persists a challenge and session without exposing the OTP", async () => {
   assert.ok(process.env.DATABASE_URL, "DATABASE_URL is required for this integration test");
   const composition = createLocalMvpComposition();
+  await composition.pool.query("INSERT INTO customers (id,normalized_phone_reference) VALUES ($1,$2) ON CONFLICT (id) DO NOTHING", ["aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa", "+381601234567"]);
   const server = createServer(createApplication({ authentication: composition.authentication }));
   await new Promise((resolve) => server.listen(0, "127.0.0.1", resolve));
   const address = server.address();

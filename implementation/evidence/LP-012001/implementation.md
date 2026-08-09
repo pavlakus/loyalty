@@ -3,7 +3,7 @@
 - Task ID: LP-012001
 - Phase: Implementation
 - Role: Backend Application Agent
-- Branch: `agent/task-preparation/LP-012001-local-mvp-application` (repository branch creation was unavailable because the shared Git ref store was read-only; no other task changes were included)
+- Branch: `agent/backend/LP-012001-local-mvp-application`
 - Preparation commit: `0032a8e`
 
 ## Scope completed
@@ -28,6 +28,8 @@ The real API scenario executes Business → Brand → active Loyalty Program →
 - Same API request replay — PASS: identical projection and no duplicate logical outcome.
 - Provider-neutral OTP request/verification — PASS: persisted challenge and session; request response contained no `otpCode`; raw OTP remained in the non-production delivery adapter memory only.
 - Application-role tenant read check — PASS: unrelated Business sees 0 Programs; owning Business sees 1.
+- `psql -v ON_ERROR_STOP=1 ... -f database/tests/local-mvp-application.sql` — PASS.
+- `NODE_ENV=test DATABASE_URL=... pnpm db:migrate:check` — PASS; 13 migration files validated.
 
 ## Known limitation
 
