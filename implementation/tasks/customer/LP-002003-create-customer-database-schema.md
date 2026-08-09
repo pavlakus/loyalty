@@ -6,7 +6,7 @@
 
 ## 2. Status
 
-`IMPLEMENTATION_COMPLETE`
+`READY_FOR_MERGE`
 
 ## 3. Category
 
