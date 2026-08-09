@@ -27,6 +27,7 @@
 | Task | Title | Status | Branch | Review | Notes |
 |---|---|---|---|---|---|
 | LP-002001 | Define Customer aggregate and identity-link architecture | DONE | `agent/security/LP-002001-customer-architecture` | APPROVED; QA APPROVED; SECURITY APPROVED | Merged into development at `ce279ee`; post-merge validation passed; architecture-only scope, no runtime or database integration claimed. |
+| LP-002003 | Create Customer database schema | DONE | `agent/database/LP-002003-customer-schema` | REVIEW APPROVED; QA APPROVED; SECURITY APPROVED | Merged into `development` at `3062f93`; post-merge migration/schema/API validation passed; RLS remains LP-002014/LP-002021 scope. |
 | LP-002002 | Define Customer API and Event contracts | DONE | `agent/security/LP-002002-customer-api-events` | APPROVED; QA APPROVED; SECURITY APPROVED | Merged into development at `c035695`; post-merge contract/build/typecheck/FCR validation passed. Root API server test is sandbox-blocked by localhost `EPERM`; no LP-002002 failure. |
 | LP-002006 | Implement Customer profile validation | DONE | `agent/security/LP-002006-customer-profile-validation` | APPROVED; QA APPROVED; SECURITY APPROVED | Merged into development at `a923f9c`; post-merge profile/build/lint/typecheck/FCR validation passed. Root test remains affected only by unrelated FCR runner baseline behavior. |
 | LP-002012 | Design Customer anonymization strategy | DONE | `agent/security/LP-002012-customer-anonymization` | APPROVED; QA APPROVED; SECURITY APPROVED | Merged into `development` at `1ae7cf5`; post-merge scoped validation passed; full repository build/typecheck/FCR test baseline remains dependency-install blocked as documented. |
@@ -55,8 +56,10 @@
 | LP-001010 | Implement OTP verification and attempt lockout | DONE | `development` | APPROVED; QA APPROVED; Security APPROVED | Merged at `8489b45`; post-merge scoped validation passed; production challenge persistence remains deferred. |
 | LP-001011 | Integrate global Customer resolution contract | DONE | `development` | APPROVED; QA APPROVED; Security APPROVED | Merged at `f7842f9`; post-merge scoped validation passed; database persistence remains deferred. |
 | LP-003001 | Define Business aggregate | DONE | `development` | APPROVED; QA APPROVED; Security APPROVED | Merged at `37edf5f`; post-merge scoped validation passed; persistence/RLS deferred. |
+| LP-003003 | Create Business schema | DONE | `agent/database/LP-003003-business-schema` | REVIEW APPROVED; QA APPROVED; SECURITY APPROVED | Merged into `development` at `2c8405c`; post-merge migration/schema validation passed; RLS remains a separate follow-up. |
 | LP-003002 | Define Business API contracts | DONE | `development` | APPROVED; QA APPROVED; Security APPROVED | Merged at `9ba454f`; post-merge scoped validation passed; routes/persistence/RLS deferred. |
 | LP-004001 | Define Brand aggregate | DONE | `development` | APPROVED; QA APPROVED; Security APPROVED | Merged at `f24b7df`; post-merge scoped validation passed; persistence/RLS deferred. |
+| LP-004003 | Create Brand schema | DONE | `agent/database/LP-004003-brand-schema` | REVIEW APPROVED; QA APPROVED; SECURITY APPROVED | Merged into `development` at `0064156`; post-merge migration/schema validation passed; RLS remains a separate follow-up. |
 
 ## Loyalty Program Product Module
 
