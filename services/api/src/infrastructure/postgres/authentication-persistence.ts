@@ -48,4 +48,13 @@ export class PostgresAuthenticationPersistence implements AuthenticationPersiste
     await this.pool.query("INSERT INTO authentication_sessions (id,customer_id,token_digest,expires_at,created_at) VALUES ($1,$2,$3,to_timestamp($4/1000.0),CURRENT_TIMESTAMP)", [sessionId,customerId,tokenDigest,expiresAt]);
     return { sessionId, token };
   }
+
+  public async resolveSession(token: string): Promise<{ sessionId: string; customerId: string } | null> {
+    const digest = createHash("sha256").update(token).digest("base64url");
+    const result = await this.pool.query<{ session_id: string; customer_id: string }>(
+      "SELECT session_id, customer_id FROM resolve_authentication_session($1)", [digest],
+    );
+    const row = result.rows[0];
+    return row ? { sessionId: row.session_id, customerId: row.customer_id } : null;
+  }
 }

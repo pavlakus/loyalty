@@ -35,7 +35,7 @@ export function startServer(options: ServerOptions = {}): Promise<RunningServer>
   const port = resolvePort(options.port, environment);
   const host = resolveHost(options.host, environment);
   const composition = options.application || !process.env.DATABASE_URL ? undefined : createLocalMvpComposition();
-  const application = options.application ?? { localMvp: composition?.localMvp.createPort(), authentication: composition?.authentication, nonProductionOnly: environment.nodeEnv === "production" };
+  const application = options.application ?? { localMvp: composition?.localMvp.createPort(), authentication: composition?.authentication, uat: composition?.uat, nonProductionOnly: environment.nodeEnv === "production" };
   const server = createServer(createApplication(application));
 
   return new Promise((resolve, reject) => {

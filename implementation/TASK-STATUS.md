@@ -149,6 +149,12 @@
 | LP-011001 | Implement deterministic Business Observation metrics | DONE | `agent/backend/LP-011001-business-observation-metrics` | Review APPROVED; QA APPROVED; Security APPROVED | Merged as `7e9713652ef57450df2965badba99e8173dbb989`; read-only in-memory metrics complete; production projection/persistence deferred to LP-011003. |
 | LP-011002 | Add Analytics API and projection contracts and privacy tests | DONE | `agent/contracts/LP-011002-analytics-contracts` | Review APPROVED; QA APPROVED; Security APPROVED | Merged as `da0cb086c1e302c995acf9e1bc85471fdf1b00fa`; read-only analytics contract gate complete; production projection/persistence deferred to LP-011003. |
 | LP-011003 | Implement production analytics projection, persistence, and RLS | DONE | `agent/security/LP-011003-analytics-persistence-v2` | Independent Review approved; QA approved; Security approved | Merged as `91285ac`; live run `31302337141` passed both jobs; local PostgreSQL projection/idempotency/RLS validation passed; post-merge evidence complete. |
+
+## UAT Readiness
+
+| Task | Title | Status | Branch | Review | Notes |
+|---|---|---|---|---|---|
+| LP-012002 | UAT-ready authenticated tenant-aware Loyalty API | READY_FOR_MERGE | `agent/backend/LP-012002-uat-api-readiness` | Review APPROVED; QA APPROVED; Security APPROVED | Correction commit `8eace7b`; repository boundary, canonical UAT errors, fresh PostgreSQL, RLS, replay, and redemption concurrency gates passed. Human merge required. |
 | LP-012001 | Compose PostgreSQL-backed local MVP application vertical | DONE | `agent/backend/LP-012001-local-mvp-application` | Review APPROVED; QA APPROVED; SECURITY APPROVED | Merged into `development` at `ca9fcb8`; post-merge PostgreSQL/API/repository validation passed. |
 
 ## AI Engineering Framework
