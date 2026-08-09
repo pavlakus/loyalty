@@ -54,3 +54,11 @@ hosted runner’s loopback service, while development fallback and production sa
 dependency audit remains enabled, but its result is explicitly non-blocking for unrelated MVP work under the current
 repository exception; scan output remains visible for ownership follow-up. No dependency or lockfile changes are
 included.
+
+## CI setup correction after run 31296431021
+
+- **Date:** 2026-08-09
+- **Correction:** Added `pnpm/action-setup@v4.0.0` with the repository-pinned `PNPM_VERSION` before `actions/setup-node` in both jobs; removed the redundant Corepack activation step.
+- **Reason:** `setup-node` pnpm caching requires pnpm to be available before cache initialization. The failed run stopped before dependency installation for this reason.
+- **Node warning reconciliation:** `actions/checkout@v4.2.2` and `actions/setup-node@v4.4.0` are already supported action versions in the repository. No unrelated action upgrade was introduced.
+- **Scope:** Workflow/toolchain setup only; Repository validation and PostgreSQL migration validation jobs are preserved.
