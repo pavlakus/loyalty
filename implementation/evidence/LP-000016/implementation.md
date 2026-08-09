@@ -71,3 +71,28 @@ included.
 - **History check:** `git log --all --oneline -S'../../../packages/event-contracts/dist/index.js' -- services/api/test/membership-domain-security.test.mjs` identifies `0bb118b`; `git merge-base --is-ancestor 0bb118b f01bea7` passed. The violation predates LP-000016 recovery and was not introduced by LP-000016.
 - **Correction:** LP-006011 owner branch `agent/correction/LP-006011-membership-boundary-import` committed `06b8585`, replacing the direct generated-artifact import with `@loyalty-platform/event-contracts`. No LP-000016 workflow or product runtime file was changed by that correction.
 - **Current CI status:** No new live run could be started in this environment because both configured GitHub CLI tokens are invalid. LP-000016 remains non-DONE pending integration of the separately-owned correction and a passing live workflow.
+
+## StructuredClone lint correction integration
+
+- **Task ID:** LP-000016
+- **Phase:** Implementation validation
+- **Role:** DevOps Agent
+- **Date:** 2026-08-09
+- **Live source run:** `31298204912`
+- **Owning task:** `LP-002010`
+- **Owning commit:** `117bd9ce746d4644c7138d2d7054655d6ee0067a`
+- **Correction commit:** `687c00fb2fb4eaa7c37d57d9cf510e99a0b067c5`
+- **Development merge commit:** `6175ce0f997914408695ba3c71946d257c8e984c`
+- **Recovery-branch update commit:** `13e1ebf0d2440ebc8078ce4e6681b8a25dda0ae5`
+
+The `structuredClone` usage predates LP-000016 and is valid under the repository-pinned Node `22.18.0` runtime. The correction declares the Node global as read-only in `eslint.config.js`; no product code, test behavior, or CI workflow behavior was changed. The correction was merged into `development` and then into this LP-000016 recovery branch without unrelated files.
+
+### Validation after correction
+
+- `git diff --check` — PASS.
+- `node --version` — PASS locally (`v25.2.1`; repository range is `>=22.18.0 <26`).
+- `node -e "console.log(typeof structuredClone)"` — PASS (`function`).
+- `CI=true pnpm install --frozen-lockfile --offline` — NOT COMPLETED; the local pnpm store lacks `@vitejs/plugin-react@4.3.4` and network access is unavailable.
+- `gh run view 31298204912 --json name,workflowName,conclusion,status,url,event,headBranch,headSha` — NOT COMPLETED; GitHub API access is unavailable from this environment.
+
+No new live workflow result is claimed. LP-000016 remains `IN_PROGRESS` until the maintainer pushes the integrated recovery branch and confirms both GitHub Actions jobs pass.
