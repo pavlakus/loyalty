@@ -22,6 +22,7 @@ export default tseslint.config(
       globals: {
         console: "readonly",
         process: "readonly",
+        structuredClone: "readonly",
       },
     },
     rules: {
