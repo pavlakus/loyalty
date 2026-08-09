@@ -56,7 +56,7 @@
 | LP-001010 | Implement OTP verification and attempt lockout | DONE | `development` | APPROVED; QA APPROVED; Security APPROVED | Merged at `8489b45`; post-merge scoped validation passed; production challenge persistence remains deferred. |
 | LP-001011 | Integrate global Customer resolution contract | DONE | `development` | APPROVED; QA APPROVED; Security APPROVED | Merged at `f7842f9`; post-merge scoped validation passed; database persistence remains deferred. |
 | LP-003001 | Define Business aggregate | DONE | `development` | APPROVED; QA APPROVED; Security APPROVED | Merged at `37edf5f`; post-merge scoped validation passed; persistence/RLS deferred. |
-| LP-003003 | Create Business schema | READY_FOR_MERGE | `agent/database/LP-003003-business-schema` | REVIEW APPROVED; QA APPROVED; SECURITY APPROVED | Implementation `d86eb12`; review `3d8e534`; QA `9f49707`; PostgreSQL migration/schema/API validation passed; RLS remains a separate follow-up. |
+| LP-003003 | Create Business schema | DONE | `agent/database/LP-003003-business-schema` | REVIEW APPROVED; QA APPROVED; SECURITY APPROVED | Merged into `development` at `2c8405c`; post-merge migration/schema validation passed; RLS remains a separate follow-up. |
 | LP-003002 | Define Business API contracts | DONE | `development` | APPROVED; QA APPROVED; Security APPROVED | Merged at `9ba454f`; post-merge scoped validation passed; routes/persistence/RLS deferred. |
 | LP-004001 | Define Brand aggregate | DONE | `development` | APPROVED; QA APPROVED; Security APPROVED | Merged at `f24b7df`; post-merge scoped validation passed; persistence/RLS deferred. |
 

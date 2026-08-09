@@ -7,7 +7,7 @@ Create Business schema
 Business
 
 ## Status
-READY_FOR_MERGE
+DONE
 
 ## Assigned Role
 Database Agent
