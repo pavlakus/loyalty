@@ -4,7 +4,7 @@
 
 - Category: DATABASE/INFRASTRUCTURE; Priority: P0; Role: Database Developer Agent; Owner: Receipt Processing
 - Dependencies: LP-000009, LP-000016, LP-007001, LP-007002, LP-007003, LP-007004
-- State: READY
+- State: READY_FOR_MERGE
 - Allowed files: immutable database migrations, RLS policies, repositories, outbox integration, database tests/evidence
 - Forbidden: implementation until Database/Migration and CI foundations are complete; mutation of immutable Receipt history
 
