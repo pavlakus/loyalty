@@ -3,6 +3,7 @@ import type { Pool, PoolClient, QueryResult, QueryResultRow } from "pg";
 export interface TenantContext {
   readonly businessId?: string;
   readonly customerId?: string;
+  readonly accessPurpose?: string;
 }
 
 export interface TransactionContext {
@@ -20,7 +21,7 @@ export class PostgresTransactionManager {
       const context: TransactionContext = {
         query: (text, values) => client.query(text, values as unknown[] | undefined),
         setTenantContext: async (value) => {
-          await client.query("SELECT set_config('app.business_id', $1, true), set_config('app.tenant_id', $1, true), set_config('app.customer_id', $2, true)", [value.businessId ?? "", value.customerId ?? ""]);
+          await client.query("SELECT set_config('app.business_id', $1, true), set_config('app.tenant_id', $2, true), set_config('app.customer_id', $3, true), set_config('app.access_purpose', $4, true)", [value.businessId ?? "", value.businessId ?? "", value.customerId ?? "", value.accessPurpose ?? ""]);
         },
       };
       await context.setTenantContext(tenant);

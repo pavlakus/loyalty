@@ -1,6 +1,7 @@
 import type { IncomingMessage, ServerResponse } from "node:http";
 import type { LocalMvpScenarioPort } from "../application/local-mvp-ports.js";
 import type { LocalAuthenticationService } from "../application/local-authentication-service.js";
+import type { UatApiService } from "../application/uat-api-service.js";
 
 function writeJson(response: ServerResponse, statusCode: number, body: object): void {
   const payload = JSON.stringify(body, (_key, value: unknown) => typeof value === "bigint" ? value.toString() : value);
@@ -13,6 +14,7 @@ function writeJson(response: ServerResponse, statusCode: number, body: object): 
 export interface ApplicationDependencies {
   readonly localMvp?: LocalMvpScenarioPort;
   readonly authentication?: LocalAuthenticationService;
+  readonly uat?: UatApiService;
   readonly nonProductionOnly?: boolean;
 }
 
@@ -21,6 +23,11 @@ async function readJson(request: IncomingMessage): Promise<unknown> {
   for await (const chunk of request) body += chunk;
   if (body.length === 0) return {};
   return JSON.parse(body);
+}
+
+function bearer(request: IncomingMessage): string {
+  const value = request.headers.authorization ?? "";
+  return value.startsWith("Bearer ") ? value.slice(7) : "";
 }
 
 export function createApplication(dependencies: ApplicationDependencies = {}): (request: IncomingMessage, response: ServerResponse) => void {
@@ -58,6 +65,45 @@ export function createApplication(dependencies: ApplicationDependencies = {}): (
       const result = await dependencies.authentication.verify(input);
       writeJson(response, 200, { data: { sessionId: result.sessionId, token: result.token } });
       return;
+    }
+    if (request.method === "POST" && requestUrl === "/api/v1/uat/fixtures" && dependencies.uat && !dependencies.nonProductionOnly) {
+      try { writeJson(response, 201, { data: await dependencies.uat.fixture() }); } catch { writeJson(response, 403, { error: "uat_fixtures_disabled" }); }
+      return;
+    }
+    if (dependencies.uat && requestUrl.startsWith("/api/v1/uat/")) {
+      try {
+        if (request.method === "POST" && requestUrl === "/api/v1/uat/memberships") {
+          const input = await readJson(request) as Parameters<UatApiService["ensureMembership"]>[0];
+          const customer = await dependencies.uat.resolveCustomerSession(bearer(request));
+          const business = await dependencies.uat.resolveBusinessActor(String((request.headers["x-uat-business-token"] ?? "")));
+          await dependencies.uat.ensureMembership({ ...input, customer, business });
+          writeJson(response, 201, { data: { membershipId: input.membershipId, status: "ACTIVE" } });
+          return;
+        }
+        if (request.method === "POST" && requestUrl === "/api/v1/uat/receipts") {
+          const input = await readJson(request) as Parameters<UatApiService["submitReceipt"]>[0];
+          const customer = await dependencies.uat.resolveCustomerSession(bearer(request));
+          const business = await dependencies.uat.resolveBusinessActor(String((request.headers["x-uat-business-token"] ?? "")));
+          if (business.businessId !== input.businessId) throw new Error("tenant context is not authorized");
+          const result = await dependencies.uat.submitReceipt({ ...input, identity: customer });
+          writeJson(response, 201, { data: result });
+          return;
+        }
+        if (request.method === "GET" && requestUrl.startsWith("/api/v1/uat/reward-accounts/")) {
+          const parsedUrl = new URL(request.url ?? "", "http://localhost");
+          const accountId = parsedUrl.pathname.split("/").pop() ?? "";
+          const business = await dependencies.uat.resolveBusinessActor(String((request.headers["x-uat-business-token"] ?? "")));
+          const businessId = String(parsedUrl.searchParams.get("businessId") ?? "");
+          writeJson(response, 200, { data: await dependencies.uat.rewardAccount(business, businessId, accountId) });
+          return;
+        }
+        if (request.method === "GET" && requestUrl.startsWith("/api/v1/uat/analytics")) {
+          const query = new URL(request.url ?? "", "http://localhost").searchParams;
+          const business = await dependencies.uat.resolveBusinessActor(String((request.headers["x-uat-business-token"] ?? "")));
+          writeJson(response, 200, { data: await dependencies.uat.analytics(business, query.get("businessId") ?? "", query.get("programId") ?? "", query.get("from") ?? "1970-01-01T00:00:00.000Z", query.get("to") ?? "2999-01-01T00:00:00.000Z") });
+          return;
+        }
+      } catch { writeJson(response, 403, { error: "uat_request_not_authorized" }); return; }
     }
     writeJson(response, 404, { error: "not_found" });
     })().catch(() => writeJson(response, 400, { error: "invalid_request" }));
