@@ -6,7 +6,7 @@
 
 ## 2. Status
 
-`DRAFT`
+`READY`
 
 ## 3. Category
 
@@ -30,7 +30,9 @@ Maintain one secure global Customer identity while preventing cross-Business per
 
 ## 8. Exact Scope
 
-Implement only the capability described by this task title and the applicable section of `MIP-002-customer.md`.
+Implement the immutable PostgreSQL schema for the global Customer aggregate described by this task title and the applicable section of `MIP-002-customer.md`. The schema owns Customer fields, lifecycle/status constraints, verified-identity uniqueness, UTC timestamps, optimistic versioning, anonymization metadata, and indexes justified by the approved access paths. RLS and purpose-scoped policies remain owned by LP-002014.
+
+Dependencies: LP-000009 (DONE), LP-002001 (DONE), LP-002002 (DONE), LP-002012 (DONE).
 
 ## 9. Out of Scope
 
@@ -41,6 +43,7 @@ Implement only the capability described by this task title and the applicable se
 - phone-number self-service change;
 - unrelated modules;
 - UAT or production changes unless explicitly authorized.
+- RLS policy implementation and purpose-scoped access tests (LP-002014/LP-002021);
 
 ## 10. Required Documents
 
@@ -68,6 +71,8 @@ services/api/src/modules/customer/**
 packages/api-contracts/src/customers/**
 packages/event-contracts/src/customer/**
 database/*customer*
+database/migrations/**
+database/tests/**
 tests/*/customer/**
 docs/modules/customer/**
 ```
@@ -102,7 +107,7 @@ services/api/src/modules/automation/**
 - unit tests;
 - integration tests where database or API behavior changes;
 - concurrency tests for duplicate creation or update races;
-- RLS and authorization tests;
+- schema integration and constraint tests; RLS and authorization tests remain required by LP-002014/LP-002021;
 - privacy and anonymization tests where personal data changes;
 - contract tests where API or Event schema changes.
 
@@ -145,4 +150,4 @@ Use applicable scenarios from:
 
 ## 18. Completion Rule
 
-This task is complete only when acceptance criteria, mandatory tests and required reviews pass.
+This task is complete only when the schema, constraints, indexes, clean/upgrade migration tests and required reviews pass. RLS and purpose-scoped authorization are not claimed until LP-002014 and LP-002021 complete.
