@@ -20,7 +20,7 @@
 | LP-000007 | Create Standard API Response and Error Contracts | DONE | `agent/qa/LP-000007-api-contracts` | APPROVED; QA APPROVED | Merged into `development` at `5c9a1fd`; post-merge validation passed; release and post-merge evidence recorded. |
 | LP-000008 | Create Event Contract Foundation | DONE | `agent/qa/LP-000008-event-contracts` | APPROVED; QA APPROVED | Merged into `development` at `73c4b6b`; post-merge validation passed; release and post-merge evidence recorded. |
 | LP-000009 | Create Database Migration Framework | DONE | `agent/security/LP-000009-ci-loopback-correction` | REVIEW APPROVED; QA APPROVED; SECURITY APPROVED | Correction merged into `development` at `4a706ea`; explicit CI/test URL validation passed; post-merge correction evidence recorded. |
-| LP-000016 | Create CI Pull Request Pipeline | IN_PROGRESS | `agent/devops/LP-000016-ci-pipeline` | Implementation in progress | GitHub Actions workflow and ephemeral PostgreSQL validation are implemented; live provider validation remains required. |
+| LP-000016 | Create CI Pull Request Pipeline | DONE | `agent/devops/LP-000016-ci-pipeline-recovery` | APPROVED; QA APPROVED; SECURITY APPROVED | Live GitHub Actions run `31298833087` passed both repository and PostgreSQL validation jobs; merged and closed after post-merge evidence. |
 
 ## Customer Product Module
 

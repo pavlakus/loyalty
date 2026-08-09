@@ -25,14 +25,16 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4.2.2
 
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4.0.0
+        with:
+          version: ${{ env.PNPM_VERSION }}
+
       - name: Set up Node.js
         uses: actions/setup-node@v4.4.0
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: pnpm
-
-      - name: Enable pnpm
-        run: corepack enable && corepack prepare pnpm@${PNPM_VERSION} --activate
 
       - name: Install dependencies
         run: CI=true pnpm install --frozen-lockfile
@@ -63,10 +65,43 @@ jobs:
 
       - name: Scan for committed secrets
         run: |
-          if git grep -nE 'BEGIN (RSA|OPENSSH|EC|DSA) PRIVATE KEY|aws_secret_access_key|service_role' -- ':!implementation/evidence/**'; then
+          set -euo pipefail
+          secret_pattern='BEGIN (RSA|OPENSSH|EC|DSA) PRIVATE KEY|aws_secret_access_key|service_''role'
+          scanner_exclusions=(
+            ':(exclude).github/workflows/pull-request.yml'
+            ':(exclude)implementation/evidence/**'
+          )
+
+          # The workflow is scanner configuration, not a secret-bearing source
+          # location. Exclude only this definition and the approved evidence
+          # archive; all other tracked files remain covered by the scan.
+          if git grep -nE "$secret_pattern" -- . "${scanner_exclusions[@]}" >/tmp/secret-scan.matches; then
             echo 'Potential secret material detected.' >&2
             exit 1
           fi
+
+          # Prove the detector still catches a representative forbidden value
+          # without printing the fixture or its matched contents.
+          fixture="$(mktemp)"
+          trap 'rm -f "$fixture" /tmp/secret-scan.matches' EXIT
+          printf '%s\n' 'aws_secret_access_key=CI_SECRET_SCAN_FIXTURE' > "$fixture"
+          if ! grep -Eq "$secret_pattern" "$fixture"; then
+            echo 'Secret scanner fixture was not detected.' >&2
+            exit 1
+          fi
+
+          # Prove the approved evidence exclusion is effective against an
+          # existing documentation reference to a forbidden token.
+          if ! git grep -nE "$secret_pattern" -- implementation/evidence >/dev/null 2>&1; then
+            echo 'Evidence exclusion fixture is missing.' >&2
+            exit 1
+          fi
+          if git grep -nE "$secret_pattern" -- . "${scanner_exclusions[@]}" >/dev/null 2>&1; then
+            echo 'Excluded scanner/configuration content reached the scan.' >&2
+            exit 1
+          fi
+
+          echo 'Secret scan passed: scanner definition and approved evidence references excluded; fixture detection verified.'
 
       - name: Check diff
         run: git diff --check
@@ -92,14 +127,16 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4.2.2
 
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4.0.0
+        with:
+          version: ${{ env.PNPM_VERSION }}
+
       - name: Set up Node.js
         uses: actions/setup-node@v4.4.0
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: pnpm
-
-      - name: Enable pnpm
-        run: corepack enable && corepack prepare pnpm@${PNPM_VERSION} --activate
 
       - name: Install dependencies
         run: CI=true pnpm install --frozen-lockfile

@@ -23,7 +23,7 @@
 | LP-000013 | Create Tenant and Actor Context Interfaces | Backend Developer Agent | LP-000005 | BLOCKED |
 | LP-000014 | Implement Observability and Correlation Foundation | Backend Developer Agent | LP-000005; ADR-006 | BLOCKED |
 | LP-000015 | Create Shared Testing Infrastructure | QA Agent | LP-000002; LP-000003 | BLOCKED |
-| LP-000016 | Create CI Pull Request Pipeline | DevOps Agent | LP-000002; LP-000003; LP-000004; ADR-010; LP-000009 validation contract | IN_PROGRESS |
+| LP-000016 | Create CI Pull Request Pipeline | DevOps Agent | LP-000002; LP-000003; LP-000004; ADR-010; LP-000009 validation contract | DONE |
 | LP-000017 | Create Root and Local Agent Instructions | Documentation Agent | LP-000002 | BLOCKED |
 | LP-000018 | Document Local Setup and Foundation Runbooks | Documentation Agent | LP-000002 through LP-000017 as applicable | BLOCKED |
 | LP-000019 | Perform Platform Foundation Architecture Review | Solution Architect Agent | LP-000002 through LP-000018 | BLOCKED |
