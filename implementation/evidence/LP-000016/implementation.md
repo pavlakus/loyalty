@@ -96,3 +96,33 @@ The `structuredClone` usage predates LP-000016 and is valid under the repository
 - `gh run view 31298204912 --json name,workflowName,conclusion,status,url,event,headBranch,headSha` — NOT COMPLETED; GitHub API access is unavailable from this environment.
 
 No new live workflow result is claimed. LP-000016 remains `IN_PROGRESS` until the maintainer pushes the integrated recovery branch and confirms both GitHub Actions jobs pass.
+
+## Secret-scan self-match correction
+
+- **Task ID:** LP-000016
+- **Phase:** Implementation correction
+- **Role:** DevOps Agent
+- **Date:** 2026-08-09
+- **Source live run:** `31298627857`
+- **Correction branch:** `agent/devops/LP-000016-ci-pipeline-recovery`
+
+The PostgreSQL, build, lint, typecheck, tests, FCR validation, and dependency-audit steps passed. Secret scanning failed because the scanner searched its own workflow definition, which necessarily contains the literal forbidden-token pattern. This was a scanner defect, not detected secret material.
+
+The workflow now:
+
+- excludes only `.github/workflows/pull-request.yml` and the already-authorized `implementation/evidence/**` archive from the tracked-source scan;
+- preserves detection for private-key headers, AWS secret-key names, and service-role credential names in all other tracked files;
+- creates a temporary representative fixture and verifies detection without printing its contents;
+- verifies the existing evidence archive reference is excluded as intended;
+- emits only a pass summary and never prints match contents.
+
+### Focused validation
+
+- `git grep` production scan with the two exclusions — PASS; exit `1` for no matches.
+- Temporary `aws_secret_access_key` fixture detection — PASS; exit `0`.
+- Existing evidence reference before exclusion — PASS; match found.
+- Excluded scan after applying workflow/evidence exclusions — PASS; exit `1` for no matches.
+- Ruby workflow YAML parse — PASS.
+- `git diff --check` — PASS.
+
+The correction does not modify Loyalty product code or weaken the secret patterns. Live GitHub Actions rerun remains required before LP-000016 can advance.
