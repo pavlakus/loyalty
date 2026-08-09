@@ -37,6 +37,9 @@ test("UAT API executes the authenticated tenant-aware Loyalty vertical without l
     assert.equal(receipt.status, 201);
     const receiptBody = (await receipt.json()).data;
     assert.equal(receiptBody.availablePoints, "100");
+    const replay = await fetch(`${url}/api/v1/uat/receipts`, { method: "POST", headers: customerHeaders, body: JSON.stringify({ businessId: fixture.businessId, brandId: fixture.brandId, programId: fixture.programId, membershipId: fixture.membershipId, rewardAccountId: fixture.rewardAccountId, xpAccountId: fixture.xpAccountId, receiptId: fixture.receiptId, redemptionId: fixture.redemptionId, amountMinor: "5000", currency: "RSD", occurredAt: "2026-08-09T10:00:00.000Z" }) });
+    assert.equal(replay.status, 201);
+    assert.equal((await replay.json()).data.availablePoints, "100");
     const customer = await fetch(`${url}/api/v1/uat/customers/me`, { headers: { authorization: `Bearer ${customerToken}` } });
     assert.equal(customer.status, 200);
     const status = await fetch(`${url}/api/v1/uat/xp-status/${fixture.membershipId}?businessId=${fixture.businessId}`, { headers: businessHeaders });
@@ -54,6 +57,9 @@ test("UAT API executes the authenticated tenant-aware Loyalty vertical without l
     assert.equal(confirmed.status, 200);
     const confirmedAccount = await fetch(`${url}/api/v1/uat/reward-accounts/${fixture.rewardAccountId}?businessId=${fixture.businessId}`, { headers: businessHeaders });
     assert.equal((await confirmedAccount.json()).data.redeemed_points, "40");
+    const concurrentBodies = ["one", "two"].map((suffix) => { const redemptionId = randomUUID(); return JSON.stringify({ businessId: fixture.businessId, membershipId: fixture.membershipId, rewardAccountId: fixture.rewardAccountId, programId: fixture.programId, rewardDefinitionId: fixture.rewardDefinitionId, redemptionId, idempotencyKey: `uat:${redemptionId}`, requestFingerprint: `uat-fingerprint:${suffix}`, createdAt: "2026-08-09T10:03:00.000Z", expiresAt: "2026-08-09T10:18:00.000Z" }); });
+    const concurrent = await Promise.all(concurrentBodies.map((body) => fetch(`${url}/api/v1/uat/redemptions/reserve`, { method: "POST", headers: businessHeaders, body })));
+    assert.equal(concurrent.filter((result) => result.status === 201).length, 1);
     const analytics = await fetch(`${url}/api/v1/uat/analytics?businessId=${fixture.businessId}&programId=${fixture.programId}`, { headers: businessHeaders });
     assert.equal(analytics.status, 200);
     assert.ok((await analytics.json()).data.length > 0);

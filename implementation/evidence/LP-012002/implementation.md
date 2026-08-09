@@ -74,3 +74,16 @@ The API test covered fixture provisioning, OTP request/verification, persisted s
 ## Readiness
 
 The implementation scope and task-scoped validation are complete. The UAT scenario uses dedicated normal API routes and does not call `/api/v1/local-mvp/scenario`. Transition: `IN_PROGRESS -> READY_FOR_REVIEW`. Independent Review, QA, Security, human merge, and post-merge validation remain required.
+
+## Correction pass — P1 review findings
+
+- Date: 2026-08-09
+- Findings addressed: P1 raw SQL/ADR-012 boundary; P1 runtime validation and canonical FCR error mapping.
+- Application boundary: `UatApiService` now depends only on `UatRepositoryPort`; PostgreSQL SQL, row mapping, transaction context and persistence queries are isolated in `PostgresUatRepository`. Domain Reward earning remains calculated by the application service before persistence coordination.
+- Request boundary: UAT request bodies and query strings reject undeclared fields and malformed identifiers, amounts, currencies and timestamps before handler execution.
+- Error boundary: UAT failures use canonical response envelopes and typed mappings for validation (400), authentication (401), authorization (403), not-found (404), conflicts (409), and safe unexpected failures (500). Raw database/domain details are not returned.
+- Boundary tests: application source is asserted not to import or execute PostgreSQL/SQL infrastructure; adapter source is asserted to own SQL access.
+- Contract tests: malformed input, unauthenticated access, cross-Business denial, unknown UAT resources, conflict mapping and internal-error redaction are covered.
+- PostgreSQL regression: fresh migrations and status PASS; Customer purpose-scoped RLS PASS; normal UAT API flow PASS without `/api/v1/local-mvp/scenario`; receipt replay PASS; concurrent redemption race PASS with one successful reservation; no credentials or database URL were recorded.
+- Correction validation: `CI=true pnpm install --frozen-lockfile` PASS; `pnpm run build` PASS; `pnpm run lint` PASS including module boundaries; `pnpm run typecheck` PASS; `pnpm run test` PASS; `pnpm validate:fcr` PASS; `git diff --check` PASS; API test suite PASS (164/164).
+- Transition recommendation: `READY_FOR_REVIEW`.

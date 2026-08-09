@@ -5,6 +5,7 @@ import { LocalMvpApplicationService } from "../../application/local-mvp-service.
 import { PostgresAuthenticationPersistence } from "./authentication-persistence.js";
 import { LocalAuthenticationService, NonProductionCapturingOtpDelivery } from "../../application/local-authentication-service.js";
 import { UatApiService } from "../../application/uat-api-service.js";
+import { PostgresUatRepository } from "./uat-repository.js";
 
 export function resolveDatabaseUrl(environment: NodeJS.ProcessEnv = process.env): string {
   if (environment.DATABASE_URL) return environment.DATABASE_URL;
@@ -18,6 +19,6 @@ export function createLocalMvpComposition(environment: NodeJS.ProcessEnv = proce
   const localMvp = new LocalMvpApplicationService(new PostgresLocalMvpPersistence(transactions));
   const delivery = new NonProductionCapturingOtpDelivery(environment.NODE_ENV ?? "development");
   const authentication = new LocalAuthenticationService(new PostgresAuthenticationPersistence(pool), delivery);
-  const uat = new UatApiService(transactions, new PostgresAuthenticationPersistence(pool), environment.NODE_ENV ?? "development");
+  const uat = new UatApiService(new PostgresUatRepository(transactions), new PostgresAuthenticationPersistence(pool), environment.NODE_ENV ?? "development");
   return { pool, localMvp, authentication, delivery, uat };
 }
