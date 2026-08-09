@@ -1,3 +1,3 @@
 # Local MVP Application Integration Task Index
 
-- LP-012001 — Compose PostgreSQL-backed local MVP application vertical (READY_FOR_MERGE)
+- LP-012001 — Compose PostgreSQL-backed local MVP application vertical (DONE)

@@ -3,7 +3,7 @@
 - Task ID: LP-012001
 - Category: Application integration
 - Priority: P0 local MVP
-- State: READY_FOR_MERGE
+- State: DONE
 - Owner: Backend Application Agent
 - Owning module: `services/api`
 - Dependencies: LP-000009, LP-000010, LP-000016, LP-002003, LP-003003, LP-004003, LP-005014, LP-006014, LP-007006, LP-008005, LP-009005, LP-010003, LP-011003, ADR-012 (all complete/accepted)
