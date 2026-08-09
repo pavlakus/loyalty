@@ -1,11 +1,14 @@
 import { createServer, type Server } from "node:http";
 
-import { createApplication } from "./create-application.js";
+import { createApplication, type ApplicationDependencies } from "./create-application.js";
+import { createLocalMvpComposition } from "../infrastructure/postgres/composition-root.js";
 import { loadServerEnvironment, type ServerEnvironment } from "../config/environment.js";
 
 export interface ServerOptions {
   readonly host?: string;
   readonly port?: number;
+  readonly application?: ApplicationDependencies;
+  readonly closeResources?: () => Promise<void>;
 }
 
 export interface RunningServer {
@@ -31,7 +34,9 @@ export function startServer(options: ServerOptions = {}): Promise<RunningServer>
   const environment = loadServerEnvironment();
   const port = resolvePort(options.port, environment);
   const host = resolveHost(options.host, environment);
-  const server = createServer(createApplication());
+  const composition = options.application || !process.env.DATABASE_URL ? undefined : createLocalMvpComposition();
+  const application = options.application ?? { localMvp: composition?.localMvp.createPort(), authentication: composition?.authentication, nonProductionOnly: environment.nodeEnv === "production" };
+  const server = createServer(createApplication(application));
 
   return new Promise((resolve, reject) => {
     const onError = (error: Error): void => {
@@ -41,7 +46,7 @@ export function startServer(options: ServerOptions = {}): Promise<RunningServer>
 
     const onListening = (): void => {
       server.removeListener("error", onError);
-      resolve({ server, close: () => closeServer(server) });
+      resolve({ server, close: async () => { await closeServer(server); await options.closeResources?.(); await composition?.pool.end(); } });
     };
 
     server.once("error", onError);

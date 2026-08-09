@@ -3,7 +3,7 @@
 - Task ID: LP-012001
 - Category: Application integration
 - Priority: P0 local MVP
-- State: TASK_PREPARATION
+- State: IN_PROGRESS
 - Owner: Backend Application Agent
 - Owning module: `services/api`
 - Dependencies: LP-000009, LP-000010, LP-000016, LP-002003, LP-003003, LP-004003, LP-005014, LP-006014, LP-007006, LP-008005, LP-009005, LP-010003, LP-011003, ADR-012 (all complete/accepted)
@@ -21,6 +21,8 @@ New product rules, new domains, external providers, deployment, production crede
 
 - `services/api/src/application/**`
 - `services/api/src/infrastructure/**`
+- `database/migrations/20260809170000_create_authentication_session_persistence.sql`
+- `database/tests/local-mvp-application.sql`
 - `services/api/src/bootstrap/**`
 - `services/api/src/server.ts`
 - `services/api/package.json`, workspace lockfile

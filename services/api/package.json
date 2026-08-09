@@ -8,10 +8,12 @@
     "lint": "eslint --no-ignore test --global fetch --max-warnings=0",
     "start": "node dist/server.js",
     "test": "pnpm run build && node --test test/*.test.mjs",
+    "test:local-mvp": "pnpm run build && node --test test/local-mvp-api.integration.mjs",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "devDependencies": {
-    "@types/node": "26.1.0"
+    "@types/node": "26.1.0",
+    "@types/pg": "8.15.5"
   },
   "dependencies": {
     "@loyalty-platform/api-contracts": "workspace:*",
