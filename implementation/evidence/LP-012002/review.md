@@ -41,3 +41,16 @@
 ## Decision
 
 `CHANGES_REQUIRED`. These P1 findings block Review approval and therefore block QA, Security, READY_FOR_MERGE, and merge.
+
+## Correction review — APPROVED
+
+- Reviewed commit: `8eace7b6e7b237a0b3ec7988a202a529b19ac4bd`
+- Date: 2026-08-09
+- The application service now depends on the typed `UatRepositoryPort`; no SQL, `pg`, transaction-manager, or infrastructure imports remain in the application service. SQL and row mapping are owned by `PostgresUatRepository`.
+- The UAT routes now perform strict body/query validation, reject undeclared fields, use canonical success/error envelopes, and map authentication, authorization, not-found, conflict, validation, and unexpected errors without leaking internals.
+- Boundary and contract tests are present and passed. The normal UAT API test remains independent of `/api/v1/local-mvp/scenario`.
+- No new P1/P2 findings identified. The two prior P1 findings are resolved within LP-012002 scope.
+
+## Decision
+
+`APPROVED`. Transition `REVIEW -> QA`.
