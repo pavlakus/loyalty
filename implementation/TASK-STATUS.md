@@ -154,7 +154,7 @@
 
 | Task | Title | Status | Branch | Review | Notes |
 |---|---|---|---|---|---|
-| LP-012002 | UAT-ready authenticated tenant-aware Loyalty API | READY_FOR_REVIEW | `agent/backend/LP-012002-uat-api-readiness` | Pending | Dedicated UAT command/query surface and normal PostgreSQL receipt/redemption orchestration complete; independent Review required. |
+| LP-012002 | UAT-ready authenticated tenant-aware Loyalty API | CHANGES_REQUIRED | `agent/backend/LP-012002-uat-api-readiness` | Review CHANGES_REQUIRED | P1: raw SQL bypasses ADR-012 repository adapters; UAT routes lack runtime validation and canonical FCR error mapping. |
 | LP-012001 | Compose PostgreSQL-backed local MVP application vertical | DONE | `agent/backend/LP-012001-local-mvp-application` | Review APPROVED; QA APPROVED; SECURITY APPROVED | Merged into `development` at `ca9fcb8`; post-merge PostgreSQL/API/repository validation passed. |
 
 ## AI Engineering Framework
