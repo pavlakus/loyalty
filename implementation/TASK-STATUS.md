@@ -148,7 +148,7 @@
 |---|---|---|---|---|---|
 | LP-011001 | Implement deterministic Business Observation metrics | DONE | `agent/backend/LP-011001-business-observation-metrics` | Review APPROVED; QA APPROVED; Security APPROVED | Merged as `7e9713652ef57450df2965badba99e8173dbb989`; read-only in-memory metrics complete; production projection/persistence deferred to LP-011003. |
 | LP-011002 | Add Analytics API and projection contracts and privacy tests | DONE | `agent/contracts/LP-011002-analytics-contracts` | Review APPROVED; QA APPROVED; Security APPROVED | Merged as `da0cb086c1e302c995acf9e1bc85471fdf1b00fa`; read-only analytics contract gate complete; production projection/persistence deferred to LP-011003. |
-| LP-011003 | Implement production analytics projection, persistence, and RLS | QA | `agent/qa/LP-011003-analytics-persistence-v2` | Independent Review approved; QA approved; Security pending | Implementation `afe6e67`; review `1632432`; clean PostgreSQL migration/projection/idempotency/RLS validation passed in QA database `loyalty_lp11003_qa_v1`. |
+| LP-011003 | Implement production analytics projection, persistence, and RLS | READY_FOR_MERGE | `agent/security/LP-011003-analytics-persistence-v2` | Independent Review approved; QA approved; Security approved | Implementation `afe6e67`; review `1632432`; QA `45767ab`; analytics PostgreSQL migration/projection/RLS validation passed; no unresolved P0/P1 findings. |
 
 ## AI Engineering Framework
 

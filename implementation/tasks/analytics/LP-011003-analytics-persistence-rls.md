@@ -3,7 +3,7 @@
 - Task ID: LP-011003
 - Category: Persistence / read-only analytics projection
 - Priority: P1 product vertical completion
-- State: QA
+- State: READY_FOR_MERGE
 - Owner: Database / Backend Implementation Agent
 - Owning module: Business Observation and Analytics
 - Dependencies: LP-000009, LP-000016, LP-011001, LP-011002 (all DONE)
