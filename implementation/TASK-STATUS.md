@@ -112,7 +112,7 @@
 | LP-007003 | Implement receipt validation and idempotency contract | DONE | `agent/backend/LP-007003-receipt-idempotency` | Review, QA, and Security approved | Merged as `9ed47ffae2b80bbfa7ab798c981b44dff3e0117a`; post-merge idempotency validation passed 2/2; persistent/distributed atomicity remains deferred. |
 | LP-007004 | Implement receipt cancellation compensating-record contract | DONE | `agent/backend/LP-007004-receipt-cancellation` | Review, QA, and Security approved | Merged as `90de479af50f656f997c4856460b708e78c6e0fd`; post-merge cancellation validation passed 2/2. |
 | LP-007005 | Add Receipt domain, privacy, concurrency, and security tests | DONE | `agent/qa/LP-007005-receipt-final-gate` | Review, QA, and Security approved | Merged as `ad876daa6f27c7143faa7ec7a16143fa30289fb8`; post-merge Receipt coverage passed 10/10; persistence/RLS/outbox remain deferred. |
-| LP-007006 | Implement Receipt persistence, RLS, and transactional outbox | READY_FOR_MERGE | `agent/security/LP-007006-receipt-persistence` | Review approved; QA approved; Security approved | Security review approved; tenant/RLS, privilege, immutability, idempotency, outbox, PostgreSQL, and repository validations passed. |
+| LP-007006 | Implement Receipt persistence, RLS, and transactional outbox | DONE | `agent/security/LP-007006-receipt-persistence` | Review approved; QA approved; Security approved | Merged as `f4360a786568c4ebad6fcf08bfc00dfda8e55245`; local PostgreSQL and live run `31301095174` passed required functional/migration checks; dependency-audit baseline exception recorded; post-merge evidence complete. |
 
 ## Reward Points Product Module
 
