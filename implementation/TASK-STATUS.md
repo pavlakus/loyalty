@@ -122,7 +122,7 @@
 | LP-008002 | Define Reward Ledger transaction and Reward Account projection contracts | DONE | `agent/backend/LP-008002-reward-ledger-contracts` | Review, QA, and Security approved | Merged as `b778f8c4dd0fe8f497f304e77435713c1709e28a`; post-merge ledger/projection validation passed 2/2; persistence/RLS/distributed enforcement remains deferred. |
 | LP-008003 | Implement pending and expiration decision contracts | DONE | `agent/backend/LP-008003-reward-lifecycle` | Review, QA, and Security approved | Merged as `1471dee594cafc736f18d6fc94d7959c132b1581`; post-merge lifecycle tests passed 3/3; scheduler/persistence/RLS remain deferred. |
 | LP-008004 | Add Reward earning, ledger, idempotency, and security tests | DONE | `agent/qa/LP-008004-reward-final-gate` | Review, QA, and Security approved | Merged as `e17b287a4cb276e4e1a0a84593915faaad50c008`; post-merge Reward tests passed 7/7; persistence/RLS/distributed enforcement remains deferred. |
-| LP-008005 | Implement Reward Ledger persistence, RLS, and concurrency enforcement | READY_FOR_MERGE | `agent/security/LP-008005-reward-persistence` | Review approved; QA approved; Security approved | PostgreSQL projection, append-only, idempotency, RLS, concurrency, and repository validation passed; security approved. |
+| LP-008005 | Implement Reward Ledger persistence, RLS, and concurrency enforcement | DONE | `agent/security/LP-008005-reward-persistence` | Review approved; QA approved; Security approved | Merged as `39002d88b5c22030d6bdcff42493c9c5dc3dcebf`; live run `31301460103` and local PostgreSQL persistence/concurrency validation passed; post-merge evidence complete. |
 
 ## XP and Status Product Module
 
