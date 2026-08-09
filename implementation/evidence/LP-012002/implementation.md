@@ -72,4 +72,4 @@ The API test covered fixture provisioning, OTP request/verification, persisted s
 
 ## Readiness
 
-Implementation scope and task-scoped validation are complete. Transition: `IMPLEMENTATION_COMPLETE -> READY_FOR_REVIEW`. Independent Review, QA, Security, human merge, and post-merge validation remain required.
+The validated slice is not yet the complete LP-012002 scope. Separate normal API commands/queries for Business, Brand, Program configuration/activation, Customer resolution, XP/Status, Reward eligibility, and reservation/confirmation/cancellation are still required; the current receipt endpoint delegates the existing local-MVP orchestration. The task remains `IN_PROGRESS` and must not enter independent review until those scoped capabilities are added.
