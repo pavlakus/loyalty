@@ -21,7 +21,7 @@ The real API scenario executes Business → Brand → active Loyalty Program →
 - `pnpm --filter @loyalty-platform/api lint` — PASS.
 - `pnpm --filter @loyalty-platform/api typecheck` — PASS.
 - `pnpm --filter @loyalty-platform/api test` — PASS, 157/157.
-- `NODE_ENV=test DATABASE_URL=postgresql://postgres:postgres@127.0.0.1:55440/loyalty_mvp_local pnpm --filter @loyalty-platform/api test:local-mvp` — PASS, 2/2.
+- `NODE_ENV=test DATABASE_URL=[REDACTED_LOCAL_DATABASE_URL] pnpm --filter @loyalty-platform/api test:local-mvp` — PASS, 2/2.
 - `git diff --check` — PASS.
 - Clean isolated database migration through `20260809170000_create_authentication_session_persistence.sql` — PASS.
 - Real API scenario response — PASS: `pointsEarned=100`, `xpEarned=10`, `availablePoints=60`, `redeemedPoints=40`, `analyticsRows=7`.
