@@ -19,7 +19,7 @@
 - LP-005011 — Define strategy selection and recommendation integration
 - LP-005012 — Implement Program validation and invariants
 - LP-005013 — Implement Program audit and event requirements
-- LP-005014 — Implement Program persistence and RLS (READY)
+- LP-005014 — Implement Program persistence and RLS (READY_FOR_MERGE)
 - LP-005015 — Add Program domain, API, and security contract tests
 - LP-005016 — Perform Loyalty Program architecture review
 - LP-005017 — Perform Loyalty Program QA and security gate
