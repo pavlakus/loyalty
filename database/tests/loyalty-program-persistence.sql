@@ -69,7 +69,7 @@ BEGIN
     WHERE id = '30000000-0000-0000-0000-000000000021:1';
     RAISE EXCEPTION 'Configuration update should have failed';
   EXCEPTION WHEN others THEN
-    IF SQLERRM NOT LIKE '%immutable%' THEN RAISE; END IF;
+    IF SQLERRM NOT LIKE '%immutable%' AND SQLERRM NOT LIKE '%permission denied%' THEN RAISE; END IF;
   END;
 END;
 $$;

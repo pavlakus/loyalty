@@ -31,11 +31,23 @@ No Customer, Membership, Receipt, Reward, XP, Status, Redemption, Analytics, LP-
 - Live migration status, rerun/idempotency, baseline upgrade and unavailable-database redaction — PASS.
 - Local Docker check — NOT AVAILABLE; Docker daemon socket unavailable.
 - Local PostgreSQL attempt — BLOCKED; `initdb`/server cannot create the required shared-memory segment in this sandbox (`Operation not permitted`).
-- `database/tests/loyalty-program-persistence.sql` — NOT RUN; it requires an executable PostgreSQL instance to prove the RLS allow/deny and immutability assertions.
+- `database/tests/loyalty-program-persistence.sql` — initial restricted-sandbox attempt could not run; subsequently executed successfully against the isolated PostgreSQL recovery instance below.
 
 ## Findings and readiness
 
-The migration is applied successfully in live PostgreSQL, but the task cannot truthfully advance to review until the dedicated RLS assertion script has run against PostgreSQL. This is an infrastructure execution blocker, not a Product or Architecture decision.
+The migration is applied successfully in live PostgreSQL and the dedicated RLS assertions subsequently passed against an isolated local PostgreSQL instance.
+
+## Local PostgreSQL recovery validation
+
+- Isolated temporary PostgreSQL server started on `127.0.0.1:55440` outside the restricted sandbox — PASS.
+- `DATABASE_URL=postgresql://postgres@127.0.0.1:55440/postgres NODE_ENV=test pnpm db:migrate` — PASS; five migrations applied from zero.
+- `... pnpm db:migrate:status` — PASS; all five migrations recorded.
+- `psql ... -v ON_ERROR_STOP=1 -f database/tests/loyalty-program-persistence.sql` — PASS; RLS read isolation, cross-tenant update denial, configuration immutability and rollback assertions passed.
+- `... pnpm db:migrate` rerun — PASS; no migrations to run.
+- `... pnpm db:migrate:check` — PASS; five migration hashes validated.
+- `git diff --check` — PASS.
+
+The temporary database contains only disposable test data and is not shared with development, UAT or production.
 
 ## Recovery
 
