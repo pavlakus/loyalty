@@ -154,7 +154,7 @@
 
 | Task | Title | Status | Branch | Review | Notes |
 |---|---|---|---|---|---|
-| LP-012002 | UAT-ready authenticated tenant-aware Loyalty API | READY_FOR_MERGE | `agent/backend/LP-012002-uat-api-readiness` | Review APPROVED; QA APPROVED; Security APPROVED | Correction commit `8eace7b`; repository boundary, canonical UAT errors, fresh PostgreSQL, RLS, replay, and redemption concurrency gates passed. Human merge required. |
+| LP-012002 | UAT-ready authenticated tenant-aware Loyalty API | DONE | `agent/backend/LP-012002-uat-api-readiness` | Review APPROVED; QA APPROVED; Security APPROVED; Post-merge COMPLETE | Merged as `6d588a89`; post-merge PostgreSQL, RLS, authenticated UAT E2E, replay, concurrency, canonical error, and ADR-012 boundary validation passed. |
 | LP-012001 | Compose PostgreSQL-backed local MVP application vertical | DONE | `agent/backend/LP-012001-local-mvp-application` | Review APPROVED; QA APPROVED; SECURITY APPROVED | Merged into `development` at `ca9fcb8`; post-merge PostgreSQL/API/repository validation passed. |
 
 ## AI Engineering Framework

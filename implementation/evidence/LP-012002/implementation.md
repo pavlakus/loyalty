@@ -87,3 +87,7 @@ The implementation scope and task-scoped validation are complete. The UAT scenar
 - PostgreSQL regression: fresh migrations and status PASS; Customer purpose-scoped RLS PASS; normal UAT API flow PASS without `/api/v1/local-mvp/scenario`; receipt replay PASS; concurrent redemption race PASS with one successful reservation; no credentials or database URL were recorded.
 - Correction validation: `CI=true pnpm install --frozen-lockfile` PASS; `pnpm run build` PASS; `pnpm run lint` PASS including module boundaries; `pnpm run typecheck` PASS; `pnpm run test` PASS; `pnpm validate:fcr` PASS; `git diff --check` PASS; API test suite PASS (164/164).
 - Transition recommendation: `READY_FOR_REVIEW`.
+
+## Post-merge closure
+
+The approved source was merged into `development` as `6d588a89f01bd99db43e317c6cdcb4afb82e7132`. Post-merge validation is complete; see `merge.md` and `post-merge.md`. Transition: `MERGED -> DONE`.
