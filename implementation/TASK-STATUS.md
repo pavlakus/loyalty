@@ -140,7 +140,7 @@
 |---|---|---|---|---|---|
 | LP-010001 | Implement Reward Definition eligibility and redemption MVP | DONE | `agent/backend/LP-010001-reward-redemption-mvp` | Review APPROVED; QA APPROVED; Security APPROVED | Merged as `8d4ab084ebd4418e3dab3c790fd7b168ff36fb20`; fixed pointsCost domain/application vertical complete; persistence/RLS/distributed enforcement deferred to LP-010003. |
 | LP-010002 | Add Reward redemption API/event and security tests | DONE | `agent/backend/LP-010002-redemption-contracts` | Review APPROVED; QA APPROVED; Security APPROVED | Merged as `181ce857579c6f813bfaee68b72ee426bd05e5b5`; fixed-point API/event/security contract gate complete; persistence/RLS remains deferred to LP-010003. |
-| LP-010003 | Implement Reward redemption persistence, RLS, and distributed concurrency | QA | `agent/qa/LP-010003-redemption-persistence` | Independent Review approved; QA approved; Security pending | Implementation `80e22b9`; review `1536b81`; clean PostgreSQL migration and redemption projection validation passed in QA database `loyalty_lp10003_qa_v2`. |
+| LP-010003 | Implement Reward redemption persistence, RLS, and distributed concurrency | READY_FOR_MERGE | `agent/security/LP-010003-redemption-persistence` | Independent Review approved; QA approved; Security approved | Implementation `80e22b9`; review `1536b81`; QA `17b72d6`; PostgreSQL migration and redemption projection validation passed; no unresolved P0/P1 findings. |
 
 ## Business Observation and Analytics Product Module
 
